@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --canvas: #F6F2EC;
+  --ink: #1A1916;
+  --sienna: #8B3A2A;
+  --muted: #6B6660;
+  --border: #E4DFD8;
+  --dark: #1A1916;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+.underline-hover {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.35s ease;
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+.work-card:hover .work-overlay {
+  opacity: 1;
+}
+
+.work-card:hover .work-title {
+  transform: translateY(0);
 }

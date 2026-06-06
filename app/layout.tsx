@@ -1,33 +1,24 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Geist } from 'next/font/google'
+import './globals.css'
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
-  title: "Enrique Ciapara — La alegría de vivir",
-  description: "Pintor. Tijuana, Baja California. La joie de vivre · The joy of living.",
-};
+  title: 'Enrique Ciapara — Pintor',
+  description:
+    'Estudio de pintura y grabado en Tijuana, Baja California. Arte contemporáneo desde 2001.',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="es" className={`${geistSans.variable}`}>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
