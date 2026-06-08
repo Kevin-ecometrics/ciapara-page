@@ -6,7 +6,7 @@ import Contact from "./Components/Home/Contact";
 export default function Home() {
   return (
     <div>
-      {/* <Hero /> */}
+      <Hero />
       <Banner />
       <About />
       <Contact />
