@@ -1,17 +1,48 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 import NavBar from "./Components/NavBar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const interstate = localFont({
+  variable: "--font-interstate",
+  src: [
+    {
+      path: "../public/interstate/interstate-light-cond-58b64220b1490.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/interstate/interstate-light-italic-58b64147957e5.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../public/interstate/interstate-regular-comp-58b641cc0aca1.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/interstate/interstate-regular-italic-58b641ecad88f.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/interstate/interstate-bold-cond-58b64162258ca.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/interstate/interstate-black-cond-58b642507872b.otf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const hoeflerText = localFont({
+  variable: "--font-hoefler-text",
+  src: "../public/hoefler-text/hoefler-text.ttf",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${interstate.variable} ${hoeflerText.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <NavBar />
