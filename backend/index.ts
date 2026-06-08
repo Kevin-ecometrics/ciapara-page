@@ -4,7 +4,9 @@ import mysql from "mysql2/promise";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 
+// En dev carga .env.local; en producción (cPanel) carga .env
 dotenv.config({ path: ".env.local" });
+dotenv.config(); // fallback a .env si una variable no fue definida arriba
 
 // ─── DB pool ──────────────────────────────────────────────────────────────────
 const pool = mysql.createPool({
