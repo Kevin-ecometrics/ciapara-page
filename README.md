@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ciapara — Enrique Ciapara website (MVP)
+
+Presentation website for the painter Enrique Ciapara (Tijuana, Baja California), built with [Next.js](https://nextjs.org) and bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+This is an **MVP version**: structure, content, and components are still subject to change.
 
 ## Getting Started
 
@@ -18,7 +22,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Current project structure
+
+- `app/layout.tsx` — root layout: defines metadata, global fonts, and mounts the `NavBar`.
+- `app/page.tsx` — main (Home) page. Currently renders `About`; `Hero` is commented out / pending use.
+- `app/Components/NavBar.tsx` — fixed navigation bar with the artist's name and a link to Home.
+- `app/Components/Home/Hero.tsx` — hero section for the home page (in progress).
+- `app/Components/Home/About.tsx` — biography/about section for the artist.
+- `app/globals.css` — global styles, theme variables (Tailwind), and font configuration.
+- `public/interstate/` — Interstate font files (titles/headings).
+- `public/hoefler-text/` — Hoefler Text font file (body text/paragraphs).
+
+## Fonts
+
+The project uses [`next/font/local`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to load and optimize two local font families (not Google Fonts), defined in `app/layout.tsx`:
+
+- **Interstate** (`--font-interstate`) — used for **titles and headings** (`h1`–`h6`). Multiple weights and styles are loaded (light, regular, bold, black, and italics) from `public/interstate/`.
+- **Hoefler Text** (`--font-hoefler-text`) — used for **body text and paragraphs**. Loaded from `public/hoefler-text/hoefler-text.ttf`.
+
+Both CSS variables are exposed on `<html>` and mapped in `app/globals.css`:
+
+- `--font-sans` → Hoefler Text (general text / Tailwind `font-sans`)
+- `--font-heading` → Interstate (available for explicit use, e.g. `font-[family-name:var(--font-heading)]`)
+- `body` uses Hoefler Text by default, and headings (`h1`–`h6`) automatically use Interstate.
 
 ## Learn More
 
