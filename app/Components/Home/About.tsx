@@ -2,13 +2,13 @@ export default function About() {
     return (
         <div className="mb-12 space-y-4 text-gray-700 leading-relaxed flex flex-col items-center justify-center px-6 py-20 font-sans">
             <h1 className="text-lg font-semibold uppercase text-[#8B4513]">About Enrique Ciapara</h1>
-            <h2 className="text-4xl font-bold text-gray-900 mb-1">
+            <p className="text-4xl font-bold text-gray-900 mb-1">
                 lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur
                 efficitur. Sed at nunc ac nisl convallis commodo. Curabitur a ligula ut enim efficitur
                 fermentum. Donec in odio sed ipsum efficitur tincidunt. Donec vel sapien eget nunc
                 efficitur efficitur. Sed at nunc ac nisl convallis commodo. Curabitur a ligula ut enim
                 efficitur fermentum.
-            </h2>
+            </p>
         </div>
     )
 }
