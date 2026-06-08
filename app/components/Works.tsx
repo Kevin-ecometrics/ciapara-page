@@ -86,27 +86,43 @@ export default function Works() {
             <motion.div
               key={work.title}
               variants={cardVariants}
-              className="work-card group relative overflow-hidden cursor-pointer"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+              className="group relative overflow-hidden cursor-pointer"
             >
-              <div className="aspect-[4/3] w-full" style={{ background: work.gradient }} />
+              <motion.div
+                className="aspect-[4/3] w-full"
+                style={{ background: work.gradient }}
+                variants={{ rest: { scale: 1 }, hover: { scale: 1.06 } }}
+                transition={{ duration: 0.6, ease: expo }}
+              />
 
-              <div className="work-overlay absolute inset-0 bg-[#1A1916]/70 opacity-0 transition-opacity duration-400 flex flex-col justify-end p-6">
-                <div
-                  className="work-title transition-transform duration-400"
-                  style={{ transform: 'translateY(1rem)' }}
+              <motion.div
+                className="absolute inset-0 bg-[#1A1916]/70 flex flex-col justify-end p-6"
+                variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+                transition={{ duration: 0.4, ease: expo }}
+              >
+                <motion.div
+                  variants={{ rest: { y: 16 }, hover: { y: 0 } }}
+                  transition={{ duration: 0.4, ease: expo }}
                 >
                   <p className="text-xs tracking-[0.2em] uppercase text-white/50 mb-1">
                     {work.medium}
                   </p>
                   <h3 className="text-white font-medium text-lg">{work.title}</h3>
                   <p className="text-white/40 text-sm">{work.year}</p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
-              <div className="p-4 border-t border-[#E4DFD8] flex justify-between items-center group-hover:opacity-0 transition-opacity duration-300">
+              <motion.div
+                className="p-4 border-t border-[#E4DFD8] flex justify-between items-center"
+                variants={{ rest: { opacity: 1 }, hover: { opacity: 0 } }}
+                transition={{ duration: 0.3, ease: expo }}
+              >
                 <span className="text-sm text-[#1A1916] font-medium">{work.title}</span>
                 <span className="text-xs text-[#6B6660]">{work.year}</span>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>

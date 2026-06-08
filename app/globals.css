@@ -41,11 +41,3 @@ body {
 .underline-hover:hover::after {
   width: 100%;
 }
-
-.work-card:hover .work-overlay {
-  opacity: 1;
-}
-
-.work-card:hover .work-title {
-  transform: translateY(0);
-}

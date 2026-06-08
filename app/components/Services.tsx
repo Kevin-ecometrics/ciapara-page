@@ -60,18 +60,29 @@ export default function Services() {
             <motion.div
               key={s.num}
               variants={cardVariants}
-              className="service-card bg-[#1A1916] p-8 lg:p-10 flex flex-col gap-6
+              whileHover={{ y: -8, backgroundColor: '#211e1a' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+              className="bg-[#1A1916] p-8 lg:p-10 flex flex-col gap-6
                          border border-transparent hover:border-[#8B3A2A]/30
                          transition-colors duration-300 cursor-default group"
             >
-              <span className="text-xs text-[#8B3A2A] tracking-[0.2em]">{s.num}</span>
+              <motion.span
+                className="text-xs text-[#8B3A2A] tracking-[0.2em]"
+                whileHover={{ x: 4 }}
+              >
+                {s.num}
+              </motion.span>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#C4622D] transition-colors duration-300">
                   {s.title}
                 </h3>
                 <p className="text-sm text-[#6B6660] leading-relaxed">{s.desc}</p>
               </div>
-              <div className="mt-auto w-6 h-px bg-[#8B3A2A] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div
+                className="mt-auto w-6 h-px bg-[#8B3A2A] origin-left scale-x-0 opacity-0
+                           group-hover:scale-x-100 group-hover:opacity-100
+                           transition-[transform,opacity] duration-300 ease-out"
+              />
             </motion.div>
           ))}
         </motion.div>
