@@ -18,7 +18,7 @@ export default function Footer() {
                 <div className="flex flex-col items-center justify-center gap-2 max-w-4xl mx-auto text-center text-sm text-[#FAF8F4] mt-4">
                     <p>&copy; {new Date().getFullYear()} Todos los derechos reservados.</p>
                     <div>
-                        <span className="font-medium">Desarrollado por </span>
+                        <span className="">Desarrollado por </span>
                         <a href="https://e-commetrics.com/" className="text-amber-500 hover:text-amber-600 transition-colors">
                             e-commetrics
                         </a>
