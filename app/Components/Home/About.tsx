@@ -1,14 +1,26 @@
 export default function About() {
     return (
-        <div className="mb-12 space-y-4 text-gray-700 leading-relaxed flex flex-col items-center justify-center px-6 py-20 font-sans">
-            <h1 className="text-lg font-semibold uppercase text-[#8B4513]">About Enrique Ciapara</h1>
-            <p className="text-4xl font-bold text-gray-900 mb-1">
-                lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur
-                efficitur. Sed at nunc ac nisl convallis commodo. Curabitur a ligula ut enim efficitur
-                fermentum. Donec in odio sed ipsum efficitur tincidunt. Donec vel sapien eget nunc
-                efficitur efficitur. Sed at nunc ac nisl convallis commodo. Curabitur a ligula ut enim
-                efficitur fermentum.
-            </p>
+        
+        <div className="flex flex-row items-center justify-between gap-20 py-20 mx-10">
+            <div className="max-w-3xl">
+                <h1 className="text-lg font-semibold uppercase text-primary">About Enrique Ciapara</h1>
+                <div className="flex flex-row items-start gap-3 text-6xl font-bold mb-6">
+                <h1 className=" text-gray-900">
+                    lorem ipsum
+                </h1>
+                <h2 className=" text-primary">
+                    dolor sit amet
+                </h2>
+                </div>
+                <p className="text-lg max-w-4xl leading-relaxed">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod unde aspernatur ratione, hic ea doloribus odio facere dignissimos, voluptatum dolorum nam dolore inventore maiores soluta quibusdam perspiciatis architecto repellat dolor nobis, enim temporibus. Quae in excepturi aliquam suscipit saepe quos hic deserunt, perferendis tempore adipisci tenetur repellendus minima facilis quam?
+                </p>
+            </div>
+            <div>
+                <figure>
+                    <img src="https://placehold.co/600x550" alt="About image" className="rounded-lg object-cover" />
+                </figure>
+            </div>
         </div>
     )
 }

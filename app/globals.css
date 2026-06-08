@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-hoefler-text);
   --font-heading: var(--font-interstate);
+  --color-primary: #8B4513;
 }
 
 body {

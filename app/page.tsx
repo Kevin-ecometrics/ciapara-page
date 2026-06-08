@@ -1,11 +1,16 @@
 import About from "./Components/Home/About";
 import Hero from "./Components/Home/Hero";
+import Banner from "./Components/Home/Banner";
+import Contact from "./Components/Home/Contact";
 
 export default function Home() {
   return (
-
-    // <Hero />
-    <About />
+    <div>
+      {/* <Hero /> */}
+      <Banner />
+      <About />
+      <Contact />
+    </div>
 
     // <main className="min-h-screen bg-[#FAF8F4] flex flex-col items-center justify-center px-6 py-20 font-sans">
     //   <div className="max-w-xl w-full">

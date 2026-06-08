@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import {Open_Sans} from "next/font/google";
 
 import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
 
 const interstate = localFont({
   variable: "--font-interstate",
@@ -40,9 +42,8 @@ const interstate = localFont({
   ],
 });
 
-const hoeflerText = localFont({
-  variable: "--font-hoefler-text",
-  src: "../public/hoefler-text/hoefler-text.ttf",
+const openSans = Open_Sans({
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -58,11 +59,12 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${interstate.variable} ${hoeflerText.variable} h-full antialiased`}
+      className={`${interstate.variable} ${openSans.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
