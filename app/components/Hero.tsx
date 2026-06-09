@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useRef, type MouseEvent } from 'react'
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'motion/react'
 
@@ -71,7 +72,7 @@ export default function Hero() {
     >
       {/* Sticky viewport — se queda fijo mientras el scroll avanza */}
       <div
-        className="sticky top-0 h-screen overflow-hidden bg-[#1a1412]"
+        className="sticky top-0 h-screen overflow-hidden bg-black"
         onMouseMove={handlePointerMove}
       >
 
@@ -83,10 +84,18 @@ export default function Hero() {
             scale: bgScale,
             filter: bgFilter,
             transformOrigin: 'center bottom',
-            background:
-              'linear-gradient(150deg, #1a1412 0%, #2d1a0e 28%, #3d2215 52%, #1e1512 76%, #120e0c 100%)',
           }}
-        />
+        >
+          <Image
+            src="/CiaparaHeroImg.jpeg"
+            alt="Ciapara Hero"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+          {/* overlay oscuro para mantener legibilidad del texto */}
+          <div className="absolute inset-0 bg-black/40" />
+        </motion.div>
 
         {/* Textura de grano — sutil, da sensación de lienzo pintado */}
         <div
