@@ -3,11 +3,5 @@ export default function ArtistLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="es">
-      <body>
-        <main>{children}</main>
-      </body>
-    </html>
-  )
+  return <main>{children}</main>
 }
