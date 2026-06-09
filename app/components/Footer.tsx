@@ -36,6 +36,19 @@ export default function Footer() {
       id="contacto"
       className="relative bg-[#1A1916] text-white overflow-hidden"
     >
+      {/* Hero background image with parallax */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        style={{ y: titleY }}
+      >
+        <img
+          src="/CiaparaHeroImg.jpeg"
+          alt=""
+          className="w-full h-full object-cover object-top scale-110"
+        />
+        <div className="absolute inset-0 bg-[#1A1916]/85" />
+      </motion.div>
+
       {/* Grain texture — matches Hero */}
       <div
         className="absolute inset-0 opacity-[0.04] mix-blend-overlay pointer-events-none z-0"
