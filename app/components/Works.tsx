@@ -1,52 +1,63 @@
-'use client'
+"use client";
 
-import { motion } from 'motion/react'
+import { motion } from "motion/react";
 
-const expo = [0.16, 1, 0.3, 1] as const
+const expo = [0.16, 1, 0.3, 1] as const;
 
 const works = [
   {
-    title: 'Paisaje Fronterizo',
-    year: '2023',
-    medium: 'Óleo sobre tela',
-    gradient: 'linear-gradient(145deg, #7a2e1e 0%, #c4562a 40%, #e8885a 70%, #7a2e1e 100%)',
+    title: "Paisaje Fronterizo",
+    year: "2023",
+    medium: "Óleo sobre tela",
+    gradient:
+      "linear-gradient(145deg, #7a2e1e 0%, #c4562a 40%, #e8885a 70%, #7a2e1e 100%)",
   },
   {
-    title: 'Nocturno #4',
-    year: '2022',
-    medium: 'Acrílico sobre tela',
-    gradient: 'linear-gradient(145deg, #14213d 0%, #2d4a8a 45%, #1a3060 75%, #0d1629 100%)',
+    title: "Nocturno #4",
+    year: "2022",
+    medium: "Acrílico sobre tela",
+    gradient:
+      "linear-gradient(145deg, #14213d 0%, #2d4a8a 45%, #1a3060 75%, #0d1629 100%)",
   },
   {
-    title: 'La Cocina III',
-    year: '2024',
-    medium: 'Técnica mixta',
-    gradient: 'linear-gradient(145deg, #3a4c2e 0%, #5e7e48 40%, #82a066 65%, #3a4c2e 100%)',
+    title: "La Cocina III",
+    year: "2024",
+    medium: "Técnica mixta",
+    gradient:
+      "linear-gradient(145deg, #3a4c2e 0%, #5e7e48 40%, #82a066 65%, #3a4c2e 100%)",
   },
   {
-    title: 'Luz Ocre',
-    year: '2023',
-    medium: 'Óleo sobre madera',
-    gradient: 'linear-gradient(145deg, #8a6018 0%, #c49030 45%, #d4aa50 70%, #8a6018 100%)',
+    title: "Luz Ocre",
+    year: "2023",
+    medium: "Óleo sobre madera",
+    gradient:
+      "linear-gradient(145deg, #8a6018 0%, #c49030 45%, #d4aa50 70%, #8a6018 100%)",
   },
   {
-    title: 'Vino I',
-    year: '2021',
-    medium: 'Óleo sobre tela',
-    gradient: 'linear-gradient(145deg, #4e1626 0%, #7e2440 45%, #9a3255 70%, #3a0e1c 100%)',
+    title: "Vino I",
+    year: "2021",
+    medium: "Óleo sobre tela",
+    gradient:
+      "linear-gradient(145deg, #4e1626 0%, #7e2440 45%, #9a3255 70%, #3a0e1c 100%)",
   },
   {
-    title: 'Grafito y Cal',
-    year: '2024',
-    medium: 'Acrílico y grafito',
-    gradient: 'linear-gradient(145deg, #222226 0%, #424248 40%, #585860 65%, #1e1e22 100%)',
+    title: "Grafito y Cal",
+    year: "2024",
+    medium: "Acrílico y grafito",
+    gradient:
+      "linear-gradient(145deg, #222226 0%, #424248 40%, #585860 65%, #1e1e22 100%)",
   },
-]
+];
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40, scale: 0.96 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: expo } },
-}
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: expo },
+  },
+};
 
 export default function Works() {
   return (
@@ -92,7 +103,7 @@ export default function Works() {
               className="group relative overflow-hidden cursor-pointer"
             >
               <motion.div
-                className="aspect-[4/3] w-full"
+                className="aspect-4/3 w-full"
                 style={{ background: work.gradient }}
                 variants={{ rest: { scale: 1 }, hover: { scale: 1.06 } }}
                 transition={{ duration: 0.6, ease: expo }}
@@ -110,7 +121,9 @@ export default function Works() {
                   <p className="text-xs tracking-[0.2em] uppercase text-white/50 mb-1">
                     {work.medium}
                   </p>
-                  <h3 className="text-white font-medium text-lg">{work.title}</h3>
+                  <h3 className="text-white font-medium text-lg">
+                    {work.title}
+                  </h3>
                   <p className="text-white/40 text-sm">{work.year}</p>
                 </motion.div>
               </motion.div>
@@ -120,7 +133,9 @@ export default function Works() {
                 variants={{ rest: { opacity: 1 }, hover: { opacity: 0 } }}
                 transition={{ duration: 0.3, ease: expo }}
               >
-                <span className="text-sm text-[#1A1916] font-medium">{work.title}</span>
+                <span className="text-sm text-[#1A1916] font-medium">
+                  {work.title}
+                </span>
                 <span className="text-xs text-[#6B6660]">{work.year}</span>
               </motion.div>
             </motion.div>
@@ -128,5 +143,5 @@ export default function Works() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
