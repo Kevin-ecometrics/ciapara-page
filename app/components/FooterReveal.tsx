@@ -28,16 +28,16 @@ export default function FooterReveal() {
   return (
     // Scroll distance = footerH px → la animación dura exactamente ese recorrido
     <div ref={containerRef} style={{ height: `calc(100vh + ${footerH}px)` }}>
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-0 h-screen overflow-hidden flex flex-col">
 
-        {/* News fijo en el fondo */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* News ocupa el espacio restante — se reduce conforme el footer sube */}
+        <div className="flex-1 overflow-hidden min-h-0">
           <News />
         </div>
 
-        {/* Footer sube desde el bottom hasta su altura natural */}
+        {/* Footer sube desde abajo sin tapar News */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 overflow-hidden z-20"
+          className="flex-shrink-0 overflow-hidden"
           style={{ height: footerHeight }}
         >
           <div ref={footerInnerRef}>

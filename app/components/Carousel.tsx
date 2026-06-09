@@ -58,7 +58,7 @@ export default function Carousel() {
   const items = [...institutions, ...institutions]
 
   return (
-    <section className="py-20 bg-[#F6F2EC] overflow-hidden border-t border-b border-[#E4DFD8]">
+    <section className="pt-20 pb-48 bg-[#F6F2EC] overflow-hidden border-t border-b border-[#E4DFD8]">
       <div className="max-w-7xl mx-auto px-6 mb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

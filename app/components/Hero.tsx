@@ -67,7 +67,7 @@ export default function Hero() {
     // Contenedor de 250vh — da "recorrido" al scroll para que el sticky dure
     <section
       ref={containerRef}
-      className="relative"
+      className="relative z-0"
       style={{ height: '250vh' }}
     >
       {/* Sticky viewport — se queda fijo mientras el scroll avanza */}

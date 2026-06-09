@@ -32,7 +32,7 @@ const itemVariants = {
 
 export default function News() {
   return (
-    <section id="noticias" className="py-28 md:py-36 px-6 bg-[#F6F2EC]">
+    <section id="noticias" className="py-28 md:py-8 px-6 bg-[#F6F2EC]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export default function News() {
                 </span>
                 <span className="text-xs text-[#6B6660]">{item.date}</span>
               </div>
-              <h3 className="text-xl font-medium text-[#1A1916] group-hover:text-[#8B3A2A] transition-colors duration-300 leading-snug">
+              <h3 className="text-xl font-medium text-[#1A1916] [@media(hover:hover)]:group-hover:text-[#8B3A2A] transition-colors duration-300 leading-snug">
                 {item.title}
               </h3>
               <p className="text-sm text-[#6B6660] leading-relaxed">{item.desc}</p>
