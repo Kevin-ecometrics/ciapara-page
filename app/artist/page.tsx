@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'motion/react'
-import Navbar from '../components/Navbar'
+import ArtistNav, { ASIDE_W } from '../components/ArtistNav'
 import Footer from '../components/Footer'
 
 const expo = [0.16, 1, 0.3, 1] as const
@@ -32,9 +33,17 @@ function FadeIn({
 }
 
 export default function ArtistPage() {
+  const [asideOpen, setAsideOpen] = useState(false)
+
   return (
     <>
-      <Navbar />
+      <ArtistNav open={asideOpen} onToggle={() => setAsideOpen(v => !v)} />
+
+      {/* Content wrapper — se desplaza a la derecha cuando el aside abre */}
+      <motion.div
+        animate={{ marginLeft: asideOpen ? ASIDE_W : 0 }}
+        transition={{ duration: 0.5, ease: expo }}
+      >
 
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative h-screen overflow-hidden bg-black">
@@ -346,6 +355,8 @@ export default function ArtistPage() {
       </section>
 
       <Footer />
+
+      </motion.div>
     </>
   )
 }
