@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${interstate.variable} ${openSans.className} h-full antialiased`}
+      className={`${interstate.variable} ${openSans.className} h-full antialiased overflow-x-hidden`}
     >
       <body className="min-h-full flex flex-col">
         <NavBar />
