@@ -1,3 +1,4 @@
+import IntroAnimation from './components/IntroAnimation'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -9,6 +10,7 @@ import FooterReveal from './components/FooterReveal'
 export default function Home() {
   return (
     <>
+      <IntroAnimation />
       <Navbar />
       <main>
         <Hero />

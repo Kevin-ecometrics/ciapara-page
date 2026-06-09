@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Open_Sans} from "next/font/google";
 import "./globals.css";
-import IntroAnimation from "./components/IntroAnimation";
-
 
 const interstate = localFont({
   variable: "--font-interstate",
@@ -63,7 +61,6 @@ export default function RootLayout({
       className={`${interstate.variable} ${openSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <IntroAnimation />
         {children}
       </body>
     </html>
