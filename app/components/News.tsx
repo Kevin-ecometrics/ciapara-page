@@ -1,155 +1,105 @@
 "use client";
 
 import { motion } from "motion/react";
-import { div, img } from "motion/react-client";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 const news = [
   {
     img: "/CiaparaHeroImg.jpeg",
-    title: "Lorem ipsum dolor sit amet.",
+    tag: "Exposición",
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    date: "2024",
     Link: "/",
-    aspectRatio: "aspect-square",
   },
   {
     img: "/CiaparaHeroImg.jpeg",
+    tag: "Grabado",
     title: "Lorem ipsum dolor sit amet.",
+    date: "2024",
     Link: "/",
-    aspectRatio: "aspect-video",
   },
   {
     img: "/CiaparaHeroImg.jpeg",
-    title: "Lorem ipsum dolor sit amet.",
+    tag: "Restauración",
+    title: "Lorem ipsum dolor sit amet consectetur adipiscing.",
+    date: "2023",
     Link: "/",
-    aspectRatio: "aspect-[4/5]",
   },
 ];
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: expo } },
-};
-
 export default function News() {
   return (
-    <section id="noticias" className="py-28 md:py-8 px-6 bg-[#1A1916]">
-      <div className="max-w-7xl mx-auto text-white">
-        <h2 className="text-xl md:text-2xl font-bold uppercase mb-4">
-          Noticias
-        </h2>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: expo }}
-          viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-col md:flex-row gap-4 items-start justify-evenly w-full"
-        >
-          <div className="flex flex-col gap-2 flex-1">
-            <figure
-              className={`${news[0].aspectRatio} w-full overflow-hidden rounded-2xl`}
-            >
-              <img
-                src={news[0].img}
-                alt=""
-                className="w-full h-full object-cover rounded-2xl"
-              />
-            </figure>
-            <p className="max-w-xs uppercase font-semibold">
-              Lorem ipsum dolor sit amet.
-            </p>
-            <a href="/" target="blank" className="hover:underline">
-              Leer más
-            </a>
-          </div>
-          <div className="flex flex-col gap-2 flex-1">
-            <figure
-              className={`${news[1].aspectRatio} w-full overflow-hidden rounded-2xl`}
-            >
-              <img
-                src={news[1].img}
-                alt=""
-                className="w-full h-full object-cover rounded-2xl"
-              />
-            </figure>
-            <p className="max-w-xs uppercase font-semibold">
-              Lorem ipsum dolor sit amet consectetur. vero.
-            </p>
-            <a href="/" target="blank" className="hover:underline">
-              Leer más
-            </a>
-          </div>
-          <div className="flex flex-col gap-2 flex-1">
-            <figure
-              className={`${news[2].aspectRatio} w-full overflow-hidden rounded-2xl`}
-            >
-              <img
-                src={news[2].img}
-                alt=""
-                className="w-full h-full object-cover rounded-2xl"
-              />
-            </figure>
-            <p className="max-w-xs uppercase font-semibold">
-              Lorem ipsum dolor sit amet.
-            </p>
-            <a href="/" target="blank" className="hover:underline">
-              Leer más
-            </a>
-          </div>
-        </motion.div>
-      </div>
-      {/* <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: expo }}
-          viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14"
-        >
-          <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-[#8B3A2A] mb-2">
-              Actualidad
-            </p>
-            <h2 className="text-3xl md:text-4xl font-light text-[#1A1916]">
-              Noticias
-            </h2>
-          </div>
-        </motion.div>
+    <section
+      id="noticias"
+      className="py-8 px-6 bg-[#1A1916] h-full flex flex-col"
+    >
+      <div className="max-w-7xl mx-auto text-white w-full flex flex-col flex-1 min-h-0">
 
+        {/* Header */}
+        <div className="flex items-baseline justify-between mb-5 shrink-0">
+          <h2 className="text-xs tracking-[0.3em] uppercase text-white/40">
+            Últimas noticias
+          </h2>
+          <span className="text-xs text-white/30">{news.length} artículos</span>
+        </div>
+
+        {/* Cards */}
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ staggerChildren: 0.12 }}
-          className="grid md:grid-cols-3 gap-8"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ staggerChildren: 0.1 }}
+          className="flex flex-col md:flex-row gap-0 md:gap-6 flex-1 min-h-0"
         >
-          {news.map((item) => (
-            <motion.article
-              key={item.title}
-              variants={itemVariants}
-              className="news-item border-t border-[#E4DFD8] pt-8 flex flex-col gap-4 cursor-pointer group"
+          {news.map((item, i) => (
+            <motion.a
+              key={i}
+              href={item.Link}
+              target="_blank"
+              rel="noreferrer"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: expo } },
+              }}
+              className="group flex flex-row md:flex-col gap-4
+                         border-t border-white/20 pt-4 pb-4 md:pb-0
+                         md:flex-1 cursor-pointer"
             >
-              <div className="flex items-center justify-between">
-                <span className="text-xs tracking-[0.18em] uppercase text-[#8B3A2A]">
-                  {item.tag}
-                </span>
-                <span className="text-xs text-[#6B6660]">{item.date}</span>
+              {/* Imagen */}
+              <div className="shrink-0 w-20 h-20 md:w-full md:h-48 overflow-hidden rounded-lg">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
-              <h3 className="text-xl font-medium text-[#1A1916] [@media(hover:hover)]:group-hover:text-[#8B3A2A] transition-colors duration-300 leading-snug">
-                {item.title}
-              </h3>
-              <p className="text-sm text-[#6B6660] leading-relaxed">
-                {item.desc}
-              </p>
-              <div className="mt-auto pt-4">
-                <span className="underline-hover text-xs tracking-[0.15em] uppercase text-[#1A1916]">
+
+              {/* Texto */}
+              <div className="flex flex-col justify-between flex-1 min-w-0">
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] tracking-widest uppercase text-white/40">
+                      {item.tag}
+                    </span>
+                    <span className="text-[10px] text-white/30">{item.date}</span>
+                  </div>
+                  <p className="text-sm font-semibold leading-snug line-clamp-2
+                                group-hover:text-white/70 transition-colors duration-300">
+                    {item.title}
+                  </p>
+                </div>
+                <span className="text-xs text-white/40 group-hover:text-white
+                                 transition-colors duration-300 mt-2 md:mt-3 inline-flex items-center gap-1">
                   Leer más
+                  <span className="translate-x-0 group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </span>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </motion.div>
-      </div> */}
+
+      </div>
     </section>
   );
 }

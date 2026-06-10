@@ -1,51 +1,42 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import News from './News'
 import Footer from './Footer'
 
 export default function FooterReveal() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const footerInnerRef = useRef<HTMLDivElement>(null)
-  const [footerH, setFooterH] = useState(600)
-
-  // Mide el alto real del footer después del primer render
-  useEffect(() => {
-    if (footerInnerRef.current) {
-      setFooterH(footerInnerRef.current.offsetHeight)
-    }
-  }, [])
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end'],
   })
 
-  // Sube solo hasta el alto natural del footer, no hasta el 100% del viewport
-  const footerHeight = useTransform(scrollYProgress, [0, 1], [0, footerH])
+  // News sube de 0 a -100% de su propia altura → se va por arriba
+  const newsY = useTransform(scrollYProgress, [0, 1], ['0%', '-100%'])
 
   return (
-    // Scroll distance = footerH px → la animación dura exactamente ese recorrido
-    <div ref={containerRef} style={{ height: `calc(100vh + ${footerH}px)` }}>
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col">
+    /*
+      200vh → 100vh de scroll real para completar la animación.
+      Footer queda fijo detrás (z-0).
+      News arranca encima (z-10) y se levanta conforme se scrollea.
+    */
+    <div ref={containerRef} className="relative" style={{ height: '200dvh' }}>
 
-        {/* News ocupa el espacio restante — se reduce conforme el footer sube */}
-        <div className="flex-1 overflow-hidden min-h-0">
-          <News />
-        </div>
-
-        {/* Footer sube desde abajo sin tapar News */}
-        <motion.div
-          className="flex-shrink-0 overflow-hidden"
-          style={{ height: footerHeight }}
-        >
-          <div ref={footerInnerRef}>
-            <Footer />
-          </div>
-        </motion.div>
-
+      {/* Footer: siempre visible detrás, sticky al top */}
+      <div className="sticky top-0 overflow-hidden" style={{ zIndex: 0, height: '100dvh' }}>
+        <Footer />
       </div>
+
+      {/* News: encima del footer, sticky al top, se levanta al hacer scroll */}
+      <motion.div
+        className="sticky overflow-hidden"
+        style={{ top: 0, zIndex: 10, marginTop: '-100vh', height: '100dvh', y: newsY }}
+      >
+        <News />
+      </motion.div>
+
     </div>
   )
 }
