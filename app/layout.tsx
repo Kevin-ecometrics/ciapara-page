@@ -48,6 +48,12 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Enrique Ciapara — La alegría de vivir",
   description: "Pintor. Tijuana, Baja California. La joie de vivre · The joy of living.",
+  alternates: {
+    canonical: "https://enriqueciapara.com",
+    languages: {
+      "es": "https://enriqueciapara.com",
+    },
+  }
 };
 
 export default function RootLayout({
