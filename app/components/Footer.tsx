@@ -34,7 +34,7 @@ export default function Footer() {
     <footer
       ref={footerRef}
       id="contacto"
-      className="relative bg-[#1A1916] text-white overflow-hidden"
+      className="relative bg-[#1A1916] text-white overflow-hidden h-full"
     >
       {/* Hero background image with parallax */}
       <motion.div
