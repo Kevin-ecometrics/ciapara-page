@@ -1,12 +1,12 @@
-import IntroAnimation from './components/IntroAnimation'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Services from './components/Services'
-import Works from './components/Works'
-import Carousel from './components/Carousel'
-import FooterReveal from './components/FooterReveal'
-import Letters from './components/Letters'
+import IntroAnimation from './Components/IntroAnimation'
+import Navbar from './Components/Navbar'
+import Hero from './Components/Hero'
+import About from './Components/About'
+import Services from './Components/Services'
+import Works from './Components/Works'
+import Carousel from './Components/Carousel'
+import FooterReveal from './Components/FooterReveal'
+import Letters from './Components/Letters'
 
 export default function Home() {
   return (
