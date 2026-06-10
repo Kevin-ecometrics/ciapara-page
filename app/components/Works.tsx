@@ -6,48 +6,87 @@ const expo = [0.16, 1, 0.3, 1] as const;
 
 const works = [
   {
-    title: "Paisaje Fronterizo",
-    year: "2023",
-    medium: "Óleo sobre tela",
-    gradient:
-      "linear-gradient(145deg, #7a2e1e 0%, #c4562a 40%, #e8885a 70%, #7a2e1e 100%)",
+    title: "Lorem ipsum dolor sit.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspectRatio: "aspect-square",
   },
   {
-    title: "Nocturno #4",
-    year: "2022",
-    medium: "Acrílico sobre tela",
-    gradient:
-      "linear-gradient(145deg, #14213d 0%, #2d4a8a 45%, #1a3060 75%, #0d1629 100%)",
+    title: "Lorem ipsum dolor sit.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspectRatio: "aspect-video",
   },
   {
-    title: "La Cocina III",
-    year: "2024",
-    medium: "Técnica mixta",
-    gradient:
-      "linear-gradient(145deg, #3a4c2e 0%, #5e7e48 40%, #82a066 65%, #3a4c2e 100%)",
+    title: "Lorem ipsum dolor sit.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspectRatio: "aspect-10/7",
   },
   {
-    title: "Luz Ocre",
-    year: "2023",
-    medium: "Óleo sobre madera",
-    gradient:
-      "linear-gradient(145deg, #8a6018 0%, #c49030 45%, #d4aa50 70%, #8a6018 100%)",
+    title: "Lorem ipsum dolor sit.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspectRatio: "aspect-5/4",
   },
   {
-    title: "Vino I",
-    year: "2021",
-    medium: "Óleo sobre tela",
-    gradient:
-      "linear-gradient(145deg, #4e1626 0%, #7e2440 45%, #9a3255 70%, #3a0e1c 100%)",
+    title: "Lorem ipsum dolor sit.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspectRatio: "aspect-video",
   },
   {
-    title: "Grafito y Cal",
-    year: "2024",
-    medium: "Acrílico y grafito",
-    gradient:
-      "linear-gradient(145deg, #222226 0%, #424248 40%, #585860 65%, #1e1e22 100%)",
+    title: "Lorem ipsum dolor sit.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspectRatio: "aspect-square",
   },
 ];
+
+// const works = [
+//   {
+//     title: "Paisaje Fronterizo",
+//     year: "2023",
+//     medium: "Óleo sobre tela",
+//     gradient:
+//       "linear-gradient(145deg, #7a2e1e 0%, #c4562a 40%, #e8885a 70%, #7a2e1e 100%)",
+//   },
+//   {
+//     title: "Nocturno #4",
+//     year: "2022",
+//     medium: "Acrílico sobre tela",
+//     gradient:
+//       "linear-gradient(145deg, #14213d 0%, #2d4a8a 45%, #1a3060 75%, #0d1629 100%)",
+//   },
+//   {
+//     title: "La Cocina III",
+//     year: "2024",
+//     medium: "Técnica mixta",
+//     gradient:
+//       "linear-gradient(145deg, #3a4c2e 0%, #5e7e48 40%, #82a066 65%, #3a4c2e 100%)",
+//   },
+//   {
+//     title: "Luz Ocre",
+//     year: "2023",
+//     medium: "Óleo sobre madera",
+//     gradient:
+//       "linear-gradient(145deg, #8a6018 0%, #c49030 45%, #d4aa50 70%, #8a6018 100%)",
+//   },
+//   {
+//     title: "Vino I",
+//     year: "2021",
+//     medium: "Óleo sobre tela",
+//     gradient:
+//       "linear-gradient(145deg, #4e1626 0%, #7e2440 45%, #9a3255 70%, #3a0e1c 100%)",
+//   },
+//   {
+//     title: "Grafito y Cal",
+//     year: "2024",
+//     medium: "Acrílico y grafito",
+//     gradient:
+//       "linear-gradient(145deg, #222226 0%, #424248 40%, #585860 65%, #1e1e22 100%)",
+//   },
+// ];
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40, scale: 0.96 },
@@ -61,8 +100,123 @@ const cardVariants = {
 
 export default function Works() {
   return (
-    <section id="obras" className="py-28 md:py-36 px-6 bg-[#F6F2EC]">
+    <section id="obras" className="py-10 md:py-16 px-6 bg-[#F6F2EC]">
       <div className="max-w-7xl mx-auto">
+        <h1 className="text-xl md:text-2xl font-bold uppercase mb-10">
+          Selección de proyectos
+        </h1>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-row gap-6 items-start justify-evenly">
+            <div className="flex flex-col">
+              <figure
+                className={`${works[0].aspectRatio} w-full overflow-hidden rounded-2xl`}
+              >
+                <img
+                  src={works[0].img}
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </figure>
+              <p className="max-w-xs uppercase font-semibold">
+                Lorem ipsum dolor sit amet.
+              </p>
+              <a href="/" target="blank" className="hover:underline">
+                Leer más
+              </a>
+            </div>
+            <div className="flex flex-col">
+              <figure
+                className={`${works[1].aspectRatio} w-full overflow-hidden rounded-2xl`}
+              >
+                <img
+                  src={works[1].img}
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </figure>
+              <p className="max-w-xs uppercase font-semibold">
+                Lorem ipsum dolor sit amet.
+              </p>
+              <a href="/" target="blank" className="hover:underline">
+                Leer más
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-row gap-6 pl-32 pr-10 items-start justify-evenly">
+            <div className="flex flex-col">
+              <figure
+                className={`${works[2].aspectRatio} w-full overflow-hidden rounded-2xl`}
+              >
+                <img
+                  src={works[2].img}
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </figure>
+              <p className="max-w-xs uppercase font-semibold">
+                Lorem ipsum dolor sit amet.
+              </p>
+              <a href="/" target="blank" className="hover:underline">
+                Leer más
+              </a>
+            </div>
+            <div className="flex flex-col">
+              <figure
+                className={`${works[3].aspectRatio} w-full overflow-hidden rounded-2xl`}
+              >
+                <img
+                  src={works[3].img}
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </figure>
+              <p className="max-w-xs uppercase font-semibold">
+                Lorem ipsum dolor sit amet.
+              </p>
+              <a href="/" target="blank" className="hover:underline">
+                Leer más
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-row gap-6 items-start justify-evenly">
+            <div className="flex flex-col">
+              <figure
+                className={`${works[4].aspectRatio} w-full overflow-hidden rounded-2xl`}
+              >
+                <img
+                  src={works[4].img}
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </figure>
+              <p className="max-w-xs uppercase font-semibold">
+                Lorem ipsum dolor sit amet.
+              </p>
+              <a href="/" target="blank" className="hover:underline">
+                Leer más
+              </a>
+            </div>
+            <div className="flex flex-col">
+              <figure
+                className={`${works[5].aspectRatio} w-full overflow-hidden rounded-2xl`}
+              >
+                <img
+                  src={works[5].img}
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </figure>
+              <p className="max-w-xs uppercase font-semibold">
+                Lorem ipsum dolor sit amet.
+              </p>
+              <a href="/" target="blank" className="hover:underline">
+                Leer más
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -141,7 +295,7 @@ export default function Works() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </div> */}
     </section>
   );
 }
