@@ -6,6 +6,7 @@ import Services from './components/Services'
 import Works from './components/Works'
 import Carousel from './components/Carousel'
 import FooterReveal from './components/FooterReveal'
+import Letters from './components/Letters'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <About />
         <Services />
         <Works />
+        <Letters />
         <Carousel />
         <FooterReveal />
       </main>
