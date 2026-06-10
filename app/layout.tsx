@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import {Open_Sans} from "next/font/google";
-
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
 
 const interstate = localFont({
   variable: "--font-interstate",
@@ -43,7 +40,9 @@ const interstate = localFont({
 });
 
 const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -53,12 +52,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://ciapara-mvp.vercel.app/",
   },
-  robots: {    index: true,
+  robots: {
+    index: true,
     follow: true,
   },
-  authors: [ {name: "Enrique Ciapara"} ],
+  authors: [{ name: "Enrique Ciapara" }],
   publisher: "E-Commetrics",
-
 };
 
 export default function RootLayout({
@@ -69,12 +68,10 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${interstate.variable} ${openSans.className} h-full antialiased overflow-x-hidden`}
+      className={`${interstate.variable} ${openSans.variable} h-full antialiased overflow-x-hidden`}
     >
       <body className="min-h-full flex flex-col">
-        <NavBar />
         {children}
-        <Footer />
       </body>
     </html>
   );
