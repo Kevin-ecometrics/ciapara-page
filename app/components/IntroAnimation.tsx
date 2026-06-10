@@ -38,8 +38,15 @@ export default function IntroAnimation() {
   const [photoIndex, setPhotoIndex] = useState(0)
 
   useEffect(() => {
+    const prevent = (e: TouchEvent) => e.preventDefault()
+    document.documentElement.style.overflow = 'hidden'
     document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
+    document.addEventListener('touchmove', prevent, { passive: false })
+    return () => {
+      document.documentElement.style.overflow = ''
+      document.body.style.overflow = ''
+      document.removeEventListener('touchmove', prevent)
+    }
   }, [])
 
   useEffect(() => {
@@ -54,6 +61,7 @@ export default function IntroAnimation() {
         setPhotoIndex(i => i + 1)
       } else {
         setVisible(false)
+        document.documentElement.style.overflow = ''
         document.body.style.overflow = ''
       }
     }, 200)

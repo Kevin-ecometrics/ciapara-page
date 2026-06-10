@@ -34,7 +34,7 @@ export default function Footer() {
     <footer
       ref={footerRef}
       id="contacto"
-      className="relative bg-[#1A1916] text-white overflow-hidden"
+      className="relative bg-[#1A1916] text-white overflow-hidden min-h-screen flex flex-col"
     >
       {/* Hero background image with parallax */}
       <motion.div
@@ -126,7 +126,7 @@ export default function Footer() {
       </div>
 
       {/* ── THREE COLUMNS ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-16 flex-1 flex flex-col justify-between">
         <motion.div
           initial="hidden"
           whileInView="visible"
