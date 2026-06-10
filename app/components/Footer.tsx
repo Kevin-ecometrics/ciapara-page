@@ -243,7 +243,17 @@ export default function Footer() {
           transition={{ duration: 1.0, ease: expo, delay: 0.2 }}
           className="pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-white/20"
         >
-          <p>© 2026 Enrique Ciapara. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Enrique Ciapara. Todos los derechos reservados. <span>
+              Desarrollado por{' '}
+              <a
+                href="https://e-commetrics.com"
+                className="underline-hover hover:text-white transition-colors duration-300"
+              >
+                E-commetrics
+              </a>
+             .
+            </span>
+          </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white/50 transition-colors duration-300">
               Aviso de privacidad

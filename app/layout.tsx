@@ -47,17 +47,20 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: "Enrique Ciapara — La alegría de vivir",
-  description: 'Descubre "La alegría de vivir", una obra del pintor Enrique Ciapara, artista de Tijuana, Baja California. Explora su inspiración, técnica y significado.',
+  description: "Pintor. Tijuana, Baja California. La joie de vivre · The joy of living.",
   keywords: "Enrique Ciapara, La alegría de vivir, pintura mexicana, arte contemporáneo, pintor de Tijuana, Baja California, arte mexicano",
   alternates: {
-    canonical: "https://ciapara-mvp.vercel.app/",
+    canonical: "https://enriqueciapara.com",
+    languages: {
+      "es": "https://enriqueciapara.com",
+    },
   },
   robots: {
     index: true,
     follow: true,
   },
   authors: [{ name: "Enrique Ciapara" }],
-  publisher: "E-Commetrics",
+  publisher: "E-commetrics",
 };
 
 export default function RootLayout({
