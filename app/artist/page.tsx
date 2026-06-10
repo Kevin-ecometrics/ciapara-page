@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import ArtistNav, { ASIDE_W } from '../components/ArtistNav'
-import Footer from '../components/Footer'
+import ArtistNav, { ASIDE_W } from '../Components/ArtistNav'
+import Footer from '../Components/Footer'
 
 const expo = [0.16, 1, 0.3, 1] as const
 
