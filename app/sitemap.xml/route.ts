@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 
+export const dynamic = 'force-static'
+
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://enriqueciapara.com'
 
 const pages = [
