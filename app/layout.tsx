@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Open_Sans} from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
 const interstate = localFont({
@@ -46,16 +46,17 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Enrique Ciapara — La alegría de vivir",
-  description: "Pintor. Tijuana, Baja California. La joie de vivre · The joy of living.",
-    keywords: "Enrique Ciapara, La alegría de vivir, pintura mexicana, arte contemporáneo, pintor de Tijuana, Baja California, arte mexicano",
+  title: "Enrique Ciapara| artista plástico |35 años de trayectoria en México",
+  description:
+    "Su pintura encierra una iconografía que a primera vista nos es cotidiana. Conoce su biografía, exposiciones y las obras más destacadas de su carrera.",
+  keywords:
+    "Artista plástico en Tijuana, Artista plástico mexicano, Artista abstracto, Pintor abstrato Tijuana, Arte contemporáneo Tijuana, Galerías de arte en Tijuana, Pintor mexicano, Artista abstracto, Artista plastico,  Artista Tijuana, Artista abstracto en Tijuana",
 
   alternates: {
     canonical: "https://enriqueciapara.com",
     languages: {
-      "es": "https://enriqueciapara.com",
+      es: "https://enriqueciapara.com",
     },
-    
   },
   robots: {
     index: true,
@@ -75,9 +76,7 @@ export default function RootLayout({
       lang="es"
       className={`${interstate.variable} ${openSans.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col">
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
