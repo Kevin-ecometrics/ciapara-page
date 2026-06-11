@@ -66,7 +66,10 @@ export default function Services() {
             className="absolute inset-0 pointer-events-none"
             initial={{ clipPath: "inset(50% 50% 50% 50%)" }}
             animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
-            exit={{ clipPath: "inset(50% 50% 50% 50%)", transition: { duration: 0 } }}
+            exit={{
+              clipPath: "inset(50% 50% 50% 50%)",
+              transition: { duration: 0 },
+            }}
             transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
           >
             <div
@@ -83,8 +86,8 @@ export default function Services() {
       </AnimatePresence>
 
       {/* Contenido encima de la imagen */}
-      <div className="relative z-10 max-w-7xl mx-auto text-white">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-10 leading-[1.15] max-w-3xl">
+      <div className="relative z-10 mx-auto text-white">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-10 leading-[1.15] max-w-3xl uppercase indent-20 md:indent-56">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem hic
           impedit expedita ea aut iste!
         </h1>
@@ -117,7 +120,7 @@ export default function Services() {
                         }
                       : { duration: 0 }
                   }
-                  className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[0.2em]"
+                  className="text-4xl md:text-5xl lg:text-6xl uppercase font-semibold tracking-[0.2em]"
                 >
                   {s.title}
                 </motion.h2>

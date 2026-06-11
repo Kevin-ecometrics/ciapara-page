@@ -28,7 +28,11 @@ type Slide =
   | { type: "color"; bg: string };
 
 const slides: Slide[] = [
-  { type: "image", src: "/CiaparaHeroImg.jpeg", alt: "Enrique Ciapara en su taller" },
+  {
+    type: "image",
+    src: "/CiaparaHeroImg.jpeg",
+    alt: "Enrique Ciapara en su taller",
+  },
   { type: "color", bg: "#8B3A2A" },
   { type: "color", bg: "#2A4A6B" },
   { type: "color", bg: "#3A6B4A" },
@@ -38,11 +42,13 @@ export default function About() {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const animContainerRef = useRef<HTMLDivElement>(null);
   const maxXRef = useRef(500);
+  const maxImageXRef = useRef(500);
   const [slideIndex, setSlideIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // shaft width drives both the growing line and the image x-offset
+  // shaft width and image position move independently at different speeds
   const shaftWidth = useMotionValue(0);
+  const imagePosition = useMotionValue(0);
 
   const { scrollYProgress } = useScroll({
     target: scrollAreaRef,
@@ -52,9 +58,23 @@ export default function About() {
   useEffect(() => {
     const measure = () => {
       if (animContainerRef.current) {
-        maxXRef.current = animContainerRef.current.offsetWidth * 0.62;
+        const isMobileView = window.innerWidth < 768;
+        setIsMobile(isMobileView);
+
+        if (isMobileView) {
+          // Mobile calculations with different constants
+          const availableWidthMobile =
+            animContainerRef.current.offsetWidth - 190;
+          maxXRef.current = Math.max(0, availableWidthMobile * 1);
+        } else {
+          // Desktop calculations
+          const availableWidth = animContainerRef.current.offsetWidth - 520;
+          const availableWidthImage =
+            animContainerRef.current.offsetWidth - 865;
+          maxXRef.current = Math.max(0, availableWidth * 1);
+          maxImageXRef.current = Math.max(0, availableWidthImage * 1);
+        }
       }
-      setIsMobile(window.innerWidth < 768);
     };
     measure();
     window.addEventListener("resize", measure);
@@ -62,10 +82,15 @@ export default function About() {
   }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    // Shaft advances faster (reaches end sooner)
     shaftWidth.set(latest * maxXRef.current);
+
+    // Image advances slower (takes longer to reach end) - use same speed ratio for both
+    imagePosition.set(latest * maxImageXRef.current);
+
     const next = Math.min(
       Math.floor(latest * slides.length * 2) >> 1,
-      slides.length - 1
+      slides.length - 1,
     );
     setSlideIndex(next);
   });
@@ -73,8 +98,8 @@ export default function About() {
   return (
     <section id="sobre-mi" className="bg-[#F6F2EC]">
       {/* Texto — scroll normal */}
-      <div className="pt-28 md:pt-36 pb-16 px-6 max-w-7xl mx-auto">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-12 leading-[1.15] max-w-4xl">
+      <div className="pt-28 md:pt-36 pb-16 px-6 mx-auto">
+        <h1 className="text-2xl lg:text-4xl font-bold uppercase mb-12 leading-[1.15] max-w-xl md:max-w-3xl lg:max-w-7xl indent-20 md:indent-56">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
           asperiores architecto itaque, reiciendis molestiae sequi voluptatum
           quis magni quae, cupiditate quisquam accusantium dolores recusandae
@@ -86,7 +111,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: expo }}
           viewport={{ once: true, amount: 0.15 }}
-          className="text-sm leading-relaxed max-w-xl mb-6"
+          className="text-sm leading-relaxed max-w-2xl mb-6"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim porro
           maxime delectus, assumenda facilis ad laudantium laboriosam iusto
@@ -115,17 +140,16 @@ export default function About() {
         200vh → 100vh de scroll pinned.
         El usuario no puede seguir bajando hasta que la flecha llegue al final.
       */}
-      <div ref={scrollAreaRef} className="relative" style={{ height: "200vh" }}>
+      <div ref={scrollAreaRef} className="relative" style={{ height: "250vh" }}>
         <div className="sticky top-0 h-screen bg-[#F6F2EC] flex items-center overflow-hidden">
-          <div ref={animContainerRef} className="max-w-7xl mx-auto px-6 w-full">
-
+          <div ref={animContainerRef} className="mx-auto px-6 w-full">
             {/*
               Fila: LOREM | [shaft crece ——] [▶] | IPSUM
               El shaft (línea) crece hacia la derecha empujando
               el arrowhead y IPSUM con él.
             */}
             <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-5 mb-8">
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.15] shrink-0">
+              <p className="text-4xl md:text-6xl font-bold leading-[1.15] shrink-0">
                 LOREM
               </p>
 
@@ -139,7 +163,7 @@ export default function About() {
                   />
                   <svg
                     className="fill-current shrink-0"
-                    style={{ height: "40px", width: "18px" }}
+                    style={{ height: "40px", width: "17px" }}
                     viewBox="463 128 158 390"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -147,16 +171,16 @@ export default function About() {
                   </svg>
                 </div>
 
-                <p className="text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.15] shrink-0">
+                <p className="text-4xl md:text-6xl font-bold leading-[1.15] shrink-0">
                   IPSUM
                 </p>
               </div>
             </div>
 
-            {/* Imagen — en desktop se desplaza con el shaft, en mobile queda fija */}
+            {/* Imagen — en desktop se desplaza con velocidad propia, en mobile queda fija */}
             <motion.figure
-              style={{ x: isMobile ? 0 : shaftWidth }}
-              className="w-125 h-80 rounded-lg overflow-hidden relative"
+              style={{ x: isMobile ? 0 : imagePosition }}
+              className={`rounded-lg overflow-hidden relative flex-shrink-0 ${isMobile ? "w-full h-100" : "w-200 h-125"}`}
             >
               <AnimatePresence mode="wait">
                 {slides[slideIndex].type === "image" ? (
@@ -165,7 +189,7 @@ export default function About() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.1 }}
                     src={
                       (slides[slideIndex] as Extract<Slide, { type: "image" }>)
                         .src
@@ -182,7 +206,7 @@ export default function About() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.3 }}
                     className="absolute inset-0 rounded-lg"
                     style={{
                       backgroundColor: (
@@ -193,7 +217,6 @@ export default function About() {
                 )}
               </AnimatePresence>
             </motion.figure>
-
           </div>
         </div>
       </div>
