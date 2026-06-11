@@ -582,7 +582,7 @@ export default function AboutPage() {
             {cvSections.map((sec, si) => (
               <FadeIn key={sec.title} delay={si * 0.05}>
                 <div className="grid md:grid-cols-[220px_1fr] gap-8 py-10">
-                  <p className="text-xs tracking-[0.25em] uppercase text-[#8B3A2A] pt-1">
+                  <p className="text-xs tracking-[0.25em] uppercase text-white pt-1">
                     {sec.title}
                   </p>
                   <ul className="space-y-3">
@@ -599,7 +599,7 @@ export default function AboutPage() {
             {/* Otras actividades */}
             <FadeIn delay={0.25}>
               <div className="grid md:grid-cols-[220px_1fr] gap-8 py-10">
-                <p className="text-xs tracking-[0.25em] uppercase text-[#8B3A2A] pt-1">
+                <p className="text-xs tracking-[0.25em] uppercase text-white pt-1">
                   Otras actividades
                 </p>
                 <ul className="space-y-3 text-sm text-white/55 leading-[1.7]">
