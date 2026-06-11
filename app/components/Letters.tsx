@@ -23,8 +23,16 @@ export default function Letters() {
   const rawLine3X = useMotionValue(0);
 
   // Spring para movimiento fluido
-  const line2X = useSpring(rawLine2X, { stiffness: 60, damping: 20, mass: 0.8 });
-  const line3X = useSpring(rawLine3X, { stiffness: 60, damping: 20, mass: 0.8 });
+  const line2X = useSpring(rawLine2X, {
+    stiffness: 60,
+    damping: 20,
+    mass: 0.8,
+  });
+  const line3X = useSpring(rawLine3X, {
+    stiffness: 60,
+    damping: 20,
+    mass: 0.8,
+  });
 
   const offsetsRef = useRef({ line2: 0, line3: 0 });
 
@@ -71,7 +79,6 @@ export default function Letters() {
     <div ref={scrollAreaRef} className="relative" style={{ height: "280vh" }}>
       <div className="sticky top-0 h-screen bg-white overflow-hidden flex items-center">
         <div className="px-6 w-full">
-
           {/* Línea 1 — CHD estático, siempre negro */}
           <div className="whitespace-nowrap">
             <span ref={chdRef} className={fs} style={{ color: BLACK }}>
@@ -81,18 +88,37 @@ export default function Letters() {
 
           {/* Línea 2 — palabras grises fijas, solo ART cambia de color */}
           <motion.div className="whitespace-nowrap" style={{ x: line2X }}>
-            <span className={fs} style={{ color: GRAY }}>PERCEPTION </span>
-            <motion.span ref={artRef} className={fs} style={{ color: lineColor }}>ENRIQUE </motion.span>
-            <span className={fs} style={{ color: GRAY }}>ARCHITECTURE</span>
+            <span className={fs} style={{ color: GRAY }}>
+              PERCEPTION{" "}
+            </span>
+            <motion.span
+              ref={artRef}
+              className={fs}
+              style={{ color: lineColor }}
+            >
+              ENRIQUE{" "}
+            </motion.span>
+            <span className={fs} style={{ color: GRAY }}>
+              ARCHITECTURE
+            </span>
           </motion.div>
 
           {/* Línea 3 — palabras grises fijas, solo MAKER cambia de color */}
           <motion.div className="whitespace-nowrap" style={{ x: line3X }}>
-            <span className={fs} style={{ color: GRAY }}>DESIGN </span>
-            <motion.span ref={makerRef} className={fs} style={{ color: lineColor }}>CIAPARA </motion.span>
-            <span className={fs} style={{ color: GRAY }}>MANUAL</span>
+            <span className={fs} style={{ color: GRAY }}>
+              DESIGN{" "}
+            </span>
+            <motion.span
+              ref={makerRef}
+              className={fs}
+              style={{ color: lineColor }}
+            >
+              CIAPARA{" "}
+            </motion.span>
+            <span className={fs} style={{ color: GRAY }}>
+              MANUAL
+            </span>
           </motion.div>
-
         </div>
       </div>
     </div>

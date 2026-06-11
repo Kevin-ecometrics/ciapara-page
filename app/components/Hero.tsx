@@ -1,66 +1,77 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useRef, type MouseEvent } from 'react'
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'motion/react'
+import Image from "next/image";
+import { useRef, type MouseEvent } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionValue,
+} from "motion/react";
 
-const expo = [0.16, 1, 0.3, 1] as const
+const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
-  const containerRef = useRef<HTMLElement>(null)
+  const containerRef = useRef<HTMLElement>(null);
 
   // Un solo scrollYProgress sobre el contenedor alto (250vh)
   // offset 'end end' → progreso 0→1 sobre los 150vh de scroll disponibles
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start start', 'end end'],
-  })
+    offset: ["start start", "end end"],
+  });
 
   // Spring-smoothing del progreso — quita la sensación "escalonada" del scroll
   // crudo y le da a todo el movimiento una inercia suave y cinematográfica.
-  const progress = useSpring(scrollYProgress, { stiffness: 110, damping: 26, mass: 0.4 })
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 110,
+    damping: 26,
+    mass: 0.4,
+  });
 
   // ── Capa 1 · fondo lejano — drift lento + desenfoque cinematográfico al salir
-  const bgY = useTransform(progress, [0, 0.6], ['0%', '28%'])
-  const bgScale = useTransform(progress, [0, 0.6], [1, 1.14])
-  const bgBlurPx = useTransform(progress, [0, 0.5], [0, 10])
-  const bgFilter = useTransform(bgBlurPx, (v) => `blur(${v}px)`)
+  const bgY = useTransform(progress, [0, 0.6], ["0%", "28%"]);
+  const bgScale = useTransform(progress, [0, 0.6], [1, 1.14]);
+  const bgBlurPx = useTransform(progress, [0, 0.5], [0, 10]);
+  const bgFilter = useTransform(bgBlurPx, (v) => `blur(${v}px)`);
 
   // ── Capa 2 · resplandor / plano medio — drift más rápido, se desvanece antes
-  const glowY = useTransform(progress, [0, 0.55], ['0%', '50%'])
-  const glowOpacity = useTransform(progress, [0, 0.4], [1, 0])
+  const glowY = useTransform(progress, [0, 0.55], ["0%", "50%"]);
+  const glowOpacity = useTransform(progress, [0, 0.4], [1, 0]);
 
   // ── Primer plano de texto — "push-through": escala, eleva, desenfoca y funde
-  const textScale = useTransform(progress, [0, 0.42], [1, 1.22])
-  const textY = useTransform(progress, [0, 0.4], ['0%', '-16%'])
-  const textOpacity = useTransform(progress, [0, 0.3], [1, 0])
-  const textBlurPx = useTransform(progress, [0, 0.36], [0, 7])
-  const textFilter = useTransform(textBlurPx, (v) => `blur(${v}px)`)
+  const textScale = useTransform(progress, [0, 0.42], [1, 1.22]);
+  const textY = useTransform(progress, [0, 0.4], ["0%", "-16%"]);
+  const textOpacity = useTransform(progress, [0, 0.3], [1, 0]);
+  const textBlurPx = useTransform(progress, [0, 0.36], [0, 7]);
+  const textFilter = useTransform(textBlurPx, (v) => `blur(${v}px)`);
 
   // ── Revelado tipo iris — cortina circular que sustituye al overlay plano,
   //    abriéndose desde el centro-inferior y fundiendo con el color de "About"
   const irisClip = useTransform(
     progress,
     [0.46, 1],
-    ['circle(0% at 50% 100%)', 'circle(150% at 50% 100%)']
-  )
+    ["circle(0% at 50% 100%)", "circle(150% at 50% 100%)"],
+  );
 
   // ── Hilo indicador de progreso de scroll (borde derecho)
-  const threadScale = useTransform(progress, [0, 1], [0, 1])
+  const threadScale = useTransform(progress, [0, 1], [0, 1]);
 
   // ── Parallax reactivo al cursor para los resplandores — añade profundidad
   //    e interactividad sutil sin depender únicamente del scroll
-  const mvX = useMotionValue(0)
-  const mvY = useMotionValue(0)
-  const orbX = useSpring(mvX, { stiffness: 40, damping: 18 })
-  const orbY = useSpring(mvY, { stiffness: 40, damping: 18 })
-  const orbXInverse = useTransform(orbX, (v) => v * -0.6)
-  const orbYInverse = useTransform(orbY, (v) => v * -0.6)
+  const mvX = useMotionValue(0);
+  const mvY = useMotionValue(0);
+  const orbX = useSpring(mvX, { stiffness: 40, damping: 18 });
+  const orbY = useSpring(mvY, { stiffness: 40, damping: 18 });
+  const orbXInverse = useTransform(orbX, (v) => v * -0.6);
+  const orbYInverse = useTransform(orbY, (v) => v * -0.6);
 
   function handlePointerMove(e: MouseEvent<HTMLDivElement>) {
-    const { left, top, width, height } = e.currentTarget.getBoundingClientRect()
-    mvX.set(((e.clientX - left) / width - 0.5) * 50)
-    mvY.set(((e.clientY - top) / height - 0.5) * 50)
+    const { left, top, width, height } =
+      e.currentTarget.getBoundingClientRect();
+    mvX.set(((e.clientX - left) / width - 0.5) * 50);
+    mvY.set(((e.clientY - top) / height - 0.5) * 50);
   }
 
   return (
@@ -68,14 +79,13 @@ export default function Hero() {
     <section
       ref={containerRef}
       className="relative z-0"
-      style={{ height: '250vh' }}
+      style={{ height: "250vh" }}
     >
       {/* Sticky viewport — se queda fijo mientras el scroll avanza */}
       <div
         className="sticky top-0 h-screen overflow-hidden bg-black"
         onMouseMove={handlePointerMove}
       >
-
         {/* ── Capa 1 · fondo — parallax lento + blur progresivo de salida ── */}
         <motion.div
           className="absolute inset-0 will-change-transform"
@@ -83,7 +93,7 @@ export default function Hero() {
             y: bgY,
             scale: bgScale,
             filter: bgFilter,
-            transformOrigin: 'center bottom',
+            transformOrigin: "center bottom",
           }}
         >
           <Image
@@ -117,7 +127,7 @@ export default function Hero() {
               x: orbX,
               y: orbY,
               backgroundImage:
-                'radial-gradient(ellipse 60% 50% at 25% 45%, #8B3A2A30 0%, transparent 70%)',
+                "radial-gradient(ellipse 60% 50% at 25% 45%, #8B3A2A30 0%, transparent 70%)",
             }}
           />
           <motion.div
@@ -126,27 +136,26 @@ export default function Hero() {
               x: orbXInverse,
               y: orbYInverse,
               backgroundImage:
-                'radial-gradient(ellipse 40% 60% at 75% 55%, #4a2a1a24 0%, transparent 60%)',
+                "radial-gradient(ellipse 40% 60% at 75% 55%, #4a2a1a24 0%, transparent 60%)",
             }}
           />
         </motion.div>
 
-
         {/* ── Texto — "push-through" cinematográfico (escala + elevación + blur + fundido) ── */}
         <motion.div
-          className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-20"
+          className="relative z-10 h-full mx-auto px-6 flex flex-col justify-end pb-20"
           style={{
             y: textY,
             scale: textScale,
             opacity: textOpacity,
             filter: textFilter,
-            transformOrigin: 'left bottom',
+            transformOrigin: "left bottom",
           }}
         >
           {/* Label — clip reveal */}
           <div className="overflow-hidden mb-8">
             <motion.p
-              initial={{ y: '110%' }}
+              initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, ease: expo, delay: 0.3 }}
               className="text-xs tracking-[0.35em] uppercase text-white/45"
@@ -158,7 +167,7 @@ export default function Hero() {
           {/* Heading — two lines with staggered clip reveal */}
           <div className="overflow-hidden mb-2">
             <motion.span
-              initial={{ y: '105%' }}
+              initial={{ y: "105%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.0, ease: expo, delay: 0.5 }}
               className="block text-[clamp(4rem,12vw,11rem)] font-bold tracking-tight text-white leading-[0.9]"
@@ -168,7 +177,7 @@ export default function Hero() {
           </div>
           <div className="overflow-hidden mb-8">
             <motion.span
-              initial={{ y: '105%' }}
+              initial={{ y: "105%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.0, ease: expo, delay: 0.65 }}
               className="block text-[clamp(4rem,12vw,11rem)] font-bold tracking-tight text-white leading-[0.9]"
@@ -188,7 +197,7 @@ export default function Hero() {
           {/* Subtitle — clip reveal */}
           <div className="overflow-hidden mb-6">
             <motion.p
-              initial={{ y: '110%' }}
+              initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.75, ease: expo, delay: 1.05 }}
               className="text-base md:text-lg text-white/55 tracking-[0.12em] uppercase"
@@ -200,14 +209,14 @@ export default function Hero() {
           {/* Description — clip reveal */}
           <div className="overflow-hidden">
             <motion.p
-              initial={{ y: '110%' }}
+              initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.75, ease: expo, delay: 1.2 }}
               className="max-w-md text-sm text-white/40 leading-relaxed"
             >
-              Arte que transita entre lo abstracto y lo figurativo, anclado en el paisaje
-              fronterizo, la arquitectura espontánea de Tijuana y los objetos cotidianos de la
-              cocina.
+              Arte que transita entre lo abstracto y lo figurativo, anclado en
+              el paisaje fronterizo, la arquitectura espontánea de Tijuana y los
+              objetos cotidianos de la cocina.
             </motion.p>
           </div>
 
@@ -227,7 +236,7 @@ export default function Hero() {
         <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center gap-4 h-44">
           <span
             className="text-[10px] tracking-[0.3em] text-white/30 uppercase"
-            style={{ writingMode: 'vertical-rl' }}
+            style={{ writingMode: "vertical-rl" }}
           >
             Scroll
           </span>
@@ -248,7 +257,7 @@ export default function Hero() {
         >
           <div className="absolute inset-0 bg-[#F6F2EC]" />
 
-          <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-20">
+          <div className="relative z-10 h-full mx-auto px-6 flex flex-col justify-end pb-20">
             <p className="text-xs tracking-[0.35em] uppercase text-[#1A1916]/40 mb-8">
               Estudio · Tijuana, B.C. · Est. 2001
             </p>
@@ -267,14 +276,13 @@ export default function Hero() {
             </p>
 
             <p className="max-w-md text-sm text-[#1A1916]/40 leading-relaxed">
-              Arte que transita entre lo abstracto y lo figurativo, anclado en el paisaje
-              fronterizo, la arquitectura espontánea de Tijuana y los objetos cotidianos de la
-              cocina.
+              Arte que transita entre lo abstracto y lo figurativo, anclado en
+              el paisaje fronterizo, la arquitectura espontánea de Tijuana y los
+              objetos cotidianos de la cocina.
             </p>
           </div>
         </motion.div>
-
       </div>
     </section>
-  )
+  );
 }

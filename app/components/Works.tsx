@@ -5,12 +5,42 @@ import { motion } from "motion/react";
 const expo = [0.16, 1, 0.3, 1] as const;
 
 const works = [
-  { title: "Lorem ipsum dolor sit amet consectetur.", link: "/", img: "/CiaparaHeroImg.jpeg", aspect: "aspect-video" },
-  { title: "Lorem ipsum dolor sit amet consectetur.", link: "/", img: "/CiaparaHeroImg.jpeg", aspect: "aspect-square" },
-  { title: "Lorem ipsum dolor sit amet consectetur.", link: "/", img: "/CiaparaHeroImg.jpeg", aspect: "aspect-10/7" },
-  { title: "Lorem ipsum dolor sit amet consectetur.", link: "/", img: "/CiaparaHeroImg.jpeg", aspect: "aspect-5/4" },
-  { title: "Lorem ipsum dolor sit amet consectetur.", link: "/", img: "/CiaparaHeroImg.jpeg", aspect: "aspect-video" },
-  { title: "Lorem ipsum dolor sit amet consectetur.", link: "/", img: "/CiaparaHeroImg.jpeg", aspect: "aspect-square" },
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspect: "aspect-video",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspect: "aspect-square",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspect: "aspect-10/7",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspect: "aspect-5/4",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspect: "aspect-video",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet consectetur.",
+    link: "/",
+    img: "/CiaparaHeroImg.jpeg",
+    aspect: "aspect-square",
+  },
 ];
 
 type Work = (typeof works)[number];
@@ -37,7 +67,9 @@ function WorkCard({
       transition={{ duration: 0.7, ease: expo }}
       viewport={{ once: true, amount: 0.15 }}
     >
-      <figure className={`${aspect} w-full overflow-hidden ${rounded ? "rounded-2xl" : ""} mb-3`}>
+      <figure
+        className={`${aspect} w-full overflow-hidden ${rounded ? "rounded-2xl" : ""} mb-3`}
+      >
         <img
           src={work.img}
           alt={work.title}
@@ -59,15 +91,15 @@ function WorkCard({
 
 export default function Works() {
   return (
-    <section id="obras" className="py-10 md:py-16 bg-[#F6F2EC]">
-      <div className="px-6 max-w-7xl mx-auto mb-10">
+    <section id="obras" className="pt-10 md:pt-16 bg-[#F6F2EC]">
+      <div className="px-6 mx-auto mb-10">
         <h1 className="text-xl md:text-2xl font-bold uppercase">
           Selección de proyectos
         </h1>
       </div>
 
       {/* ── Mobile: single column, full-bleed images ── */}
-      <div className="flex flex-col gap-10 md:hidden">
+      {/* <div className="flex flex-col gap-10 md:hidden">
         {works.map((work, i) => (
           <motion.a
             key={i}
@@ -79,9 +111,9 @@ export default function Works() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: expo }}
             viewport={{ once: true, amount: 0.2 }}
-          >
-            {/* sin padding para imagen full-bleed */}
-            <figure className="w-full aspect-video overflow-hidden mb-3">
+          > */}
+      {/* sin padding para imagen full-bleed */}
+      {/* <figure className="w-full aspect-video overflow-hidden mb-3">
               <img
                 src={work.img}
                 alt={work.title}
@@ -101,24 +133,48 @@ export default function Works() {
             </div>
           </motion.a>
         ))}
-      </div>
+      </div> */}
 
       {/* ── Desktop: staggered 2-column ── */}
-      <div className="hidden md:flex flex-col gap-6 max-w-7xl mx-auto px-6">
+      <div className="md:flex flex-col gap-6 mx-auto px-6">
         {/* row 1 */}
-        <div className="flex gap-6 items-start">
-          <WorkCard work={works[0]} className="w-1/2" aspect="aspect-square" />
-          <WorkCard work={works[1]} className="w-1/2 mt-20" aspect="aspect-video" />
+        <div className=" flex flex-col md:flex-row gap-6 items-start">
+          <WorkCard
+            work={works[0]}
+            className="md:w-1/2"
+            aspect="aspect-square"
+          />
+          <WorkCard
+            work={works[1]}
+            className="md:w-1/2 md:mt-20 mr-5 md:mr-0"
+            aspect="aspect-video"
+          />
         </div>
         {/* row 2 — desplazada a la derecha */}
-        <div className="flex gap-6 items-start pl-24">
-          <WorkCard work={works[2]} className="w-5/12" aspect="aspect-10/7" />
-          <WorkCard work={works[3]} className="w-5/12 mt-12" aspect="aspect-5/4" />
+        <div className="flex flex-col md:flex-row gap-6 items-start md:pl-24 mt-6 md:mt-0">
+          <WorkCard
+            work={works[2]}
+            className="md:w-5/12 ml-20 md:ml-0"
+            aspect="aspect-10/7"
+          />
+          <WorkCard
+            work={works[3]}
+            className="md:w-5/12 md:mt-12 mr-15 md:mr-0"
+            aspect="aspect-5/4"
+          />
         </div>
         {/* row 3 */}
-        <div className="flex gap-6 items-start">
-          <WorkCard work={works[4]} className="w-1/2" aspect="aspect-video" />
-          <WorkCard work={works[5]} className="w-1/2 mt-16" aspect="aspect-square" />
+        <div className="flex flex-col md:flex-row gap-6 items-start mt-6 md:mt-0">
+          <WorkCard
+            work={works[4]}
+            className="md:w-1/2 mr-5 md:mr-0"
+            aspect="aspect-video"
+          />
+          <WorkCard
+            work={works[5]}
+            className="md:w-1/2 md:mt-16"
+            aspect="aspect-square"
+          />
         </div>
       </div>
     </section>
