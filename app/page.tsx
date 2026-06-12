@@ -17,9 +17,9 @@ export default function Home() {
         <Hero />
         <About />
         <Collections />
-        <Works />
+        {/* <Works />
         <Letters />
-        <Carousel />
+        <Carousel /> */}
         <FooterReveal />
       </main>
     </>

@@ -48,7 +48,8 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://enriqueciapara.com"),
-  title: "Enrique Ciapara| artista plástico |35 años de trayectoria en México",
+  title:
+    "Enrique Ciapara | artista plástico | 35 años de trayectoria en México",
   description:
     "Su pintura encierra una iconografía que a primera vista nos es cotidiana. Conoce su biografía, exposiciones y las obras más destacadas de su carrera.",
   keywords:

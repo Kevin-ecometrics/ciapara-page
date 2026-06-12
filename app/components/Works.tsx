@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useI18n } from "../providers/i18nProvider";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
@@ -90,11 +91,12 @@ function WorkCard({
 }
 
 export default function Works() {
+  const { t } = useI18n();
   return (
     <section id="obras" className="pt-10 md:pt-16 bg-[#F6F2EC]">
       <div className="px-6 mx-auto mb-10">
         <h1 className="text-xl md:text-2xl font-bold uppercase">
-          Selección de proyectos
+          {t.works.title}
         </h1>
       </div>
 
