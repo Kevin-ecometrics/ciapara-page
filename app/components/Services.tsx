@@ -2,41 +2,28 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import { useI18n } from "../providers/i18nProvider";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
-const services = [
+const servicesMeta = [
   {
     num: "01",
-    title: "Pintar",
-    desc: "Creación pictórica en óleo, acrílico y técnica mixta sobre distintos soportes. La imagen que emerge del gesto y la materia.",
     hoverBg: "bg-[#4C2A1D]",
     img: "/service-pintar.jpg",
     imgFallback: "#6B3020",
   },
   {
     num: "02",
-    title: "Grabar",
-    desc: "Taller La Brigada: litografía, serigrafía, aguafuerte y monotipos. El grabado como disciplina de precisión y azar controlado.",
     hoverBg: "bg-[#2D3C30]",
     img: "/service-grabar.jpg",
     imgFallback: "#2D3C30",
   },
   {
     num: "03",
-    title: "Exponer",
-    desc: "Curaduría, montaje y producción de exposiciones individuales y colectivas en galerías e instituciones culturales.",
     hoverBg: "bg-[#2B2F4C]",
     img: "/service-exponer.jpg",
     imgFallback: "#2B2F4C",
-  },
-  {
-    num: "04",
-    title: "Restaurar",
-    desc: "Conservación, diagnóstico e intervención de obra pictórica. Devolverle la vida y el tiempo a la pintura.",
-    hoverBg: "bg-[#3A2430]",
-    img: "/service-restaurar.jpg",
-    imgFallback: "#3A2430",
   },
 ];
 
@@ -46,7 +33,14 @@ const cardVariants = {
 };
 
 export default function Services() {
+  const { t } = useI18n();
   const [activeService, setActiveService] = useState<string | null>(null);
+
+  const services = servicesMeta.map((meta, i) => ({
+    ...meta,
+    title: t.collections.items[i].title,
+    desc: t.collections.items[i].description,
+  }));
 
   const sectionBg = activeService
     ? (services.find((s) => s.num === activeService)?.hoverBg ?? "bg-[#1A1916]")
@@ -122,7 +116,7 @@ export default function Services() {
                   }
                   className="text-4xl md:text-5xl lg:text-6xl uppercase font-semibold tracking-[0.2em]"
                 >
-                  {s.title}
+                  {s.title ?? ""}
                 </motion.h2>
               </div>
               <AnimatePresence>

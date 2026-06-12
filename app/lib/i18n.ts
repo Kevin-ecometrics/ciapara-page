@@ -2,58 +2,54 @@ export type Locale = "es" | "en";
 
 export const translations = {
     es: {
-        home:{
-            nav: {
-                collections: "Colecciones",
-                about: "Acerca de",
-                press: "Prensa",
-                contact: "Contacto"
-            },
-            hero: {
-                title: "Enrique Ciapara",
-                subtitle: "Artista abstracto basado en Tijuana México",   
-            },
-            about: {
-                quote: "La pintura de Ciapara es una pintura vitalista, que sin explicitarlo, invita a gozar de la misma, de sus colores, de su espontaneidad,de sus líneas sensibles: nada rígido se encuentra en ella, es flexible, un deleite para los ojos; nada oscuro, ni tétrico, ni dramático, ni ideológico, se concibe en sus cuadros, sino el puro goce de ver, comer, beber, vivir.",
-                speaker: "Luis Verdejo",
-                text: "Su pintura encierra una iconografía que a primera vista nos es cotidiana. En una siguiente mirada nos sorprende al descubrir que cada objeto, cada intento de reconstrucción de su entorno ha fallado y a cambio permitió el nacimiento de otro paralelo. Hay un mundo nuevo, con formas y códigos autónomos de todo lo que hemos aprendido a nombrar. Santiago Espinosa de los Monteros",
-                speaker2: "Santiago Espinosa de los Monteros",
-                date: "Ciudad de México, Junio 2011",
-                preArrow:"Lorem",
-                postArrow:"Ipsum",
-                more:"Más información sobre errores",
-            },
-            collections: {
-                quoteBold: "Las pinturas de Enrique Ciapara proporcionan un auténtico placer. Este placer no está separado de los sentidos, sino que depende de ellos, y disfrutar de su pintura no dista mucho de lo que se experimenta al degustar una comida extraordinaria y preparada con mucho cariño.",
-                quote: "Lo que ofrece es una narrativa diferente, tan sorprendente por su sinceridad como por su paradójica fugacidad. Ofrece pintura. Solo eso. Pintura, pero en su máxima expresión.",
-                speaker: "Lucía Sanromán",
-                date: "Junio 2011",
-                collection: [ 
-                    {
-                        title: "ERRORES",
-                        description: "2018 y 2019, reinterpretacion/ versión libre de cuatro escenas de Sandro Botticelli tituladas «La historia de Nastagio degli Onesti», basadas en un relato de Giovanni Boccaccio, otra figura destacada del Renacimiento florentino",
-                    },
-                    {
-                        title: "2015",
-                        description: "En su obra se encuentra una síntesis cultural entre lo bajacaliforniano y lo mediterráneo."  
-                    },
-                    {
-                        title: "BLURB (BLURB 2000-2009_)",
-                        description: "",
-                    }
-                ]
-            }
-            
+    nav: {
+        collections: "Colecciones",
+        about: "Acerca de",
+        news: "Prensa",
+        contact: "Contacto"
         },
-    },
-    en: {
-        home:{
-            nav: {
-                collections: "Collections",
-                about: "About",
-                press: "Press",
-                contact: "Contact"
+    hero: {
+        title: "Enrique Ciapara",
+        subtitle: "Artista abstracto basado en Tijuana México",   
+        },
+    about: {
+        quote: "La pintura de Ciapara es una pintura vitalista, que sin explicitarlo, invita a gozar de la misma, de sus colores, de su espontaneidad,de sus líneas sensibles: nada rígido se encuentra en ella, es flexible, un deleite para los ojos; nada oscuro, ni tétrico, ni dramático, ni ideológico, se concibe en sus cuadros, sino el puro goce de ver, comer, beber, vivir.",
+        speaker: "Luis Verdejo",
+        text: "Su pintura encierra una iconografía que a primera vista nos es cotidiana. En una siguiente mirada nos sorprende al descubrir que cada objeto, cada intento de reconstrucción de su entorno ha fallado y a cambio permitió el nacimiento de otro paralelo. Hay un mundo nuevo, con formas y códigos autónomos de todo lo que hemos aprendido a nombrar. Santiago Espinosa de los Monteros",
+        speaker2: "Santiago Espinosa de los Monteros",
+        date: "Ciudad de México, Junio 2011",
+        preArrow:"Lorem",
+        postArrow:"Ipsum",
+        more:"Más información sobre errores",
+        },
+    collections: {
+        quoteBold: "Las pinturas de Enrique Ciapara proporcionan un auténtico placer. Este placer no está separado de los sentidos, sino que depende de ellos, y disfrutar de su pintura no dista mucho de lo que se experimenta al degustar una comida extraordinaria y preparada con mucho cariño.",
+        quote: "Lo que ofrece es una narrativa diferente, tan sorprendente por su sinceridad como por su paradójica fugacidad. Ofrece pintura. Solo eso. Pintura, pero en su máxima expresión.",
+        speaker: "Lucía Sanromán",
+        date: "Junio 2011",
+        items: [ 
+            {
+                title: "ERRORES",
+                description: "2018 y 2019, reinterpretacion/ versión libre de cuatro escenas de Sandro Botticelli tituladas «La historia de Nastagio degli Onesti», basadas en un relato de Giovanni Boccaccio, otra figura destacada del Renacimiento florentino",
             },
+            {
+                title: "2015",
+                description: "En su obra se encuentra una síntesis cultural entre lo bajacaliforniano y lo mediterráneo."  
+            },
+            {
+                title: "BLURB (BLURB 2000-2009_)",
+                description: "",
+            }
+            ]
+        },
+        },
+        en: {
+    nav: {
+        collections: "Collections",
+        about: "About",
+        news: "News",
+        contact: "Contact",
+        },
             hero: {
                 title: "Enrique Ciapara",
                 subtitle: "Abstract artist based in Tijuana, Mexico",   
@@ -73,7 +69,7 @@ export const translations = {
                 quote: "What he offers is a different narrative as startling for its sincerity as for its paradoxical transience. He offers painting. Just that. Painting, but at its best.",
                 speaker: "Lucía Sanromán",
                 date: "June 2011",
-                collection: [ 
+                items: [ 
                     {
                         title: "ERRORES",
                         description: "2018 and 2019: a reinterpretation/free adaptation of four scenes by Sandro Botticelli titled “The Story of Nastagio degli Onesti,” based on a story by Giovanni Boccaccio, another prominent figure of the Florentine Renaissance",
@@ -87,9 +83,14 @@ export const translations = {
                         description: "",
                     }
                 ]
-            }
-        },
-    }
-} as const;
+            },
+  },
 
-export type Translations = typeof translations;
+};
+
+export type Translations = {
+    nav: {collections: string; about: string; news: string; contact: string};
+    hero: {title: string; subtitle: string;};
+    about: {quote: string; speaker: string; text: string; speaker2: string; date: string; preArrow: string; postArrow: string; more: string;};
+    collections: {quoteBold: string; quote: string; speaker: string; date: string; items:{title: string; description: string}[]};
+};

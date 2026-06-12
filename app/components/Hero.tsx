@@ -9,11 +9,13 @@ import {
   useSpring,
   useMotionValue,
 } from "motion/react";
-import { useI18n } from ".../providers/I18nProvider";
+import { useI18n } from "../providers/i18nProvider";
+import type { Locale } from "../lib/i18n";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
+  const { t, locale, setLocale } = useI18n();
   const containerRef = useRef<HTMLElement>(null);
 
   // Un solo scrollYProgress sobre el contenedor alto (250vh)

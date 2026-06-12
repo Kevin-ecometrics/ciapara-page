@@ -3,7 +3,7 @@
 import { createContext, useContext, useState } from "react";
 import { translations, type Locale, type Translations } from "../lib/i18n";
 
-const STORAGE_KEY = "scaneat_locale";
+const STORAGE_KEY = "ciapara_locale";
 
 type I18nContextType = {
   locale: Locale;
@@ -13,7 +13,7 @@ type I18nContextType = {
 
 const I18nContext = createContext<I18nContextType>({
   locale: "es",
-  t: translations.es as unknown as Translations,
+  t: translations.es,
   setLocale: () => {},
 });
 
@@ -33,11 +33,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <I18nContext.Provider
-      value={{
-        locale,
-        t: translations[locale] as unknown as Translations,
-        setLocale,
-      }}
+      value={{ locale, t: translations[locale], setLocale }}
     >
       {children}
     </I18nContext.Provider>

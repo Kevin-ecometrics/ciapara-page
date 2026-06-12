@@ -1,14 +1,27 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import { motion, useScroll, useTransform, useSpring } from 'motion/react'
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import { useI18n } from "../providers/i18nProvider";
 
-const expo = [0.16, 1, 0.3, 1] as const
+const expo = [0.16, 1, 0.3, 1] as const;
 
 const MARQUEE_ITEMS = [
-  'Pintura', '·', 'Grabado', '·', 'Tijuana', '·', 'Est. 2001', '·',
-  'Arte Contemporáneo', '·', 'Baja California', '·', 'Técnica Mixta', '·',
-]
+  "Pintura",
+  "·",
+  "Grabado",
+  "·",
+  "Tijuana",
+  "·",
+  "Est. 2001",
+  "·",
+  "Arte Contemporáneo",
+  "·",
+  "Baja California",
+  "·",
+  "Técnica Mixta",
+  "·",
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -17,18 +30,23 @@ const fadeUp = {
     y: 0,
     transition: { duration: 0.7, ease: expo, delay },
   }),
-}
+};
 
 export default function Footer() {
-  const footerRef = useRef<HTMLElement>(null)
+  const { t } = useI18n();
+  const footerRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: footerRef,
-    offset: ['start end', 'end end'],
-  })
+    offset: ["start end", "end end"],
+  });
 
-  const progress = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 })
-  const titleY = useTransform(progress, [0, 1], ['6%', '0%'])
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 90,
+    damping: 24,
+    mass: 0.4,
+  });
+  const titleY = useTransform(progress, [0, 1], ["6%", "0%"]);
 
   return (
     <footer
@@ -37,10 +55,7 @@ export default function Footer() {
       className="relative bg-[#1A1916] text-white overflow-hidden min-h-screen flex flex-col"
     >
       {/* Hero background image with parallax */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{ y: titleY }}
-      >
+      <motion.div className="absolute inset-0 z-0" style={{ y: titleY }}>
         <img
           src="/CiaparaHeroImg.jpeg"
           alt=""
@@ -62,7 +77,8 @@ export default function Footer() {
       <div
         className="absolute top-0 left-1/3 w-[700px] h-[500px] pointer-events-none z-0 opacity-[0.07]"
         style={{
-          background: 'radial-gradient(ellipse 60% 60% at 50% 0%, #8B3A2A 0%, transparent 70%)',
+          background:
+            "radial-gradient(ellipse 60% 60% at 50% 0%, #8B3A2A 0%, transparent 70%)",
         }}
       />
 
@@ -70,10 +86,10 @@ export default function Footer() {
       <div className="relative z-10 pt-24 px-6 max-w-7xl mx-auto">
         <motion.div style={{ y: titleY }} className="will-change-transform">
           <div className="flex">
-            {'CIAPARA'.split('').map((char, i) => (
+            {"CIAPARA".split("").map((char, i) => (
               <div key={i} className="overflow-hidden">
                 <motion.span
-                  initial={{ y: '105%' }}
+                  initial={{ y: "105%" }}
                   whileInView={{ y: 0 }}
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 1.0, ease: expo, delay: i * 0.05 }}
@@ -93,7 +109,7 @@ export default function Footer() {
           transition={{ duration: 0.8, ease: expo, delay: 0.45 }}
           className="mt-4 mb-10 text-xs tracking-[0.35em] uppercase text-white/30"
         >
-          Estudio · Tijuana, B.C. · Est. 2001
+          {/* {t.footer.studio} */}
         </motion.p>
 
         <motion.div
@@ -108,15 +124,15 @@ export default function Footer() {
       {/* ── MARQUEE ── */}
       <div className="relative z-10 py-5 border-b border-white/10 overflow-hidden">
         <motion.div
-          animate={{ x: ['0%', '-50%'] }}
-          transition={{ duration: 28, ease: 'linear', repeat: Infinity }}
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 28, ease: "linear", repeat: Infinity }}
           className="flex gap-12 whitespace-nowrap w-max"
         >
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
             <span
               key={i}
               className={`text-[10px] tracking-[0.35em] uppercase ${
-                item === '·' ? 'text-[#8B3A2A]' : 'text-white/20'
+                item === "·" ? "text-[#8B3A2A]" : "text-white/20"
               }`}
             >
               {item}
@@ -147,8 +163,7 @@ export default function Footer() {
               variants={fadeUp}
               className="text-xs text-white/40 leading-relaxed max-w-xs"
             >
-              Estudio de pintura y grabado establecido en Tijuana, Baja California, México.
-              Desde 2001 al servicio del arte.
+              {/* {t.footer.studioDesc} */}
             </motion.p>
             <motion.div
               custom={0.16}
@@ -157,11 +172,15 @@ export default function Footer() {
             >
               <motion.div
                 animate={{ opacity: [1, 0.3, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="w-1.5 h-1.5 rounded-full bg-[#8B3A2A]"
               />
               <span className="text-xs text-[#8B3A2A] tracking-[0.12em] uppercase">
-                Taller Establecido
+                {/* {t.footer.established} */}
               </span>
             </motion.div>
           </div>
@@ -173,19 +192,24 @@ export default function Footer() {
               variants={fadeUp}
               className="text-xs tracking-[0.25em] uppercase text-white/30 mb-2"
             >
-              Navegación
+              {/* {t.footer.navigation} */}
             </motion.p>
-            {['Obras', 'Sobre Mí', 'Noticias', 'Contacto'].map((link, i) => (
+            {[
+              { label: t.nav.collections, href: "#obras" },
+              { label: t.nav.about, href: "#sobre-mi" },
+              { label: t.nav.news, href: "#noticias" },
+              { label: t.nav.contact, href: "#contacto" },
+            ].map(({ label, href }, i) => (
               <motion.a
-                key={link}
+                key={href}
                 custom={0.12 + i * 0.06}
                 variants={fadeUp}
-                href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+                href={href}
                 whileHover={{ x: 6 }}
                 transition={{ duration: 0.3, ease: expo }}
                 className="underline-hover text-sm text-white/60 hover:text-white transition-colors duration-300 w-fit"
               >
-                {link}
+                {label}
               </motion.a>
             ))}
           </div>
@@ -197,7 +221,7 @@ export default function Footer() {
               variants={fadeUp}
               className="text-xs tracking-[0.25em] uppercase text-white/30 mb-2"
             >
-              Contacto
+              {/* {t.footer.contact} */}
             </motion.p>
             <motion.div
               custom={0.18}
@@ -212,15 +236,15 @@ export default function Footer() {
                   contacto@ciapara.com
                 </a>
               </p>
-              <p>Tijuana, Baja California, México</p>
-              <p>Tarragona, Catalunya, España</p>
+              {/* <p>{t.footer.location1}</p> */}
+              {/* <p>{t.footer.location2}</p> */}
             </motion.div>
             <motion.div
               custom={0.26}
               variants={fadeUp}
               className="flex gap-5 mt-4"
             >
-              {['Instagram', 'Facebook', 'LinkedIn'].map((net) => (
+              {["Instagram", "Facebook", "LinkedIn"].map((net) => (
                 <motion.a
                   key={net}
                   href="#"
@@ -243,27 +267,34 @@ export default function Footer() {
           transition={{ duration: 1.0, ease: expo, delay: 0.2 }}
           className="pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-white/20"
         >
-          <p>&copy; {new Date().getFullYear()} Enrique Ciapara. Todos los derechos reservados. <span>
-              Desarrollado por{' '}
-              <a
-                href="https://e-commetrics.com"
-                className="underline-hover hover:text-white transition-colors duration-300"
-              >
-                E-commetrics
-              </a>
-             .
-            </span>
-          </p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white/50 transition-colors duration-300">
-              Aviso de privacidad
+          {/* <p>&copy; {new Date().getFullYear()} Enrique Ciapara. {t.footer.rights}{' '} */}
+          <span>
+            {/* {t.footer.developedBy}{' '} */}
+            <a
+              href="https://e-commetrics.com"
+              className="underline-hover hover:text-white transition-colors duration-300"
+            >
+              E-commetrics
             </a>
-            <a href="#" className="hover:text-white/50 transition-colors duration-300">
-              Créditos
+            .
+          </span>
+          {/* </p> */}
+          <div className="flex gap-6">
+            <a
+              href="#"
+              className="hover:text-white/50 transition-colors duration-300"
+            >
+              {/* {t.footer.privacy} */}
+            </a>
+            <a
+              href="#"
+              className="hover:text-white/50 transition-colors duration-300"
+            >
+              {/* {t.footer.credits} */}
             </a>
           </div>
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }

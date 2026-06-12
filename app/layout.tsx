@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import { I18nProvider } from "./providers/i18nProvider";
 
 const interstate = localFont({
   variable: "--font-interstate",
@@ -76,7 +77,9 @@ export default function RootLayout({
       lang="es"
       className={`${interstate.variable} ${openSans.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+          <I18nProvider>{children}</I18nProvider>
+        </body>
     </html>
   );
 }
