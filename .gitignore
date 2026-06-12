@@ -53,4 +53,4 @@ server/*
 *.webm
 
 # images intro
-public/images/*
+/public/images/*
