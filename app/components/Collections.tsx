@@ -6,7 +6,7 @@ import { useI18n } from "../providers/i18nProvider";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
-const servicesMeta = [
+const collectionsMeta = [
   {
     num: "01",
     hoverBg: "bg-[#4C2A1D]",
@@ -32,21 +32,22 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: expo } },
 };
 
-export default function Services() {
+export default function Collections() {
   const { t } = useI18n();
   const [activeService, setActiveService] = useState<string | null>(null);
 
-  const services = servicesMeta.map((meta, i) => ({
+  const collections = collectionsMeta.map((meta, i) => ({
     ...meta,
     title: t.collections.items[i].title,
     desc: t.collections.items[i].description,
   }));
 
   const sectionBg = activeService
-    ? (services.find((s) => s.num === activeService)?.hoverBg ?? "bg-[#1A1916]")
+    ? (collections.find((s) => s.num === activeService)?.hoverBg ??
+      "bg-[#1A1916]")
     : "bg-[#1A1916]";
 
-  const activeData = services.find((s) => s.num === activeService);
+  const activeData = collections.find((s) => s.num === activeService);
 
   return (
     <section
@@ -81,16 +82,20 @@ export default function Services() {
 
       {/* Contenido encima de la imagen */}
       <div className="relative z-10 mx-auto text-white">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-10 leading-[1.15] max-w-3xl uppercase indent-20 md:indent-56">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem hic
-          impedit expedita ea aut iste!
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-10 leading-[1.15] max-w-5xl uppercase indent-20 md:indent-56">
+          "{t.collections.quoteBold}
         </h1>
-        <p className="text-sm leading-relaxed max-w-2xl mb-12">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore autem
-          pariatur tempore. Sint in dolorum optio magni, quae voluptate iure.
+        <p className="text- leading-relaxed max-w-xl mb-6">
+          {t.collections.quote}"
+        </p>
+        <p className="text-sm leading-relaxed max-w-xl">
+          - {t.collections.speaker}
+        </p>
+        <p className="text-sm leading-relaxed max-w-xl mb-12 ml-2">
+          {t.collections.date}
         </p>
 
-        {services.map((s) => (
+        {collections.map((s) => (
           <div
             key={s.num}
             className="mb-6 group transition-colors duration-300"

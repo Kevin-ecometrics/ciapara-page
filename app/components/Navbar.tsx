@@ -13,8 +13,8 @@ export default function Navbar() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   const links = [
-    { label: t.nav.collections, href: "#collections" },
     { label: t.nav.about, href: "#about" },
+    { label: t.nav.collections, href: "#collections" },
     { label: t.nav.news, href: "#news" },
     { label: t.nav.contact, href: "#contacto" },
   ];

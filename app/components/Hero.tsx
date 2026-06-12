@@ -10,12 +10,11 @@ import {
   useMotionValue,
 } from "motion/react";
 import { useI18n } from "../providers/i18nProvider";
-import type { Locale } from "../lib/i18n";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
-  const { t, locale, setLocale } = useI18n();
+  const { t } = useI18n();
   const containerRef = useRef<HTMLElement>(null);
 
   // Un solo scrollYProgress sobre el contenedor alto (250vh)
@@ -163,7 +162,7 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: expo, delay: 0.3 }}
               className="text-xs tracking-[0.35em] uppercase text-white/45"
             >
-              Estudio · Tijuana, B.C. · Est. 2001
+              {t.hero.place}
             </motion.p>
           </div>
 
@@ -205,7 +204,7 @@ export default function Hero() {
               transition={{ duration: 0.75, ease: expo, delay: 1.05 }}
               className="text-base md:text-lg text-white/55 tracking-[0.12em] uppercase"
             >
-              Pintor contemporáneo
+              {t.hero.subtitle}
             </motion.p>
           </div>
 
@@ -216,11 +215,7 @@ export default function Hero() {
               animate={{ y: 0 }}
               transition={{ duration: 0.75, ease: expo, delay: 1.2 }}
               className="max-w-md text-sm text-white/40 leading-relaxed"
-            >
-              Arte que transita entre lo abstracto y lo figurativo, anclado en
-              el paisaje fronterizo, la arquitectura espontánea de Tijuana y los
-              objetos cotidianos de la cocina.
-            </motion.p>
+            ></motion.p>
           </div>
 
           {/* Scroll indicator */}
@@ -231,7 +226,7 @@ export default function Hero() {
             className="mt-20 flex items-center gap-4 text-white/25 text-xs tracking-[0.25em] uppercase"
           >
             <div className="w-10 h-px bg-white/25" />
-            Desplazar
+            {t.hero.scroller}
           </motion.div>
         </motion.div>
 
@@ -262,7 +257,7 @@ export default function Hero() {
 
           <div className="relative z-10 h-full mx-auto px-6 flex flex-col justify-end pb-20">
             <p className="text-xs tracking-[0.35em] uppercase text-[#1A1916]/40 mb-8">
-              Estudio · Tijuana, B.C. · Est. 2001
+              {t.hero.place}
             </p>
 
             <span className="block text-[clamp(4rem,12vw,11rem)] font-bold tracking-tight text-[#1A1916] leading-[0.9] mb-2">
@@ -275,14 +270,10 @@ export default function Hero() {
             <div className="w-16 h-px bg-[#1A1916]/25 mb-8" />
 
             <p className="text-base md:text-lg text-[#1A1916]/55 tracking-[0.12em] uppercase mb-6">
-              Pintor contemporáneo
+              {t.hero.subtitle}
             </p>
 
-            <p className="max-w-md text-sm text-[#1A1916]/40 leading-relaxed">
-              Arte que transita entre lo abstracto y lo figurativo, anclado en
-              el paisaje fronterizo, la arquitectura espontánea de Tijuana y los
-              objetos cotidianos de la cocina.
-            </p>
+            <p className="max-w-md text-sm text-[#1A1916]/40 leading-relaxed"></p>
           </div>
         </motion.div>
       </div>

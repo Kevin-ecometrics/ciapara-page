@@ -8,6 +8,8 @@ import {
   useMotionValue,
   useMotionValueEvent,
 } from "motion/react";
+import { useI18n } from "../providers/i18nProvider";
+import Link from "next/link";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
@@ -39,6 +41,7 @@ const slides: Slide[] = [
 ];
 
 export default function About() {
+  const { t } = useI18n();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const animContainerRef = useRef<HTMLDivElement>(null);
   const maxXRef = useRef(500);
@@ -96,30 +99,22 @@ export default function About() {
   });
 
   return (
-    <section id="sobre-mi" className="bg-[#F6F2EC]">
+    <section id="about" className="bg-[#F6F2EC]">
       {/* Texto — scroll normal */}
       <div className="pt-28 md:pt-36 pb-16 px-6 mx-auto">
-        <h1 className="text-2xl lg:text-4xl font-bold uppercase mb-12 leading-[1.15] max-w-xl md:max-w-3xl lg:max-w-7xl indent-20 md:indent-56">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-          asperiores architecto itaque, reiciendis molestiae sequi voluptatum
-          quis magni quae, cupiditate quisquam accusantium dolores recusandae
-          pariatur vel atque modi incidunt ducimus saepe vitae animi fugiat
-          dolorum.
+        <h1 className="text-2xl lg:text-4xl font-bold uppercase mb-6 leading-[1.15] max-w-xl md:max-w-3xl lg:max-w-7xl indent-20 md:indent-56">
+          "{t.about.quote}"
         </h1>
+        <p className=" font-normal text-2xl mb-12">- {t.about.speaker}</p>
+
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: expo }}
           viewport={{ once: true, amount: 0.15 }}
-          className="text-sm leading-relaxed max-w-2xl mb-6"
+          className="leading-relaxed max-w-2xl mb-6"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim porro
-          maxime delectus, assumenda facilis ad laudantium laboriosam iusto
-          eligendi cumque aspernatur eum omnis, dolore vel quibusdam officia,
-          ullam expedita natus iste? Minus sunt libero laudantium molestias? Ab,
-          expedita consequatur ad placeat atque accusantium quisquam eveniet
-          temporibus, voluptate omnis, nulla quos! Quaerat suscipit vel ipsum
-          omnis soluta ea deleniti maxime voluptatibus.
+          "{t.about.text}"
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -128,11 +123,16 @@ export default function About() {
           viewport={{ once: true, amount: 0.15 }}
           className="text-sm leading-relaxed max-w-xl"
         >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam
-          maiores, accusantium distinctio quae illo ipsa quos voluptatem velit
-          temporibus laboriosam, sunt, magni recusandae beatae! Quaerat iste
-          totam quae iure dolores quasi, magni fuga adipisci maxime eligendi,
-          doloremque tenetur placeat accusamus.
+          - {t.about.speaker2}
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: expo }}
+          viewport={{ once: true, amount: 0.15 }}
+          className="text-sm leading-relaxed max-w-xl pl-2"
+        >
+          ({t.about.date})
         </motion.p>
       </div>
 
@@ -149,8 +149,8 @@ export default function About() {
               el arrowhead y IPSUM con él.
             */}
             <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-5 mb-8">
-              <p className="text-4xl md:text-6xl font-bold leading-[1.15] shrink-0">
-                LOREM
+              <p className="text-4xl md:text-6xl font-bold leading-[1.15] shrink-0 uppercase">
+                {t.about.preArrow}
               </p>
 
               {/* Mobile: arrow + IPSUM in same row. Desktop: contents (transparent wrapper) */}
@@ -171,8 +171,8 @@ export default function About() {
                   </svg>
                 </div>
 
-                <p className="text-4xl md:text-6xl font-bold leading-[1.15] shrink-0">
-                  IPSUM
+                <p className="text-4xl md:text-6xl font-bold leading-[1.15] shrink-0 uppercase">
+                  {t.about.postArrow}
                 </p>
               </div>
             </div>
@@ -220,7 +220,14 @@ export default function About() {
           </div>
         </div>
       </div>
-
+      <div className="w-full flex items-center justify-end">
+        <a
+          href="/about"
+          className="font-extrabold text-lg uppercase px-6 hover:underline inline-block"
+        >
+          {t.about.more}
+        </a>
+      </div>
       <div className="pb-28 md:pb-36" />
     </section>
   );

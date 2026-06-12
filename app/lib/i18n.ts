@@ -3,14 +3,16 @@ export type Locale = "es" | "en";
 export const translations = {
     es: {
     nav: {
-        collections: "Colecciones",
         about: "Acerca de",
+        collections: "Colecciones",
         news: "Prensa",
         contact: "Contacto"
         },
     hero: {
+        place: "Estudio · Tijuana, B.C. · Est. 2026",
         title: "Enrique Ciapara",
-        subtitle: "Artista abstracto basado en Tijuana México",   
+        subtitle: "Artista abstracto basado en Tijuana México",
+        scroller: "Desplazar"   
         },
     about: {
         quote: "La pintura de Ciapara es una pintura vitalista, que sin explicitarlo, invita a gozar de la misma, de sus colores, de su espontaneidad,de sus líneas sensibles: nada rígido se encuentra en ella, es flexible, un deleite para los ojos; nada oscuro, ni tétrico, ni dramático, ni ideológico, se concibe en sus cuadros, sino el puro goce de ver, comer, beber, vivir.",
@@ -20,7 +22,7 @@ export const translations = {
         date: "Ciudad de México, Junio 2011",
         preArrow:"Lorem",
         postArrow:"Ipsum",
-        more:"Más información sobre errores",
+        more:'Más información sobre "errores"',
         },
     collections: {
         quoteBold: "Las pinturas de Enrique Ciapara proporcionan un auténtico placer. Este placer no está separado de los sentidos, sino que depende de ellos, y disfrutar de su pintura no dista mucho de lo que se experimenta al degustar una comida extraordinaria y preparada con mucho cariño.",
@@ -42,17 +44,22 @@ export const translations = {
             }
             ]
         },
+        works: {
+            title: "Selección de Proyectos",
+            }
         },
         en: {
     nav: {
-        collections: "Collections",
         about: "About",
+        collections: "Collections",
         news: "News",
         contact: "Contact",
         },
             hero: {
+                place: "Studio · Tijuana, B.C. · Est. 2026",
                 title: "Enrique Ciapara",
-                subtitle: "Abstract artist based in Tijuana, Mexico",   
+                subtitle: "Abstract artist based in Tijuana, Mexico",
+                scroller: "scroller",  
             },
             about: {
                 quote: "Ciapara’s painting is full of life; without explicitly stating it, it invites us to enjoy it—its colors, its spontaneity, its delicate lines. There is nothing rigid about it; it is flexible, a delight to the eyes. Nothing dark, gloomy, dramatic, or ideological can be found in his paintings, only the pure joy of seeing, eating, drinking, and living.",
@@ -62,7 +69,7 @@ export const translations = {
                 date: "Mexico City, June 2011",
                 preArrow:"Lorem",
                 postArrow:"Ipsum",
-                more:"More information about Errores",
+                more:'More information about "Errores"',
             },
             collections: {
                 quoteBold: "Enrique Ciapara’s paintings give real pleasure. This pleasure is not divorced from the senses but rather dependent on them, and to enjoy his painting is not too far removed from what is experienced during a lovingly made, extraordinary meal.",
@@ -84,13 +91,17 @@ export const translations = {
                     }
                 ]
             },
+            works: {
+                title: "Projects Selection",
+            }
   },
 
 };
 
 export type Translations = {
-    nav: {collections: string; about: string; news: string; contact: string};
-    hero: {title: string; subtitle: string;};
+    nav: {about: string; collections: string; news: string; contact: string};
+    hero: {place: string; title: string; subtitle: string; scroller: string;};
     about: {quote: string; speaker: string; text: string; speaker2: string; date: string; preArrow: string; postArrow: string; more: string;};
     collections: {quoteBold: string; quote: string; speaker: string; date: string; items:{title: string; description: string}[]};
+    works: {title: string};
 };
