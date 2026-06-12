@@ -47,6 +47,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://enriqueciapara.com"),
   title: "Enrique Ciapara| artista plástico |35 años de trayectoria en México",
   description:
     "Su pintura encierra una iconografía que a primera vista nos es cotidiana. Conoce su biografía, exposiciones y las obras más destacadas de su carrera.",
@@ -67,6 +68,22 @@ export const metadata: Metadata = {
   publisher: "E-commetrics",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Enrique Ciapara",
+  url: "https://enriqueciapara.com",
+  image: "https://enriqueciapara.com/opengraph-image.png",
+  jobTitle: "Artista plástico",
+  description:
+    "Su pintura encierra una iconografía que a primera vista nos es cotidiana. Conoce su biografía, exposiciones y las obras más destacadas de su carrera.",
+  nationality: {
+    "@type": "Country",
+    name: "México",
+  },
+  sameAs: [],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -77,9 +94,15 @@ export default function RootLayout({
       lang="es"
       className={`${interstate.variable} ${openSans.variable} h-full antialiased overflow-x-hidden`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
-          <I18nProvider>{children}</I18nProvider>
-        </body>
+        <I18nProvider>{children}</I18nProvider>
+      </body>
     </html>
   );
 }
