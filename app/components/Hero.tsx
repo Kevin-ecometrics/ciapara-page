@@ -9,6 +9,7 @@ import {
   useSpring,
   useMotionValue,
 } from "motion/react";
+import { useI18n } from ".../providers/I18nProvider";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
