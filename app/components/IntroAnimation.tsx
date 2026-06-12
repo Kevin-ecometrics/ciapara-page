@@ -32,12 +32,21 @@ const ENTER_FROM = [
   { x: '3%',  y: '-3%' },
 ]
 
+const INTRO_KEY = 'ciapara_intro'
+
 export default function IntroAnimation() {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
   const [phase, setPhase] = useState<'name' | 'photos'>('name')
   const [photoIndex, setPhotoIndex] = useState(0)
 
   useEffect(() => {
+    if (sessionStorage.getItem(INTRO_KEY)) return
+    sessionStorage.setItem(INTRO_KEY, '1')
+    setVisible(true)
+  }, [])
+
+  useEffect(() => {
+    if (!visible) return
     const prevent = (e: TouchEvent) => e.preventDefault()
     document.documentElement.style.overflow = 'hidden'
     document.body.style.overflow = 'hidden'
@@ -47,7 +56,7 @@ export default function IntroAnimation() {
       document.body.style.overflow = ''
       document.removeEventListener('touchmove', prevent)
     }
-  }, [])
+  }, [visible])
 
   useEffect(() => {
     const t = setTimeout(() => setPhase('photos'), 2400)

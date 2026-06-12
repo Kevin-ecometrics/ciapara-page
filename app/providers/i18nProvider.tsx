@@ -1,9 +1,8 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { translations, type Locale, type Translations } from "../lib/i18n";
-
-const STORAGE_KEY = "ciapara_locale";
 
 type I18nContextType = {
   locale: Locale;
@@ -17,24 +16,19 @@ const I18nContext = createContext<I18nContextType>({
   setLocale: () => {},
 });
 
-function getInitialLocale(): Locale {
-  if (typeof window === "undefined") return "es";
-  const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-  return stored && stored in translations ? stored : "es";
-}
-
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(getInitialLocale);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const locale: Locale = pathname.startsWith("/en") ? "en" : "es";
 
   function setLocale(l: Locale) {
-    localStorage.setItem(STORAGE_KEY, l);
-    setLocaleState(l);
+    if (l === locale) return;
+    router.push(l === "en" ? "/en" : "/", { scroll: false });
   }
 
   return (
-    <I18nContext.Provider
-      value={{ locale, t: translations[locale], setLocale }}
-    >
+    <I18nContext.Provider value={{ locale, t: translations[locale], setLocale }}>
       {children}
     </I18nContext.Provider>
   );
