@@ -7,6 +7,8 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://enriqueciapara.com
 const pages = [
   { url: '/',       priority: '1.0', changefreq: 'monthly' },
   { url: '/artist', priority: '0.8', changefreq: 'monthly' },
+  { url: '/about', priority: '0.8', changefreq: 'monthly' },
+
 ]
 
 export function GET() {
