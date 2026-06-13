@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const expo = [0.16, 1, 0.3, 1] as const;
-const DISPLAY_MS = 420;
-const MAX_WAIT_MS = 8000;
+const DISPLAY_MS = 300;
+const NAME_MS = 2400;
 
 const imagenes = [
   {
@@ -84,39 +84,35 @@ const ENTER_FROM = [
 ];
 
 export default function IntroAnimation() {
-  const [visible, setVisible] = useState(false);
-  const [phase, setPhase] = useState<"name" | "photos">("name");
+  const [visible, setVisible] = useState(true);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [loadedCount, setLoadedCount] = useState(0);
-  const [readyImages, setReadyImages] = useState<typeof imagenes>([]);
-  const [imagesReady, setImagesReady] = useState(false);
   const [nameTimerDone, setNameTimerDone] = useState(false);
+  const [firstImageReady, setFirstImageReady] = useState(false);
+  // loadedMask drives rendering (state); loadedRef drives interval logic (no stale closure)
+  const [loadedMask, setLoadedMask] = useState<boolean[]>(
+    Array(imagenes.length).fill(false)
+  );
+  const loadedRef = useRef<boolean[]>(Array(imagenes.length).fill(false));
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Preload with decode() — guarantees pixels are GPU-ready before animating
+  // Derive phase from state — no setState-in-effect
+  const phase: "name" | "photos" =
+    nameTimerDone && firstImageReady ? "photos" : "name";
+
+  // Parallel preload with decode() — GPU-ready before animating
   useEffect(() => {
-    setVisible(true);
-    const resolved = new Set<string>();
-    let settled = 0;
-
-    const finish = () => {
-      const ordered = imagenes.filter((item) => resolved.has(item.img));
-      setReadyImages(ordered);
-      setImagesReady(true);
-    };
-
-    const maxWait = setTimeout(finish, MAX_WAIT_MS);
-
-    imagenes.forEach((item) => {
+    imagenes.forEach((item, i) => {
       const img = new window.Image();
       const settle = (ok: boolean) => {
-        if (ok) resolved.add(item.img);
-        settled += 1;
-        setLoadedCount(settled);
-        if (settled === imagenes.length) {
-          clearTimeout(maxWait);
-          finish();
-        }
+        loadedRef.current[i] = ok;
+        setLoadedMask((prev) => {
+          const next = [...prev];
+          next[i] = ok;
+          return next;
+        });
+        setLoadedCount((c) => c + 1);
+        if (i === 0 && ok) setFirstImageReady(true);
       };
       img.onload = () =>
         img
@@ -126,20 +122,13 @@ export default function IntroAnimation() {
       img.onerror = () => settle(false);
       img.src = item.img;
     });
-
-    return () => clearTimeout(maxWait);
   }, []);
 
-  // Minimum display time for name phase
+  // Name phase minimum timer
   useEffect(() => {
-    const t = setTimeout(() => setNameTimerDone(true), 2400);
+    const t = setTimeout(() => setNameTimerDone(true), NAME_MS);
     return () => clearTimeout(t);
   }, []);
-
-  // Transition to photos only when both conditions met
-  useEffect(() => {
-    if (imagesReady && nameTimerDone) setPhase("photos");
-  }, [imagesReady, nameTimerDone]);
 
   // Scroll lock
   useEffect(() => {
@@ -155,23 +144,35 @@ export default function IntroAnimation() {
     };
   }, [visible]);
 
-  // setInterval is more reliable than chained setTimeouts for consistent cadence
+  const endIntro = () => {
+    setVisible(false);
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+  };
+
+  // Slideshow — reads loadedRef so the closure is always fresh
   useEffect(() => {
-    if (phase !== "photos" || readyImages.length === 0) return;
+    if (phase !== "photos") return;
 
     intervalRef.current = setInterval(() => {
       setPhotoIndex((prev) => {
-        const next = prev + 1;
-        if (next >= readyImages.length) {
+        let next = prev + 1;
+
+        // Skip images that failed to load
+        while (next < imagenes.length && loadedRef.current[next] === false) {
+          next++;
+        }
+
+        if (next >= imagenes.length) {
           clearInterval(intervalRef.current!);
           intervalRef.current = null;
-          setTimeout(() => {
-            setVisible(false);
-            document.documentElement.style.overflow = "";
-            document.body.style.overflow = "";
-          }, 600);
+          setTimeout(endIntro, 600);
           return prev;
         }
+
+        // Hold current frame if next not decoded yet (slow connection)
+        if (!loadedRef.current[next]) return prev;
+
         return next;
       });
     }, DISPLAY_MS);
@@ -179,18 +180,18 @@ export default function IntroAnimation() {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [phase, readyImages.length]);
+  }, [phase]);
 
   return (
     <AnimatePresence>
       {visible && (
         <motion.div
           key="intro"
-          className="fixed inset-0 z-9999 bg-black overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-black overflow-hidden"
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.9, ease: expo }}
+          transition={{ duration: 0.45, ease: expo }}
         >
-          {/* Name + loader — sits above photos during its exit */}
+          {/* Name phase */}
           <AnimatePresence mode="sync">
             {phase === "name" && (
               <motion.div
@@ -243,16 +244,19 @@ export default function IntroAnimation() {
                     />
                   </div>
                   <span className="text-white/40 text-[10px] tracking-widest uppercase font-light">
-                    {imagesReady ? "listo" : `${loadedCount} / ${imagenes.length}`}
+                    {loadedCount >= imagenes.length
+                      ? "listo"
+                      : `${loadedCount} / ${imagenes.length}`}
                   </span>
                 </motion.div>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* All images pre-rendered — no mount/unmount during slideshow */}
+          {/* All loaded images pre-rendered as layers — no mount/unmount flicker */}
           {phase === "photos" &&
-            readyImages.map((item, i) => {
+            imagenes.map((item, i) => {
+              if (!loadedMask[i]) return null;
               const isCurrent = i === photoIndex;
               const isPast = i < photoIndex;
               const from = ENTER_FROM[i % ENTER_FROM.length];
@@ -270,10 +274,10 @@ export default function IntroAnimation() {
                   transition={
                     isCurrent
                       ? {
-                          opacity: { duration: 0.1, ease: "linear" },
-                          x: { duration: 0.2, ease: expo },
-                          y: { duration: 0.2, ease: expo },
-                          scale: { duration: 0.25, ease: expo },
+                          opacity: { duration: 0.06, ease: "linear" },
+                          x: { duration: 0.12, ease: expo },
+                          y: { duration: 0.12, ease: expo },
+                          scale: { duration: 0.15, ease: expo },
                         }
                       : { duration: 0 }
                   }

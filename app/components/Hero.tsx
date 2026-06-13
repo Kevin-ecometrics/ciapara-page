@@ -167,6 +167,7 @@ export default function Hero() {
           </div>
 
           {/* Heading — two lines with staggered clip reveal */}
+          <h1>
           <div className="overflow-hidden mb-2">
             <motion.span
               initial={{ y: "105%" }}
@@ -187,6 +188,7 @@ export default function Hero() {
               CIAPARA
             </motion.span>
           </div>
+          </h1>
 
           {/* Divider — expand from left */}
           <motion.div
@@ -198,24 +200,14 @@ export default function Hero() {
 
           {/* Subtitle — clip reveal */}
           <div className="overflow-hidden mb-6">
-            <motion.p
+            <motion.h2
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.75, ease: expo, delay: 1.05 }}
-              className="text-base md:text-lg text-white/55 tracking-[0.12em] uppercase"
+              className="text-base md:text-lg text-white/55 tracking-[0.12em] uppercase font-normal"
             >
               {t.hero.subtitle}
-            </motion.p>
-          </div>
-
-          {/* Description — clip reveal */}
-          <div className="overflow-hidden">
-            <motion.p
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.75, ease: expo, delay: 1.2 }}
-              className="max-w-md text-sm text-white/40 leading-relaxed"
-            ></motion.p>
+            </motion.h2>
           </div>
 
           {/* Scroll indicator */}
@@ -260,20 +252,20 @@ export default function Hero() {
               {t.hero.place}
             </p>
 
+            <h1>
             <span className="block text-[clamp(4rem,12vw,11rem)] font-bold tracking-tight text-[#1A1916] leading-[0.9] mb-2">
               ENRIQUE
             </span>
             <span className="block text-[clamp(4rem,12vw,11rem)] font-bold tracking-tight text-[#1A1916] leading-[0.9] mb-8">
               CIAPARA
             </span>
+            </h1>
 
             <div className="w-16 h-px bg-[#1A1916]/25 mb-8" />
 
-            <p className="text-base md:text-lg text-[#1A1916]/55 tracking-[0.12em] uppercase mb-6">
+            <h2 className="text-base md:text-lg text-[#1A1916]/55 tracking-[0.12em] uppercase font-normal mb-6">
               {t.hero.subtitle}
-            </p>
-
-            <p className="max-w-md text-sm text-[#1A1916]/40 leading-relaxed"></p>
+            </h2>
           </div>
         </motion.div>
       </div>

@@ -24,7 +24,11 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   function setLocale(l: Locale) {
     if (l === locale) return;
-    router.push(l === "en" ? "/en" : "/", { scroll: false });
+    if (l === "en") {
+      router.push(`/en${pathname}`, { scroll: false });
+    } else {
+      router.push(pathname.replace(/^\/en/, "") || "/", { scroll: false });
+    }
   }
 
   return (

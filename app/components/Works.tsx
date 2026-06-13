@@ -95,9 +95,9 @@ export default function Works() {
   return (
     <section id="obras" className="pt-10 md:pt-16 bg-[#F6F2EC]">
       <div className="px-6 mx-auto mb-10">
-        <h1 className="text-xl md:text-2xl font-bold uppercase">
+        <h2 className="text-xl md:text-2xl font-bold uppercase">
           {t.works.title}
-        </h1>
+        </h2>
       </div>
 
       {/* ── Mobile: single column, full-bleed images ── */}

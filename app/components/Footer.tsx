@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import { FaInstagram } from "react-icons/fa";
 import { useI18n } from "../providers/i18nProvider";
 
 const expo = [0.16, 1, 0.3, 1] as const;
@@ -33,7 +34,7 @@ const fadeUp = {
 };
 
 export default function Footer() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const footerRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -109,7 +110,7 @@ export default function Footer() {
           transition={{ duration: 0.8, ease: expo, delay: 0.45 }}
           className="mt-4 mb-10 text-xs tracking-[0.35em] uppercase text-white/30"
         >
-          {/* {t.footer.studio} */}
+          {t.footer.studio}
         </motion.p>
 
         <motion.div
@@ -163,7 +164,7 @@ export default function Footer() {
               variants={fadeUp}
               className="text-xs text-white/40 leading-relaxed max-w-xs"
             >
-              {/* {t.footer.studioDesc} */}
+              {t.footer.studioDesc}
             </motion.p>
             <motion.div
               custom={0.16}
@@ -180,7 +181,7 @@ export default function Footer() {
                 className="w-1.5 h-1.5 rounded-full bg-[#8B3A2A]"
               />
               <span className="text-xs text-[#8B3A2A] tracking-[0.12em] uppercase">
-                {/* {t.footer.established} */}
+                {t.footer.established}
               </span>
             </motion.div>
           </div>
@@ -192,13 +193,15 @@ export default function Footer() {
               variants={fadeUp}
               className="text-xs tracking-[0.25em] uppercase text-white/30 mb-2"
             >
-              {/* {t.footer.navigation} */}
+              {t.footer.navigation}
             </motion.p>
             {[
               { label: t.nav.collections, href: "#obras" },
               { label: t.nav.about, href: "#sobre-mi" },
               { label: t.nav.news, href: "#noticias" },
               { label: t.nav.contact, href: "#contacto" },
+              { label: t.nav.artistPage, href: locale === 'en' ? '/en/artist' : '/artist' },
+              { label: t.nav.aboutPage, href: locale === 'en' ? '/en/about' : '/about' },
             ].map(({ label, href }, i) => (
               <motion.a
                 key={href}
@@ -221,7 +224,7 @@ export default function Footer() {
               variants={fadeUp}
               className="text-xs tracking-[0.25em] uppercase text-white/30 mb-2"
             >
-              {/* {t.footer.contact} */}
+              {t.footer.contact}
             </motion.p>
             <motion.div
               custom={0.18}
@@ -230,31 +233,35 @@ export default function Footer() {
             >
               <p>
                 <a
-                  href="mailto:contacto@ciapara.com"
+                  href="mailto:Ciaenriqueciapara@gmail.com"
                   className="underline-hover hover:text-white transition-colors duration-300"
                 >
-                  contacto@ciapara.com
+                  Ciaenriqueciapara@gmail.com
                 </a>
               </p>
-              {/* <p>{t.footer.location1}</p> */}
-              {/* <p>{t.footer.location2}</p> */}
-            </motion.div>
-            <motion.div
-              custom={0.26}
-              variants={fadeUp}
-              className="flex gap-5 mt-4"
-            >
-              {["Instagram", "Facebook", "LinkedIn"].map((net) => (
-                <motion.a
-                  key={net}
-                  href="#"
-                  whileHover={{ y: -2 }}
-                  transition={{ duration: 0.25, ease: expo }}
-                  className="text-xs text-white/40 underline-hover hover:text-white transition-colors duration-300"
+              <p>
+                <a
+                  href="tel:+526642177876"
+                  className="underline-hover hover:text-white transition-colors duration-300"
                 >
-                  {net}
-                </motion.a>
-              ))}
+                  +52 664 217 7876
+                </a>
+              </p>
+              <p>{t.footer.location1}</p>
+              <p>{t.footer.location2}</p>
+            </motion.div>
+            <motion.div custom={0.26} variants={fadeUp} className="mt-4">
+              <motion.a
+                href="https://www.instagram.com/enriqueciapara/"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.25, ease: expo }}
+                className="inline-flex items-center gap-2 text-xs text-white/40 hover:text-white transition-colors duration-300"
+              >
+                <FaInstagram size={18} />
+                <span>@enriqueciapara</span>
+              </motion.a>
             </motion.div>
           </div>
         </motion.div>
@@ -267,9 +274,9 @@ export default function Footer() {
           transition={{ duration: 1.0, ease: expo, delay: 0.2 }}
           className="pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-white/20"
         >
-          {/* <p>&copy; {new Date().getFullYear()} Enrique Ciapara. {t.footer.rights}{' '} */}
+          <p>&copy; {new Date().getFullYear()} Enrique Ciapara. {t.footer.rights}{' '}
           <span>
-            {/* {t.footer.developedBy}{' '} */}
+            {t.footer.developedBy}{' '}
             <a
               href="https://e-commetrics.com"
               className="underline-hover hover:text-white transition-colors duration-300"
@@ -278,19 +285,19 @@ export default function Footer() {
             </a>
             .
           </span>
-          {/* </p> */}
+          </p>
           <div className="flex gap-6">
             <a
               href="#"
               className="hover:text-white/50 transition-colors duration-300"
             >
-              {/* {t.footer.privacy} */}
+              {t.footer.privacy}
             </a>
             <a
               href="#"
               className="hover:text-white/50 transition-colors duration-300"
             >
-              {/* {t.footer.credits} */}
+              {t.footer.credits}
             </a>
           </div>
         </motion.div>

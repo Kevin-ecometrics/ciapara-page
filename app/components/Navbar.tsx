@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { useI18n } from "../providers/i18nProvider";
 import type { Locale } from "../lib/i18n";
@@ -9,14 +10,19 @@ const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Navbar() {
   const { t, locale, setLocale } = useI18n();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
+  // On non-home pages, prefix anchors with the home path so they navigate back
+  const isHome = pathname === "/" || pathname === "/en";
+  const homeBase = isHome ? "" : locale === "en" ? "/en" : "/";
+
   const links = [
-    { label: t.nav.about, href: "#about" },
-    { label: t.nav.collections, href: "#collections" },
-    { label: t.nav.news, href: "#news" },
-    { label: t.nav.contact, href: "#contacto" },
+    { label: t.nav.about, href: `${homeBase}#about` },
+    { label: t.nav.collections, href: `${homeBase}#collections` },
+    { label: t.nav.news, href: `${homeBase}#news` },
+    { label: t.nav.contact, href: `${homeBase}#contacto` },
   ];
 
   useEffect(() => {
@@ -89,7 +95,7 @@ export default function Navbar() {
               scrolled ? "text-[#6B6660]" : "text-white/50"
             }`}
           >
-            contacto@ciapara.com
+            Ciaenriqueciapara@gmail.com
           </span>
 
           <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">

@@ -102,9 +102,9 @@ export default function About() {
     <section id="about" className="bg-[#F6F2EC]">
       {/* Texto — scroll normal */}
       <div className="pt-28 md:pt-36 pb-16 px-6 mx-auto">
-        <h1 className="text-2xl lg:text-4xl font-bold uppercase mb-6 leading-[1.15] max-w-xl md:max-w-3xl lg:max-w-7xl indent-20 md:indent-56">
+        <h3 className="text-2xl lg:text-4xl font-bold uppercase mb-6 leading-[1.15] max-w-xl md:max-w-3xl lg:max-w-7xl indent-20 md:indent-56">
           "{t.about.quote}"
-        </h1>
+        </h3>
         <p className=" font-normal text-2xl mb-12">- {t.about.speaker}</p>
 
         <motion.p

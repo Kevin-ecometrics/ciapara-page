@@ -82,12 +82,12 @@ export default function Collections() {
 
       {/* Contenido encima de la imagen */}
       <div className="relative z-10 mx-auto text-white">
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-10 leading-[1.15] max-w-5xl uppercase indent-20 md:indent-56">
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-10 leading-[1.15] max-w-5xl uppercase indent-20 md:indent-56">
           "{t.collections.quoteBold}
-        </h1>
-        <p className="text- leading-relaxed max-w-xl mb-6">
+        </h3>
+        <h4 className="leading-relaxed max-w-xl mb-6 font-normal">
           {t.collections.quote}"
-        </p>
+        </h4>
         <p className="text-sm leading-relaxed max-w-xl">
           - {t.collections.speaker}
         </p>

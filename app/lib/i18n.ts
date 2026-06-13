@@ -6,7 +6,9 @@ export const translations = {
         about: "Acerca de",
         collections: "Colecciones",
         news: "Prensa",
-        contact: "Contacto"
+        contact: "Contacto",
+        artistPage: "Artista",
+        aboutPage: "Textos",
         },
     hero: {
         place: "Estudio · Tijuana, B.C. · Est. 2026",
@@ -46,7 +48,20 @@ export const translations = {
         },
         works: {
             title: "Selección de Proyectos",
-            }
+            },
+        footer: {
+            studio: "Estudio",
+            studioDesc: "Arte abstracto contemporáneo desde Tijuana, Baja California.",
+            established: "Tijuana, México · Est. 2001",
+            navigation: "Navegación",
+            contact: "Contacto",
+            location1: "Tijuana, Baja California",
+            location2: "México",
+            rights: "Todos los derechos reservados.",
+            developedBy: "Desarrollado por",
+            privacy: "Privacidad",
+            credits: "Créditos",
+        },
         },
         en: {
     nav: {
@@ -54,6 +69,8 @@ export const translations = {
         collections: "Collections",
         news: "News",
         contact: "Contact",
+        artistPage: "Artist",
+        aboutPage: "Texts",
         },
             hero: {
                 place: "Studio · Tijuana, B.C. · Est. 2026",
@@ -93,15 +110,29 @@ export const translations = {
             },
             works: {
                 title: "Projects Selection",
-            }
+            },
+            footer: {
+                studio: "Studio",
+                studioDesc: "Contemporary abstract art from Tijuana, Baja California.",
+                established: "Tijuana, México · Est. 2001",
+                navigation: "Navigation",
+                contact: "Contact",
+                location1: "Tijuana, Baja California",
+                location2: "Mexico",
+                rights: "All rights reserved.",
+                developedBy: "Developed by",
+                privacy: "Privacy",
+                credits: "Credits",
+            },
   },
 
 };
 
 export type Translations = {
-    nav: {about: string; collections: string; news: string; contact: string};
+    nav: {about: string; collections: string; news: string; contact: string; artistPage: string; aboutPage: string};
     hero: {place: string; title: string; subtitle: string; scroller: string;};
     about: {quote: string; speaker: string; text: string; speaker2: string; date: string; preArrow: string; postArrow: string; more: string;};
     collections: {quoteBold: string; quote: string; speaker: string; date: string; items:{title: string; description: string}[]};
     works: {title: string};
+    footer: {studio: string; studioDesc: string; established: string; navigation: string; contact: string; location1: string; location2: string; rights: string; developedBy: string; privacy: string; credits: string};
 };
