@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { useI18n } from "../providers/i18nProvider";
+import Link from "next/link";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
@@ -12,18 +13,21 @@ const collectionsMeta = [
     hoverBg: "bg-[#4C2A1D]",
     img: "/service-pintar.jpg",
     imgFallback: "#6B3020",
+    href: "/errores",
   },
   {
     num: "02",
     hoverBg: "bg-[#2D3C30]",
     img: "/service-grabar.jpg",
     imgFallback: "#2D3C30",
+    href: "/2015",
   },
   {
     num: "03",
     hoverBg: "bg-[#2B2F4C]",
     img: "/service-exponer.jpg",
     imgFallback: "#2B2F4C",
+    href: "/blurb",
   },
 ];
 
@@ -97,11 +101,12 @@ export default function Collections() {
         </p>
 
         {collections.map((s) => (
-          <div
+          <Link
             key={s.num}
             className="mb-6 group transition-colors duration-300"
             onMouseEnter={() => setActiveService(s.num)}
             onMouseLeave={() => setActiveService(null)}
+            href={s.href}
           >
             <div className="flex flex-row items-center justify-between mb-6 cursor-pointer">
               <div className="overflow-hidden py-1">
@@ -140,7 +145,7 @@ export default function Collections() {
               </AnimatePresence>
             </div>
             <hr className="flex-1 border-t border-white/40" />
-          </div>
+          </Link>
         ))}
       </div>
     </section>
