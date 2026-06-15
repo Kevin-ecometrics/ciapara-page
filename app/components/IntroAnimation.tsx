@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const expo = [0.16, 1, 0.3, 1] as const;
-const DISPLAY_MS = 300;
+const DISPLAY_MS = 150;
 const NAME_MS = 2400;
 
 const imagenes = [
@@ -91,10 +91,11 @@ export default function IntroAnimation() {
   const [firstImageReady, setFirstImageReady] = useState(false);
   // loadedMask drives rendering (state); loadedRef drives interval logic (no stale closure)
   const [loadedMask, setLoadedMask] = useState<boolean[]>(
-    Array(imagenes.length).fill(false)
+    Array(imagenes.length).fill(false),
   );
   const loadedRef = useRef<boolean[]>(Array(imagenes.length).fill(false));
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const skipRef = useRef(false);
 
   // Derive phase from state — no setState-in-effect
   const phase: "name" | "photos" =
@@ -102,6 +103,12 @@ export default function IntroAnimation() {
 
   // Parallel preload with decode() — GPU-ready before animating
   useEffect(() => {
+    if (sessionStorage.getItem("skip-intro") === "1") {
+      sessionStorage.removeItem("skip-intro");
+      skipRef.current = true;
+      setVisible(false);
+      return;
+    }
     imagenes.forEach((item, i) => {
       const img = new window.Image();
       const settle = (ok: boolean) => {
@@ -126,6 +133,7 @@ export default function IntroAnimation() {
 
   // Name phase minimum timer
   useEffect(() => {
+    if (skipRef.current) return;
     const t = setTimeout(() => setNameTimerDone(true), NAME_MS);
     return () => clearTimeout(t);
   }, []);
@@ -166,7 +174,7 @@ export default function IntroAnimation() {
         if (next >= imagenes.length) {
           clearInterval(intervalRef.current!);
           intervalRef.current = null;
-          setTimeout(endIntro, 600);
+          setTimeout(endIntro, 120);
           return prev;
         }
 

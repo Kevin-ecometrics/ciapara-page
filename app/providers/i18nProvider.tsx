@@ -24,6 +24,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   function setLocale(l: Locale) {
     if (l === locale) return;
+    sessionStorage.setItem("skip-intro", "1");
     if (l === "en") {
       router.push(`/en${pathname}`, { scroll: false });
     } else {

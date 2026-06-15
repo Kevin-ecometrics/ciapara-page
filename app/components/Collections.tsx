@@ -51,6 +51,7 @@ export default function Collections() {
 
   return (
     <section
+      id="collections"
       className={`relative overflow-hidden py-28 md:py-36 px-6 transition-colors duration-300 ${sectionBg}`}
     >
       {/* Imagen full-section — se revela desde el centro hacia afuera */}

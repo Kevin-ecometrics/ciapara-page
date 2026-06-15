@@ -31,7 +31,7 @@ const news = [
 export default function News() {
   const imageHeights = ["h-20 md:h-155", "h-20 md:h-175", "h-20 md:h-150"];
   return (
-    <section id="noticias" className="py-8 px-6 bg-[#1A1916]  flex flex-col">
+    <section id="news" className="py-8 px-6 bg-[#1A1916]  flex flex-col">
       <div className=" mx-auto text-white w-full flex flex-col flex-1 min-h-0">
         {/* Header */}
         <div className="flex items-baseline justify-between mb-5 shrink-0">

@@ -25,6 +25,20 @@ export default function Navbar() {
     { label: t.nav.contact, href: `${homeBase}#contacto` },
   ];
 
+  function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+    if (!isHome) {
+      sessionStorage.setItem("skip-intro", "1");
+      return;
+    }
+    e.preventDefault();
+    const id = href.replace(/.*#/, "");
+    if (id === "contacto") {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -62,6 +76,7 @@ export default function Navbar() {
             <motion.a
               key={href}
               href={href}
+              onClick={(e) => handleNavClick(e, href)}
               onMouseEnter={() => setHovered(href)}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}

@@ -200,8 +200,14 @@ export default function Footer() {
               { label: t.nav.about, href: "#sobre-mi" },
               { label: t.nav.news, href: "#noticias" },
               { label: t.nav.contact, href: "#contacto" },
-              { label: t.nav.artistPage, href: locale === 'en' ? '/en/artist' : '/artist' },
-              { label: t.nav.aboutPage, href: locale === 'en' ? '/en/about' : '/about' },
+              {
+                label: t.nav.artistPage,
+                href: locale === "en" ? "/en/artist" : "/artist",
+              },
+              {
+                label: t.nav.aboutPage,
+                href: locale === "en" ? "/en/about" : "/about",
+              },
             ].map(({ label, href }, i) => (
               <motion.a
                 key={href}
@@ -274,17 +280,18 @@ export default function Footer() {
           transition={{ duration: 1.0, ease: expo, delay: 0.2 }}
           className="pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-white/20"
         >
-          <p>&copy; {new Date().getFullYear()} Enrique Ciapara. {t.footer.rights}{' '}
-          <span>
-            {t.footer.developedBy}{' '}
-            <a
-              href="https://e-commetrics.com"
-              className="underline-hover hover:text-white transition-colors duration-300"
-            >
-              E-commetrics
-            </a>
-            .
-          </span>
+          <p>
+            &copy; {new Date().getFullYear()} Enrique Ciapara. {t.footer.rights}{" "}
+            <span>
+              {t.footer.developedBy}{" "}
+              <a
+                href="https://e-commetrics.com"
+                className="underline-hover hover:text-white transition-colors duration-300"
+              >
+                E-commetrics
+              </a>
+              .
+            </span>
           </p>
           <div className="flex gap-6">
             <a

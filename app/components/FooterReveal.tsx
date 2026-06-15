@@ -22,7 +22,7 @@ export default function FooterReveal() {
       Footer queda fijo detrás (z-0).
       News arranca encima (z-10) y se levanta conforme se scrollea.
     */
-    <div ref={containerRef} className="relative" style={{ height: '200dvh' }}>
+    <div ref={containerRef} id="news" className="relative" style={{ height: '200dvh' }}>
 
       {/* Footer: siempre visible detrás, sticky al top */}
       <div className="sticky top-0 overflow-hidden" style={{ zIndex: 0, height: '100dvh' }}>
