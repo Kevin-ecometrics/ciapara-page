@@ -51,6 +51,3 @@ server/*
 *.flv
 *.mkv
 *.webm
-
-# images intro
-/public/images/*
