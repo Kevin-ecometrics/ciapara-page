@@ -10,24 +10,27 @@ const expo = [0.16, 1, 0.3, 1] as const;
 const collectionsMeta = [
   {
     num: "01",
-    hoverBg: "bg-[#4C2A1D]",
-    img: "/service-pintar.jpg",
-    imgFallback: "#6B3020",
-    href: "/errores",
+    hoverBg: "bg-[#2B2F4C]",
+    img: "/images/blurb/Pieza caminata en tecnica mixta sobre tela 183x 305 cm 2008 por enrique ciapara.webp",
+    imgFallback: "#2B2F4C",
+    href: "/archivo-2000-09",
+    hrefEn: "/en/archivo-2000-09",
   },
   {
     num: "02",
     hoverBg: "bg-[#2D3C30]",
-    img: "/service-grabar.jpg",
+    img: "/images/2015/Pieza sunnyday en acrilico sobre tela 122x 107 cm por artista enrique ciapara.webp",
     imgFallback: "#2D3C30",
-    href: "/2015",
+    href: "/serie-2015",
+    hrefEn: "/en/serie-2015",
   },
   {
     num: "03",
-    hoverBg: "bg-[#2B2F4C]",
-    img: "/service-exponer.jpg",
-    imgFallback: "#2B2F4C",
-    href: "/blurb",
+    hoverBg: "bg-[#4C2A1D]",
+    img: "/images/errores/Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp",
+    imgFallback: "#6B3020",
+    href: "/catalogo-de-errores",
+    hrefEn: "/en/catalogo-de-errores",
   },
 ];
 
@@ -37,7 +40,7 @@ const cardVariants = {
 };
 
 export default function Collections() {
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
   const [activeService, setActiveService] = useState<string | null>(null);
 
   const collections = collectionsMeta.map((meta, i) => ({
@@ -106,7 +109,7 @@ export default function Collections() {
             className="mb-6 group transition-colors duration-300"
             onMouseEnter={() => setActiveService(s.num)}
             onMouseLeave={() => setActiveService(null)}
-            href={s.href}
+            href={locale === "en" ? s.hrefEn : s.href}
           >
             <div className="flex flex-row items-center justify-between mb-6 cursor-pointer">
               <div className="overflow-hidden py-1">

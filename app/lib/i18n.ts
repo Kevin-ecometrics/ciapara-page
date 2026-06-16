@@ -33,17 +33,17 @@ export const translations = {
         date: "Junio 2011",
         items: [ 
             {
-                title: "ERRORES",
-                description: "2018 y 2019, reinterpretacion/ versión libre de cuatro escenas de Sandro Botticelli tituladas «La historia de Nastagio degli Onesti», basadas en un relato de Giovanni Boccaccio, otra figura destacada del Renacimiento florentino",
+                title: "Archivo 2000-09",
+                description: "En esta colección de más de nueve años, Enrique Ciapara se presenta como un hábil mediador entre lo que él quiere y lo que la pintura quiere. Descubre más.",
             },
             {
-                title: "2015",
-                description: "En su obra se encuentra una síntesis cultural entre lo bajacaliforniano y lo mediterráneo."  
+                title: "Serie 2015",
+                description: "Explora la colección 2015 de Enrique Ciapara: pintura semiabstracta y sintética que celebra el paisaje del Norte, la luz de Tarragona y el alma de la frontera."  
             },
             {
-                title: "BLURB (BLURB 2000-2009)",
-                description: "",
-            }
+                title: "Catalogo de ERRORES",
+                description: '¿Error, despropósito o feliz acierto? Descubre "Catálogo de Errores", la enigmática colección de Enrique Ciapara inspirada en Sandro Botticelli y Boccaccio.',
+            },
             ]
         },
         works: {
@@ -95,17 +95,17 @@ export const translations = {
                 date: "June 2011",
                 items: [ 
                     {
-                        title: "ERRORES",
-                        description: "2018 and 2019: a reinterpretation/free adaptation of four scenes by Sandro Botticelli titled “The Story of Nastagio degli Onesti,” based on a story by Giovanni Boccaccio, another prominent figure of the Florentine Renaissance",
+                        title: "2000-09 Archive",
+                        description: "In this collection spanning more than nine years, Enrique Ciapara emerges as a skilled mediator between what he wants and what the painting wants. Learn more.",
                     },
                     {
-                        title: "2015",
-                        description: "His work reflects a cultural synthesis of Baja California and Mediterranean influences."  
+                        title: "2015 Series",
+                        description: "Discover Enrique Ciapara’s 2015 collection: semi-abstract and synthetic paintings that pay homage to the northern landscape, the light of Tarragona, and the spirit of the border."  
                     },
                     {
-                        title: "BLURB (BLURB 2000-2009)",
-                        description: "",
-                    }
+                        title: "Errores Catalogue",
+                        description: "Mistake, absurdity, or stroke of genius? Discover “Catálogo de Errores,” Enrique Ciapara's enigmatic collection inspired by Sandro Botticelli and Boccaccio.",
+                    },        
                 ]
             },
             works: {

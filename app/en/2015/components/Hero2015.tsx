@@ -84,7 +84,7 @@ export default function HeroErrores() {
             initial={{ y: "110%" }}
             animate={{ y: 0 }}
             transition={{ duration: 0.75, ease: expo, delay: 1.0 }}
-            className="text-xs text-white/45 leading-relaxed tracking-widest uppercase"
+            className=" text-white/45 leading-relaxed tracking-widest uppercase"
           >
             {collection.description}
           </motion.p>
