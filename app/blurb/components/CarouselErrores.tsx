@@ -8,11 +8,11 @@ const images = [
     alt: "Pieza 11 sin titulo del catálogo de errores hecha en acrílico sobre tela 122 x 86 cm del artista visual baja californiano Enrique Ciapara",
   },
   {
-    src: "/images/errores/Pieza 12 colección errores.webp",
+    src: "/images/errores/Pieza doce sin titulo souvenir del valle catalogo de errores acrilico y oleo sobre tela 200x 140 cm del artista abstracto mexicano enrique ciapara.webp",
     alt: "Pieza doce sin título souvenir del valle catálogo de errores acrílico y óleo sobre tela 200x 140 cm del artista abstracto mexicano que radica en Tijuana Enrique Ciapara",
   },
   {
-    src: "/images/errores/Pieza 13 colección errores.webp",
+    src: "/images/errores/Pieza trece sin titulo de catalogo de errores acrilico sobre tela 213 x 122 cm del pintor ciapara.webp",
     alt: "Pieza trece sin título de catálogo de errores acrílico sobre tela 213 x 122 cm del pintor de tijuana Enrique Ciapara",
   },
 ];

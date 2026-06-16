@@ -41,7 +41,7 @@ export const translations = {
                 description: "En su obra se encuentra una síntesis cultural entre lo bajacaliforniano y lo mediterráneo."  
             },
             {
-                title: "BLURB (BLURB 2000-2009_)",
+                title: "BLURB (BLURB 2000-2009)",
                 description: "",
             }
             ]
@@ -103,7 +103,7 @@ export const translations = {
                         description: "His work reflects a cultural synthesis of Baja California and Mediterranean influences."  
                     },
                     {
-                        title: "BLURB (BLURB 2000-2009_)",
+                        title: "BLURB (BLURB 2000-2009)",
                         description: "",
                     }
                 ]

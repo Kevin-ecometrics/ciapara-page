@@ -4,8 +4,10 @@ export const erroresTranslations = {
     es:
     {
         hero: {
+            subtitle: "Colección · Enrique Ciapara · 2018 — 2019",
             title:'Catálogo de Errores',
-            subtitle: 'Los errores como deseos de Enrique Ciapara'
+            title2:'Errores',
+            explore: 'Explorar',
         },
         quotes: {
             q1: 'Enrique Ciapara supone la manifestación de un deseo, el placer y el goce de pintar desde una aspiración a la libertad total, en la cual el error es pura manifestación imaginativa y alucinada, hecha de pura materia pictórica.',
