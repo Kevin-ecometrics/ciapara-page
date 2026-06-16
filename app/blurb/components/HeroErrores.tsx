@@ -2,20 +2,22 @@
 
 import { motion } from "motion/react";
 import { useI18n } from "../../providers/i18nProvider";
+import { useBlurbT } from "../../lib/i18n-blurb";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function HeroErrores() {
-  const { t } = useI18n();
-  const collection = t.collections.items[0];
+  const { t, locale } = useI18n();
+  const bT = useBlurbT(locale);
+  const collection = t.collections.items[2];
 
   return (
     <section className="relative h-screen overflow-hidden bg-black">
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
-          src="/images/errores/Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp"
-          alt="Obra titulada Banquete en el pinar elaborada en acrílico sobre tela 152 x 429 por Enrique Ciapara 2019"
+          src="/images/blurb/Pieza caminata en tecnica mixta sobre tela 183x 305 cm 2008 por enrique ciapara.webp"
+          alt="Pieza caminata en técnica mixta sobre tela 183x 305 cm elaborada en 2008 por artista Enrique Ciapara"
           className="w-full h-full object-cover object-center scale-105"
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/85" />
@@ -40,7 +42,7 @@ export default function HeroErrores() {
             transition={{ duration: 0.7, ease: expo, delay: 0.2 }}
             className="text-[10px] tracking-[0.5em] uppercase text-white/40"
           >
-            Colección · Enrique Ciapara · 2018 — 2019
+            {bT.hero.subtitle}
           </motion.p>
         </div>
 
@@ -53,7 +55,7 @@ export default function HeroErrores() {
               transition={{ duration: 1.0, ease: expo, delay: 0.35 }}
               className="block text-[clamp(3.5rem,12vw,11rem)] font-bold tracking-tight uppercase text-white leading-[0.88]"
             >
-              CATÁLOGO DE
+              {bT.hero.title1}
             </motion.span>
           </div>
           <div className="overflow-hidden">
@@ -63,7 +65,7 @@ export default function HeroErrores() {
               transition={{ duration: 1.0, ease: expo, delay: 0.5 }}
               className="block text-[clamp(3.5rem,12vw,11rem)] font-bold tracking-tight uppercase text-white leading-[0.88]"
             >
-              ERRORES
+              {bT.hero.title2}
             </motion.span>
           </div>
         </h1>
@@ -95,7 +97,7 @@ export default function HeroErrores() {
           transition={{ duration: 0.6, ease: expo, delay: 1.6 }}
           className="absolute bottom-10 flex flex-col items-center gap-3 text-white/25 text-[10px] tracking-[0.35em] uppercase"
         >
-          Explorar
+          {bT.hero.explore}
           <div className="w-px h-8 bg-white/20" />
         </motion.div>
       </div>

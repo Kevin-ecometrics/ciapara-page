@@ -2,11 +2,13 @@
 
 import { motion } from "motion/react";
 import { useI18n } from "../../providers/i18nProvider";
+import { useErroresT } from "../../lib/i18n-errores";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function HeroErrores() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const eT = useErroresT(locale);
   const collection = t.collections.items[0];
 
   return (
@@ -40,7 +42,7 @@ export default function HeroErrores() {
             transition={{ duration: 0.7, ease: expo, delay: 0.2 }}
             className="text-[10px] tracking-[0.5em] uppercase text-white/40"
           >
-            Colección · Enrique Ciapara · 2018 — 2019
+            {eT.hero.subtitle}
           </motion.p>
         </div>
 
@@ -53,7 +55,7 @@ export default function HeroErrores() {
               transition={{ duration: 1.0, ease: expo, delay: 0.35 }}
               className="block text-[clamp(3.5rem,12vw,11rem)] font-bold tracking-tight uppercase text-white leading-[0.88]"
             >
-              CATÁLOGO DE
+              {eT.hero.title1}
             </motion.span>
           </div>
           <div className="overflow-hidden">
@@ -63,7 +65,7 @@ export default function HeroErrores() {
               transition={{ duration: 1.0, ease: expo, delay: 0.5 }}
               className="block text-[clamp(3.5rem,12vw,11rem)] font-bold tracking-tight uppercase text-white leading-[0.88]"
             >
-              ERRORES
+              {eT.hero.title2}
             </motion.span>
           </div>
         </h1>
@@ -95,7 +97,7 @@ export default function HeroErrores() {
           transition={{ duration: 0.6, ease: expo, delay: 1.6 }}
           className="absolute bottom-10 flex flex-col items-center gap-3 text-white/25 text-[10px] tracking-[0.35em] uppercase"
         >
-          Explorar
+          {eT.hero.explore}
           <div className="w-px h-8 bg-white/20" />
         </motion.div>
       </div>

@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import { useI18n } from "../../providers/i18nProvider";
+import { useBlurbT } from "../../lib/i18n-blurb";
 import type { Locale } from "../../lib/i18n";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function NavbarErrores() {
   const { locale, setLocale } = useI18n();
+  const bT = useBlurbT(locale);
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
 
@@ -64,7 +66,7 @@ export default function NavbarErrores() {
               strokeLinejoin="round"
             />
           </svg>
-          <span className="hidden sm:inline">Volver</span>
+          <span className="hidden sm:inline">{bT.nav.back}</span>
         </motion.button>
 
         {/* Logo — centro */}

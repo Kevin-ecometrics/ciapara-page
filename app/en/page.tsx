@@ -12,7 +12,10 @@ export default function HomeEn() {
       <Navbar />
       <main>
         <Hero />
-        <div className="relative z-30 bg-[#F6F2EC]" style={{ marginTop: "calc(-100vh + 300px)" }}>
+        <div
+          className="relative z-30 bg-[#F6F2EC]"
+          style={{ marginTop: "calc(-100vh + 300px)" }}
+        >
           <About />
         </div>
         <Collections />

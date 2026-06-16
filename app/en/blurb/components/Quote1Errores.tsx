@@ -1,7 +1,7 @@
 "use client";
 
-import { useI18n } from "../../providers/i18nProvider";
-import { useBlurbT } from "../../lib/i18n-blurb";
+import { useI18n } from "../../../providers/i18nProvider";
+import { useBlurbT } from "../../../lib/i18n-blurb";
 
 export default function Quote1Errores() {
   const { locale } = useI18n();

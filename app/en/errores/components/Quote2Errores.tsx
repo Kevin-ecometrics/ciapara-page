@@ -1,28 +1,51 @@
 "use client";
 
-export default function Quote1Errores() {
+import { useI18n } from "../../../providers/i18nProvider";
+import { useErroresT } from "../../../lib/i18n-errores";
+
+export default function Quote2Errores() {
+  const { locale } = useI18n();
+  const eT = useErroresT(locale);
+
   return (
     <section className="">
       <div className="px-6">
         <h1 className="text-black/50 w-full text-start my-12 text-[clamp(2.5rem,5vw,7rem)] md;text-[clamp(3rem,5vw,7rem)] md:text-[clamp(3.5rem,5vw,7rem)] block font-bold tracking-tight leading-[0.95] uppercase">
-          "Habría que decir que estos últimos cuadros de “Catálogo de errores”
-          están retando nuestros prejuicios como espectadores, algo que pocas
-          veces sucede en el terreno de la pintura actual. "
+          &ldquo;{eT.quote2.q}&rdquo;
         </h1>
         <p className="text-black/90 w-full text-start mb-24 text-[clamp(1.5rem,3vw,5rem)] md:text-[clamp(2rem,3vw,5rem)] md: block font-bold tracking-tight">
-          - Carlos E. Palacios
+          - {eT.quote2.author}
         </p>
       </div>
 
-      <div className=" gap-0 items-stretch w-full">
-        <div className="w-full h-[35rem] md:h-[50rem] overflow-hidden">
+      <section className="relative h-[50rem] overflow-hidden bg-black">
+        {/* Imagen de fondo */}
+        <div className="absolute inset-0">
           <img
-            className="w-full h-full object-cover object-center"
-            src={"/images/errores/Pieza 61 colección errores.webp"}
+            className="w-full h-full object-cover object-center scale-105"
+            src={
+              "/images/errores/Pieza 61 sin titulo catalogo de errores en acrilico sobre tela 122 x 80cm por artista enrique ciapara en tijuana.webp"
+            }
             alt="Ultima Pieza número 61 sin título del catálogo de errores en acrílico sobre tela 122 x 80 cm por artista enrique Ciapara en Tijuana Baja California"
           />
+          <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/85" />
         </div>
-      </div>
+
+        {/* Textura de grano */}
+        <div
+          className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          }}
+        />
+
+        {/* Contenido */}
+        <div className="relative z-10 h-full flex flex-col justify-center px-6 pb-16">
+          <h1 className="text-white/90 w-full text-start my-12 text-[clamp(3rem,5vw,7rem)] md:text-[clamp(3.5rem,5vw,7rem)] block font-bold tracking-tight leading-[0.95] uppercase"></h1>
+          <p className="text-white/60 w-full text-start text-[clamp(2rem,3vw,5rem)] block font-bold tracking-tight"></p>
+        </div>
+      </section>
     </section>
   );
 }

@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import { useI18n } from "../../providers/i18nProvider";
+import { use2015T } from "../../lib/i18n-2015";
 
 const images = [
   {
@@ -18,6 +20,8 @@ const images = [
 ];
 
 export default function CarouselErrores() {
+  const { locale } = useI18n();
+  const t2015 = use2015T(locale);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const dragRef = useRef({ dragging: false, startX: 0, scrollLeft: 0 });
@@ -74,8 +78,7 @@ export default function CarouselErrores() {
   return (
     <section className="w-full overflow-hidden flex flex-col items-center justify-center">
       <h1 className="text-black/ w-full text-center my-24 text-[clamp(3.5rem,5vw,7rem)] block font-bold tracking-tight leading-[0.88] px-6 uppercase">
-        Su obra se encuentra una síntesis cultural entre lo bajacaliforniano y
-        lo mediterráneo
+        {t2015.carousel.title}
       </h1>
 
       {/* Desktop — grilla de 3 columnas */}

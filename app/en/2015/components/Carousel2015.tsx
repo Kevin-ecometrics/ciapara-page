@@ -2,26 +2,26 @@
 
 import { useRef, useState, useEffect } from "react";
 import { useI18n } from "../../../providers/i18nProvider";
-import { useErroresT } from "../../../lib/i18n-errores";
+import { use2015T } from "../../../lib/i18n-2015";
 
 const images = [
   {
-    src: "/images/errores/Pieza once sin titulo catalogo de errores acrilico sobre tela 122 x 86 del artista visual baja californiano ciapara.webp",
-    alt: "Pieza 11 sin titulo del catálogo de errores hecha en acrílico sobre tela 122 x 86 cm del artista visual baja californiano Enrique Ciapara",
+    src: "/images/2015/Pieza cipres acrilico sobre tela 122 x 80 cm  por enrique ciapara.webp",
+    alt: "ieza ciprés acrílico sobre tela 122 x 80 cm  por Enrique Ciapara artista visual mexicano inspirado en la arquitectura de Tijuana",
   },
   {
-    src: "/images/errores/Pieza doce sin titulo souvenir del valle catalogo de errores acrilico y oleo sobre tela 200x 140 cm del artista abstracto mexicano enrique ciapara.webp",
-    alt: "Pieza doce sin título souvenir del valle catálogo de errores acrílico y óleo sobre tela 200x 140 cm del artista abstracto mexicano que radica en Tijuana Enrique Ciapara",
+    src: "/images/2015/Pieza Cielo acrilico sobre tela 213x 122 cm por ciapara artista basado en tijuana.webp",
+    alt: "Pieza Cielo elaborado en acrilico sobre tela 213x 122 cm por ciapara artista basado en tijuana, inspirado en rotulos de comida callejera ",
   },
   {
-    src: "/images/errores/Pieza trece sin titulo de catalogo de errores acrilico sobre tela 213 x 122 cm del pintor ciapara.webp",
-    alt: "Pieza trece sin título de catálogo de errores acrílico sobre tela 213 x 122 cm del pintor de tijuana Enrique Ciapara",
+    src: "/images/2015/Pieza ensenada acrilico sobre tela 213x 122 cm por artista de la frontera san diego tijuana.webp",
+    alt: "Pieza ensenada acrílico sobre tela 213x 122 cm por artista de la frontera San Diego Tijuana inspirado en Ensenada Baja California  ",
   },
 ];
 
 export default function CarouselErrores() {
   const { locale } = useI18n();
-  const eT = useErroresT(locale);
+  const t2015 = use2015T(locale);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const dragRef = useRef({ dragging: false, startX: 0, scrollLeft: 0 });
@@ -78,7 +78,7 @@ export default function CarouselErrores() {
   return (
     <section className="w-full overflow-hidden flex flex-col items-center justify-center">
       <h1 className="text-black/ w-full text-center my-24 text-[clamp(3.5rem,5vw,7rem)] block font-bold tracking-tight leading-[0.88] px-6 uppercase">
-        {eT.carousel.title}
+        {t2015.carousel.title}
       </h1>
 
       {/* Desktop — grilla de 3 columnas */}

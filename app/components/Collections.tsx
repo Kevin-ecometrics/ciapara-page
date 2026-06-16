@@ -90,15 +90,15 @@ export default function Collections() {
         <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-10 leading-[1.15] max-w-5xl uppercase indent-20 md:indent-56">
           "{t.collections.quoteBold}
         </h3>
-        <h4 className="leading-relaxed max-w-xl mb-6 font-normal">
+        <h4 className="leading-relaxed max-w-xl md:text-lg lg:text-xl mb-6 font-normal">
           {t.collections.quote}"
         </h4>
-        <p className="text-sm leading-relaxed max-w-xl">
-          - {t.collections.speaker}
-        </p>
-        <p className="text-sm leading-relaxed max-w-xl mb-12 ml-2">
-          {t.collections.date}
-        </p>
+        <div className="text-sm leading-relaxed max-w-xl mb-12 ml-2">
+          <p>
+            - {t.collections.speaker}
+            <span>({t.collections.date})</span>
+          </p>
+        </div>
 
         {collections.map((s) => (
           <Link

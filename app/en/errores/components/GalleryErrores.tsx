@@ -15,7 +15,7 @@ export default function Gallery() {
   return (
     <section className="px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch w-full pb-24">
-        <div className="w-full h-[35rem] md:h-[45rem] overflow-hidden">
+        <div className="w-full h-[35rem] md:h-[45rem] overflow-hidden rounded-2xl shadow-2xl">
           <img
             className="w-full h-full object-cover object-center"
             src={
@@ -24,7 +24,7 @@ export default function Gallery() {
             alt="Pieza 14 Cascada Souvenir del Valle en acrílico sobre tela en 200x 140 cm del creado por el artista mexicano Enrique Ciapara en 2019"
           />
         </div>
-        <div className="w-full h-[45rem] overflow-hidden">
+        <div className="w-full h-[45rem] overflow-hidden rounded-2xl shadow-2xl">
           <video
             ref={videoRef}
             muted
@@ -40,7 +40,7 @@ export default function Gallery() {
             />
           </video>
         </div>
-        <div className="w-full h-[35rem] md:h-[45rem] overflow-hidden">
+        <div className="w-full h-[35rem] md:h-[45rem] overflow-hidden rounded-2xl shadow-2xl">
           <img
             className="w-full h-full object-cover object-center"
             src={

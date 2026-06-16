@@ -1,17 +1,20 @@
 "use client";
 
+import { useI18n } from "../../providers/i18nProvider";
+import { useErroresT } from "../../lib/i18n-errores";
+
 export default function Quote1Errores() {
+  const { locale } = useI18n();
+  const eT = useErroresT(locale);
+
   return (
     <section className="mb-24">
       <div className="px-6">
         <h1 className="text-black/50 w-full text-start my-12 text-[clamp(2.5rem,5vw,7rem)] md:text-[clamp(3.5rem,5vw,7rem)] block font-bold tracking-tight leading-[0.95] uppercase">
-          "Enrique Ciapara supone la manifestación de un deseo, el placer y el
-          goce de pintar desde una aspiración a la libertad total, en la cual el
-          error es pura manifestación imaginativa y alucinada, hecha de pura
-          materia pictórica."
+          &ldquo;{eT.quote1.q}&rdquo;
         </h1>
         <p className="text-black/90 w-full text-start mb-24 text-[clamp(1.5rem,3vw,5rem)] md:text-[clamp(2rem,3vw,5rem)] block font-bold tracking-tight">
-          - Carlos E. Palacios
+          - {eT.quote1.author}
         </p>
       </div>
 

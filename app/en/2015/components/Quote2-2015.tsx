@@ -1,7 +1,7 @@
 "use client";
 
-import { useI18n } from "../../providers/i18nProvider";
-import { use2015T } from "../../lib/i18n-2015";
+import { useI18n } from "../../../providers/i18nProvider";
+import { use2015T } from "../../../lib/i18n-2015";
 
 export default function Quote2Errores() {
   const { locale } = useI18n();
