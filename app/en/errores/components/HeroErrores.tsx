@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useI18n } from "../../providers/i18nProvider";
+import { useI18n } from "../../../providers/i18nProvider";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 

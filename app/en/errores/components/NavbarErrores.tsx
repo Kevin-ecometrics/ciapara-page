@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
-import { useI18n } from "../../providers/i18nProvider";
-import type { Locale } from "../../lib/i18n";
+import { useI18n } from "../../../providers/i18nProvider";
+import type { Locale } from "../../../lib/i18n";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
@@ -39,7 +39,6 @@ export default function NavbarErrores() {
       }`}
     >
       <div className="relative mx-auto px-6 flex items-center justify-center">
-
         {/* Flecha de regreso — izquierda */}
         <motion.button
           onClick={handleBack}
@@ -84,7 +83,9 @@ export default function NavbarErrores() {
           transition={{ duration: 0.6, ease: expo, delay: 0.4 }}
           className="absolute right-6 flex items-center gap-3"
         >
-          <span className={`hidden lg:block text-xs transition-colors duration-500 ${colorMuted}`}>
+          <span
+            className={`hidden lg:block text-xs transition-colors duration-500 ${colorMuted}`}
+          >
             Ciaenriqueciapara@gmail.com
           </span>
 
@@ -92,7 +93,9 @@ export default function NavbarErrores() {
             {(["es", "en"] as Locale[]).map((l, i) => (
               <span key={l} className="flex items-center gap-1.5">
                 {i > 0 && (
-                  <span className={`transition-colors duration-500 ${scrolled ? "text-[#6B6660]/30" : "text-white/20"}`}>
+                  <span
+                    className={`transition-colors duration-500 ${scrolled ? "text-[#6B6660]/30" : "text-white/20"}`}
+                  >
                     /
                   </span>
                 )}
@@ -100,8 +103,12 @@ export default function NavbarErrores() {
                   onClick={() => setLocale(l)}
                   className={`uppercase transition-colors duration-300 cursor-pointer ${
                     locale === l
-                      ? scrolled ? "text-[#1A1916] font-semibold" : "text-white font-semibold"
-                      : scrolled ? "text-[#6B6660]/50 hover:text-[#6B6660]" : "text-white/30 hover:text-white/60"
+                      ? scrolled
+                        ? "text-[#1A1916] font-semibold"
+                        : "text-white font-semibold"
+                      : scrolled
+                        ? "text-[#6B6660]/50 hover:text-[#6B6660]"
+                        : "text-white/30 hover:text-white/60"
                   }`}
                 >
                   {l}
@@ -110,7 +117,6 @@ export default function NavbarErrores() {
             ))}
           </div>
         </motion.div>
-
       </div>
     </motion.nav>
   );
