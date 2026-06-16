@@ -12,6 +12,7 @@ export default function Navbar() {
   const { t, locale, setLocale } = useI18n();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [inHero, setInHero] = useState(true);
   const [hovered, setHovered] = useState<string | null>(null);
 
   // On non-home pages, prefix anchors with the home path so they navigate back
@@ -40,17 +41,25 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const heroH = () => window.innerHeight * 2.5;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setInHero(y < heroH());
+      setScrolled(y > 80);
+    };
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: expo, delay: 0.1 }}
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: inHero ? 0 : 1, y: inHero ? -8 : 0 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        inHero ? "pointer-events-none" : ""
+      } ${
         scrolled
           ? "bg-[#F6F2EC]/96 backdrop-blur-sm border-b border-[#E4DFD8] py-3"
           : "bg-transparent py-6"
@@ -105,13 +114,7 @@ export default function Navbar() {
           transition={{ duration: 0.6, ease: expo, delay: 0.6 }}
           className="flex items-center gap-3"
         >
-          <span
-            className={`hidden lg:block text-xs transition-colors duration-500 ${
-              scrolled ? "text-[#6B6660]" : "text-white/50"
-            }`}
-          >
-            Ciaenriqueciapara@gmail.com
-          </span>
+
 
           <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
             {(["es", "en"] as Locale[]).map((l, i) => (

@@ -10,64 +10,76 @@ import {
   useMotionValue,
 } from "motion/react";
 import { useI18n } from "../providers/i18nProvider";
+import type { Locale } from "../lib/i18n";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
-  const { t } = useI18n();
+  const { t, locale, setLocale } = useI18n();
   const containerRef = useRef<HTMLElement>(null);
 
-  // Un solo scrollYProgress sobre el contenedor alto (250vh)
-  // offset 'end end' → progreso 0→1 sobre los 150vh de scroll disponibles
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  // Spring-smoothing del progreso — quita la sensación "escalonada" del scroll
-  // crudo y le da a todo el movimiento una inercia suave y cinematográfica.
   const progress = useSpring(scrollYProgress, {
     stiffness: 110,
     damping: 26,
     mass: 0.4,
   });
 
-  // ── Capa 1 · fondo lejano — drift lento + desenfoque cinematográfico al salir
-  const bgY = useTransform(progress, [0, 0.6], ["0%", "28%"]);
-  const bgScale = useTransform(progress, [0, 0.6], [1, 1.14]);
-  const bgBlurPx = useTransform(progress, [0, 0.5], [0, 10]);
+  // ── Fondo
+  const bgY = useTransform(progress, [0, 0.36], ["0%", "28%"]);
+  const bgScale = useTransform(progress, [0, 0.36], [1, 1.14]);
+  const bgBlurPx = useTransform(progress, [0, 0.3], [0, 10]);
   const bgFilter = useTransform(bgBlurPx, (v) => `blur(${v}px)`);
 
-  // ── Capa 2 · resplandor / plano medio — drift más rápido, se desvanece antes
-  const glowY = useTransform(progress, [0, 0.55], ["0%", "50%"]);
-  const glowOpacity = useTransform(progress, [0, 0.4], [1, 0]);
+  // ── Resplandores
+  const glowY = useTransform(progress, [0, 0.33], ["0%", "50%"]);
+  const glowOpacity = useTransform(progress, [0, 0.24], [1, 0]);
 
-  // ── Primer plano de texto — "push-through": escala, eleva, desenfoca y funde
-  const textScale = useTransform(progress, [0, 0.42], [1, 1.22]);
-  const textY = useTransform(progress, [0, 0.4], ["0%", "-16%"]);
-  const textOpacity = useTransform(progress, [0, 0.3], [1, 0]);
-  const textBlurPx = useTransform(progress, [0, 0.36], [0, 7]);
+  // ── Texto oscuro push-through
+  const textScale = useTransform(progress, [0, 0.252], [1, 1.22]);
+  const textY = useTransform(progress, [0, 0.24], ["0%", "-16%"]);
+  const textOpacity = useTransform(progress, [0, 0.18], [1, 0]);
+  const textBlurPx = useTransform(progress, [0, 0.216], [0, 7]);
   const textFilter = useTransform(textBlurPx, (v) => `blur(${v}px)`);
 
-  // ── Revelado tipo iris — cortina circular que sustituye al overlay plano,
-  //    abriéndose desde el centro-inferior y fundiendo con el color de "About"
+  // ── Iris: progress 0.276 → 0.60
   const irisClip = useTransform(
     progress,
-    [0.46, 1],
+    [0.276, 0.6],
     ["circle(0% at 50% 100%)", "circle(150% at 50% 100%)"],
   );
 
-  // ── Hilo indicador de progreso de scroll (borde derecho)
+  // ── Hilo de progreso
   const threadScale = useTransform(progress, [0, 1], [0, 1]);
 
-  // ── Parallax reactivo al cursor para los resplandores — añade profundidad
-  //    e interactividad sutil sin depender únicamente del scroll
+  // ── Parallax de cursor
   const mvX = useMotionValue(0);
   const mvY = useMotionValue(0);
   const orbX = useSpring(mvX, { stiffness: 40, damping: 18 });
   const orbY = useSpring(mvY, { stiffness: 40, damping: 18 });
   const orbXInverse = useTransform(orbX, (v) => v * -0.6);
   const orbYInverse = useTransform(orbY, (v) => v * -0.6);
+
+  const heroLinks = [
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.collections, href: "#collections" },
+    { label: t.nav.news, href: "#news" },
+    { label: t.nav.contact, href: "#contacto" },
+  ];
+
+  function handleHeroNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    if (id === "contacto") {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   function handlePointerMove(e: MouseEvent<HTMLDivElement>) {
     const { left, top, width, height } =
@@ -76,27 +88,86 @@ export default function Hero() {
     mvY.set(((e.clientY - top) / height - 0.5) * 50);
   }
 
+  const darkNavRow = (
+    <div className="flex items-center justify-between px-6 pt-3 border-t border-white/10">
+      <div className="hidden md:flex items-center gap-8 lg:gap-10">
+        {heroLinks.map(({ label, href }) => (
+          <a
+            key={href}
+            href={href}
+            onClick={(e) => handleHeroNavClick(e, href)}
+            className="text-xs tracking-[0.18em] uppercase text-white/55 hover:text-white transition-colors duration-300"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+      <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
+        {(["es", "en"] as Locale[]).map((l, i) => (
+          <span key={l} className="flex items-center gap-1.5">
+            {i > 0 && <span className="text-white/20">/</span>}
+            <button
+              onClick={() => setLocale(l)}
+              className={`uppercase transition-colors duration-300 cursor-pointer ${
+                locale === l ? "text-white font-semibold" : "text-white/30 hover:text-white/60"
+              }`}
+            >
+              {l}
+            </button>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+
+  const lightNavRow = (
+    <div className="flex items-center justify-between px-6 pt-3 border-t border-[#1A1916]/10">
+      <div className="hidden md:flex items-center gap-8 lg:gap-10">
+        {heroLinks.map(({ label, href }) => (
+          <a
+            key={href}
+            href={href}
+            onClick={(e) => handleHeroNavClick(e, href)}
+            className="text-xs tracking-[0.18em] uppercase text-[#1A1916]/55 hover:text-[#1A1916] transition-colors duration-300"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+      <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
+        {(["es", "en"] as Locale[]).map((l, i) => (
+          <span key={l} className="flex items-center gap-1.5">
+            {i > 0 && <span className="text-[#1A1916]/20">/</span>}
+            <button
+              onClick={() => setLocale(l)}
+              className={`uppercase transition-colors duration-300 cursor-pointer ${
+                locale === l
+                  ? "text-[#1A1916] font-semibold"
+                  : "text-[#1A1916]/30 hover:text-[#1A1916]/60"
+              }`}
+            >
+              {l}
+            </button>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
-    // Contenedor de 250vh — da "recorrido" al scroll para que el sticky dure
     <section
       ref={containerRef}
-      className="relative z-0"
-      style={{ height: "250vh" }}
+      className="relative z-10"
+      style={{ height: "350vh" }}
     >
-      {/* Sticky viewport — se queda fijo mientras el scroll avanza */}
       <div
         className="sticky top-0 h-screen overflow-hidden bg-black"
         onMouseMove={handlePointerMove}
       >
-        {/* ── Capa 1 · fondo — parallax lento + blur progresivo de salida ── */}
+        {/* ── Fondo ── */}
         <motion.div
           className="absolute inset-0 will-change-transform"
-          style={{
-            y: bgY,
-            scale: bgScale,
-            filter: bgFilter,
-            transformOrigin: "center bottom",
-          }}
+          style={{ y: bgY, scale: bgScale, filter: bgFilter, transformOrigin: "center bottom" }}
         >
           <Image
             src="/CiaparaHeroImg.jpeg"
@@ -105,11 +176,10 @@ export default function Hero() {
             priority
             className="object-cover object-center"
           />
-          {/* overlay oscuro para mantener legibilidad del texto */}
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>
 
-        {/* Textura de grano — sutil, da sensación de lienzo pintado */}
+        {/* Grano */}
         <div
           className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
           style={{
@@ -118,7 +188,7 @@ export default function Hero() {
           }}
         />
 
-        {/* ── Capa 2 · resplandores — parallax de scroll + drift por cursor ── */}
+        {/* ── Resplandores ── */}
         <motion.div
           className="absolute inset-0 pointer-events-none will-change-transform"
           style={{ y: glowY, opacity: glowOpacity }}
@@ -143,19 +213,12 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* ── Texto — "push-through" cinematográfico (escala + elevación + blur + fundido) ── */}
+        {/* ── TOP: Título + Nav versión oscura ── */}
         <motion.div
-          className="relative z-10 h-full mx-auto px-6 flex flex-col justify-end pb-20"
-          style={{
-            y: textY,
-            scale: textScale,
-            opacity: textOpacity,
-            filter: textFilter,
-            transformOrigin: "left bottom",
-          }}
+          className="absolute top-0 left-0 right-0 z-10 pt-8"
+          style={{ y: textY, scale: textScale, opacity: textOpacity, filter: textFilter, transformOrigin: "left top" }}
         >
-          {/* Label — clip reveal */}
-          <div className="overflow-hidden mb-8">
+          <div className="overflow-hidden mb-3 px-6">
             <motion.p
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
@@ -165,41 +228,38 @@ export default function Hero() {
               {t.hero.place}
             </motion.p>
           </div>
-
-          {/* Heading — two lines with staggered clip reveal */}
-          <h1>
-          <div className="overflow-hidden mb-2">
+          <h1 className="overflow-hidden w-full mb-4">
             <motion.span
               initial={{ y: "105%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.0, ease: expo, delay: 0.5 }}
-              className="block text-[clamp(4rem,12vw,11rem)] font-bold tracking-tight text-white leading-[0.9]"
+              className="block font-bold tracking-[-0.02em] text-white leading-[0.88] whitespace-nowrap"
+              style={{ fontSize: "clamp(2rem, 10.2vw, 20rem)" }}
             >
-              ENRIQUE
+              ENRIQUE CIAPARA
             </motion.span>
-          </div>
-          <div className="overflow-hidden mb-8">
-            <motion.span
-              initial={{ y: "105%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1.0, ease: expo, delay: 0.65 }}
-              className="block text-[clamp(4rem,12vw,11rem)] font-bold tracking-tight text-white leading-[0.9]"
-            >
-              CIAPARA
-            </motion.span>
-          </div>
           </h1>
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: expo, delay: 1.0 }}
+          >
+            {darkNavRow}
+          </motion.div>
+        </motion.div>
 
-          {/* Divider — expand from left */}
+        {/* ── BOTTOM: Divider + Subtítulo versión oscura ── */}
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 z-10 px-6 pb-8 flex flex-col"
+          style={{ opacity: textOpacity, filter: textFilter }}
+        >
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.7, ease: expo, delay: 0.95 }}
-            className="w-16 h-px bg-white/25 mb-8 origin-left"
+            className="w-16 h-px bg-white/25 mb-6 origin-left"
           />
-
-          {/* Subtitle — clip reveal */}
-          <div className="overflow-hidden mb-6">
+          <div className="overflow-hidden">
             <motion.h2
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
@@ -209,25 +269,11 @@ export default function Hero() {
               {t.hero.subtitle}
             </motion.h2>
           </div>
-
-          {/* Scroll indicator */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: expo, delay: 1.75 }}
-            className="mt-20 flex items-center gap-4 text-white/25 text-xs tracking-[0.25em] uppercase"
-          >
-            <div className="w-10 h-px bg-white/25" />
-            {t.hero.scroller}
-          </motion.div>
         </motion.div>
 
-        {/* ── Hilo de progreso de scroll — detalle editorial en el borde derecho ── */}
+        {/* ── Hilo de progreso ── */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center gap-4 h-44">
-          <span
-            className="text-[10px] tracking-[0.3em] text-white/30 uppercase"
-            style={{ writingMode: "vertical-rl" }}
-          >
+          <span className="text-[10px] tracking-[0.3em] text-white/30 uppercase" style={{ writingMode: "vertical-rl" }}>
             Scroll
           </span>
           <div className="relative w-px flex-1 bg-white/10 overflow-hidden">
@@ -238,32 +284,33 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Revelado tipo iris — cortina circular que descubre el MISMO
-              contenido del hero, ahora en paleta invertida (claro/oscuro),
-              como si el lienzo cambiara de tono al abrirse ── */}
+        {/* ── Iris overlay ── */}
         <motion.div
-          className="absolute inset-0 z-20 pointer-events-none overflow-hidden"
+          className="absolute inset-0 z-20 overflow-hidden"
           style={{ clipPath: irisClip }}
         >
-          <div className="absolute inset-0 bg-[#F6F2EC]" />
+          <div className="absolute inset-0 bg-[#F6F2EC] pointer-events-none" />
 
-          <div className="relative z-10 h-full mx-auto px-6 flex flex-col justify-end pb-20">
-            <p className="text-xs tracking-[0.35em] uppercase text-[#1A1916]/40 mb-8">
+          {/* Título + Nav versión clara */}
+          <div className="absolute top-0 left-0 right-0 pt-8 z-10">
+            <p className="text-xs tracking-[0.35em] uppercase text-[#1A1916]/40 mb-3 px-6">
               {t.hero.place}
             </p>
-
-            <h1>
-            <span className="block text-[clamp(4rem,12vw,11rem)] font-bold tracking-tight text-[#1A1916] leading-[0.9] mb-2">
-              ENRIQUE
-            </span>
-            <span className="block text-[clamp(4rem,12vw,11rem)] font-bold tracking-tight text-[#1A1916] leading-[0.9] mb-8">
-              CIAPARA
-            </span>
+            <h1 className="overflow-hidden w-full mb-4">
+              <span
+                className="block font-bold tracking-[-0.02em] text-[#1A1916] leading-[0.88] whitespace-nowrap"
+                style={{ fontSize: "clamp(2rem, 10.2vw, 20rem)" }}
+              >
+                ENRIQUE CIAPARA
+              </span>
             </h1>
+            {lightNavRow}
+          </div>
 
-            <div className="w-16 h-px bg-[#1A1916]/25 mb-8" />
-
-            <h2 className="text-base md:text-lg text-[#1A1916]/55 tracking-[0.12em] uppercase font-normal mb-6">
+          {/* Divider + Subtítulo */}
+          <div className="absolute bottom-0 left-0 right-0 px-6 pb-8 flex flex-col z-10 pointer-events-none">
+            <div className="w-16 h-px bg-[#1A1916]/25 mb-6" />
+            <h2 className="text-base md:text-lg text-[#1A1916]/55 tracking-[0.12em] uppercase font-normal">
               {t.hero.subtitle}
             </h2>
           </div>

@@ -15,7 +15,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
+        {/* About sube desde abajo sobre el hero. El tope es el título+nav fijo (z-40).
+            margin-top negativo hace que About empiece a asomarse durante los últimos
+            100vh del hero. bg-[#F6F2EC] coincide con el iris para transición suave. */}
+        <div className="relative z-30 bg-[#F6F2EC]" style={{ marginTop: "calc(-100vh + 300px)" }}>
+          <About />
+        </div>
         <Collections />
         {/* <Works />
         <Letters />
