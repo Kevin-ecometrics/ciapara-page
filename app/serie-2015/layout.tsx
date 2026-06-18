@@ -9,10 +9,11 @@ export const metadata: Metadata = {
     "Colección 2015 Ciapara, Enrique Ciapara, pintor Tijuana, artista abstracto mexicano, síntesis mediterránea bajacaliforniana, artista visual baja californiano, frontera San Diego Tijuana, pintura contemporánea, avenida revolución Tijuana",
 
   alternates: {
-    canonical: "https://enriqueciapara.com/2015",
+    canonical: "https://enriqueciapara.com/serie-2015",
     languages: {
-      es: "https://enriqueciapara.com/2015",
-      en: "https://enriqueciapara.com/en/2015",
+      es: "https://enriqueciapara.com/serie-2015",
+      en: "https://enriqueciapara.com/en/serie-2015",
+      "x-default": "https://enriqueciapara.com/serie-2015",
     },
   },
   robots: {

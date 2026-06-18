@@ -21,12 +21,15 @@ export default function Navbar() {
 
   const links = [
     { label: t.nav.about, href: `${homeBase}#about` },
-    { label: t.nav.collections, href: `${homeBase}#collections` },
+    { label: t.nav.collections, href: `${homeBase}#obras` },
     { label: t.nav.news, href: `${homeBase}#news` },
     { label: t.nav.contact, href: `${homeBase}#contacto` },
   ];
 
-  function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  function handleNavClick(
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) {
     if (!isHome) {
       sessionStorage.setItem("skip-intro", "1");
       return;
@@ -41,7 +44,7 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    const heroH = () => window.innerHeight * 2.5;
+    const heroH = () => window.innerHeight * 1.5;
     const onScroll = () => {
       const y = window.scrollY;
       setInHero(y < heroH());
@@ -114,8 +117,6 @@ export default function Navbar() {
           transition={{ duration: 0.6, ease: expo, delay: 0.6 }}
           className="flex items-center gap-3"
         >
-
-
           <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
             {(["es", "en"] as Locale[]).map((l, i) => (
               <span key={l} className="flex items-center gap-1.5">

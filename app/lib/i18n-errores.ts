@@ -3,7 +3,7 @@ import type { Locale } from './i18n'
 export const erroresTranslations = {
   es: {
     hero: {
-      subtitle: "Colección · Enrique Ciapara · 2018 — 2019",
+      subtitle: "Obras · Enrique Ciapara · 2018 — 2019",
       title1: "Catálogo de",
       title2: "Errores",
       explore: "Explorar",
@@ -25,7 +25,7 @@ export const erroresTranslations = {
   },
   en: {
     hero: {
-      subtitle: "Collection · Enrique Ciapara · 2018 — 2019",
+      subtitle: "Works · Enrique Ciapara · 2018 — 2019",
       title1: "Errores",
       title2: "Catalogue",
       explore: "Explore",

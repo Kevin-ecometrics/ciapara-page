@@ -38,7 +38,10 @@ const slides: Slide[] = [
   { type: "color", bg: "#8B3A2A" },
   { type: "color", bg: "#2A4A6B" },
   { type: "color", bg: "#3A6B4A" },
+  { type: "color", bg: "#8B6B2A" },
 ];
+
+const years = ["1991", "2000", "2009", "2015", "2026"];
 
 export default function About() {
   const { t } = useI18n();
@@ -100,42 +103,6 @@ export default function About() {
 
   return (
     <section id="about" className="bg-[#F6F2EC]">
-      {/* Texto — scroll normal */}
-      <div className="pt-28 md:pt-36 pb-16 px-6 mx-auto">
-        <h3 className="text-2xl lg:text-4xl font-bold uppercase mb-6 leading-[1.15] max-w-xl md:max-w-3xl lg:max-w-7xl indent-20 md:indent-56">
-          "{t.about.quote}"
-        </h3>
-        <p className=" font-normal text-2xl mb-12">- {t.about.speaker}</p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: expo }}
-          viewport={{ once: true, amount: 0.15 }}
-          className="leading-relaxed max-w-2xl mb-6"
-        >
-          "{t.about.text}"
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: expo }}
-          viewport={{ once: true, amount: 0.15 }}
-          className="text-sm leading-relaxed max-w-xl"
-        >
-          - {t.about.speaker2}
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: expo }}
-          viewport={{ once: true, amount: 0.15 }}
-          className="text-sm leading-relaxed max-w-xl pl-2"
-        >
-          ({t.about.date})
-        </motion.p>
-      </div>
-
       {/*
         200vh → 100vh de scroll pinned.
         El usuario no puede seguir bajando hasta que la flecha llegue al final.
@@ -171,8 +138,19 @@ export default function About() {
                   </svg>
                 </div>
 
-                <p className="text-4xl md:text-6xl font-bold leading-[1.15] shrink-0 uppercase">
-                  {t.about.postArrow}
+                <p className="relative text-4xl md:text-6xl font-bold leading-[1.15] shrink-0 uppercase">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={years[slideIndex]}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="block"
+                    >
+                      {years[slideIndex]}
+                    </motion.span>
+                  </AnimatePresence>
                 </p>
               </div>
             </div>

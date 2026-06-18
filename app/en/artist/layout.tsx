@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://enriqueciapara.com/artist",
+    canonical: "https://enriqueciapara.com/en/artist",
     languages: {
       es: "https://enriqueciapara.com/artist",
       en: "https://enriqueciapara.com/en/artist",
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ArtistLayout({
+export default function EnArtistLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return <main>{children}</main>
+  return <main>{children}</main>;
 }

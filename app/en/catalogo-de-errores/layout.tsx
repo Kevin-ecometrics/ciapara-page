@@ -9,10 +9,11 @@ export const metadata: Metadata = {
     "Catálogo de Errores, Enrique Ciapara, pintor Tijuana, artista abstracto mexicano, Ciapara, frontera San Diego Tijuana, artista visual baja californiano, colección 2018 2019, Botticelli Ciapara, pintura contemporánea Tijuana",
 
   alternates: {
-    canonical: "https://enriqueciapara.com/errores",
+    canonical: "https://enriqueciapara.com/en/catalogo-de-errores",
     languages: {
-      es: "https://enriqueciapara.com/errores",
-      en: "https://enriqueciapara.com/en/errores",
+      es: "https://enriqueciapara.com/catalogo-de-errores",
+      en: "https://enriqueciapara.com/en/catalogo-de-errores",
+      "x-default": "https://enriqueciapara.com/catalogo-de-errores",
     },
   },
   robots: {

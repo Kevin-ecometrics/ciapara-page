@@ -2,7 +2,7 @@ import IntroAnimation from "./components/IntroAnimation";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Collections from "./components/Collections";
+import Collections from "./components/Obras";
 import Works from "./components/Works";
 import Carousel from "./components/Carousel";
 import FooterReveal from "./components/FooterReveal";
@@ -15,12 +15,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        {/* About sube desde abajo sobre el hero. El tope es el título+nav fijo (z-40).
-            margin-top negativo hace que About empiece a asomarse durante los últimos
-            100vh del hero. bg-[#F6F2EC] coincide con el iris para transición suave. */}
-        <div className="relative z-30 bg-[#F6F2EC]" style={{ marginTop: "calc(-100vh + 300px)" }}>
-          <About />
-        </div>
+        {/* El título, nav y el inicio de About (quote) ya se revelan juntos
+            dentro del iris de Hero (ver HeroReveal). Cuando el sticky de Hero
+            se despega, este About (la parte con scroll-track propio) continúa
+            de forma inmediata, sin solape ni desfase. */}
+        <About />
         <Collections />
         {/* <Works />
         <Letters />

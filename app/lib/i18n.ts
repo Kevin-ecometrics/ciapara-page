@@ -4,14 +4,14 @@ export const translations = {
     es: {
     nav: {
         about: "Acerca de",
-        collections: "Colecciones",
+        collections: "Obras",
         news: "Prensa",
         contact: "Contacto",
         artistPage: "Artista",
         aboutPage: "Textos",
         },
     hero: {
-        place: "Estudio · Tijuana, B.C. · Est. 2026",
+        place: "Estudio 1991 · Tijuana, B.C. México",
         title: "Enrique Ciapara",
         subtitle: "Artista abstracto basado en Tijuana México",
         scroller: "Desplazar"   
@@ -62,18 +62,22 @@ export const translations = {
             privacy: "Privacidad",
             credits: "Créditos",
         },
+        worksFooter: {
+            works: "Obras",
+            seeMore: "Ver más",
+        },
         },
         en: {
     nav: {
         about: "About",
-        collections: "Collections",
+        collections: "Works",
         news: "News",
         contact: "Contact",
         artistPage: "Artist",
         aboutPage: "Texts",
         },
             hero: {
-                place: "Studio · Tijuana, B.C. · Est. 2026",
+                place: "Studio 1991 · Tijuana, B.C. México",
                 title: "Enrique Ciapara",
                 subtitle: "Abstract artist based in Tijuana, Mexico",
                 scroller: "scroller",  
@@ -124,6 +128,10 @@ export const translations = {
                 privacy: "Privacy",
                 credits: "Credits",
             },
+            worksFooter: {
+                works: "Works",
+                seeMore: "See more",
+            }
   },
 
 };
@@ -135,4 +143,5 @@ export type Translations = {
     collections: {quoteBold: string; quote: string; speaker: string; date: string; items:{title: string; description: string}[]};
     works: {title: string};
     footer: {studio: string; studioDesc: string; established: string; navigation: string; contact: string; location1: string; location2: string; rights: string; developedBy: string; privacy: string; credits: string};
+    worksFooter: {works: string; seeMore: string;};
 };

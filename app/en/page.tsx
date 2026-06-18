@@ -2,7 +2,7 @@ import IntroAnimation from "../components/IntroAnimation";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Collections from "../components/Collections";
+import Collections from "../components/Obras";
 import FooterReveal from "../components/FooterReveal";
 
 export default function HomeEn() {
@@ -12,12 +12,7 @@ export default function HomeEn() {
       <Navbar />
       <main>
         <Hero />
-        <div
-          className="relative z-30 bg-[#F6F2EC]"
-          style={{ marginTop: "calc(-100vh + 300px)" }}
-        >
-          <About />
-        </div>
+        <About />
         <Collections />
         <FooterReveal />
       </main>

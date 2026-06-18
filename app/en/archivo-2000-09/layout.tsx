@@ -9,10 +9,11 @@ export const metadata: Metadata = {
     "Enrique Ciapara 2000 2009, Ciapara colección blurb, pintor Tijuana, artista abstracto mexicano, Ciapara, frontera San Diego Tijuana, artista visual baja californiano, pintura contemporánea, trayectoria Ciapara",
 
   alternates: {
-    canonical: "https://enriqueciapara.com/blurb",
+    canonical: "https://enriqueciapara.com/en/archivo-2000-09",
     languages: {
-      es: "https://enriqueciapara.com/blurb",
-      en: "https://enriqueciapara.com/en/blurb",
+      es: "https://enriqueciapara.com/archivo-2000-09",
+      en: "https://enriqueciapara.com/en/archivo-2000-09",
+      "x-default": "https://enriqueciapara.com/archivo-2000-09",
     },
   },
   robots: {

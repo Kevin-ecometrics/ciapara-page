@@ -3,8 +3,8 @@ import type { Locale } from './i18n'
 export const translations2015 = {
   es: {
     hero: {
-      subtitle: "Colección · Enrique Ciapara · 2015",
-      title1: "Catálogo",
+      subtitle: "Obras · Enrique Ciapara · 2015",
+      title1: "Serie",
       title2: "2015",
       explore: "Explorar",
     },
@@ -25,9 +25,9 @@ export const translations2015 = {
   },
   en: {
     hero: {
-      subtitle: "Collection · Enrique Ciapara · 2015",
+      subtitle: "Works · Enrique Ciapara · 2015",
       title1: "2015",
-      title2: "Catalogue",
+      title2: "Series",
       explore: "Explore",
     },
     nav: {
