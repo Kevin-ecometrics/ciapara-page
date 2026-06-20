@@ -50,3 +50,16 @@ server/*
 *.wmv
 *.flv
 *.mkv
+
+#heavy images
+public/images/*.jpg
+public/images/*.jpeg
+public/images/*.pdf
+
+# only .webp allowed in these galleries — never commit raw .jpg originals
+public/images/2015/*.jpg
+public/images/2015/*.jpeg
+public/images/blurb/*.jpg
+public/images/blurb/*.jpeg
+public/images/errores/*.jpg
+public/images/errores/*.jpeg

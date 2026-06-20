@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://enriqueciapara.com"),
-  title: "Colección 2015 | Enrique Ciapara — Síntesis bajacaliforniana y mediterránea",
+  title: "Enrique Ciapara's 2015 Series of Works",
   description:
-    "Explora la colección 2015 de Enrique Ciapara: pintura semiabstracta y sintética que celebra el paisaje del Norte, la luz de Tarragona y el alma de la frontera.",
+    "Explora la serie 2015 con pintura universal con alma norteña semiabstracta y sintética que celebra el paisaje del Norte y la luz de Tarragona.",
   keywords:
     "Colección 2015 Ciapara, Enrique Ciapara, pintor Tijuana, artista abstracto mexicano, síntesis mediterránea bajacaliforniana, artista visual baja californiano, frontera San Diego Tijuana, pintura contemporánea, avenida revolución Tijuana",
 

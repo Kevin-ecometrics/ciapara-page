@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://enriqueciapara.com"),
-  title: "Colección 2000-2009 | Enrique Ciapara — Una década de obra",
+  title: "Enrique Ciapara, 2000–09 Collection ",
   description:
-    "En esta colección de más de nueve años, Enrique Ciapara se presenta como un hábil mediador entre lo que él quiere y lo que la pintura quiere. Descubre más.",
+    "In this collection spanning more than 10 years, the artist is presented as a skilled mediator between what he wants and what the painting wants. Learn more",
   keywords:
-    "Enrique Ciapara 2000 2009, Ciapara colección blurb, pintor Tijuana, artista abstracto mexicano, Ciapara, frontera San Diego Tijuana, artista visual baja californiano, pintura contemporánea, trayectoria Ciapara",
+    "painter ciapara, Artist, Enrique Ciapara, Ciapara, Tijuana, San Diego-Tijuana Border, Revolution Avenue, Signs, Enrique Ciapara visual artist from Baja California, Enrique Ciapara Mexican abstract artist, Enrique Ciapara Mexican abstract artist, Enrique Ciapara artist from the San Diego-Tijuana border region, Enrique Ciapara artist in Tijuana",
 
   alternates: {
     canonical: "https://enriqueciapara.com/en/archivo-2000-09",

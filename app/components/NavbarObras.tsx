@@ -26,6 +26,11 @@ export default function NavbarErrores() {
     router.push(locale === "en" ? "/en#obras" : "/#obras");
   }
 
+  function handleBackMain() {
+    sessionStorage.setItem("skip-intro", "0");
+    router.push(locale === "en" ? "/en" : "/");
+  }
+
   const colorText = scrolled ? "text-[#1A1916]" : "text-white";
   const colorMuted = scrolled ? "text-[#6B6660]" : "text-white/50";
 
@@ -69,14 +74,15 @@ export default function NavbarErrores() {
         </motion.button>
 
         {/* Logo — centro */}
-        <motion.span
+        <motion.button
+          onClick={handleBackMain}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: expo, delay: 0.2 }}
-          className={`text-xs font-semibold tracking-[0.4em] uppercase transition-colors duration-500 ${colorText}`}
+          className={`hover:cursor-pointer text-xs font-semibold tracking-[0.4em] uppercase transition-colors duration-500 ${colorText}`}
         >
           C I A P A R A
-        </motion.span>
+        </motion.button>
 
         {/* Derecha — email + selector de idioma */}
         <motion.div

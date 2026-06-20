@@ -20,7 +20,7 @@ export default function HeroArchivo00_09() {
   // El título se desplaza hacia abajo y se desvanece a medida que se scrollea,
   // como si quedara "atrás" justo antes de llegar a la galería.
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "45%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 1]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0.25]);
 
   return (
     <section

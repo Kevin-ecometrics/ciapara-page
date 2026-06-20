@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useI18n } from "../../../providers/i18nProvider";
 import { useErroresT } from "../../../lib/i18n-errores";
 
@@ -10,14 +11,27 @@ export default function HeroErrores() {
   const { t, locale } = useI18n();
   const eT = useErroresT(locale);
   const collection = t.collections.items[0];
+  const heroRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  // El título se desplaza hacia abajo y se desvanece a medida que se scrollea,
+  // como si quedara "atrás" justo antes de llegar a la galería.
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "45%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0.25]);
 
   return (
-    <section className="relative h-screen overflow-hidden bg-black">
+    <section
+      ref={heroRef}
+      className="relative h-screen overflow-hidden bg-black"
+    >
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
-          src="/images/errores/Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp"
-          alt="Obra titulada Banquete en el pinar elaborada en acrílico sobre tela 152 x 429 por Enrique Ciapara 2019"
+          src="/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp"
+          alt="Work titled Banquet in the Pine Forest, made in acrylic on canvas, 152 x 429 cm, by Enrique Ciapara, 2019"
           className="w-full h-full object-cover object-center scale-105"
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/85" />
@@ -32,8 +46,11 @@ export default function HeroErrores() {
         }}
       />
 
-      {/* Contenido — centrado vertical y horizontal */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+      {/* Contenido — cargado a la izquierda */}
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative z-10 h-full flex flex-col items-start justify-center text-left px-6 md:px-14 lg:px-20"
+      >
         {/* Etiqueta */}
         <div className="overflow-hidden mb-8">
           <motion.p
@@ -47,7 +64,7 @@ export default function HeroErrores() {
         </div>
 
         {/* Título */}
-        <h1 className="flex flex-col items-center">
+        <h1 className="flex flex-col items-start">
           <div className="overflow-hidden">
             <motion.span
               initial={{ y: "105%" }}
@@ -70,12 +87,12 @@ export default function HeroErrores() {
           </div>
         </h1>
 
-        {/* Divisor centrado */}
+        {/* Divisor */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, ease: expo, delay: 0.9 }}
-          className="w-12 h-px bg-white/25 my-8 origin-center"
+          className="w-12 h-px bg-white/25 my-8 origin-left"
         />
 
         {/* Descripción */}
@@ -84,7 +101,7 @@ export default function HeroErrores() {
             initial={{ y: "110%" }}
             animate={{ y: 0 }}
             transition={{ duration: 0.75, ease: expo, delay: 1.0 }}
-            className=" text-white/45 leading-relaxed tracking-widest uppercase"
+            className="text-white/45 leading-relaxed tracking-widest uppercase"
           >
             {collection.description}
           </motion.p>
@@ -95,12 +112,12 @@ export default function HeroErrores() {
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: expo, delay: 1.6 }}
-          className="absolute bottom-10 flex flex-col items-center gap-3 text-white/25 text-[10px] tracking-[0.35em] uppercase"
+          className="absolute bottom-10 left-6 md:left-14 lg:left-20 flex flex-col items-start gap-3 text-white/25 text-[10px] tracking-[0.35em] uppercase"
         >
           {eT.hero.explore}
           <div className="w-px h-8 bg-white/20" />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
