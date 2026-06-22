@@ -201,7 +201,7 @@ export default function Gallery() {
               &times;
             </button>
             <img
-              src={lightboxImage.src.replace(/\.webp$/i, ".jpg")}
+              src={lightboxImage.src}
               alt={lightboxImage.alt}
               onClick={(e) => e.stopPropagation()}
               className="w-full h-full object-contain"

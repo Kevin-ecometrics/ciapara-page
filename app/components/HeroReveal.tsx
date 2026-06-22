@@ -2,6 +2,7 @@
 
 import { useI18n } from "../providers/i18nProvider";
 import type { Locale } from "../lib/i18n";
+import { scrollToSection } from "../lib/scrollToSection";
 import AboutIntro from "./AboutIntro";
 
 export default function HeroReveal() {
@@ -19,12 +20,7 @@ export default function HeroReveal() {
     href: string,
   ) {
     e.preventDefault();
-    const id = href.replace("#", "");
-    if (id === "contacto") {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection(href.replace("#", ""));
   }
 
   return (

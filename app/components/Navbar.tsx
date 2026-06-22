@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { useI18n } from "../providers/i18nProvider";
 import type { Locale } from "../lib/i18n";
+import { scrollToSection } from "../lib/scrollToSection";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
@@ -35,12 +36,7 @@ export default function Navbar() {
       return;
     }
     e.preventDefault();
-    const id = href.replace(/.*#/, "");
-    if (id === "contacto") {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection(href.replace(/.*#/, ""));
   }
 
   useEffect(() => {

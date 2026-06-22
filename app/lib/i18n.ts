@@ -51,8 +51,8 @@ export const translations = {
             },
         footer: {
             studio: "Estudio",
-            studioDesc: "Arte abstracto contemporáneo desde Tijuana, Baja California.",
-            established: "Tijuana, México · Est. 2001",
+            studioDesc: "Tijuana, Baja California.",
+            established: "Tijuana, B.C. México",
             navigation: "Navegación",
             contact: "Contacto",
             location1: "Tijuana, Baja California",
@@ -117,8 +117,8 @@ export const translations = {
             },
             footer: {
                 studio: "Studio",
-                studioDesc: "Contemporary abstract art from Tijuana, Baja California.",
-                established: "Tijuana, México · Est. 2001",
+                studioDesc: "Tijuana, Baja California.",
+                established: "Tijuana, B.C. México",
                 navigation: "Navigation",
                 contact: "Contact",
                 location1: "Tijuana, Baja California",

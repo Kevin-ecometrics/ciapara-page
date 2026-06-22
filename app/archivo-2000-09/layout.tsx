@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://enriqueciapara.com"),
-  title: "Colección 2000-2009 | Enrique Ciapara — Una década de obra",
+  title: "Enrique Ciapara colección 2000-09",
   description:
     "En esta colección de más de nueve años, Enrique Ciapara se presenta como un hábil mediador entre lo que él quiere y lo que la pintura quiere. Descubre más.",
   keywords:

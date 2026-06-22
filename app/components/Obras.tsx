@@ -32,7 +32,7 @@ const collectionsMeta = [
   {
     num: "03",
     hoverBg: "bg-[#4C2A1D]",
-    img: "/images/errores/Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp",
+    img: "/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp",
     imgFallback: "#05df72",
     href: "/catalogo-de-errores",
     hrefEn: "/en/catalogo-de-errores",
@@ -95,7 +95,7 @@ export default function Collections() {
       style={{ height: isMobile ? `${collections.length * 100}vh` : "auto" }}
     >
       <div
-        className={`relative overflow-hidden px-6 transition-colors duration-300 ${sectionBg} ${
+        className={`relative overflow-hidden px-6 transition-colors duration-300 h-screen ${sectionBg} ${
           isMobile
             ? "sticky top-0 h-screen flex flex-col justify-center"
             : "py-28 md:py-36"

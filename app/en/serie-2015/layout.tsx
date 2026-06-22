@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://enriqueciapara.com"),
-  title:
-    "Colección 2015 | Enrique Ciapara — Síntesis bajacaliforniana y mediterránea",
+  title: "Enrique Ciapara's 2015 Series of Works",
   description:
     "Explore the 2015 series, featuring universal paintings with a semi-abstract, synthetic Northern spirit that celebrate the Northern landscape and the light of Tarragona.",
   keywords:

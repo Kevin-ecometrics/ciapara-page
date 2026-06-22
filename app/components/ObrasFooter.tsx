@@ -19,7 +19,7 @@ const collectionsMeta = [
     hrefEn: "/en/serie-2015",
   },
   {
-    img: "/images/errores/Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp",
+    img: "/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp",
     href: "/catalogo-de-errores",
     hrefEn: "/en/catalogo-de-errores",
   },

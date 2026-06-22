@@ -2,7 +2,7 @@ import IntroAnimation from "../components/IntroAnimation";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Collections from "../components/Obras";
+import Obras from "../components/Obras";
 import FooterReveal from "../components/FooterReveal";
 
 export default function HomeEn() {
@@ -13,7 +13,7 @@ export default function HomeEn() {
       <main>
         <Hero />
         <About />
-        <Collections />
+        {/* <Obras /> */}
         <FooterReveal />
       </main>
     </>

@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useI18n } from "../../providers/i18nProvider";
-import { useErroresT } from "../../lib/i18n-errores";
-import { images } from "./GalleryImagesErrores";
+import { use2015T } from "../../lib/i18n-2015";
+import { images } from "./GalleryImages2015";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 const DISPLAY_MS = 150;
@@ -24,9 +24,9 @@ const ENTER_FROM = [
   { x: "3%", y: "-3%" },
 ];
 
-export default function IntroErrores() {
+export default function IntroSerie2015() {
   const { locale } = useI18n();
-  const eT = useErroresT(locale);
+  const t2015 = use2015T(locale);
   const imagenes = images.slice(0, IMAGE_COUNT);
 
   const [visible, setVisible] = useState(true);
@@ -133,7 +133,7 @@ export default function IntroErrores() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          key="intro-errores"
+          key="intro-2015"
           className="fixed inset-0 z-[9999] bg-black overflow-hidden"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.45, ease: expo }}
@@ -155,7 +155,7 @@ export default function IntroErrores() {
                     animate={{ y: 0 }}
                     transition={{ duration: 1.0, ease: expo, delay: 0.1 }}
                   >
-                    {eT.hero.title1}
+                    {t2015.hero.title1}
                   </motion.span>
                 </div>
                 <div className="overflow-hidden">
@@ -166,7 +166,7 @@ export default function IntroErrores() {
                     animate={{ y: 0 }}
                     transition={{ duration: 1.0, ease: expo, delay: 0.25 }}
                   >
-                    {eT.hero.title2}
+                    {t2015.hero.title2}
                   </motion.span>
                 </div>
                 <motion.div

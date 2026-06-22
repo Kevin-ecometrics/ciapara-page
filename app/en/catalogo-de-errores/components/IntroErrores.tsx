@@ -1,88 +1,67 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useI18n } from "../../../providers/i18nProvider";
 import { useErroresT } from "../../../lib/i18n-errores";
+import { images } from "./GalleryImagesErrores";
 
 const expo = [0.16, 1, 0.3, 1] as const;
-// Curva simétrica para el giro de página — acelera y luego frena, como una
-// hoja de papel cayendo por su propio peso. La curva "expo" (arriba) es un
-// ease-out fuerte pensado para revelar texto, no para un giro físico.
-const pageFlipEase = [0.45, 0.05, 0.55, 0.95] as const;
+const DISPLAY_MS = 150;
+const NAME_MS = 2400;
+const IMAGE_COUNT = 10;
 
-// Cuántas páginas interiores se usan (en parejas, como páginas dobles).
-// Cambia este número para que el hojeo dure más o menos.
-const SOURCE_PAGE_COUNT = 30;
-const SPREAD_COUNT = SOURCE_PAGE_COUNT / 2;
-
-const COVER_SRC = "/images/errores/cuaderno/pagina-01.webp";
-// pagina-01 es la portada; las páginas interiores empiezan en pagina-02.
-const PAGES = Array.from(
-  { length: SOURCE_PAGE_COUNT },
-  (_, i) => `/images/errores/cuaderno/pagina-${String(i + 2).padStart(2, "0")}.webp`,
-);
-const SPREADS = Array.from({ length: SPREAD_COUNT }, (_, i) => [
-  PAGES[i * 2],
-  PAGES[i * 2 + 1],
-]);
-const ALL_SRCS = [COVER_SRC, ...PAGES];
-
-// El libro cerrado mide una página; abierto, mide el doble (la pareja de
-// hojas), pero la altura no cambia — así se ve horizontal al abrirse.
-const BOOK_H_VMIN = 48;
-const SINGLE_W_VMIN = +((BOOK_H_VMIN * 618) / 760).toFixed(1);
-const DOUBLE_W_VMIN = +(SINGLE_W_VMIN * 2).toFixed(1);
-
-const NAME_MS = 1500;
-const OPEN_DELAY_MS = 300;
-const OPEN_CLOSE_DURATION = 0.5;
-// FLIP_MS debe ser mayor que FLIP_DURATION (en ms): si el intervalo dispara
-// la siguiente página antes de que la anterior termine de girar, esa
-// animación se corta a mitad de camino y salta a su posición final — eso es
-// lo que se sentía "trabado". Con el intervalo más holgado, cada hoja
-// completa su arco antes de que empiece la próxima.
-const FLIP_MS = 260;
-const FLIP_DURATION = 0.24;
-const CLOSE_DELAY_MS = 150;
-const HOLD_MS = 550;
-
-// Cuántas páginas futuras se mantienen montadas por adelantado. Solo se
-// renderizan las hojas cercanas al índice actual (en vez de las 15 a la
-// vez) para que el navegador no tenga que componer ~30 imágenes en 3D al
-// mismo tiempo — eso era lo que causaba el trabajo al girar las páginas.
-const LOOKAHEAD = 2;
+const ENTER_FROM = [
+  { x: "4%", y: "0%" },
+  { x: "-4%", y: "0%" },
+  { x: "0%", y: "3%" },
+  { x: "0%", y: "-3%" },
+  { x: "3%", y: "2%" },
+  { x: "-3%", y: "-2%" },
+  { x: "4%", y: "-2%" },
+  { x: "-4%", y: "2%" },
+  { x: "0%", y: "3%" },
+  { x: "3%", y: "-3%" },
+];
 
 export default function IntroErrores() {
   const { locale } = useI18n();
   const eT = useErroresT(locale);
+  const imagenes = images.slice(0, IMAGE_COUNT);
 
   const [visible, setVisible] = useState(true);
-  const [pageIndex, setPageIndex] = useState(0);
-  const [opened, setOpened] = useState(false);
-  const [closing, setClosing] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const [loadedCount, setLoadedCount] = useState(0);
   const [nameTimerDone, setNameTimerDone] = useState(false);
-  const [allLoaded, setAllLoaded] = useState(false);
+  const [firstImageReady, setFirstImageReady] = useState(false);
   const [loadedMask, setLoadedMask] = useState<boolean[]>(
-    Array(ALL_SRCS.length).fill(false),
+    Array(imagenes.length).fill(false),
   );
+  const loadedRef = useRef<boolean[]>(Array(imagenes.length).fill(false));
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const skipRef = useRef(false);
 
-  const phase: "name" | "book" = nameTimerDone && allLoaded ? "book" : "name";
-  const isOpen = opened && !closing;
+  const phase: "name" | "photos" =
+    nameTimerDone && firstImageReady ? "photos" : "name";
 
-  // Precarga la portada y todas las páginas en paralelo.
   useEffect(() => {
-    let loadedCount = 0;
-    ALL_SRCS.forEach((src, i) => {
+    if (sessionStorage.getItem("skip-intro") === "1") {
+      sessionStorage.removeItem("skip-intro");
+      skipRef.current = true;
+      setVisible(false);
+      return;
+    }
+    imagenes.forEach((item, i) => {
       const img = new window.Image();
       const settle = (ok: boolean) => {
-        loadedCount++;
+        loadedRef.current[i] = ok;
         setLoadedMask((prev) => {
           const next = [...prev];
           next[i] = ok;
           return next;
         });
-        if (loadedCount >= ALL_SRCS.length) setAllLoaded(true);
+        setLoadedCount((c) => c + 1);
+        if (i === 0 && ok) setFirstImageReady(true);
       };
       img.onload = () =>
         img
@@ -90,11 +69,13 @@ export default function IntroErrores() {
           .catch(() => {})
           .finally(() => settle(true));
       img.onerror = () => settle(false);
-      img.src = src;
+      img.src = item.src;
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
+    if (skipRef.current) return;
     const t = setTimeout(() => setNameTimerDone(true), NAME_MS);
     return () => clearTimeout(t);
   }, []);
@@ -118,47 +99,34 @@ export default function IntroErrores() {
     document.body.style.overflow = "";
   };
 
-  // Coreografía: portada cerrada -> se abre en doble página -> hojea
-  // rápido las páginas -> cierra la portada -> termina la intro.
   useEffect(() => {
-    if (phase !== "book") return;
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    let interval: ReturnType<typeof setInterval> | null = null;
+    if (phase !== "photos") return;
 
-    timers.push(
-      setTimeout(() => {
-        setOpened(true);
+    intervalRef.current = setInterval(() => {
+      setPhotoIndex((prev) => {
+        let next = prev + 1;
 
-        timers.push(
-          setTimeout(() => {
-            let i = 0;
-            interval = setInterval(() => {
-              i++;
-              setPageIndex(i);
-              if (i >= SPREAD_COUNT) {
-                if (interval) clearInterval(interval);
-                timers.push(
-                  setTimeout(() => {
-                    setClosing(true);
-                    timers.push(
-                      setTimeout(
-                        endIntro,
-                        OPEN_CLOSE_DURATION * 1000 + HOLD_MS,
-                      ),
-                    );
-                  }, CLOSE_DELAY_MS),
-                );
-              }
-            }, FLIP_MS);
-          }, OPEN_CLOSE_DURATION * 1000),
-        );
-      }, OPEN_DELAY_MS),
-    );
+        while (next < imagenes.length && loadedRef.current[next] === false) {
+          next++;
+        }
+
+        if (next >= imagenes.length) {
+          clearInterval(intervalRef.current!);
+          intervalRef.current = null;
+          setTimeout(endIntro, 120);
+          return prev;
+        }
+
+        if (!loadedRef.current[next]) return prev;
+
+        return next;
+      });
+    }, DISPLAY_MS);
 
     return () => {
-      timers.forEach(clearTimeout);
-      if (interval) clearInterval(interval);
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase]);
 
   return (
@@ -166,7 +134,7 @@ export default function IntroErrores() {
       {visible && (
         <motion.div
           key="intro-errores"
-          className="fixed inset-0 z-9999 bg-black overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-black overflow-hidden"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.45, ease: expo }}
         >
@@ -207,105 +175,69 @@ export default function IntroErrores() {
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 0.7, ease: expo, delay: 0.7 }}
                 />
+
+                <motion.div
+                  className="absolute bottom-8 left-1/2 -translate-x-1/2 w-32 flex flex-col items-center gap-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.9, duration: 0.4 }}
+                >
+                  <div className="w-full h-px bg-white/15 overflow-hidden">
+                    <motion.div
+                      className="h-full bg-white/60 origin-left"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: loadedCount / imagenes.length }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                    />
+                  </div>
+                  <span className="text-white/40 text-[10px] tracking-widest uppercase font-light">
+                    {loadedCount >= imagenes.length
+                      ? "listo"
+                      : `${loadedCount} / ${imagenes.length}`}
+                  </span>
+                </motion.div>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* Fase de libro — portada única, se abre en doble página y vuelve a cerrar */}
-          {phase === "book" && (
-            <div
-              className="absolute inset-0 flex items-center justify-center"
-              style={{ perspective: "2200px" }}
-            >
-              <motion.div
-                className="relative shadow-2xl shadow-black/60 rounded-md"
-                style={{ height: `${BOOK_H_VMIN}vmin`, willChange: "width" }}
-                animate={{
-                  width: `${isOpen ? DOUBLE_W_VMIN : SINGLE_W_VMIN}vmin`,
-                }}
-                transition={{ duration: OPEN_CLOSE_DURATION, ease: expo }}
-              >
-                {/* Base — queda al descubierto cuando todas las páginas se han pasado */}
-                <div className="absolute inset-0 rounded-md bg-[#15140f]" />
-
-                {/* Páginas dobles, encimadas — la de arriba se pasa primero.
-                    Solo se montan la que se está pasando y unas pocas por
-                    adelantado; las ya pasadas se desmontan (siguen ocultas
-                    igual, pero dejan de pesarle al navegador). */}
-                {SPREADS.map(([leftSrc, rightSrc], i) => {
-                  // Se mantiene un colchón hacia atrás para que la hoja que
-                  // todavía está terminando su giro (FLIP_DURATION) no se
-                  // desmonte a la mitad de la animación.
-                  if (i < pageIndex - 2 || i > pageIndex + LOOKAHEAD)
-                    return null;
-                  if (!loadedMask[i * 2 + 1] || !loadedMask[i * 2 + 2])
-                    return null;
-                  const flipped = i < pageIndex;
-                  return (
-                    <motion.div
-                      key={leftSrc}
-                      className="absolute inset-0 flex overflow-hidden rounded-md"
-                      style={{
-                        zIndex: SPREADS.length - i,
-                        transformOrigin: "0% 50%",
-                        backfaceVisibility: "hidden",
-                        willChange: "transform",
-                      }}
-                      initial={false}
-                      animate={{ rotateY: flipped ? -178 : 0 }}
-                      transition={
-                        i === pageIndex - 1
-                          ? { duration: FLIP_DURATION, ease: pageFlipEase }
-                          : { duration: 0 }
-                      }
-                    >
-                      <div className="w-1/2 h-full overflow-hidden">
-                        <img
-                          src={leftSrc}
-                          alt=""
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="w-1/2 h-full overflow-hidden border-l border-black/10">
-                        <img
-                          src={rightSrc}
-                          alt=""
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </motion.div>
-                  );
-                })}
-
-                {/* Portada — una sola página; se abre y se vuelve a cerrar sobre el lomo */}
-                {loadedMask[0] && (
-                  <motion.div
-                    className="absolute inset-0 overflow-hidden rounded-md"
-                    style={{
-                      zIndex: SPREADS.length + 2,
-                      transformOrigin: "0% 50%",
-                      backfaceVisibility: "hidden",
-                      willChange: "transform",
-                    }}
-                    animate={{ rotateY: isOpen ? -178 : 0 }}
-                    transition={{ duration: OPEN_CLOSE_DURATION, ease: expo }}
-                  >
-                    <img
-                      src={COVER_SRC}
-                      alt={`${eT.hero.title1} ${eT.hero.title2}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                )}
-
-                {/* Lomo */}
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-[3%] rounded-l-md bg-linear-to-r from-black/70 to-transparent"
-                  style={{ zIndex: SPREADS.length + 3 }}
-                />
-              </motion.div>
-            </div>
-          )}
+          {/* Todas las imágenes cargadas se pre-renderizan como capas — sin parpadeo al montar/desmontar */}
+          {phase === "photos" &&
+            imagenes.map((item, i) => {
+              if (!loadedMask[i]) return null;
+              const isCurrent = i === photoIndex;
+              const isPast = i < photoIndex;
+              const from = ENTER_FROM[i % ENTER_FROM.length];
+              return (
+                <motion.div
+                  key={item.src}
+                  className="absolute inset-0"
+                  style={{ zIndex: i }}
+                  initial={{ opacity: 0, x: from.x, y: from.y, scale: 1.04 }}
+                  animate={
+                    isCurrent || isPast
+                      ? { opacity: 1, x: "0%", y: "0%", scale: 1 }
+                      : { opacity: 0, x: from.x, y: from.y, scale: 1.04 }
+                  }
+                  transition={
+                    isCurrent
+                      ? {
+                          opacity: { duration: 0.06, ease: "linear" },
+                          x: { duration: 0.12, ease: expo },
+                          y: { duration: 0.12, ease: expo },
+                          scale: { duration: 0.15, ease: expo },
+                        }
+                      : { duration: 0 }
+                  }
+                >
+                  <img
+                    src={item.src}
+                    title={item.alt}
+                    alt={item.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              );
+            })}
         </motion.div>
       )}
     </AnimatePresence>

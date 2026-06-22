@@ -2,7 +2,7 @@ import IntroAnimation from "./components/IntroAnimation";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Collections from "./components/Obras";
+import Obras from "./components/Obras";
 import Works from "./components/Works";
 import Carousel from "./components/Carousel";
 import FooterReveal from "./components/FooterReveal";
@@ -20,7 +20,7 @@ export default function Home() {
             se despega, este About (la parte con scroll-track propio) continúa
             de forma inmediata, sin solape ni desfase. */}
         <About />
-        <Collections />
+        {/* <Obras /> */}
         {/* <Works />
         <Letters />
         <Carousel /> */}

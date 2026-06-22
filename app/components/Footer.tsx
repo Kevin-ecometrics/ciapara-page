@@ -1,28 +1,13 @@
 "use client";
 
 import { useRef } from "react";
+import { usePathname } from "next/navigation";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { FaInstagram } from "react-icons/fa";
 import { useI18n } from "../providers/i18nProvider";
+import { scrollToSection } from "../lib/scrollToSection";
 
 const expo = [0.16, 1, 0.3, 1] as const;
-
-const MARQUEE_ITEMS = [
-  "Pintura",
-  "·",
-  "Grabado",
-  "·",
-  "Tijuana",
-  "·",
-  "Est. 2001",
-  "·",
-  "Arte Contemporáneo",
-  "·",
-  "Baja California",
-  "·",
-  "Técnica Mixta",
-  "·",
-];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -35,7 +20,31 @@ const fadeUp = {
 
 export default function Footer() {
   const { t, locale } = useI18n();
+  const pathname = usePathname();
   const footerRef = useRef<HTMLElement>(null);
+
+  // On non-home pages, prefix anchors with the home path so they navigate back
+  const isHome = pathname === "/" || pathname === "/en";
+  const homeBase = isHome ? "" : locale === "en" ? "/en" : "/";
+
+  const navLinks = [
+    { label: t.nav.about, href: `${homeBase}#about` },
+    { label: t.nav.collections, href: `${homeBase}#obras` },
+    { label: t.nav.news, href: `${homeBase}#news` },
+    { label: t.nav.contact, href: `${homeBase}#contacto` },
+  ];
+
+  function handleNavClick(
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) {
+    if (!isHome) {
+      sessionStorage.setItem("skip-intro", "1");
+      return;
+    }
+    e.preventDefault();
+    scrollToSection(href.replace(/.*#/, ""));
+  }
 
   const { scrollYProgress } = useScroll({
     target: footerRef,
@@ -84,7 +93,7 @@ export default function Footer() {
       />
 
       {/* ── LARGE TITLE — per-character clip reveal + scroll parallax ── */}
-      <div className="relative z-10 pt-24 px-6 max-w-7xl mx-auto">
+      <div className="relative z-10 pt-24 px-6 mx-auto">
         <motion.div style={{ y: titleY }} className="will-change-transform">
           <div className="flex">
             {"CIAPARA".split("").map((char, i) => (
@@ -103,47 +112,17 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.8, ease: expo, delay: 0.45 }}
-          className="mt-4 mb-10 text-xs tracking-[0.35em] uppercase text-white/30"
-        >
-          {t.footer.studio}
-        </motion.p>
-
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.9, ease: expo, delay: 0.35 }}
-          className="w-full h-px bg-white/10 origin-left"
+          className="mt-10 w-full h-px bg-white/10 origin-left"
         />
       </div>
 
-      {/* ── MARQUEE ── */}
-      <div className="relative z-10 py-5 border-b border-white/10 overflow-hidden">
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 28, ease: "linear", repeat: Infinity }}
-          className="flex gap-12 whitespace-nowrap w-max"
-        >
-          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
-            <span
-              key={i}
-              className={`text-[10px] tracking-[0.35em] uppercase ${
-                item === "·" ? "text-[#8B3A2A]" : "text-white/20"
-              }`}
-            >
-              {item}
-            </span>
-          ))}
-        </motion.div>
-      </div>
-
       {/* ── THREE COLUMNS ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-16 flex-1 flex flex-col justify-between">
+      <div className="relative z-10 mx-auto px-6 pt-20 pb-16 flex-1 flex flex-col justify-between">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -159,13 +138,13 @@ export default function Footer() {
             >
               C I A P A R A
             </motion.p>
-            <motion.p
+            {/* <motion.p
               custom={0.08}
               variants={fadeUp}
               className="text-xs text-white/40 leading-relaxed max-w-xs"
             >
               {t.footer.studioDesc}
-            </motion.p>
+            </motion.p> */}
             <motion.div
               custom={0.16}
               variants={fadeUp}
@@ -180,7 +159,7 @@ export default function Footer() {
                 }}
                 className="w-1.5 h-1.5 rounded-full bg-[#8B3A2A]"
               />
-              <span className="text-xs text-[#8B3A2A] tracking-[0.12em] uppercase">
+              <span className="text-xs font-bold text-[#8B3A2A] tracking-[0.12em] uppercase">
                 {t.footer.established}
               </span>
             </motion.div>
@@ -195,25 +174,13 @@ export default function Footer() {
             >
               {t.footer.navigation}
             </motion.p>
-            {[
-              { label: t.nav.collections, href: "#obras" },
-              { label: t.nav.about, href: "#sobre-mi" },
-              { label: t.nav.news, href: "#noticias" },
-              { label: t.nav.contact, href: "#contacto" },
-              {
-                label: t.nav.artistPage,
-                href: locale === "en" ? "/en/artist" : "/artist",
-              },
-              {
-                label: t.nav.aboutPage,
-                href: locale === "en" ? "/en/about" : "/about",
-              },
-            ].map(({ label, href }, i) => (
+            {navLinks.map(({ label, href }, i) => (
               <motion.a
                 key={href}
                 custom={0.12 + i * 0.06}
                 variants={fadeUp}
                 href={href}
+                onClick={(e) => handleNavClick(e, href)}
                 whileHover={{ x: 6 }}
                 transition={{ duration: 0.3, ease: expo }}
                 className="underline-hover text-sm text-white/60 hover:text-white transition-colors duration-300 w-fit"
@@ -253,8 +220,6 @@ export default function Footer() {
                   +52 664 217 7876
                 </a>
               </p>
-              <p>{t.footer.location1}</p>
-              <p>{t.footer.location2}</p>
             </motion.div>
             <motion.div custom={0.26} variants={fadeUp} className="mt-4">
               <motion.a
