@@ -7,6 +7,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useI18n } from "../providers/i18nProvider";
 import Link from "next/link";
 
@@ -46,6 +47,7 @@ const cardVariants = {
 
 export default function Collections() {
   const { locale, t } = useI18n();
+  const pathname = usePathname();
   const [activeService, setActiveService] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
@@ -57,11 +59,18 @@ export default function Collections() {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  const collections = collectionsMeta.map((meta, i) => ({
-    ...meta,
-    title: t.collections.items[i].title,
-    desc: t.collections.items[i].description,
-  }));
+  // En la página de una obra, no mostrarla entre las opciones — evita que
+  // el listado se enlace a la página en la que ya estás.
+  const normalizedPath =
+    pathname.replace(/^\/en/, "").replace(/\/$/, "") || "/";
+
+  const collections = collectionsMeta
+    .map((meta, i) => ({
+      ...meta,
+      title: t.collections.items[i].title,
+      desc: t.collections.items[i].description,
+    }))
+    .filter((s) => s.href !== normalizedPath);
 
   // En mobile, la sección queda fija (pinned) mientras se hace scroll a
   // través de las 3 obras; cuál está activa depende del progreso de scroll,
@@ -80,13 +89,6 @@ export default function Collections() {
     setActiveService(collections[idx]?.num ?? null);
   });
 
-  const sectionBg = activeService
-    ? (collections.find((s) => s.num === activeService)?.hoverBg ??
-      "bg-[#1A1916]")
-    : "bg-[#1A1916]";
-
-  const activeData = collections.find((s) => s.num === activeService);
-
   return (
     <section
       id="obras"
@@ -95,63 +97,83 @@ export default function Collections() {
       style={{ height: isMobile ? `${collections.length * 100}vh` : "auto" }}
     >
       <div
-        className={`relative overflow-hidden px-6 transition-colors duration-300 h-screen ${sectionBg} ${
+        className={`relative overflow-hidden px-6 transition-colors duration-300 bg-[#1A1916] ${
           isMobile
             ? "sticky top-0 h-screen flex flex-col justify-center"
             : "py-28 md:py-36"
         }`}
       >
-        {/* Imagen full-section — se revela desde el centro hacia afuera */}
-        <AnimatePresence>
-          {activeData && (
-            <motion.figure
-              key={activeData.num}
-              className="absolute inset-0 pointer-events-none"
-              initial={{ clipPath: "inset(50% 50% 50% 50%)" }}
-              animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
-              exit={{
-                clipPath: "inset(50% 50% 50% 50%)",
-                transition: { duration: 0 },
-              }}
-              transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
-            >
-              <div
-                className="absolute inset-0"
-                style={{ backgroundColor: activeData.imgFallback }}
-              />
-              <img
-                src={activeData.img}
-                alt={activeData.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/85" />
+        {/* Fondo por defecto — visible cuando ninguna obra está activa */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="."
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#1A1916]/85" />
+          <div
+            className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            }}
+          />
+        </div>
 
-              {/* Textura de grano */}
-              <div
-                className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
-                style={{
-                  backgroundImage:
-                    "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-                }}
-              />
-            </motion.figure>
-          )}
-        </AnimatePresence>
+        {/* Imágenes de cada obra — siempre montadas, se revelan desde el
+            centro hacia afuera por encima de la imagen anterior/del fondo */}
+        {collections.map((s) => (
+          <motion.figure
+            key={s.num}
+            className="absolute inset-0 pointer-events-none"
+            style={{ zIndex: activeService === s.num ? 10 : 1 }}
+            initial={false}
+            animate={{
+              clipPath:
+                activeService === s.num
+                  ? "inset(0% 0% 0% 0%)"
+                  : "inset(50% 50% 50% 50%)",
+            }}
+            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
+          >
+            <div
+              className="absolute inset-0"
+              style={{ backgroundColor: s.imgFallback }}
+            />
+            <img
+              src={s.img}
+              alt={s.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/85" />
+
+            {/* Textura de grano */}
+            <div
+              className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+              }}
+            />
+          </motion.figure>
+        ))}
 
         {/* Contenido encima de la imagen */}
         <div className="relative z-10 mx-auto text-white">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-10 leading-[1.15] max-w-5xl uppercase indent-20 md:indent-56">
-            "{t.collections.quoteBold}
-          </h3>
-          <h4 className="leading-relaxed max-w-xl md:text-lg lg:text-xl mb-6 font-normal">
-            {t.collections.quote}"
-          </h4>
-          <div className="text-sm leading-relaxed max-w-xl mb-12 ml-2">
-            <p>
-              - {t.collections.speaker}
-              <span>({t.collections.date})</span>
-            </p>
-          </div>
+          <motion.div
+            animate={{ opacity: activeService ? 0 : 1 }}
+            transition={{ duration: 0.4, ease: expo }}
+          >
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 leading-[1.15] max-w-5xl uppercase indent-20 md:indent-56">
+              "{t.collections.quoteBold}"
+            </h3>
+            <div className="text-sm leading-relaxed max-w-xl mb-12 ml-2">
+              <p>
+                - {t.collections.speaker}
+                <span>({t.collections.date})</span>
+              </p>
+            </div>
+          </motion.div>
 
           {collections.map((s) => (
             <Link
@@ -161,7 +183,7 @@ export default function Collections() {
               onMouseLeave={() => setActiveService(null)}
               href={locale === "en" ? s.hrefEn : s.href}
             >
-              <div className="flex flex-col lg:flex-row items-center justify-between mb-6 cursor-pointer">
+              <div className="flex flex-col lg:flex-row items-center justify-between my-6 cursor-pointer">
                 <div className="overflow-hidden py-1">
                   <motion.h2
                     animate={

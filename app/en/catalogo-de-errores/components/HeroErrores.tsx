@@ -8,9 +8,8 @@ import { useErroresT } from "../../../lib/i18n-errores";
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function HeroErrores() {
-  const { t, locale } = useI18n();
+  const { locale } = useI18n();
   const eT = useErroresT(locale);
-  const collection = t.collections.items[0];
   const heroRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -49,7 +48,7 @@ export default function HeroErrores() {
       {/* Contenido — cargado a la izquierda */}
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 h-full flex flex-col items-start justify-center text-left px-6 md:px-14 lg:px-20"
+        className="relative z-10 h-full flex flex-col items-start justify-end text-left px-6 md:px-14 lg:px-20 pb-10 md:pb-14"
       >
         {/* Etiqueta */}
         <div className="overflow-hidden mb-8">
@@ -92,31 +91,8 @@ export default function HeroErrores() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, ease: expo, delay: 0.9 }}
-          className="w-12 h-px bg-white/25 my-8 origin-left"
+          className="w-12 h-px bg-white/25 mt-8 origin-left"
         />
-
-        {/* Descripción */}
-        <div className="overflow-hidden max-w-lg">
-          <motion.p
-            initial={{ y: "110%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.75, ease: expo, delay: 1.0 }}
-            className="text-white/45 leading-relaxed tracking-widest uppercase"
-          >
-            {collection.description}
-          </motion.p>
-        </div>
-
-        {/* Indicador de scroll */}
-        <motion.div
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: expo, delay: 1.6 }}
-          className="absolute bottom-10 left-6 md:left-14 lg:left-20 flex flex-col items-start gap-3 text-white/25 text-[10px] tracking-[0.35em] uppercase"
-        >
-          {eT.hero.explore}
-          <div className="w-px h-8 bg-white/20" />
-        </motion.div>
       </motion.div>
     </section>
   );

@@ -3,14 +3,19 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import Obras from "./Obras";
-import ObrasFooter from "./ObrasFooter";
 import Footer from "./Footer";
 
 import { usePathname } from "next/navigation";
 
 const obrasRoutes = ["/archivo-2000-09", "/catalogo-de-errores", "/serie-2015"];
 
-function FooterRevealStack({ showObras }: { showObras: boolean }) {
+function FooterRevealStack({
+  isObraPage,
+  isAboutPage,
+}: {
+  isObraPage: boolean;
+  isAboutPage: boolean;
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -41,7 +46,12 @@ function FooterRevealStack({ showObras }: { showObras: boolean }) {
         <Footer />
       </div>
 
-      {/* Works: encima del footer, sticky al top, se levanta al hacer scroll */}
+      {/* Works: encima del footer, sticky al top, se levanta al hacer scroll.
+          En la página de about, el CV (mucho más alto que una pantalla) ya
+          se renderizó en flujo normal antes de este componente, así que acá
+          solo hace falta un panel blanco — del mismo color que el fondo del
+          CV — que sirva de "tapa" y se levante para revelar el footer, sin
+          recortar ni scrollear nada. */}
       <motion.div
         className="sticky overflow-hidden"
         style={{
@@ -52,7 +62,17 @@ function FooterRevealStack({ showObras }: { showObras: boolean }) {
           y: worksY,
         }}
       >
-        {showObras ? <ObrasFooter /> : <Obras />}
+        {/* Misma estructura para home y páginas de obra aunque hoy ambas
+            ramas rendericen Obras (que ya se auto-excluye en su propia
+            página) — se mantiene separada para poder volver a cambiar el
+            último componente del home sin tocar las páginas de obra. */}
+        {isAboutPage ? (
+          <div className="h-24 w-full bg-white" />
+        ) : isObraPage ? (
+          <Obras />
+        ) : (
+          <Obras />
+        )}
       </motion.div>
     </div>
   );
@@ -61,10 +81,12 @@ function FooterRevealStack({ showObras }: { showObras: boolean }) {
 export default function FooterReveal() {
   const pathname = usePathname();
 
-  // En home: Works. En las páginas de colección: Obras en su lugar.
   const normalizedPath =
     pathname.replace(/^\/en/, "").replace(/\/$/, "") || "/";
-  const showObras = obrasRoutes.includes(normalizedPath);
+  const isObraPage = obrasRoutes.includes(normalizedPath);
+  const isAboutPage = normalizedPath === "/about";
 
-  return <FooterRevealStack showObras={showObras} />;
+  return (
+    <FooterRevealStack isObraPage={isObraPage} isAboutPage={isAboutPage} />
+  );
 }

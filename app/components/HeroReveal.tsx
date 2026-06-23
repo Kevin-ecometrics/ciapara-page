@@ -8,10 +8,14 @@ import AboutIntro from "./AboutIntro";
 export default function HeroReveal() {
   const { t, locale, setLocale } = useI18n();
 
+  // Prensa aún no tiene un destino listo — oculto por ahora. Quitar este
+  // flag cuando vuelva a estar disponible.
+  const SHOW_NEWS_LINK = false;
+
   const heroLinks = [
     { label: t.nav.about, href: "#about" },
-    { label: t.nav.collections, href: "#collections" },
-    { label: t.nav.news, href: "#news" },
+    { label: t.nav.collections, href: "#obras" },
+    ...(SHOW_NEWS_LINK ? [{ label: t.nav.news, href: "#news" }] : []),
     { label: t.nav.contact, href: "#contacto" },
   ];
 

@@ -9,8 +9,9 @@ import { images } from "./GalleryImages";
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Gallery() {
-  const { locale } = useI18n();
+  const { t, locale } = useI18n();
   const bT = useBlurbT(locale);
+  const collection = t.collections.items[0];
   const [hovered, setHovered] = useState<number | null>(null);
   const active = hovered !== null ? images[hovered] : null;
 
@@ -46,13 +47,17 @@ export default function Gallery() {
         <div className="px-6 lg:px-12 flex flex-col lg:flex-row gap-16 lg:gap-0">
           {/* Galería — 3/4 del ancho, espaciada como una sala de museo */}
           <div ref={colRef} className="lg:w-3/4">
-            {/* Título — recibe el relevo del título del Hero */}
-            <motion.h2
-              style={{ y: titleY, opacity: titleOpacity }}
-              className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight uppercase text-[#1A1916] leading-[0.9] mb-20 md:mb-32"
-            >
-              {bT.hero.title1} {bT.hero.title2}
-            </motion.h2>
+            {/* Título + descripción — recibe el relevo del título del Hero,
+                animados juntos como un solo bloque */}
+            <motion.div style={{ y: titleY, opacity: titleOpacity }}>
+              <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight uppercase text-[#1A1916] leading-[0.9] mb-6 md:mb-8">
+                {bT.hero.title1} {bT.hero.title2}
+              </h2>
+
+              <p className="max-w-lg text-[#1A1916]/45 leading-relaxed tracking-widest uppercase mb-20 md:mb-32">
+                {collection.description}
+              </p>
+            </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 items-start gap-x-10 gap-y-24 md:gap-x-16 md:gap-y-36 lg:gap-x-20 lg:gap-y-44">
               {images.map((img, i) => (

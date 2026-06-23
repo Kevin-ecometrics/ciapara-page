@@ -20,10 +20,16 @@ export default function Navbar() {
   const isHome = pathname === "/" || pathname === "/en";
   const homeBase = isHome ? "" : locale === "en" ? "/en" : "/";
 
+  // Prensa aún no tiene un destino listo — oculto por ahora. Quitar este
+  // flag cuando vuelva a estar disponible.
+  const SHOW_NEWS_LINK = false;
+
   const links = [
     { label: t.nav.about, href: `${homeBase}#about` },
     { label: t.nav.collections, href: `${homeBase}#obras` },
-    { label: t.nav.news, href: `${homeBase}#news` },
+    ...(SHOW_NEWS_LINK
+      ? [{ label: t.nav.news, href: `${homeBase}#news` }]
+      : []),
     { label: t.nav.contact, href: `${homeBase}#contacto` },
   ];
 
@@ -64,12 +70,12 @@ export default function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className=" mx-auto px-6 flex items-center justify-between">
+      <div className="mx-auto px-6 grid grid-cols-3 items-center">
         <motion.a
           href="#"
           whileHover={{ letterSpacing: "0.5em" }}
           transition={{ duration: 0.4, ease: expo }}
-          className={`text-xs font-semibold tracking-[0.4em] uppercase transition-colors duration-500 ${
+          className={`justify-self-start text-xs font-semibold tracking-[0.4em] uppercase transition-colors duration-500 ${
             scrolled ? "text-[#1A1916]" : "text-white"
           }`}
         >
@@ -77,7 +83,7 @@ export default function Navbar() {
         </motion.a>
 
         <div
-          className="hidden md:flex items-center gap-10"
+          className="hidden md:flex items-center justify-self-center gap-10"
           onMouseLeave={() => setHovered(null)}
         >
           {links.map(({ label, href }, i) => (
@@ -111,7 +117,7 @@ export default function Navbar() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: expo, delay: 0.6 }}
-          className="flex items-center gap-3"
+          className="flex items-center justify-self-end gap-3"
         >
           <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
             {(["es", "en"] as Locale[]).map((l, i) => (

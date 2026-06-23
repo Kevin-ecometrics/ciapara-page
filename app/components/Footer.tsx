@@ -27,10 +27,16 @@ export default function Footer() {
   const isHome = pathname === "/" || pathname === "/en";
   const homeBase = isHome ? "" : locale === "en" ? "/en" : "/";
 
+  // Prensa aún no tiene un destino listo — oculto por ahora. Quitar este
+  // flag cuando vuelva a estar disponible.
+  const SHOW_NEWS_LINK = false;
+
   const navLinks = [
     { label: t.nav.about, href: `${homeBase}#about` },
     { label: t.nav.collections, href: `${homeBase}#obras` },
-    { label: t.nav.news, href: `${homeBase}#news` },
+    ...(SHOW_NEWS_LINK
+      ? [{ label: t.nav.news, href: `${homeBase}#news` }]
+      : []),
     { label: t.nav.contact, href: `${homeBase}#contacto` },
   ];
 
