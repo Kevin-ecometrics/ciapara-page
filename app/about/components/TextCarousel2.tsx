@@ -1,23 +1,17 @@
 "use client";
 
 import { useDragScroll } from "../../lib/useDragScroll";
+import { useI18n } from "../../providers/i18nProvider";
 
 export default function FirstYears() {
   const { ref, dragging, handlers } = useDragScroll<HTMLDivElement>();
+  const { t } = useI18n();
 
   return (
     <section className="px-6 pb-24">
       <div className="max-w-4xl mx-auto text-left">
         <h4 className="font-bold mb-24 leading-[1.15] text-[#1A1916] text-lg md:text-xl">
-          Su obra aparece en distintos catálogos de exposiciones nacionales e
-          internacionales, tales como OBRA NEGRA, Una aproximación a la cultura
-          visual de Tijuana, 2011, Centro Cultural Tijuana; STRANGE NEW WORLD,
-          2006, Museum of Contemporary Art San Diego. Su trabajo también se ha
-          reseñado y analizado en los libros: De aquellos páramos sin
-          cultura…(Tres décadas de artes en Baja California: de lo retiniano a
-          lo conceptual), Roberto Rosique, 2016; Cambio y permanencia (Las rutas
-          abiertas del arte Bajacaliforniano del siglo XXI), Gabriel Trujillo
-          Muñoz, 2017.
+          {t.aboutBio.catalogs.text}
         </h4>
       </div>
 
@@ -48,12 +42,7 @@ export default function FirstYears() {
 
       <div className="max-w-4xl mx-auto text-left">
         <h4 className="font-bold mt-24 leading-[1.15] text-[#1A1916] text-lg md:text-xl">
-          Ha sido galardonado con premios y distinciones en diversos certámenes
-          de arte como la III Bienal del Noroeste (1991), la Bienal Plástica de
-          Baja California (1993, 2005) y recientemente obtuvo el primer lugar en
-          la VI Bienal de Pintura Pedro Coronel (2019). Formó parte del Sistema
-          Nacional de Creadores de Arte, FONCA, edición 2019-2022. Trabaja y
-          radica desde la ciudad de Tijuana, México.
+          {t.aboutBio.awards.text}
         </h4>
       </div>
     </section>

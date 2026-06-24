@@ -24,8 +24,10 @@ export default function Navbar() {
   // flag cuando vuelva a estar disponible.
   const SHOW_NEWS_LINK = false;
 
+  const aboutHref = locale === "en" ? "/en/about" : "/about";
+
   const links = [
-    { label: t.nav.about, href: `${homeBase}#about` },
+    { label: t.nav.about, href: aboutHref },
     { label: t.nav.collections, href: `${homeBase}#obras` },
     ...(SHOW_NEWS_LINK
       ? [{ label: t.nav.news, href: `${homeBase}#news` }]
@@ -37,6 +39,9 @@ export default function Navbar() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
   ) {
+    // Enlaces a página completa (como /about) navegan normal, sin interceptar.
+    if (!href.includes("#")) return;
+
     if (!isHome) {
       sessionStorage.setItem("skip-intro", "1");
       return;

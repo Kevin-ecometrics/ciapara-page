@@ -1,22 +1,17 @@
 "use client";
 
 import { useDragScroll } from "../../lib/useDragScroll";
+import { useI18n } from "../../providers/i18nProvider";
 
 export default function FirstYears() {
   const { ref, dragging, handlers } = useDragScroll<HTMLDivElement>();
+  const { t } = useI18n();
 
   return (
     <section className="px-6 py-24">
       <div className="max-w-4xl mx-auto text-left">
         <h4 className="font-bold mb-24 leading-[1.15] text-[#1A1916] text-lg md:text-xl">
-          ENRIQUE CIAPARA nació en la ciudad de Tijuana, BC bajo el signo de
-          cáncer, en el año de 1972; de padre sonorense y madre
-          chilango-bajacaliforniana. Como muchos artistas desde tempana edad se
-          acerco a las artes, probando destreza en la música, tomando perfil
-          definitivo en el dibujo y la pintura. En una ciudad en la que no había
-          estudios artísticos profesionales, hasta hace pocos años, Enrique se
-          formó en talleres libres, asistió al Colegio Soutwestern de Chula
-          Vista y a los estudios de diferentes pintores y grabadores en Tijuana.
+          {t.aboutBio.firstYears.text}
         </h4>
       </div>
 

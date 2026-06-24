@@ -1,20 +1,17 @@
 "use client";
 
 import { useDragScroll } from "../../lib/useDragScroll";
+import { useI18n } from "../../providers/i18nProvider";
 
 export default function FirstYears() {
   const { ref, dragging, handlers } = useDragScroll<HTMLDivElement>();
+  const { t } = useI18n();
 
   return (
     <section className="px-6 pb-24">
       <div className="max-w-4xl mx-auto text-left">
         <h4 className="font-bold mb-24 leading-[1.15] text-[#1A1916] text-lg md:text-xl">
-          En 1997 realiza su segunda estancia en Europa, tomando de nuevo, como
-          ciudad de base Tarragona en donde nace su segunda hija. En ésta
-          residencia se afianza la gestualidad como camino de expresión en su
-          obra. A su vuelta conoce al artista Fernando Delmar con quien empata
-          en sensibilidad y búsqueda de intencionalidad creativa con el deseo,
-          el azar y lo indeterminado como camino de trabajo.
+          {t.aboutBio.europeSecond.text}
         </h4>
       </div>
 

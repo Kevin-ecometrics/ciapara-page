@@ -1,16 +1,15 @@
 "use client";
 
+import { useI18n } from "../../providers/i18nProvider";
+
 export default function TextGallery() {
+  const { t } = useI18n();
+
   return (
     <section className="px-6 pb-24">
       <div className="max-w-4xl mx-auto text-left">
         <h4 className="font-bold mb-24 leading-[1.15] text-[#1A1916] text-lg md:text-xl">
-          En 1993 realizó su primera residencia en Europa, en la que viajó por
-          España, Francia y Alemania, quedándose tres meses en Tarragona. Esta
-          experiencia le dejó un gusto por la cultura mediterránea,
-          desarrollando su natural habilidad gastronómica. A partir de 1996 se
-          formaliza la demanda de su obra, logrando desde hace unos años una
-          estabilidad de mercado regional en Ensenada-Tijuana-San Diego.
+          {t.aboutBio.europeFirst.text}
         </h4>
       </div>
       <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-center md:justify-center md:gap-16">

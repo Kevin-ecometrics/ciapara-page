@@ -1,18 +1,15 @@
 "use client";
 
+import { useI18n } from "../../providers/i18nProvider";
+
 export default function TextGallery() {
+  const { t } = useI18n();
+
   return (
     <section className="px-6 pb-24">
       <div className="max-w-4xl mx-auto text-left">
         <h4 className="font-bold mb-24 leading-[1.15] text-[#1A1916] text-lg md:text-xl">
-          A finales de la década de los años ochenta y principios de los noventa
-          el artista Felipe Almada fue su mentor y el Nopal Centenario su
-          pandilla y generación. En cuyo ambiente se desarrollaron los jóvenes
-          que destacaron en teatro (Edward Coward), performance (Hugo Sánchez),
-          literatura (Gerardo Navarro), activismo binacional (Carmela Castrejón)
-          y en pintura (Ciapara). Después una influencia determinante en su
-          formación fue la cercanía con el maestro Luís Moret y la maestra Marta
-          Palau.
+          {t.aboutBio.mentors.text}
         </h4>
       </div>
       <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-center md:justify-center md:gap-16">

@@ -1,19 +1,15 @@
 "use client";
 
+import { useI18n } from "../../providers/i18nProvider";
+
 export default function TextGallery() {
+  const { t } = useI18n();
+
   return (
     <section className="px-6 pb-24">
       <div className="max-w-4xl mx-auto text-left">
         <h4 className="font-bold mb-24 leading-[1.15] text-[#1A1916] text-lg md:text-xl">
-          Desde principios de los años dos mil ha sido uno de los artistas más
-          destacados de la zona fronteriza Tijuana-San Diego, presentando su
-          trabajo en numerosas muestras colectivas y exposiciones individuales
-          en museos y galerías de Tijuana, San Diego, Ciudad de México,
-          Barcelona, Los Ángeles y Washington DC., entre otras sedes. Entre sus
-          exposiciones individuales más recientes destacan ERRORES (2019),
-          PAISAJES EN TRÁNSITO en el Museo Pedro Coronel, Zacatecas (2019),
-          ENRIQUE CIAPARA en la Galería Estación Coyoacán, Arte Contemporáneo,
-          CDMX (2015) y TROMPE-L’OEIL en el Centro Cultural Tijuana (2013).
+          {t.aboutBio.recentShows.text}
         </h4>
       </div>
       <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-center md:justify-center md:gap-16">

@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useI18n } from "../../providers/i18nProvider";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
+  const { t } = useI18n();
+
   return (
     <section className="relative">
       <div className="max-w-xl mx-auto text-center px-6 pb-24 pt-34">
@@ -15,7 +18,7 @@ export default function Hero() {
             transition={{ duration: 1.0, ease: expo, delay: 0.5 }}
             className="block"
           >
-            Enrique Ciapara Semblanza
+            {t.aboutBio.hero.title}
           </motion.span>
         </h1>
       </div>

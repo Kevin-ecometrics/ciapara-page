@@ -12,8 +12,10 @@ export default function HeroReveal() {
   // flag cuando vuelva a estar disponible.
   const SHOW_NEWS_LINK = false;
 
+  const aboutHref = locale === "en" ? "/en/about" : "/about";
+
   const heroLinks = [
-    { label: t.nav.about, href: "#about" },
+    { label: t.nav.about, href: aboutHref },
     { label: t.nav.collections, href: "#obras" },
     ...(SHOW_NEWS_LINK ? [{ label: t.nav.news, href: "#news" }] : []),
     { label: t.nav.contact, href: "#contacto" },
@@ -23,6 +25,8 @@ export default function HeroReveal() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
   ) {
+    // Enlaces a página completa (como /about) navegan normal, sin interceptar.
+    if (!href.includes("#")) return;
     e.preventDefault();
     scrollToSection(href.replace("#", ""));
   }

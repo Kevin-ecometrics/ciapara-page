@@ -6,7 +6,7 @@ export default function AboutIntro() {
   const { t } = useI18n();
 
   return (
-    <div id="about" className="pt-40 pb-10 px-6 mx-auto">
+    <div className="pt-40 pb-10 px-6 mx-auto">
       <h3 className="text-xl md:text-2xl lg:text-4xl font-bold uppercase mb-4 leading-[1.15] max-w-xl md:max-w-3xl lg:max-w-7xl indent-12 md:indent-32 text-[#1A1916]">
         "{t.about.quote}"
       </h3>
