@@ -2,91 +2,67 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import Obras from "./Obras";
 import Footer from "./Footer";
-
 import { usePathname } from "next/navigation";
 
-const obrasRoutes = ["/archivo-2000-09", "/catalogo-de-errores", "/serie-2015"];
-
-function FooterRevealStack({
-  isObraPage,
-  isAboutPage,
-}: {
-  isObraPage: boolean;
-  isAboutPage: boolean;
-}) {
+export default function FooterReveal() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const isAboutPage =
+    (pathname.replace(/^\/en/, "").replace(/\/$/, "") || "/") === "/about";
 
+  /*
+    offset ["start end", "end end"]:
+      progress=0 → top del container llega al bottom del viewport (container entra desde abajo)
+      progress=1 → bottom del container llega al bottom del viewport
+
+    Con un container de 200dvh y viewport de 100dvh:
+      La zona sticky (containerTop en viewportTop) ocurre en progress≈0.5
+      → el footer ya lleva la mitad del viaje cuando el usuario lo ve por primera vez.
+      No hay fase "negra vacía".
+  */
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"],
+    offset: ["start end", "end end"],
   });
 
-  // Works sube de 0 a -100% de su propia altura → se va por arriba
-  const worksY = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
+  // Footer sube desde 100dvh debajo hasta su posición natural.
+  // En progress=0.5 (inicio de sticky) ya está en y=50dvh → mitad visible.
+  const footerY = useTransform(scrollYProgress, [0, 1], ["100dvh", "0dvh"]);
+
+  // About: tapa blanca se queda quieta hasta que empieza el sticky, luego sube.
+  const coverY = useTransform(scrollYProgress, [0.5, 1], ["0%", "-100%"]);
 
   return (
-    /*
-      200vh → 100vh de scroll real para completar la animación.
-      Footer queda fijo detrás (z-0).
-      Works arranca encima (z-10) y se levanta conforme se scrollea.
-    */
     <div
       ref={containerRef}
-      id="works"
+      id="contacto"
       className="relative"
       style={{ height: "200dvh" }}
     >
-      {/* Footer: siempre visible detrás, sticky al top */}
+      {/* Footer sticky detrás — siempre presente */}
       <div
-        className="sticky top-0 overflow-hidden"
+        className="sticky top-0 overflow-hidden bg-[#1A1916]"
         style={{ zIndex: 0, height: "100dvh" }}
       >
-        <Footer />
+        <motion.div style={{ y: isAboutPage ? undefined : footerY }}>
+          <Footer />
+        </motion.div>
       </div>
 
-      {/* Works: encima del footer, sticky al top, se levanta al hacer scroll.
-          En la página de about, el CV (mucho más alto que una pantalla) ya
-          se renderizó en flujo normal antes de este componente, así que acá
-          solo hace falta un panel blanco — del mismo color que el fondo del
-          CV — que sirva de "tapa" y se levante para revelar el footer, sin
-          recortar ni scrollear nada. */}
-      <motion.div
-        className="sticky overflow-hidden"
-        style={{
-          top: 0,
-          zIndex: 10,
-          marginTop: "-100vh",
-          height: "100dvh",
-          y: worksY,
-        }}
-      >
-        {/* Misma estructura para home y páginas de obra aunque hoy ambas
-            ramas rendericen Obras (que ya se auto-excluye en su propia
-            página) — se mantiene separada para poder volver a cambiar el
-            último componente del home sin tocar las páginas de obra. */}
-        {isAboutPage ? (
-          <div className="h-24 w-full bg-white" />
-        ) : isObraPage ? (
-          <Obras />
-        ) : (
-          <Obras />
-        )}
-      </motion.div>
+      {/* About: tapa blanca encima que se levanta para revelar el footer */}
+      {isAboutPage && (
+        <motion.div
+          className="sticky overflow-hidden bg-white"
+          style={{
+            top: 0,
+            zIndex: 10,
+            marginTop: "-100dvh",
+            height: "100dvh",
+            y: coverY,
+          }}
+        />
+      )}
     </div>
-  );
-}
-
-export default function FooterReveal() {
-  const pathname = usePathname();
-
-  const normalizedPath =
-    pathname.replace(/^\/en/, "").replace(/\/$/, "") || "/";
-  const isObraPage = obrasRoutes.includes(normalizedPath);
-  const isAboutPage = normalizedPath === "/about";
-
-  return (
-    <FooterRevealStack isObraPage={isObraPage} isAboutPage={isAboutPage} />
   );
 }

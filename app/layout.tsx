@@ -108,6 +108,12 @@ export default function RootLayout({
       className={`${interstate.variable} ${interstateCompressed.variable} ${openSans.variable} h-full antialiased overflow-x-hidden`}
     >
       <head>
+        <link rel="icon" type="image/svg+xml" href="/logos/favicon/favicon.svg" />
+        <link rel="icon" type="image/png" href="/logos/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="shortcut icon" href="/logos/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logos/favicon/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Ciapara" />
+        <link rel="manifest" href="/logos/favicon/site.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

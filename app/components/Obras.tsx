@@ -16,27 +16,57 @@ const expo = [0.16, 1, 0.3, 1] as const;
 const collectionsMeta = [
   {
     num: "01",
-    hoverBg: "bg-[#2B2F4C]",
-    img: "/images/blurb/Pieza caminata en tecnica mixta sobre tela 183x 305 cm 2008 por enrique ciapara.webp",
-    imgFallback: "#2B2F4C",
-    href: "/archivo-2000-09",
-    hrefEn: "/en/archivo-2000-09",
+    hoverBg: "bg-[#4C2A1D]",
+    img: "/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.jpeg",
+    imgFallback: "#4C2A1D",
+    href: "/catalogo-de-errores",
+    hrefEn: "/en/catalogo-de-errores",
+    disabled: false,
   },
   {
     num: "02",
-    hoverBg: "bg-[#2D3C30]",
-    img: "/images/2015/Pieza sunnyday en acrilico sobre tela 122x 107 cm por artista enrique ciapara.webp",
-    imgFallback: "#2D3C30",
-    href: "/serie-2015",
-    hrefEn: "/en/serie-2015",
+    hoverBg: "bg-[#3B3028]",
+    img: "",
+    imgFallback: "#3B3028",
+    href: "",
+    hrefEn: "",
+    disabled: true,
   },
   {
     num: "03",
-    hoverBg: "bg-[#4C2A1D]",
-    img: "/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.jpeg",
-    imgFallback: "#05df72",
-    href: "/catalogo-de-errores",
-    hrefEn: "/en/catalogo-de-errores",
+    hoverBg: "bg-[#2D3C30]",
+    img: "/images/2015/Pieza dulce del dia de brujas acrilico sobre tela 122x 141 cm por pintor enrique ciapara.jpg",
+    imgFallback: "#2D3C30",
+    href: "/serie-2015",
+    hrefEn: "/en/serie-2015",
+    disabled: false,
+  },
+  {
+    num: "04",
+    hoverBg: "bg-[#2C3540]",
+    img: "",
+    imgFallback: "#2C3540",
+    href: "",
+    hrefEn: "",
+    disabled: true,
+  },
+  {
+    num: "05",
+    hoverBg: "bg-[#2A2A2A]",
+    img: "",
+    imgFallback: "#2A2A2A",
+    href: "",
+    hrefEn: "",
+    disabled: true,
+  },
+  {
+    num: "06",
+    hoverBg: "bg-[#2B2F4C]",
+    img: "/images/blurb/Pieza caminata en tecnica mixta sobre tela 183x 305 cm 2008 por enrique ciapara.jpg",
+    imgFallback: "#2B2F4C",
+    href: "/archivo-2000-09",
+    hrefEn: "/en/archivo-2000-09",
+    disabled: false,
   },
 ];
 
@@ -175,53 +205,72 @@ export default function Collections() {
             </div>
           </motion.div>
 
-          {collections.map((s) => (
-            <Link
-              key={s.num}
-              className="mb-6 group transition-colors duration-300"
-              onMouseEnter={() => setActiveService(s.num)}
-              onMouseLeave={() => setActiveService(null)}
-              href={locale === "en" ? s.hrefEn : s.href}
-            >
-              <div className="flex flex-col lg:flex-row items-center justify-between my-6 cursor-pointer">
-                <div className="overflow-hidden py-1">
-                  <motion.h2
-                    animate={
-                      activeService === s.num
-                        ? { y: ["0%", "100%", "-100%", "0%"] }
-                        : { y: "0%" }
-                    }
-                    transition={
-                      activeService === s.num
-                        ? {
-                            duration: 0.52,
-                            times: [0, 0.44, 0.45, 1],
-                            ease: ["easeIn", "linear", "easeOut"],
-                          }
-                        : { duration: 0 }
-                    }
-                    className="text-4xl md:text-5xl lg:text-6xl text-center uppercase font-semibold tracking-[0.2em]"
-                  >
-                    {s.title ?? ""}
-                  </motion.h2>
-                </div>
-                <AnimatePresence>
-                  {activeService === s.num && (
-                    <motion.p
-                      initial={{ opacity: 0, y: 16 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 16 }}
-                      transition={{ duration: 0.4, ease: expo }}
-                      className="text-sm text-white text-center leading-relaxed max-w-md"
+          {collections.map((s) => {
+            const inner = (
+              <>
+                <div className="flex flex-col lg:flex-row items-center justify-between my-6">
+                  <div className="overflow-hidden py-1 flex items-center gap-4">
+                    <motion.h2
+                      animate={
+                        !s.disabled && activeService === s.num
+                          ? { y: ["0%", "100%", "-100%", "0%"] }
+                          : { y: "0%" }
+                      }
+                      transition={
+                        !s.disabled && activeService === s.num
+                          ? {
+                              duration: 0.52,
+                              times: [0, 0.44, 0.45, 1],
+                              ease: ["easeIn", "linear", "easeOut"],
+                            }
+                          : { duration: 0 }
+                      }
+                      className={`text-4xl md:text-5xl lg:text-6xl text-center uppercase font-semibold tracking-[0.2em] ${
+                        s.disabled ? "opacity-30" : ""
+                      }`}
                     >
-                      {s.desc}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
+                      {s.title ?? ""}
+                    </motion.h2>
+                    {s.disabled && (
+                      <span className="text-[10px] tracking-[0.2em] uppercase text-white/30 border border-white/20 px-2 py-0.5 shrink-0">
+                        Próximamente
+                      </span>
+                    )}
+                  </div>
+                  <AnimatePresence>
+                    {!s.disabled && activeService === s.num && (
+                      <motion.p
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 16 }}
+                        transition={{ duration: 0.4, ease: expo }}
+                        className="text-sm text-white text-center leading-relaxed max-w-md"
+                      >
+                        {s.desc}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
+                <hr className="flex-1 border-t border-white/40" />
+              </>
+            );
+
+            return s.disabled ? (
+              <div key={s.num} className="mb-6 cursor-default">
+                {inner}
               </div>
-              <hr className="flex-1 border-t border-white/40" />
-            </Link>
-          ))}
+            ) : (
+              <Link
+                key={s.num}
+                className="mb-6 group transition-colors duration-300 cursor-pointer"
+                onMouseEnter={() => setActiveService(s.num)}
+                onMouseLeave={() => setActiveService(null)}
+                href={locale === "en" ? s.hrefEn : s.href}
+              >
+                {inner}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

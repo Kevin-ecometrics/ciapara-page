@@ -5,13 +5,14 @@ import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import { useI18n } from "../../../providers/i18nProvider";
 import { use2015T } from "../../../lib/i18n-2015";
 import { images } from "./GalleryImages2015";
+import Description2015 from "../../../serie-2015/components/Description2015";
+import CollectionDescription from "../../../components/CollectionDescription";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Gallery() {
   const { t, locale } = useI18n();
   const t2015 = use2015T(locale);
-  const collection = t.collections.items[1];
   const [hovered, setHovered] = useState<number | null>(null);
   const active = hovered !== null ? images[hovered] : null;
 
@@ -50,13 +51,10 @@ export default function Gallery() {
             {/* Título + descripción — recibe el relevo del título del Hero,
                 animados juntos como un solo bloque */}
             <motion.div style={{ y: titleY, opacity: titleOpacity }}>
-              <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight uppercase text-[#1A1916] leading-[0.9] mb-6 md:mb-8">
-                {t2015.hero.title1} {t2015.hero.title2}
-              </h2>
-
-              <p className="max-w-lg text-[#1A1916]/45 leading-relaxed tracking-widest uppercase mb-20 md:mb-32">
-                {collection.description}
-              </p>
+              <CollectionDescription
+                title={`${t2015.hero.title1} ${t2015.hero.title2}`}>
+                <Description2015 />
+              </CollectionDescription>
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 items-start gap-x-10 gap-y-24 md:gap-x-16 md:gap-y-36 lg:gap-x-20 lg:gap-y-44">

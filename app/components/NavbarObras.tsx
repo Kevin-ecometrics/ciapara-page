@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { useI18n } from "../providers/i18nProvider";
 import { useBlurbT } from "../lib/i18n-blurb";
 import type { Locale } from "../lib/i18n";
@@ -79,9 +80,17 @@ export default function NavbarErrores() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: expo, delay: 0.2 }}
-          className={`hover:cursor-pointer text-xs font-semibold tracking-[0.4em] uppercase transition-colors duration-500 ${colorText}`}
+          className="hover:cursor-pointer shrink-0"
         >
-          C I A P A R A
+          <Image
+            src="/logos/ecp 3.2.png"
+            alt="Ciapara"
+            width={80}
+            height={32}
+            className={`h-8 w-auto transition-all duration-500 ${
+              scrolled ? "" : "brightness-0 invert"
+            }`}
+          />
         </motion.button>
 
         {/* Derecha — email + selector de idioma */}

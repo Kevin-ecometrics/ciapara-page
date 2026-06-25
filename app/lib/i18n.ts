@@ -31,18 +31,30 @@ export const translations = {
         quote: "Lo que ofrece es una narrativa diferente, tan sorprendente por su sinceridad como por su paradójica fugacidad. Ofrece pintura. Solo eso. Pintura, pero en su máxima expresión.",
         speaker: "Lucía Sanromán",
         date: "Junio 2011",
-        items: [ 
+        items: [
+            {
+                title: "Catálogo de Errores",
+                description: '¿Error, despropósito o feliz acierto? Descubre "Catálogo de Errores", la enigmática colección de Enrique Ciapara inspirada en Sandro Botticelli y Boccaccio.',
+            },
+            {
+                title: "Vanitas",
+                description: "",
+            },
+            {
+                title: "2015",
+                description: "Explora la colección 2015 de Enrique Ciapara: pintura semiabstracta y sintética que celebra el paisaje del Norte, la luz de Tarragona y el alma de la frontera.",
+            },
+            {
+                title: "Trompe l'oeil",
+                description: "",
+            },
+            {
+                title: "Detritus",
+                description: "",
+            },
             {
                 title: "Archivo 2000-09",
                 description: "En esta colección de más de nueve años, Enrique Ciapara se presenta como un hábil mediador entre lo que él quiere y lo que la pintura quiere. Descubre más.",
-            },
-            {
-                title: "Serie 2015",
-                description: "Explora la colección 2015 de Enrique Ciapara: pintura semiabstracta y sintética que celebra el paisaje del Norte, la luz de Tarragona y el alma de la frontera."  
-            },
-            {
-                title: "Catalogo de ERRORES",
-                description: '¿Error, despropósito o feliz acierto? Descubre "Catálogo de Errores", la enigmática colección de Enrique Ciapara inspirada en Sandro Botticelli y Boccaccio.',
             },
             ]
         },
@@ -231,19 +243,31 @@ export const translations = {
                 quote: "What he offers is a different narrative as startling for its sincerity as for its paradoxical transience. He offers painting. Just that. Painting, but at its best.",
                 speaker: "Lucía Sanromán",
                 date: "June 2011",
-                items: [ 
+                items: [
+                    {
+                        title: "Errores Catalogue",
+                        description: "Mistake, absurdity, or stroke of genius? Discover \"Catálogo de Errores,\" Enrique Ciapara's enigmatic collection inspired by Sandro Botticelli and Boccaccio.",
+                    },
+                    {
+                        title: "Vanitas",
+                        description: "",
+                    },
+                    {
+                        title: "2015",
+                        description: "Discover Enrique Ciapara’s 2015 collection: semi-abstract and synthetic paintings that pay homage to the northern landscape, the light of Tarragona, and the spirit of the border.",
+                    },
+                    {
+                        title: "Trompe l’oeil",
+                        description: "",
+                    },
+                    {
+                        title: "Detritus",
+                        description: "",
+                    },
                     {
                         title: "2000-09 Archive",
                         description: "In this collection spanning more than nine years, Enrique Ciapara emerges as a skilled mediator between what he wants and what the painting wants. Learn more.",
                     },
-                    {
-                        title: "2015 Series",
-                        description: "Discover Enrique Ciapara’s 2015 collection: semi-abstract and synthetic paintings that pay homage to the northern landscape, the light of Tarragona, and the spirit of the border."  
-                    },
-                    {
-                        title: "Errores Catalogue",
-                        description: "Mistake, absurdity, or stroke of genius? Discover “Catálogo de Errores,” Enrique Ciapara's enigmatic collection inspired by Sandro Botticelli and Boccaccio.",
-                    },        
                 ]
             },
             works: {

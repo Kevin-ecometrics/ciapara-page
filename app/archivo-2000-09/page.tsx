@@ -1,16 +1,18 @@
 "use client";
 
-import NavbarObras from "../components/NavbarObras";
+import Navbar from "../components/Navbar";
 import Hero from "./components/HeroArchivo00_09";
 import GalleryArchivo00_09 from "./components/GalleryArchivo00_09";
+import Obras from "../components/Obras";
 import FooterReveal from "../components/FooterReveal";
 
 export default function ErroresPage() {
   return (
     <>
-      <NavbarObras />
+      <Navbar />
       <Hero />
       <GalleryArchivo00_09 />
+      <Obras />
       <FooterReveal />
     </>
   );

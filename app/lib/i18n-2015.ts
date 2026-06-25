@@ -13,6 +13,7 @@ export const translations2015 = {
     },
     gallery: {
       hint: "Pasa el cursor sobre una obra",
+      description: "",
       labels: {
         title: "Título",
         technique: "Técnica",
@@ -34,6 +35,7 @@ export const translations2015 = {
     },
     gallery: {
       hint: "Hover over a piece",
+      description: "",
       labels: {
         title: "Title",
         technique: "Technique",

@@ -20,10 +20,7 @@ export default function Home() {
             se despega, este About (la parte con scroll-track propio) continúa
             de forma inmediata, sin solape ni desfase. */}
         <About />
-        {/* <Obras /> */}
-        {/* <Works />
-        <Letters />
-        <Carousel /> */}
+        <Obras />
         <FooterReveal />
       </main>
     </>

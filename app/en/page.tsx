@@ -13,7 +13,7 @@ export default function HomeEn() {
       <main>
         <Hero />
         <About />
-        {/* <Obras /> */}
+        <Obras />
         <FooterReveal />
       </main>
     </>

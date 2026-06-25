@@ -9,64 +9,64 @@ const NAME_MS = 2400;
 
 const imagenes = [
   {
-    img: "/images/IMAGEN 1.webp",
+    img: "/IntroAnimation/Pieza 1 del catalogo errores por enrique ciapara en acrilico sobre tela 160 x 122 cm.jpeg",
     title:
-      "Pintura sin titulo acrilico sobre tela 160x 120 cm del catálogo de Enrique Ciapara artista visual de baja california",
-    alt: "Primera pieza del catálogo Errores del reconocido artista mexicano Enrique Ciapara en Baja California .Pieza en Acrílico sobre tela 160 x 120 cm",
+      "Pintura sin titulo acrilico sobre tela 160 x 122 cm del catálogo de Enrique Ciapara artista visual de baja california",
+    alt: "Primera pieza del catálogo Errores del reconocido artista mexicano Enrique Ciapara en Baja California. Pieza en Acrílico sobre tela 160 x 122 cm",
   },
   {
-    img: "/images/IMAGEN 2.webp",
+    img: "/IntroAnimation/Pieza 2 del catalogo de errores por artista visual  enrique ciapara en acrilico sobre tela en dimensiones 160 x 122 cm.jpeg",
     title:
-      "Segunda pieza de coleccion errores sin titulo  acrilico sobre tela 160 x 122 cm por artista en tijuana enrique ciapara",
-    alt: "Segunda pieza de la más reciente  colección errores sin título  acrílico sobre tela 160 x 122 cm por artista en Tijuana Enrique Ciapar",
+      "Segunda pieza de coleccion errores sin titulo acrilico sobre tela 160 x 122 cm por artista en tijuana enrique ciapara",
+    alt: "Segunda pieza de la más reciente colección errores sin título acrílico sobre tela 160 x 122 cm por artista en Tijuana Enrique Ciapara",
   },
   {
-    img: "/images/IMAGEN 3.webp",
+    img: "/IntroAnimation/Pieza 3 del catalogo de errores por ciapara elaborada en acrilico sobre tela 200 c 140 cm.jpeg",
     title:
-      "Tercera pieza sin nombre del catalogo de errores del artista plastico vanguardista enrique ciapara acrilico sobre tela 200x 140 cm",
-    alt: "Tercera pieza sin titulo en acrílico sobre tela 200x 140 cm del artista plástico vanguardista Enriqe Ciapara",
+      "Tercera pieza sin nombre del catalogo de errores del artista plastico vanguardista enrique ciapara acrilico sobre tela 200 x 140 cm",
+    alt: "Tercera pieza sin título en acrílico sobre tela 200 x 140 cm del artista plástico vanguardista Enrique Ciapara",
   },
   {
-    img: "/images/IMAGEN 4.webp",
+    img: "/IntroAnimation/Pieza 4 del catalogo de errores por ciapara elaborada en acrilico sobre tela 200 x 140 cm.jpeg",
     title:
-      "Cuarta pieza del catalogo de errores en acrilico sobre tela 200x 140 cm del pintor enrique ciapara en tijuana",
+      "Cuarta pieza del catalogo de errores en acrilico sobre tela 200 x 140 cm del pintor enrique ciapara en tijuana",
     alt: "Cuarta pieza de la imperdible colección de Errores del pintor Enrique Ciapara en Tijuana. Acrílico sobre tela 200 x 140 cm",
   },
   {
-    img: "/images/IMAGEN 5.webp",
+    img: "/IntroAnimation/Pieza 5 sin titulo catalogo de errores acrilico  sobre tela por enrique ciapara en dimensiones 160 x 122 cm  Pieza 5 sin titulo catalogo de errores acrilico  sobre tela por enrique ciapara en dimensiones 160 x 122 cm.jpeg",
     title:
       "Quinta pieza de la magna coleccion errores por el artista con mas 3 decadas de trayectoria acrilico sobre tela 160 x 122 cm",
-    alt: "Quinta pieza de la magna colección de Errores por el artista con más de 3 décadas de trayectoria originario de la Ciudad de Tijuana. Acrílico sobre tela 160x 122 cm",
+    alt: "Quinta pieza de la magna colección de Errores por el artista con más de 3 décadas de trayectoria originario de Tijuana. Acrílico sobre tela 160 x 122 cm",
   },
   {
-    img: "/images/IMAGEN 6.webp",
+    img: "/IntroAnimation/Pieza 6 del catalogo de errores en acrilico sobre tela en 160 x 122 cm por artista basado en tijuana enrique ciapara.jpeg",
     title:
-      "Sexta pieza sin titulo del catalogo de errores de Enrique Ciapara artista fronterizo acrilico sobre tela 160x 120 cm",
-    alt: "Sexta pieza sin título del catálogo de errores de Enrique Ciapara artista fronterizo acrílico sobre tela 160x 120 cm",
+      "Sexta pieza sin titulo del catalogo de errores de Enrique Ciapara artista fronterizo acrilico sobre tela 160 x 122 cm",
+    alt: "Sexta pieza sin título del catálogo de errores de Enrique Ciapara artista fronterizo acrílico sobre tela 160 x 122 cm",
   },
   {
-    img: "/images/IMAGEN 7.webp",
+    img: "/IntroAnimation/Pieza 7 titulada san antonio del catalogo de errores por enrique ciapara en acrilico sobre tela 122 x 107 cm.jpeg",
     title:
-      "Septima pieza titulada San antonio Souvenir del valle en acrilico sobre tela 122x 107 cm por el reconocido Enrique Ciapara",
-    alt: "Septima pieza titulada San Antonio Souvenir del Valle en acrílico sobre tela 122x 107 cm por el reconocido artista plástico Enrique Ciapara",
+      "Septima pieza titulada San antonio del catalogo de errores en acrilico sobre tela 122 x 107 cm por el reconocido Enrique Ciapara",
+    alt: "Séptima pieza titulada San Antonio del catálogo de Errores en acrílico sobre tela 122 x 107 cm por el reconocido artista plástico Enrique Ciapara",
   },
   {
-    img: "/images/IMAGEN 8.webp",
+    img: "/IntroAnimation/Pieza 8 titulada duetto elaborada en acrilico sobre tela 160 x 122 cm por enrique ciapara.jpeg",
     title:
-      "Octava pieza titulada Duetto souvenir del valle del catalogo de errores en acrilico sobre tela 160 x 122 cm",
-    alt: "Octava pieza titulada Duetto Souvenir del Valle de la colección  catálogo de Errores. Acrílico sobre tela 160 x 122 cm",
+      "Octava pieza titulada Duetto del catalogo de errores en acrilico sobre tela 160 x 122 cm por enrique ciapara",
+    alt: "Octava pieza titulada Duetto del catálogo de Errores. Acrílico sobre tela 160 x 122 cm por Enrique Ciapara",
   },
   {
-    img: "/images/IMAGEN 9.webp",
+    img: "/IntroAnimation/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.jpeg",
     title:
-      "Novena pieza del catalogo de errores titulada Banquete en el pinar souvenir del valle acrilico sobre tela 152x 429 cm",
-    alt: "Novena piea del catalogo de errores titulado Banquete en el pinar Souvenir del valle Acrílico sobre tela 152x 429 cm por el artista Enrique Ciapara",
+      "Novena pieza del catalogo de errores titulada Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara",
+    alt: "Novena pieza del catálogo de Errores titulada Banquete en el Pinar. Acrílico sobre tela 152 x 429 cm por el artista Enrique Ciapara",
   },
   {
-    img: "/images/IMAGEN 10.webp",
+    img: "/IntroAnimation/Pieza 10 el tigre en acrilico sobre tela en 160 x 122 cm por enrique ciapara.jpeg",
     title:
-      "Decima obra del catalogo de errores tilulada el tigre por el artista enrique ciapara acrilico sobre tela 160x 122 cm",
-    alt: "Decima obra del cátalogo de Errores titulada El tigre por el artista mexicano Enrique Ciapara. Acrílico sobre",
+      "Decima obra del catalogo de errores titulada el tigre por el artista enrique ciapara acrilico sobre tela 160 x 122 cm",
+    alt: "Décima obra del catálogo de Errores titulada El Tigre por el artista mexicano Enrique Ciapara. Acrílico sobre tela 160 x 122 cm",
   },
 ];
 
