@@ -29,7 +29,7 @@ export default function HeroErrores() {
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
-          src="/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp"
+          src="/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.jpeg"
           alt="Work titled Banquet in the Pine Forest, made in acrylic on canvas, 152 x 429 cm, by Enrique Ciapara, 2019"
           className="w-full h-full object-cover object-center scale-105"
         />

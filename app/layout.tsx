@@ -40,6 +40,17 @@ const interstate = localFont({
   ],
 });
 
+const interstateCompressed = localFont({
+  variable: "--font-interstate-compressed",
+  src: [
+    {
+      path: "../public/interstate/interstate-black-comp-58b64117a2ad9.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+});
+
 const openSans = Open_Sans({
   variable: "--font-open-sans",
   subsets: ["latin"],
@@ -94,7 +105,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${interstate.variable} ${openSans.variable} h-full antialiased overflow-x-hidden`}
+      className={`${interstate.variable} ${interstateCompressed.variable} ${openSans.variable} h-full antialiased overflow-x-hidden`}
     >
       <head>
         <script

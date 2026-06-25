@@ -1,12 +1,24 @@
 "use client";
 
+import { motion, useTransform, type MotionValue } from "motion/react";
 import { useI18n } from "../providers/i18nProvider";
 import type { Locale } from "../lib/i18n";
 import { scrollToSection } from "../lib/scrollToSection";
 import AboutIntro from "./AboutIntro";
 
-export default function HeroReveal() {
+export default function HeroReveal({
+  progress,
+  titleFontSize,
+}: {
+  progress: MotionValue<number>;
+  titleFontSize: number | null;
+}) {
   const { t, locale, setLocale } = useI18n();
+
+  // El about-intro queda oculto hasta que el título ya esté asentado, y
+  // entonces sube a su lugar con poco scroll adicional.
+  const aboutY = useTransform(progress, [0.65, 0.82], ["28px", "0px"]);
+  const aboutOpacity = useTransform(progress, [0.65, 0.82], [0, 1]);
 
   // Prensa aún no tiene un destino listo — oculto por ahora. Quitar este
   // flag cuando vuelva a estar disponible.
@@ -37,10 +49,15 @@ export default function HeroReveal() {
         <p className="text-xs tracking-[0.35em] uppercase text-[#1A1916]/40 mb-3 px-6">
           {t.hero.place}
         </p>
-        <h1 className="overflow-hidden w-full mb-4">
+        <h1 className="overflow-hidden w-full mb-4 px-6">
           <span
             className="block font-bold tracking-[-0.02em] text-[#1A1916] leading-[0.88] whitespace-nowrap"
-            style={{ fontSize: "clamp(2rem, 10.2vw, 20rem)" }}
+            style={{
+              fontFamily: "var(--font-interstate-compressed)",
+              fontSize: titleFontSize
+                ? `${titleFontSize}px`
+                : "clamp(2rem, 10.2vw, 20rem)",
+            }}
           >
             ENRIQUE CIAPARA
           </span>
@@ -79,7 +96,9 @@ export default function HeroReveal() {
       </div>
 
       <div className="flex-1 overflow-hidden">
-        <AboutIntro />
+        <motion.div style={{ y: aboutY, opacity: aboutOpacity }}>
+          <AboutIntro />
+        </motion.div>
       </div>
     </div>
   );

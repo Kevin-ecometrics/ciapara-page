@@ -11,7 +11,7 @@ export const translations = {
         aboutPage: "Textos",
         },
     hero: {
-        place: "Estudio 1991 · Tijuana, B.C. México",
+        place: "Estudio · Tijuana, B.C. México",
         title: "Enrique Ciapara",
         subtitle: "Artista abstracto basado en Tijuana México",
         scroller: "Desplazar"   
@@ -211,10 +211,10 @@ export const translations = {
         aboutPage: "Texts",
         },
             hero: {
-                place: "Studio 1991 · Tijuana, B.C. México",
+                place: "Studio · Tijuana, B.C. México",
                 title: "Enrique Ciapara",
                 subtitle: "Abstract artist based in Tijuana, Mexico",
-                scroller: "scroller",  
+                scroller: "Scroll",
             },
             about: {
                 quote: "Ciapara’s painting is full of life; without explicitly stating it, it invites us to enjoy it—its colors, its spontaneity, its delicate lines. There is nothing rigid about it; it is flexible, a delight to the eyes. Nothing dark, gloomy, dramatic, or ideological can be found in his paintings, only the pure joy of seeing, eating, drinking, and living.",

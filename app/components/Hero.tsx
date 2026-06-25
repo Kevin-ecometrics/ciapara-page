@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRef, type MouseEvent } from "react";
 import {
   motion,
@@ -12,13 +11,24 @@ import {
 import { useI18n } from "../providers/i18nProvider";
 import type { Locale } from "../lib/i18n";
 import { scrollToSection } from "../lib/scrollToSection";
+import { useFitText } from "../lib/useFitText";
+import { useCoverFill } from "../lib/useCoverFill";
 import HeroReveal from "./HeroReveal";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
+  const HeroColor = "/images/HeroColor.jpeg";
+
   const { t, locale, setLocale } = useI18n();
   const containerRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
+  const {
+    containerRef: titleRef,
+    textRef: titleTextRef,
+    fontSize: titleFontSize,
+  } = useFitText<HTMLHeadingElement, HTMLSpanElement>();
+  const colorFill = useCoverFill(HeroColor, bgRef, titleRef);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -31,32 +41,13 @@ export default function Hero() {
     mass: 0.4,
   });
 
-  // ── Fondo
-  const bgY = useTransform(progress, [0, 0.6], ["0%", "28%"]);
-  const bgScale = useTransform(progress, [0, 0.6], [1, 1.14]);
-  const bgBlurPx = useTransform(progress, [0, 0.5], [0, 10]);
-  const bgFilter = useTransform(bgBlurPx, (v) => `blur(${v}px)`);
-
-  // ── Resplandores
-  const glowY = useTransform(progress, [0, 0.55], ["0%", "50%"]);
-  const glowOpacity = useTransform(progress, [0, 0.4], [1, 0]);
-
-  // ── Texto oscuro push-through
-  const textScale = useTransform(progress, [0, 0.42], [1, 1.22]);
-  const textY = useTransform(progress, [0, 0.4], ["0%", "-16%"]);
-  const textOpacity = useTransform(progress, [0, 0.3], [1, 0]);
-  const textBlurPx = useTransform(progress, [0, 0.36], [0, 7]);
-  const textFilter = useTransform(textBlurPx, (v) => `blur(${v}px)`);
-
-  // ── Iris: progress 0.46 → 1.0 (termina justo cuando se suelta el pin)
+  // ── Iris: progress 0 → 1.0 (arranca de inmediato y dura todo el scroll,
+  // termina justo cuando se suelta el pin)
   const irisClip = useTransform(
     progress,
-    [0.46, 1],
+    [0, 1],
     ["circle(0% at 50% 100%)", "circle(150% at 50% 100%)"],
   );
-
-  // ── Hilo de progreso
-  const threadScale = useTransform(progress, [0, 1], [0, 1]);
 
   // ── Parallax de cursor
   const mvX = useMotionValue(0);
@@ -104,7 +95,7 @@ export default function Hero() {
             key={href}
             href={href}
             onClick={(e) => handleHeroNavClick(e, href)}
-            className="text-xs tracking-[0.18em] uppercase text-white/55 hover:text-white transition-colors duration-300"
+            className="text-xs tracking-[0.18em] uppercase text-white hover:font-bold transition-colors duration-300"
           >
             {label}
           </a>
@@ -113,13 +104,13 @@ export default function Hero() {
       <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
         {(["es", "en"] as Locale[]).map((l, i) => (
           <span key={l} className="flex items-center gap-1.5">
-            {i > 0 && <span className="text-white/20">/</span>}
+            {i > 0 && <span className="text-white">/</span>}
             <button
               onClick={() => setLocale(l)}
               className={`uppercase transition-colors duration-300 cursor-pointer ${
                 locale === l
                   ? "text-white font-semibold"
-                  : "text-white/30 hover:text-white/60"
+                  : "text-white hover:font-bold"
               }`}
             >
               {l}
@@ -135,31 +126,21 @@ export default function Hero() {
       ref={containerRef}
       id="hero"
       className="relative z-10"
-      style={{ height: "250vh" }}
+      style={{ height: "200vh" }}
     >
       <div
         className="sticky top-0 h-screen overflow-hidden bg-black"
         onMouseMove={handlePointerMove}
       >
         {/* ── Fondo ── */}
-        <motion.div
-          className="absolute inset-0 will-change-transform"
-          style={{
-            y: bgY,
-            scale: bgScale,
-            filter: bgFilter,
-            transformOrigin: "center bottom",
-          }}
-        >
-          <Image
-            src="/CiaparaHeroImg.jpeg"
-            alt="Ciapara Hero"
-            fill
-            priority
-            className="object-cover object-center"
+        <div ref={bgRef} className="absolute inset-0 grayscale">
+          <img
+            src={HeroColor}
+            alt=""
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/40" />
-        </motion.div>
+        </div>
 
         {/* Grano */}
         <div
@@ -171,10 +152,7 @@ export default function Hero() {
         />
 
         {/* ── Resplandores ── */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none will-change-transform"
-          style={{ y: glowY, opacity: glowOpacity }}
-        >
+        <div className="absolute inset-0 pointer-events-none">
           <motion.div
             className="absolute inset-0"
             style={{
@@ -193,36 +171,43 @@ export default function Hero() {
                 "radial-gradient(ellipse 40% 60% at 75% 55%, #4a2a1a24 0%, transparent 60%)",
             }}
           />
-        </motion.div>
+        </div>
 
         {/* ── TOP: Título + Nav versión oscura ── */}
-        <motion.div
-          className="absolute top-0 left-0 right-0 z-10 pt-8"
-          style={{
-            y: textY,
-            scale: textScale,
-            opacity: textOpacity,
-            filter: textFilter,
-            transformOrigin: "left top",
-          }}
-        >
+        <div className="absolute top-0 left-0 right-0 z-10 pt-8">
           <div className="overflow-hidden mb-3 px-6">
             <motion.p
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, ease: expo, delay: 0.3 }}
-              className="text-xs tracking-[0.35em] uppercase text-white/45"
+              className="text-xs tracking-[0.35em] uppercase text-white"
             >
               {t.hero.place}
             </motion.p>
           </div>
-          <h1 className="overflow-hidden w-full mb-4">
+          <h1
+            ref={titleRef}
+            className="overflow-hidden w-full mb-4 px-6"
+            style={{
+              fontSize: titleFontSize
+                ? `${titleFontSize}px`
+                : "clamp(2rem, 10.2vw, 20rem)",
+            }}
+          >
             <motion.span
+              ref={titleTextRef}
               initial={{ y: "105%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.0, ease: expo, delay: 0.5 }}
-              className="block font-bold tracking-[-0.02em] text-white leading-[0.88] whitespace-nowrap"
-              style={{ fontSize: "clamp(2rem, 10.2vw, 20rem)" }}
+              className="block font-bold tracking-[-0.02em] leading-[0.88] whitespace-nowrap bg-clip-text bg-no-repeat text-transparent"
+              style={{
+                fontFamily: "var(--font-interstate-compressed)",
+                backgroundImage: `url(${HeroColor})`,
+                backgroundSize: colorFill?.backgroundSize ?? "cover",
+                backgroundPosition: colorFill?.backgroundPosition ?? "center",
+                WebkitTextFillColor: "transparent",
+                WebkitBackgroundClip: "text",
+              }}
             >
               ENRIQUE CIAPARA
             </motion.span>
@@ -234,13 +219,10 @@ export default function Hero() {
           >
             {darkNavRow}
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* ── BOTTOM: Divider + Subtítulo versión oscura ── */}
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 z-10 px-6 pb-8 flex flex-col"
-          style={{ opacity: textOpacity, filter: textFilter }}
-        >
+        <div className="absolute bottom-0 left-0 right-0 z-10 px-6 pb-8 flex flex-col">
           {/* <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -257,22 +239,26 @@ export default function Hero() {
               {t.hero.subtitle}
             </motion.h2>
           </div> */}
-        </motion.div>
 
-        {/* ── Hilo de progreso ── */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center gap-4 h-44">
-          <span
-            className="text-[10px] tracking-[0.3em] text-white/30 uppercase"
-            style={{ writingMode: "vertical-rl" }}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: expo, delay: 1.1 }}
+            className="flex justify-center"
           >
-            Scroll
-          </span>
-          <div className="relative w-px flex-1 bg-white/10 overflow-hidden">
-            <motion.div
-              className="absolute top-0 left-0 right-0 h-full bg-white/50 origin-top"
-              style={{ scaleY: threadScale }}
-            />
-          </div>
+            <motion.span
+              animate={{ opacity: [0.35, 1, 0.35] }}
+              transition={{
+                duration: 2.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.1,
+              }}
+              className="text-[10px] tracking-[0.3em] text-white uppercase"
+            >
+              {t.hero.scroller}
+            </motion.span>
+          </motion.div>
         </div>
 
         {/* ── Iris overlay ── */}
@@ -284,7 +270,7 @@ export default function Hero() {
 
           {/* Título + Nav + inicio de About, ya pegados, versión clara */}
           <div className="absolute inset-0 z-10">
-            <HeroReveal />
+            <HeroReveal progress={progress} titleFontSize={titleFontSize} />
           </div>
         </motion.div>
       </div>
