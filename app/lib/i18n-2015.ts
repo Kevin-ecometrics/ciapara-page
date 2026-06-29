@@ -4,8 +4,8 @@ export const translations2015 = {
   es: {
     hero: {
       subtitle: "Obras · Enrique Ciapara · 2015",
-      title1: "Serie",
-      title2: "2015",
+      title1: "2015",
+      title2: "",
       explore: "Explorar",
     },
     nav: {

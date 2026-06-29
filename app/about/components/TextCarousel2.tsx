@@ -5,7 +5,8 @@ import { useI18n } from "../../providers/i18nProvider";
 
 export default function FirstYears() {
   const { ref, dragging, handlers } = useDragScroll<HTMLDivElement>();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const isEn = locale === "en";
 
   return (
     <section className="px-6 pb-24">
@@ -25,7 +26,7 @@ export default function FirstYears() {
         <figure className="h-100 w-[90%] shrink-0 overflow-hidden md:h-175 md:w-1/2 md:min-w-100 md:shrink">
           <img
             src="/images/about/Enrique Ciapara reflexionando en su antiguo estudio en 2010 en la ciudad de Tijuana con sus obras en el fondo.webp"
-            alt="Enrique Ciapara reflexionando sobre sillon verde desgastado con ropa casual en su antiguo estudio en 2010 en la ciudad de Tijuana con sus obras en el fondo"
+            alt={isEn ? "Enrique Ciapara in a worn green armchair in his former studio in Tijuana, 2010, with his works in the background" : "Enrique Ciapara reflexionando sobre sillon verde desgastado con ropa casual en su antiguo estudio en 2010 en la ciudad de Tijuana con sus obras en el fondo"}
             className="w-full h-full object-cover object-center"
             draggable={false}
           />
@@ -33,7 +34,7 @@ export default function FirstYears() {
         <figure className="h-100 w-[90%] shrink-0 overflow-hidden md:h-175 md:w-1/2 md:min-w-100 md:shrink">
           <img
             src="/images/about/Fotografia casual de enrique ciapara en anterior estudio en 2010 con piezas de fondo.webp"
-            alt="Fotografía casual de artista mexicano Enrique Ciapara en anterior estudio, sentado en un sillón desgastado, mientras toma agua en 2010 con piezas de fondo"
+            alt={isEn ? "Casual photograph of Mexican artist Enrique Ciapara in his former studio, seated in a worn armchair while drinking water in 2010, with works in the background" : "Fotografía casual de artista mexicano Enrique Ciapara en anterior estudio, sentado en un sillón desgastado, mientras toma agua en 2010 con piezas de fondo"}
             className="w-full h-full object-cover object-center"
             draggable={false}
           />

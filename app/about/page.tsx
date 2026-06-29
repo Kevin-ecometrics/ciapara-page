@@ -15,16 +15,18 @@ import FooterReveal from "../components/FooterReveal";
 export default function About() {
   return (
     <>
-      <NavbarLight />
-      <Hero />
-      <FirstYears />
-      <TextGallery />
-      <Carousel />
-      <TextGallery2 />
-      <TextCarousel />
-      <TextGallery3 />
-      <TextCarousel2 />
-      <CVEnriqueCiapara />
+      <div className="relative z-1 bg-[#F6F2EC]">
+        <NavbarLight />
+        <Hero />
+        <FirstYears />
+        <TextGallery />
+        <Carousel />
+        <TextGallery2 />
+        <TextCarousel />
+        <TextGallery3 />
+        <TextCarousel2 />
+        <CVEnriqueCiapara />
+      </div>
       <FooterReveal />
     </>
   );

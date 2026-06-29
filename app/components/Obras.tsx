@@ -22,42 +22,52 @@ const collectionsMeta = [
     href: "/catalogo-de-errores",
     hrefEn: "/en/catalogo-de-errores",
     disabled: false,
+    noLink: false,
+    hidden: false,
   },
   {
     num: "02",
     hoverBg: "bg-[#3B3028]",
-    img: "",
+    img: "/images/Vanitas/Portada Vanitas.jpg",
     imgFallback: "#3B3028",
     href: "",
     hrefEn: "",
-    disabled: true,
+    disabled: false,
+    noLink: true,
+    hidden: false,
   },
   {
     num: "03",
     hoverBg: "bg-[#2D3C30]",
     img: "/images/2015/Pieza dulce del dia de brujas acrilico sobre tela 122x 141 cm por pintor enrique ciapara.jpg",
     imgFallback: "#2D3C30",
-    href: "/serie-2015",
-    hrefEn: "/en/serie-2015",
+    href: "/2015",
+    hrefEn: "/en/2015",
     disabled: false,
+    noLink: false,
+    hidden: false,
   },
   {
     num: "04",
     hoverBg: "bg-[#2C3540]",
-    img: "",
+    img: "/images/about/Vista de obras en la colección trompe l' oeil de enrique ciapara en artista en la frontera san diego tijuana.webp",
     imgFallback: "#2C3540",
-    href: "",
-    hrefEn: "",
-    disabled: true,
+    href: "/trompe-loeil",
+    hrefEn: "/en/trompe-loeil",
+    disabled: false,
+    noLink: false,
+    hidden: false,
   },
   {
     num: "05",
     hoverBg: "bg-[#2A2A2A]",
     img: "",
     imgFallback: "#2A2A2A",
-    href: "",
+    href: "/Trompe-L'oeil",
     hrefEn: "",
-    disabled: true,
+    disabled: false,
+    noLink: false,
+    hidden: true,
   },
   {
     num: "06",
@@ -67,6 +77,8 @@ const collectionsMeta = [
     href: "/archivo-2000-09",
     hrefEn: "/en/archivo-2000-09",
     disabled: false,
+    noLink: false,
+    hidden: false,
   },
 ];
 
@@ -100,7 +112,7 @@ export default function Collections() {
       title: t.collections.items[i].title,
       desc: t.collections.items[i].description,
     }))
-    .filter((s) => s.href !== normalizedPath);
+    .filter((s) => !s.hidden && s.href !== normalizedPath);
 
   // En mobile, la sección queda fija (pinned) mientras se hace scroll a
   // través de las 3 obras; cuál está activa depende del progreso de scroll,
@@ -170,11 +182,13 @@ export default function Collections() {
               className="absolute inset-0"
               style={{ backgroundColor: s.imgFallback }}
             />
-            <img
-              src={s.img}
-              alt={s.title}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            {s.img && (
+              <img
+                src={s.img}
+                alt={s.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
             <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/85" />
 
             {/* Textura de grano */}
@@ -255,7 +269,16 @@ export default function Collections() {
               </>
             );
 
-            return s.disabled ? (
+            return s.noLink ? (
+              <div
+                key={s.num}
+                className="mb-6 cursor-default"
+                onMouseEnter={() => setActiveService(s.num)}
+                onMouseLeave={() => setActiveService(null)}
+              >
+                {inner}
+              </div>
+            ) : s.disabled ? (
               <div key={s.num} className="mb-6 cursor-default">
                 {inner}
               </div>

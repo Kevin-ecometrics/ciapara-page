@@ -22,6 +22,31 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Enrique Ciapara" }],
   publisher: "E-commetrics",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    alternateLocale: "es_MX",
+    url: "https://enriqueciapara.com/en/archivo-2000-09",
+    siteName: "Enrique Ciapara",
+    title: "Enrique Ciapara, 2000–09 Collection",
+    description:
+      "In this collection spanning more than ten years, the artist is presented as a skilled mediator between what he wants and what the painting wants. Learn more.",
+    images: [
+      {
+        url: "https://enriqueciapara.com/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Enrique Ciapara — 2000–09 Collection",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enrique Ciapara, 2000–09 Collection",
+    description:
+      "Over ten years of work where Ciapara mediates between what he wants and what the painting wants.",
+    images: ["https://enriqueciapara.com/opengraph-image.png"],
+  },
 };
 
 export default function BlurbLayout({

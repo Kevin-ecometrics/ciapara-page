@@ -1,5 +1,6 @@
 export type GalleryImage = {
   src: string;
+  lightboxSrc?: string;
   alt: string;
   width: number;
   height: number;

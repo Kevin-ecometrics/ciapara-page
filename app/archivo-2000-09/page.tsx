@@ -9,10 +9,12 @@ import FooterReveal from "../components/FooterReveal";
 export default function ErroresPage() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <GalleryArchivo00_09 />
-      <Obras />
+      <div className="relative z-1 bg-[#F6F2EC]">
+        <Navbar />
+        <Hero />
+        <GalleryArchivo00_09 />
+        <Obras />
+      </div>
       <FooterReveal />
     </>
   );

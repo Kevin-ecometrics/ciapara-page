@@ -3,7 +3,8 @@
 import { useI18n } from "../../providers/i18nProvider";
 
 export default function TextGallery() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const isEn = locale === "en";
 
   return (
     <section className="px-6 pb-24">
@@ -17,14 +18,14 @@ export default function TextGallery() {
           <figure className="mr-auto">
             <img
               src="/images/about/Exposicion en el cubo trompe l oeil con piezas y television con video los 15 errores mas comunes en la pintura.webp"
-              alt="Exposición en tijuana en El Cubo titulada Trompe l' oeil con piezas y una pieza intervenida de una televisión presentando: los 15 errores más comunes en la pintura por el artista Enrique Ciapara"
+              alt={isEn ? "Exhibition at El Cubo in Tijuana titled Trompe-l'oeil featuring an altered television showing: the 15 most common errors in painting, by Enrique Ciapara" : "Exposición en tijuana en El Cubo titulada Trompe l' oeil con piezas y una pieza intervenida de una televisión presentando: los 15 errores más comunes en la pintura por el artista Enrique Ciapara"}
               className="h-auto w-full"
             />
           </figure>
           <figure className="ml-20 md:ml-auto">
             <img
               src="/images/about/Retrado de Enrique Ciapara en 2011 en anterior estudio en Tijuana.webp"
-              alt="Retratado del artista Enrique Ciapara sentado en un sofa detrás de un televisor antiguo en su anterior estudio en Tijuana en el año 2011"
+              alt={isEn ? "Portrait of artist Enrique Ciapara seated on a sofa behind an old television in his former studio in Tijuana, 2011" : "Retratado del artista Enrique Ciapara sentado en un sofa detrás de un televisor antiguo en su anterior estudio en Tijuana en el año 2011"}
               className="w-full h-auto md:w-150"
             />
           </figure>
@@ -33,7 +34,7 @@ export default function TextGallery() {
         <figure className="mr-20 md:mr-0">
           <img
             src="/images/about/Poliptico de mas de 300 dibujos en tinta por enrique ciapara expuestos en CECUT anio 2013.webp"
-            alt="Políptico de más de 300 dibujos en técnica de tinta sobre papel por artista Enrique Ciapara expuestos en colección Trompe-l'oeil en el Centro Cultural Tijuana"
+            alt={isEn ? "Polyptych of more than 300 ink-on-paper drawings by Enrique Ciapara exhibited in the Trompe-l'oeil collection at Centro Cultural Tijuana" : "Políptico de más de 300 dibujos en técnica de tinta sobre papel por artista Enrique Ciapara expuestos en colección Trompe-l'oeil en el Centro Cultural Tijuana"}
             className="w-full h-auto md:w-140"
           />
         </figure>

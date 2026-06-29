@@ -4,7 +4,7 @@ export const aboutTranslations = {
   es: {
     hero: {
       label: 'Textos sobre la obra',
-      title: 'Hacia la\nmonotonoía',
+      title: 'Hacia la\nmonotonía',
     },
     essay: {
       title: 'Hacia la monotonía en Ciapara',

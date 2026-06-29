@@ -22,8 +22,57 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Enrique Ciapara" }],
   publisher: "E-commetrics",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    alternateLocale: "es_MX",
+    url: "https://enriqueciapara.com/en",
+    siteName: "Enrique Ciapara",
+    title: "Enrique Ciapara | 35 Years of Work in Mexico",
+    description:
+      "His painting contains iconography that, at first glance, seems familiar. Discover his biography, exhibitions, and the most outstanding works of his career.",
+    images: [
+      {
+        url: "https://enriqueciapara.com/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Enrique Ciapara — Visual artist",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enrique Ciapara | 35 Years of Work in Mexico",
+    description:
+      "His painting contains iconography that, at first glance, seems familiar. Discover his biography, exhibitions, and the most outstanding works of his career.",
+    images: ["https://enriqueciapara.com/opengraph-image.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Enrique Ciapara",
+  url: "https://enriqueciapara.com/en",
+  image: "https://enriqueciapara.com/opengraph-image.png",
+  jobTitle: "Visual artist",
+  description:
+    "His painting contains iconography that, at first glance, seems familiar. Discover his biography, exhibitions, and the most outstanding works of his career.",
+  nationality: {
+    "@type": "Country",
+    name: "Mexico",
+  },
+  sameAs: ["https://www.instagram.com/enriqueciapara/"],
 };
 
 export default function EnLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  );
 }

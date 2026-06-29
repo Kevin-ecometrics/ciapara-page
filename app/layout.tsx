@@ -79,6 +79,30 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Enrique Ciapara" }],
   publisher: "E-commetrics",
+  openGraph: {
+    type: "website",
+    locale: "es_MX",
+    url: "https://enriqueciapara.com",
+    siteName: "Enrique Ciapara",
+    title: "Enrique Ciapara | 35 años de trayectoria en México",
+    description:
+      "Su pintura encierra una iconografía que a primera vista nos es cotidiana. Conoce su biografía, exposiciones y las obras más destacadas de su carrera.",
+    images: [
+      {
+        url: "https://enriqueciapara.com/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Enrique Ciapara — Artista plástico",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enrique Ciapara | 35 años de trayectoria en México",
+    description:
+      "Su pintura encierra una iconografía que a primera vista nos es cotidiana. Conoce su biografía, exposiciones y las obras más destacadas de su carrera.",
+    images: ["https://enriqueciapara.com/opengraph-image.png"],
+  },
 };
 
 const jsonLd = {

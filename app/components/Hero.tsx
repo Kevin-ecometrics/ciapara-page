@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type MouseEvent } from "react";
+import { useRef, useState, type MouseEvent } from "react";
 import {
   motion,
   useScroll,
@@ -14,6 +14,7 @@ import { scrollToSection } from "../lib/scrollToSection";
 import { useFitText } from "../lib/useFitText";
 import { useCoverFill } from "../lib/useCoverFill";
 import HeroReveal from "./HeroReveal";
+import MobileMenu from "./MobileMenu";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
@@ -23,6 +24,7 @@ export default function Hero() {
   const { t, locale, setLocale } = useI18n();
   const containerRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const {
     containerRef: titleRef,
     textRef: titleTextRef,
@@ -41,15 +43,12 @@ export default function Hero() {
     mass: 0.4,
   });
 
-  // ── Iris: progress 0 → 1.0 (arranca de inmediato y dura todo el scroll,
-  // termina justo cuando se suelta el pin)
   const irisClip = useTransform(
     progress,
     [0, 1],
     ["circle(0% at 50% 100%)", "circle(150% at 50% 100%)"],
   );
 
-  // ── Parallax de cursor
   const mvX = useMotionValue(0);
   const mvY = useMotionValue(0);
   const orbX = useSpring(mvX, { stiffness: 40, damping: 18 });
@@ -57,10 +56,7 @@ export default function Hero() {
   const orbXInverse = useTransform(orbX, (v) => v * -0.6);
   const orbYInverse = useTransform(orbY, (v) => v * -0.6);
 
-  // Prensa aún no tiene un destino listo — oculto por ahora. Quitar este
-  // flag cuando vuelva a estar disponible.
-  const SHOW_NEWS_LINK = false;
-
+  const SHOW_NEWS_LINK = true;
   const aboutHref = locale === "en" ? "/en/about" : "/about";
 
   const heroLinks = [
@@ -74,7 +70,6 @@ export default function Hero() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
   ) {
-    // Enlaces a página completa (como /about) navegan normal, sin interceptar.
     if (!href.includes("#")) return;
     e.preventDefault();
     scrollToSection(href.replace("#", ""));
@@ -89,18 +84,40 @@ export default function Hero() {
 
   const darkNavRow = (
     <div className="flex items-center justify-between px-6 pt-3 border-t border-white/10">
-      <div className="hidden md:flex items-center gap-8 lg:gap-10">
-        {heroLinks.map(({ label, href }) => (
-          <a
-            key={href}
-            href={href}
-            onClick={(e) => handleHeroNavClick(e, href)}
-            className="text-xs tracking-[0.18em] uppercase text-white hover:font-bold transition-colors duration-300"
+      {/* Izquierda: MENU (mobile) + links (desktop) */}
+      <div className="flex items-center gap-3 md:gap-8 lg:gap-10">
+        <button
+          onClick={() => setMenuOpen(true)}
+          className="md:hidden flex items-center gap-1.5 text-[10px] tracking-[0.2em] uppercase font-medium text-white/70 hover:text-white transition-colors duration-300"
+        >
+          Menu
+          <svg
+            width="12"
+            height="10"
+            viewBox="0 0 12 10"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
           >
-            {label}
-          </a>
-        ))}
+            <path d="M0 1h12M0 5h12M0 9h12" />
+          </svg>
+        </button>
+        <div className="hidden md:flex items-center gap-8 lg:gap-10">
+          {heroLinks.map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={(e) => handleHeroNavClick(e, href)}
+              className="text-xs tracking-[0.18em] uppercase text-white hover:font-bold transition-colors duration-300"
+            >
+              {label}
+            </a>
+          ))}
+        </div>
       </div>
+
+      {/* Derecha: idiomas */}
       <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
         {(["es", "en"] as Locale[]).map((l, i) => (
           <span key={l} className="flex items-center gap-1.5">
@@ -221,25 +238,8 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* ── BOTTOM: Divider + Subtítulo versión oscura ── */}
+        {/* ── BOTTOM: scroll indicator ── */}
         <div className="absolute bottom-0 left-0 right-0 z-10 px-6 pb-8 flex flex-col">
-          {/* <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.7, ease: expo, delay: 0.95 }}
-            className="w-16 h-px bg-white/25 mb-6 origin-left"
-          />
-          <div className="overflow-hidden">
-            <motion.h2
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.75, ease: expo, delay: 1.05 }}
-              className="text-base md:text-lg text-white/55 tracking-[0.12em] uppercase font-normal"
-            >
-              {t.hero.subtitle}
-            </motion.h2>
-          </div> */}
-
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -268,12 +268,25 @@ export default function Hero() {
         >
           <div className="absolute inset-0 bg-[#F6F2EC] pointer-events-none" />
 
-          {/* Título + Nav + inicio de About, ya pegados, versión clara */}
           <div className="absolute inset-0 z-10">
-            <HeroReveal progress={progress} titleFontSize={titleFontSize} />
+            <HeroReveal
+              progress={progress}
+              titleFontSize={titleFontSize}
+              onOpenMenu={() => setMenuOpen(true)}
+            />
           </div>
         </motion.div>
       </div>
+
+      {/* MobileMenu fuera del clip-path para que no quede recortado */}
+      <MobileMenu
+        isOpen={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        links={heroLinks}
+        locale={locale}
+        setLocale={setLocale}
+        onLinkClick={handleHeroNavClick}
+      />
     </section>
   );
 }

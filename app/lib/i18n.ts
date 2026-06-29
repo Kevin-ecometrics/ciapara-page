@@ -9,6 +9,13 @@ export const translations = {
         contact: "Contacto",
         artistPage: "Artista",
         aboutPage: "Textos",
+        openMenu: "Abrir menú",
+        closeMenu: "Cerrar menú",
+        },
+    press: {
+        heading: "Últimas noticias",
+        articles: "artículos",
+        cta: "Ver más",
         },
     hero: {
         place: "Estudio · Tijuana, B.C. México",
@@ -34,19 +41,19 @@ export const translations = {
         items: [
             {
                 title: "Catálogo de Errores",
-                description: '¿Error, despropósito o feliz acierto? Descubre "Catálogo de Errores", la enigmática colección de Enrique Ciapara inspirada en Sandro Botticelli y Boccaccio.',
+                description: 'Descubre la reinterpretación libre de Enrique Ciapara sobre la obra de Sandro Botticelli y Boccaccio. Una visión contemporánea e independiente.',
             },
             {
                 title: "Vanitas",
-                description: "",
+                description: "Vanitas explora el grabado a través de una dualidad fascinante por un lado, la melancolía de lo efímero, lo fútil y lo mortal y la vanidad entendida.",
             },
             {
                 title: "2015",
-                description: "Explora la colección 2015 de Enrique Ciapara: pintura semiabstracta y sintética que celebra el paisaje del Norte, la luz de Tarragona y el alma de la frontera.",
+                description: "Una obra inspirada en la luz del Norte y los paisajes de Tarragona, donde los objetos de cocina cobran vida.",
             },
             {
                 title: "Trompe l'oeil",
-                description: "",
+                description: "La obra que se reúne en esta exposición describe un límite entre todas las posibilidades que se pueden encontrar más allá de lo que alcanzamos a ver, más allá del paisaje.",
             },
             {
                 title: "Detritus",
@@ -54,7 +61,7 @@ export const translations = {
             },
             {
                 title: "Archivo 2000-09",
-                description: "En esta colección de más de nueve años, Enrique Ciapara se presenta como un hábil mediador entre lo que él quiere y lo que la pintura quiere. Descubre más.",
+                description: "El hedonismo de la pintura de Ciapara  en medio de un orden social son un manifiesto de resistencia. Conoce la colección completa",
             },
             ]
         },
@@ -221,6 +228,13 @@ export const translations = {
         contact: "Contact",
         artistPage: "Artist",
         aboutPage: "Texts",
+        openMenu: "Open menu",
+        closeMenu: "Close menu",
+        },
+    press: {
+        heading: "Latest news",
+        articles: "articles",
+        cta: "Read more",
         },
             hero: {
                 place: "Studio · Tijuana, B.C. México",
@@ -246,19 +260,19 @@ export const translations = {
                 items: [
                     {
                         title: "Errores Catalogue",
-                        description: "Mistake, absurdity, or stroke of genius? Discover \"Catálogo de Errores,\" Enrique Ciapara's enigmatic collection inspired by Sandro Botticelli and Boccaccio.",
+                        description: "Discover Enrique Ciapara’s free reinterpretation of the works of Sandro Botticelli and Boccaccio. A contemporary and independent perspective.",
                     },
                     {
                         title: "Vanitas",
-                        description: "",
+                        description: "Vanitas explores printmaking through a fascinating duality: on the one hand, the melancholy of the ephemeral, the futile, and the mortal; and on the other, vanity as it is understood.",
                     },
                     {
                         title: "2015",
-                        description: "Discover Enrique Ciapara’s 2015 collection: semi-abstract and synthetic paintings that pay homage to the northern landscape, the light of Tarragona, and the spirit of the border.",
+                        description: "A work inspired by the northern light and the landscapes of Tarragona, where kitchen objects come to life.",
                     },
                     {
                         title: "Trompe l’oeil",
-                        description: "",
+                        description: "The works featured in this exhibition explore the boundary between all the possibilities that lie beyond what we can see, beyond the landscape",
                     },
                     {
                         title: "Detritus",
@@ -266,7 +280,7 @@ export const translations = {
                     },
                     {
                         title: "2000-09 Archive",
-                        description: "In this collection spanning more than nine years, Enrique Ciapara emerges as a skilled mediator between what he wants and what the painting wants. Learn more.",
+                        description: "The hedonism in Ciapara’s paintings, set against the backdrop of a social order, serves as a manifesto of resistance. Explore the complete collection",
                     },
                 ]
             },
@@ -433,7 +447,8 @@ export const translations = {
 };
 
 export type Translations = {
-    nav: {about: string; collections: string; news: string; contact: string; artistPage: string; aboutPage: string};
+    nav: {about: string; collections: string; news: string; contact: string; artistPage: string; aboutPage: string; openMenu: string; closeMenu: string};
+    press: {heading: string; articles: string; cta: string};
     hero: {place: string; title: string; subtitle: string; scroller: string;};
     about: {quote: string; speaker: string; text: string; speaker2: string; date: string; preArrow: string; postArrow: string; more: string;};
     collections: {quoteBold: string; quote: string; speaker: string; date: string; items:{title: string; description: string}[]};

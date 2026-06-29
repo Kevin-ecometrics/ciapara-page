@@ -43,28 +43,28 @@ function ToggleButton({ up, label, onClick }: { up: boolean; label: string; onCl
 export default function CollectionDescription({ title, children }: Props) {
   const [expanded, setExpanded] = useState(false);
   const { locale } = useI18n();
-  const topRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   const readMoreLabel = locale === "en" ? "Read more" : "Leer más";
   const collapseLabel = locale === "en" ? "Show less" : "Leer menos";
 
-  function collapse() {
+  function collapseAndScroll() {
     setExpanded(false);
     setTimeout(() => {
-      topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      titleRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 80);
   }
 
   return (
     <div className="mb-20 md:mb-32">
-      <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight uppercase text-[#1A1916] leading-[0.9] mb-6 md:mb-8">
+      <h2
+        ref={titleRef}
+        className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight uppercase text-[#1A1916] leading-[0.9] mb-6 md:mb-8"
+      >
         {title}
       </h2>
 
-      {/* Scroll anchor */}
-      <div ref={topRef} />
-
-      {/* Top "leer menos" — shown when expanded */}
+      {/* Top "leer menos" — collapses only, no scroll */}
       <AnimatePresence>
         {expanded && (
           <motion.div
@@ -74,7 +74,7 @@ export default function CollectionDescription({ title, children }: Props) {
             transition={{ duration: 0.2 }}
             className="mb-3"
           >
-            <ToggleButton up label={collapseLabel} onClick={collapse} />
+            <ToggleButton up label={collapseLabel} onClick={() => setExpanded(false)} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -100,12 +100,15 @@ export default function CollectionDescription({ title, children }: Props) {
         </AnimatePresence>
       </motion.div>
 
-      {/* Bottom "leer más" — shown when collapsed */}
-      {!expanded && (
-        <div className="mt-3">
+      {/* Bottom buttons */}
+      <div className="mt-3">
+        {!expanded ? (
           <ToggleButton up={false} label={readMoreLabel} onClick={() => setExpanded(true)} />
-        </div>
-      )}
+        ) : (
+          /* Bottom "leer menos" — collapses AND scrolls to title */
+          <ToggleButton up label={collapseLabel} onClick={collapseAndScroll} />
+        )}
+      </div>
     </div>
   );
 }

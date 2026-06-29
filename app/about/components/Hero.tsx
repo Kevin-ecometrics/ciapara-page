@@ -6,7 +6,7 @@ import { useI18n } from "../../providers/i18nProvider";
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <section className="relative">
@@ -25,7 +25,7 @@ export default function Hero() {
       <figure className="relative h-screen md:h-[70vh] w-full overflow-hidden">
         <img
           src="/images/about/enrique ciapara en su estudio en la ciudad de tijuana.webp"
-          alt="Artista Enrique Ciapara maniobrando un sillón en su estudio en la ciudad de Tijuana"
+          alt={locale === "en" ? "Artist Enrique Ciapara arranging a chair in his studio in Tijuana" : "Artista Enrique Ciapara maniobrando un sillón en su estudio en la ciudad de Tijuana"}
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/20 via-black/10 to-transparent" />

@@ -84,7 +84,7 @@ export default function Gallery() {
                       alt={img.alt}
                       width={img.width}
                       height={img.height}
-                      className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-110"
+                      className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     />
                   </div>
 
