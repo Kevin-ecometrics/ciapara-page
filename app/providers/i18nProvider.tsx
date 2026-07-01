@@ -20,11 +20,11 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const locale: Locale = pathname.startsWith("/fr")
+  const locale: Locale = /^\/fr(\/|$)/.test(pathname)
     ? "fr"
-    : pathname.startsWith("/ca")
+    : /^\/ca(\/|$)/.test(pathname)
     ? "ca"
-    : pathname.startsWith("/en")
+    : /^\/en(\/|$)/.test(pathname)
     ? "en"
     : "es";
 

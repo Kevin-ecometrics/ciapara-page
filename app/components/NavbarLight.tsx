@@ -71,7 +71,7 @@ export default function NavbarLight() {
           {/* Izquierda: logo + hamburguesa + links */}
           <div className="flex items-center gap-3 md:gap-10">
             <a
-              href={homeBase || "#"}
+              href={homeBase || "/"}
               className="flex items-center shrink-0"
               onClick={() => {
                 if (!isHome) sessionStorage.setItem("skip-intro", "1");

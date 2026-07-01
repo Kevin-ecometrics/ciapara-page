@@ -255,7 +255,7 @@ export default function Navbar() {
         <div className="mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-3 md:gap-10">
             <a
-              href={homeBase || "#"}
+              href={homeBase || "/"}
               className="shrink-0"
               onClick={() => sessionStorage.setItem("skip-intro", "1")}
             >
@@ -310,7 +310,7 @@ export default function Navbar() {
         <div className="mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-3 md:gap-10">
             <a
-              href={homeBase || "#"}
+              href={homeBase || "/"}
               className="shrink-0"
               onClick={() => sessionStorage.setItem("skip-intro", "1")}
             >

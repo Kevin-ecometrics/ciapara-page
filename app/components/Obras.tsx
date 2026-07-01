@@ -116,7 +116,8 @@ export default function Collections() {
   // En la página de una obra, no mostrarla entre las opciones — evita que
   // el listado se enlace a la página en la que ya estás.
   const normalizedPath =
-    pathname.replace(/^\/(en|fr|ca)/, "").replace(/\/$/, "") || "/";
+    pathname.replace(/^\/(en|fr|ca)(?=\/|$)/, "").replace(/\/$/, "") || "/";
+  const isHome = normalizedPath === "/";
 
   const collections = collectionsMeta
     .map((meta, i) => ({
@@ -216,20 +217,22 @@ export default function Collections() {
 
         {/* Contenido encima de la imagen */}
         <div className="relative z-10 mx-auto text-white">
-          <motion.div
-            animate={{ opacity: activeService ? 0 : 1 }}
-            transition={{ duration: 0.4, ease: expo }}
-          >
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 leading-[1.15] max-w-5xl uppercase indent-20 md:indent-56">
-              "{t.collections.quoteBold}"
-            </h3>
-            <div className="text-sm leading-relaxed max-w-xl mb-12 ml-2">
-              <p>
-                - {t.collections.speaker}
-                <span>({t.collections.date})</span>
-              </p>
-            </div>
-          </motion.div>
+          {isHome && (
+            <motion.div
+              animate={{ opacity: activeService ? 0 : 1 }}
+              transition={{ duration: 0.4, ease: expo }}
+            >
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 leading-[1.15] max-w-5xl uppercase indent-20 md:indent-56">
+                "{t.collections.quoteBold}"
+              </h3>
+              <div className="text-sm leading-relaxed max-w-xl mb-12 ml-2">
+                <p>
+                  - {t.collections.speaker}
+                  <span>({t.collections.date})</span>
+                </p>
+              </div>
+            </motion.div>
+          )}
 
           {collections.map((s) => {
             const inner = (
