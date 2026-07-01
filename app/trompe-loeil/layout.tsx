@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     languages: {
       es: "https://enriqueciapara.com/trompe-loeil",
       en: "https://enriqueciapara.com/en/trompe-loeil",
+      fr: "https://enriqueciapara.com/fr/trompe-loeil",
+      ca: "https://enriqueciapara.com/ca/trompe-loeil",
       "x-default": "https://enriqueciapara.com/trompe-loeil",
     },
   },

@@ -32,7 +32,7 @@ export default function DescriptionArchivo() {
           it.
           <br />
           For the forefathers of utilitarian philosophy Jeremy Bentham and John
-          Stuart Mills the “greater happiness principle” is the standard by
+          Stuart Mills the "greater happiness principle" is the standard by
           which to judge the grater good of any given situation: an action is
           ethically correct, or better than another action, in so far as it
           promotes happiness in all people affected by the situation, and wrong
@@ -75,7 +75,7 @@ export default function DescriptionArchivo() {
           simile, in order to translate it into text. This may be why it is hard
           to talk about Ciapara’s painting in a way that feels as materially
           dense as looking at it in person. What is meant when a painting is
-          described as having “presence” is that the experience of it is as
+          described as having "presence" is that the experience of it is as
           focused and direct, layered and discursive, as if one where in front
           of something other than an inert object. Only associative phrases
           approximate the experience. And so, I say that Ciapara’s paintings are
@@ -131,6 +131,286 @@ export default function DescriptionArchivo() {
           Lucía Sanromán
           <br />
           June 2011
+        </h3>
+      </div>
+    );
+  }
+
+  if (locale === "fr") {
+    return (
+      <div className="text-[#1A1916]/45 leading-relaxed pr-6 space-y-4">
+        <h2 className="text-2xl">
+          Du plaisir et d&apos;autres principes dans l&apos;œuvre d&apos;Enrique
+          Ciapara
+        </h2>
+        <p>
+          On pourrait se demander de quoi il s&apos;agit. Cela témoigne
+          d&apos;un tel engagement à déposer du pigment et de tant de temps
+          consacré à cela, et pour quoi ? Comment pourrait-on imaginer un but à
+          cette action soutenue ? À quoi sert-il, cet acte d&apos;appliquer de
+          la peinture diluée ou dense sur une surface de papier ou de toile ?
+          Pourtant, nous accomplissons de petits gestes quotidiennement sans les
+          remettre en question — des actions discrètes comme embrasser ou manger
+          du bon pain tartiné d&apos;un petit morceau de beurre non salé. Alors
+          pourquoi remettre en question l&apos;acte de peindre aujourd&apos;hui
+          en particulier ?
+          <br />
+          Est-il si absurde de s&apos;interroger sur sa fonction que
+          d&apos;interroger quel pourrait être le but utilitaire de préparer un
+          repas extraordinaire ?
+          <br />
+          Un argument strictement utilitaire met en évidence la fausseté de ces
+          questions.
+        </p>
+        <p>
+          Un repas admirablement préparé a meilleur goût et est plus agréable ;
+          par conséquent, il apporte plus de bonheur à ceux qui ont le plaisir
+          de le savourer.
+          <br />
+          Pour les pères de la philosophie utilitariste Jeremy Bentham et John
+          Stuart Mills, le &laquo; principe du plus grand bonheur &raquo; est la
+          norme à partir de laquelle juger le plus grand bien dans une situation
+          donnée : une action est éthiquement correcte — ou meilleure qu&apos;une
+          autre action — dans la mesure où elle promeut le bonheur de toutes les
+          personnes concernées par la situation, et mauvaise si elle génère du
+          malheur.
+          <br />
+          Les peintures d&apos;Enrique Ciapara procurent un vrai plaisir. Ce
+          plaisir n&apos;est pas séparé des sens mais en dépend au contraire, et
+          apprécier sa peinture n&apos;est pas si éloigné de ce que
+          l&apos;on ressent lors d&apos;un repas extraordinaire préparé avec
+          amour. Cela rend-il la peinture de Ciapara moins pertinente, importante
+          ou appropriée que d&apos;autres types d&apos;art contemporain, comme
+          l&apos;art qui reflète stylistiquement et thématiquement la dureté du
+          contexte urbain de Tijuana — le lieu où l&apos;artiste vit et travaille
+          — ou les pratiques artistiques qui s&apos;engagent visiblement dans les
+          questions sociales qui conditionnent la vie dans le nord du Mexique en
+          ce moment ?
+        </p>
+        <p>
+          Mes questions sont délibérément polémiques et conduisent à des réponses
+          contradictoires mais productives. Si l&apos;on définit l&apos;art
+          contemporain comme testimonial, il est évident que Ciapara
+          n&apos;utilise pas son pinceau pour diagnostiquer ce qui affecte le
+          Mexique. Il n&apos;offre aucune prescription sur la façon de résoudre
+          les gigantesques problèmes économiques et sociaux qui pèsent sur ce
+          pays. Son œuvre est dépourvue de commentaire politique : elle ne dit
+          absolument rien sur la propagation de la narco-violence au Mexique, et
+          particulièrement à Tijuana au cours des six dernières années, et ne
+          capitalise pas sur un sentiment croissant d&apos;angoisse face à
+          l&apos;avenir du Mexique et à ses perspectives. Si ce que l&apos;on
+          cherche dans l&apos;art contemporain est un reflet direct des conditions
+          contextuelles du moment, il est également évident que Ciapara
+          n&apos;est pas intéressé à utiliser thématiquement et stylistiquement
+          l&apos;iconographie de la vie urbaine dans une ville frontalière :
+          images de la clôture entre le Mexique et les États-Unis, maquiladoras
+          et leurs déchets, vie nocturne frontalière et ses habitants. Aucun de
+          ces motifs n&apos;apparaît dans ses peintures. Pas directement, en tout
+          cas.
+        </p>
+        <p>
+          Ce qu&apos;il offre est un récit différent, aussi saisissant par sa
+          sincérité que par sa transitoriété paradoxale. Il offre de la peinture.
+          Seulement cela. La peinture, mais à son meilleur. La bonne peinture est
+          difficile à décrire avec des mots et il faut en faire le tour, par la
+          métaphore et la comparaison, pour la transposer en texte. C&apos;est
+          peut-être pourquoi il est difficile de parler de la peinture de Ciapara
+          d&apos;une manière qui semble aussi matériellement dense que de la
+          contempler en personne. Ce qu&apos;on entend lorsqu&apos;on décrit un
+          tableau comme ayant une &laquo; présence &raquo;, c&apos;est que
+          l&apos;expérience en est aussi concentrée et directe, stratifiée et
+          discursive, comme si l&apos;on se trouvait face à quelque chose
+          d&apos;autre qu&apos;un objet inerte. Seules des phrases associatives
+          s&apos;approchent de l&apos;expérience. Ainsi, je dis que les peintures
+          de Ciapara sont lyriques et syncopées comme le Night Train de John
+          Coltrane ; libres comme les gribouillages d&apos;enfants mais
+          pleinement conscientes dans leur ingéniosité compositionnelle ; elles
+          sont naturelles ; et leurs surfaces expriment un plaisir si hédoniste
+          dans le processus de leur création qu&apos;il ne reste plus de place
+          pour la nostalgie du passé de la peinture. Cette dernière qualité est
+          rare de nos jours, quand la mort du genre a été annoncée si souvent que
+          l&apos;on se désintéresse de son passage et de son obituaire. Peignant
+          toute sa vie d&apos;adulte, Ciapara avait à peine vingt ans quand il a
+          commencé à fréquenter les ateliers que le peintre espagnol Luis Moret
+          dirigeait à Tijuana dans les années 1980. Plus proche de l&apos;Art
+          Informel que de l&apos;expressionnisme abstrait de l&apos;École
+          américaine, le langage pictural de Ciapara a évolué vers un alphabet de
+          marques qui expriment une conscience des origines représentationnelles
+          de la peinture sans être liées ni au réalisme ni à l&apos;abstraction.
+          Un examen linéaire de dix ans de production, de 1999 à 2009, le montre
+          maintenant un débat réfléchi et constant avec lui-même sur la tension
+          entre les marques de surface et le fond ; il présente également
+          l&apos;artiste comme un habile négociateur entre ce qu&apos;il veut et
+          ce que la peinture veut. Et si autrefois le fond semblait parfois
+          s&apos;opposer à sa volonté de maintenir un désordre conscient sur la
+          surface, au fil d&apos;une décennie Ciapara sait exactement quand
+          contrôler ses marques vacillantes, et quand les laisser aller vers le
+          désir inhérent à la peinture moderniste d&apos;atteindre la planéité.
+          Parfois évocateur de Cy Twombly et à d&apos;autres moments du Philip
+          Guston des débuts, Ciapara est le plus lui-même quand il est le plus
+          hédoniste — quand le plaisir guide les décisions picturales prises en
+          temps réel, dans l&apos;atelier.
+          <br />
+          Le plaisir est lié au sentiment de bonheur, de beauté et de
+          satisfaction, mais s&apos;en distingue en ce qu&apos;il ne cherche rien
+          d&apos;autre que lui-même. On peut sentir le principe du plaisir guider
+          les décisions picturales de Ciapara de la même manière qu&apos;on peut
+          sentir le plaisir guider un grand chef dans la préparation d&apos;un
+          festin particulièrement délicieux. Les deux conduisent à un sentiment de
+          trouver dans le familier quelque chose d&apos;acutément extraordinaire —
+          un sentiment d&apos;exaltation moins lié au choc du nouveau qu&apos;au
+          délice qui provient de reconnaître que quelque chose est bon.
+        </p>
+        <p>
+          Ce qui nous ramène au début : quel est le bien de la peinture de
+          Ciapara ? Le bien de cette peinture réside, je crois, dans ce
+          qu&apos;elle nous offre un plaisir plus profond, lié au sentiment de
+          trouver un ordre dans un monde de plus en plus en désordre, tout en
+          exprimant, avec un certain courage, une croyance implicite en la
+          capacité de la peinture à articuler et communiquer le bonheur.
+          <br />
+          La persistance de Ciapara à revenir au plaisir, même au milieu
+          d&apos;un ordre social voué à la dissolution, n&apos;est ni banale ni
+          ornementale, mais témoigne d&apos;une forme de résistance de plus.{" "}
+        </p>
+        <h3 className="text-2xl">
+          Lucía Sanromán
+          <br />
+          Juin 2011
+        </h3>
+      </div>
+    );
+  }
+
+  if (locale === "ca") {
+    return (
+      <div className="text-[#1A1916]/45 leading-relaxed pr-6 space-y-4">
+        <h2 className="text-2xl">
+          Del plaer i altres principis en l&apos;obra d&apos;Enrique Ciapara
+        </h2>
+        <p>
+          Podríem preguntar-nos de què es tracta tot això. Demostra tal
+          compromís amb l&apos;acte de dipositar pigment i tant de temps dedicat
+          a això, i per a què? Com podríem imaginar un propòsit per a aquesta
+          acció sostinguda? Per a què serveix aquest acte d&apos;aplicar pintura
+          diluïda o densa sobre una superfície de paper o tela? Tot i això,
+          realitzem petits gestos quotidianament sense qüestionar-los — accions
+          discretes com petonar o menjar bon pa untat amb un petit tros de
+          mantega sense sal. Per què, doncs, qüestionar l&apos;acte de pintar
+          avui en particular?
+          <br />
+          No és tan absurd preguntar-se per la seva funció com interrogar quin
+          seria el propòsit utilitari de preparar un àpat extraordinari?
+          <br />
+          Un argument estrictament utilitari posa en evidència la fal·làcia
+          d&apos;aquestes preguntes.
+        </p>
+        <p>
+          Un àpat admirablement preparat té millor gust i resulta més plaent;
+          per tant, genera major felicitat en aquells que tenen el plaer de
+          saborejarlo.
+          <br />
+          Per als pares de la filosofia utilitarista, Jeremy Bentham i John
+          Stuart Mills, el &laquo;principi de la major felicitat&raquo; és el
+          criteri per jutjar el bé major en qualsevol situació donada: una acció
+          és èticament correcta — o millor que una altra — en la mesura que
+          promou la felicitat de totes les persones afectades per la situació, i
+          és incorrecta si genera infelicitat.
+          <br />
+          Les pinturas d&apos;Enrique Ciapara proporcionen un plaer autèntic.
+          Aquest plaer no està separat dels sentits sinó que en depèn, i gaudir
+          de la seva pintura no s&apos;allunya gaire del que s&apos;experimenta
+          en degustar un àpat extraordinari preparat amb molt d&apos;amor. Fa
+          això que la pintura de Ciapara sigui menys rellevant, important o
+          apropiada que altres tipus d&apos;art contemporani, com l&apos;art que
+          reflecteix estilísticament i temàticament la duresa del context urbà de
+          Tijuana — el lloc on l&apos;artista viu i treballa — o les pràctiques
+          artístiques amb una evident implicació política en els problemes socials
+          que condicionen la vida al nord de Mèxic en aquest moment?
+        </p>
+        <p>
+          Les meves preguntes són deliberadament polèmiques i condueixen a
+          respostes contradictòries però productives. Si un defineix l&apos;art
+          contemporani com a testimonial, resulta evident que Ciapara no usa el
+          seu pinzell per diagnosticar el que afecta Mèxic. No ofereix cap
+          prescripció sobre com resoldre els ingents problemes econòmics i socials
+          que pesen sobre aquest país. La seva obra manca de comentari polític: no
+          diu absolutament res sobre l&apos;expansió de la narcoviolència a Mèxic,
+          i particularment a Tijuana durant els últims sis anys, i no capitalitza
+          el creixent temor davant el futur de Mèxic i les seves perspectives. Si
+          el que es busca en l&apos;art contemporani és un reflex directe de les
+          condicions contextuals del moment, també és evident que Ciapara no està
+          interessat a utilitzar temàticament ni estilísticament la iconografia de
+          la vida urbana en una ciutat fronterera: imatges del mur entre Mèxic i
+          els Estats Units, maquiladoras i els seus residus, la vida nocturna
+          fronterera i els seus personatges. Cap d&apos;aquests motius apareix en
+          les seves pinturas. No directament, en tot cas.
+        </p>
+        <p>
+          El que ofereix és una narrativa diferent, tan sorprenent per la seva
+          sinceritat com per la seva paradoxal transitorietat. Ofereix pintura.
+          Només això. Pintura, però en la seva màxima expressió. La bona pintura
+          és difícil de descriure amb paraules i cal voltar-la, a través de la
+          metàfora i el símil, per traduir-la en text. Potser per això resulta
+          difícil parlar de la pintura de Ciapara d&apos;una manera que es senti
+          tan materialment densa com contemplar-la en persona. Quan es descriu un
+          quadre com dotat de &laquo;presència&raquo;, es vol dir que
+          l&apos;experiència n&apos;és tan concentrada i directa, tan estratificada
+          i discursiva, com si hom estigués davant d&apos;alguna cosa més que un
+          objecte inert. Només les frases associatives s&apos;aproximen a
+          l&apos;experiència. Així, diré que les pinturas de Ciapara són líriques i
+          sincopades com el Night Train de John Coltrane; lliures com els gargots
+          dels nens, però plenament conscients en el seu enginy compositiu; són
+          naturals, i les seves superfícies expressen tal plaer hedonista en el
+          procés de la seva realització que no queda espai per a la nostàlgia del
+          passat de la pintura. Aquesta última qualitat és poc freqüent en aquests
+          temps, quan la mort del gènere ha estat anunciada tantes vegades que ja
+          poc importa la seva partida i el seu obituari. Havent pintat tota la
+          seva vida adulta, Ciapara tenia una mica més de vint anys quan va
+          començar a assistir als tallers que el pintor espanyol Luis Moret
+          impartia a Tijuana als anys vuitanta. Més proper a l&apos;art informel
+          que a l&apos;expressionisme abstracte de l&apos;escola americana, el
+          llenguatge pictòric de Ciapara ha evolucionat cap a un alfabet de marques
+          que expressen una consciència dels orígens representacionals de la
+          pintura sense estar lligat ni al realisme ni a l&apos;abstracció. Un
+          examen lineal de deu anys de producció, de 1999 a 2009, el mostra
+          mantenint un debat reflexiu i constant amb ell mateix sobre la tensió
+          entre les marques de la superfície i el fons; també presenta l&apos;artista
+          com un hàbil mediador entre el que ell vol i el que la pintura vol. I si
+          abans el fons de vegades semblava oposar-se a la seva voluntat de
+          mantenir un desordre autoconscient en la superfície, al llarg d&apos;una
+          dècada Ciapara sap exactament quan controlar les seves marques
+          parpellejants i quan deixar-les anar cap al desig inherent de la pintura
+          modernista d&apos;assolir la planitud. De vegades evocador de Cy Twombly
+          i en altres moments del Philip Guston primerenc, Ciapara és més ell
+          mateix quan és més hedonista: quan el plaer guia les decisions
+          pictòriques que es prenen en temps real, al taller.
+          <br />
+          El plaer està relacionat amb la sensació de felicitat, de bellesa i de
+          satisfacció, però se&apos;n diferencia en el fet que no busca res més
+          que si mateix. Es pot percebre el principi del plaer guiant les decisions
+          pictòriques de Ciapara de la mateixa manera que es pot percebre el plaer
+          guiant un gran cuiner en la preparació d&apos;un festí particularment
+          deliciós. Tots dos condueixen a la sensació de trobar en el familiar
+          quelcom agudament extraordinari: una sensació d&apos;elació menys
+          relacionada amb l&apos;impacte del nou que amb el delit que prové de
+          reconèixer que alguna cosa és bona.
+        </p>
+        <p>
+          El que ens torna al principi: quin és el bé de la pintura de Ciapara?
+          El bé d&apos;ella resideix, crec, en el fet que ens regala un plaer més
+          profund, lligat a la sensació de trobar ordre en un món cada vegada més
+          en desordre, alhora que expressa, amb una certa valentia, una creença
+          implícita en la pintura per articular i comunicar la felicitat.
+          <br />
+          La persistent tornada de Ciapara al plaer, fins i tot enmig d&apos;un
+          ordre social empenyut cap a la dissolució, no és banal ni ornamental,
+          sinó que constitueix una forma més de resistència.{" "}
+        </p>
+        <h3 className="text-2xl">
+          Lucía Sanromán
+          <br />
+          Juny 2011
         </h3>
       </div>
     );

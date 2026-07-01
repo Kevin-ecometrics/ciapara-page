@@ -102,9 +102,29 @@ const rows: Array<Array<{ idx: number; start: number; span: number; y: number }>
   ],
 ];
 
+const TECHNIQUE: Record<string, Record<"fr" | "ca", string>> = {
+  "Acrylic on canvas": { fr: "Acrylique sur toile", ca: "Acrílic sobre tela" },
+  "Mixed media on canvas": { fr: "Technique mixte sur toile", ca: "Tècnica mixta sobre tela" },
+  "Mixed media on paper": { fr: "Technique mixte sur papier", ca: "Tècnica mixta sobre paper" },
+  "Ink on paper": { fr: "Encre sur papier", ca: "Tinta sobre paper" },
+};
+
 export default function Gallery() {
   const { locale } = useI18n();
   const bT = useBlurbT(locale);
+
+  function getTechnique(technique: string): string {
+    if ((locale === "fr" || locale === "ca") && TECHNIQUE[technique]) {
+      return TECHNIQUE[technique][locale as "fr" | "ca"];
+    }
+    return technique;
+  }
+
+  function getAlt(img: typeof images[number]): string {
+    if (locale === "fr" && img.altFr) return img.altFr;
+    if (locale === "ca" && img.altCa) return img.altCa;
+    return img.alt;
+  }
   const [hovered, setHovered] = useState<number | null>(null);
   const active = hovered !== null ? images[hovered] : null;
 
@@ -149,7 +169,7 @@ export default function Gallery() {
                       <div className="group overflow-hidden rounded-xl shadow-lg shadow-black/10 ring-1 ring-black/5">
                         <img
                           src={img.src}
-                          alt={img.alt}
+                          alt={getAlt(img)}
                           width={img.width}
                           height={img.height}
                           draggable={false}
@@ -191,7 +211,7 @@ export default function Gallery() {
                       {bT.gallery.labels.technique}
                     </p>
                     <p className="text-base text-[#1A1916] leading-snug">
-                      {active.technique || "—"}
+                      {getTechnique(active.technique) || "—"}
                     </p>
                   </div>
                   <div>

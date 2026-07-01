@@ -1,6 +1,8 @@
 export type GalleryImage = {
   src: string;
   alt: string;
+  altFr: string;
+  altCa: string;
   width: number;
   height: number;
   landscape: boolean;
@@ -17,6 +19,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Pieza titulada quince en tecnica mixta sobre tela 217x 122 cm 2001 por artista plastico enrique ciapara.webp",
     alt: "Piece titled Fifteen, mixed media on canvas, 217x 122 cm, created in 2001 by visual artist Enrique Ciapara, based in Tijuana",
+    altFr: "Pièce intitulée Quince (Quinze), technique mixte sur toile, 217 x 122 cm, créée en 2001 par l'artiste visuel Enrique Ciapara, basé à Tijuana",
+    altCa: "Peça titulada Quince (Quinze), tècnica mixta sobre tela, 217 x 122 cm, creada el 2001 per l'artista visual Enrique Ciapara, establert a Tijuana",
     width: 341,
     height: 606,
     landscape: false,
@@ -31,6 +35,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Pieza sin tiulo en acrilico sobre tela 217 x 122 cm por artista visual bajacaliforniano ciapara.webp",
     alt: "Untitled piece in acrylic on canvas, 217 x 122 cm, by Baja California visual artist Enrique Ciapara",
+    altFr: "Pièce sans titre en acrylique sur toile, 217 x 122 cm, de l'artiste visuel de Basse-Californie Enrique Ciapara",
+    altCa: "Peça sense títol en acrílic sobre tela, 217 x 122 cm, de l'artista visual de Baixa Califòrnia Enrique Ciapara",
     width: 337,
     height: 605,
     landscape: false,
@@ -45,6 +51,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Pieza detritus elaborada en acrilico sobre tela 217x 122 cm en 1999 por enrique ciapara.webp",
     alt: "Piece titled Detritus, made in acrylic on canvas, 217x 122 cm, in 1999 by Enrique Ciapara",
+    altFr: "Pièce intitulée Detritus, en acrylique sur toile, 217 x 122 cm, réalisée en 1999 par Enrique Ciapara",
+    altCa: "Peça titulada Detritus, en acrílic sobre tela, 217 x 122 cm, realitzada el 1999 per Enrique Ciapara",
     width: 349,
     height: 604,
     landscape: false,
@@ -59,6 +67,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Pieza caminata en tecnica mixta sobre tela 183x 305 cm 2008 por enrique ciapara.webp",
     alt: "Piece titled Walk, mixed media on canvas, 183x 305 cm, made in 2008 by artist Enrique Ciapara",
+    altFr: "Pièce intitulée Caminata (Promenade), technique mixte sur toile, 183 x 305 cm, réalisée en 2008 par l'artiste Enrique Ciapara",
+    altCa: "Peça titulada Caminata (Caminada), tècnica mixta sobre tela, 183 x 305 cm, realitzada el 2008 per l'artista Enrique Ciapara",
     width: 770,
     height: 475,
     landscape: false,
@@ -73,6 +83,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/La despedida pieza en acrilico sobre tela en 122x 213 cm por Enrique Ciapara.webp",
     alt: "The Farewell, a piece made in acrylic on canvas, 122x 213 cm, by San Diego-Tijuana border artist Enrique Ciapara",
+    altFr: "La Despedida (L'Adieu), une pièce en acrylique sur toile, 122 x 213 cm, de l'artiste de la frontière San Diego-Tijuana Enrique Ciapara",
+    altCa: "La Despedida (L'Adeu), una peça en acrílic sobre tela, 122 x 213 cm, de l'artista de la frontera San Diego-Tijuana Enrique Ciapara",
     width: 770,
     height: 442,
     landscape: false,
@@ -87,6 +99,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Pieza titulada detritus en tinta sobre papel 101x 406 cm elaborada en 2005 por artista mexicano enrique ciapara.webp",
     alt: "Piece titled Detritus, ink on paper, 101x 406 cm, made in 2005 by Mexican artist Enrique Ciapara",
+    altFr: "Pièce intitulée Detritus, encre sur papier, 101 x 406 cm, réalisée en 2005 par l'artiste mexicain Enrique Ciapara",
+    altCa: "Peça titulada Detritus, tinta sobre paper, 101 x 406 cm, realitzada el 2005 per l'artista mexicà Enrique Ciapara",
     width: 770,
     height: 194,
     landscape: true,
@@ -101,6 +115,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Pieza sin titulo elaborada en tecnica mixta sobre papel en 130x 90 cm por arista abstracto enrique ciapara.webp",
     alt: "Untitled piece made in mixed media on paper, 130x 90 cm, by Mexican abstract artist Enrique Ciapara",
+    altFr: "Pièce sans titre en technique mixte sur papier, 130 x 90 cm, de l'artiste abstrait mexicain Enrique Ciapara",
+    altCa: "Peça sense títol en tècnica mixta sobre paper, 130 x 90 cm, de l'artista abstracte mexicà Enrique Ciapara",
     width: 430,
     height: 609,
     landscape: false,
@@ -115,6 +131,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Obra el inmortal  en tecnica mixta sobre papel en 130x 90 cm elaborada en 2001 por Enrique Ciapara artista de la frontera sandiego tijuana.webp",
     alt: "Work titled The Immortal, mixed media on paper, 130 x 90 cm, made in 2001 by visual artist Enrique Ciapara, who lives on the San Diego-Tijuana border",
+    altFr: "Œuvre intitulée El inmortal (L'Immortel), technique mixte sur papier, 130 x 90 cm, réalisée en 2001 par l'artiste visuel Enrique Ciapara, qui vit à la frontière San Diego-Tijuana",
+    altCa: "Obra titulada El inmortal (L'Immortal), tècnica mixta sobre paper, 130 x 90 cm, realitzada el 2001 per l'artista visual Enrique Ciapara, que viu a la frontera San Diego-Tijuana",
     width: 452,
     height: 607,
     landscape: false,
@@ -129,6 +147,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Obra sin titulo  pieza en tecnica mixta sobre papel en 130x 90 cm por el pintor enrique ciapara.webp",
     alt: "Untitled work in mixed media on paper, 130x 90 cm, by Mexican painter Enrique Ciapara",
+    altFr: "Œuvre sans titre en technique mixte sur papier, 130 x 90 cm, du peintre mexicain Enrique Ciapara",
+    altCa: "Obra sense títol en tècnica mixta sobre paper, 130 x 90 cm, del pintor mexicà Enrique Ciapara",
     width: 449,
     height: 603,
     landscape: false,
@@ -143,6 +163,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Avión y pimiento mixta sobre papel 60 x 40 cm 2002 .webp",
     alt: "Work titled Airplane and Pepper, mixed media on paper, 60x 40 cm, by Enrique Ciapara, artist from the Tijuana-San Diego region",
+    altFr: "Œuvre intitulée Avión y pimiento (Avion et Poivron), technique mixte sur papier, 60 x 40 cm, d'Enrique Ciapara, artiste de la région Tijuana-San Diego",
+    altCa: "Obra titulada Avión y pimiento (Avió i Pebrot), tècnica mixta sobre paper, 60 x 40 cm, d'Enrique Ciapara, artista de la regió Tijuana-San Diego",
     width: 336,
     height: 529,
     landscape: false,
@@ -157,6 +179,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Imago mixta sobre tela 213x 122 cm 2001.webp",
     alt: "Imago, a piece in mixed media on canvas, 213 x 122 cm, by Mexican artist Enrique Ciapara",
+    altFr: "Imago, une pièce en technique mixte sur toile, 213 x 122 cm, de l'artiste mexicain Enrique Ciapara",
+    altCa: "Imago, una peça en tècnica mixta sobre tela, 213 x 122 cm, de l'artista mexicà Enrique Ciapara",
     width: 611,
     height: 529,
     landscape: false,
@@ -171,6 +195,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Las cosas y las sombras de las cosas mixta sobre tela 213 x 122 cm 2001 .webp",
     alt: "Work from Enrique Ciapara's archive titled Things and the Shadows of Things, mixed media on canvas, 213x 122 cm",
+    altFr: "Œuvre de l'archive d'Enrique Ciapara intitulée Las cosas y las sombras de las cosas (Les choses et les ombres des choses), technique mixte sur toile, 213 x 122 cm",
+    altCa: "Obra de l'arxiu d'Enrique Ciapara titulada Las cosas y las sombras de las cosas (Les coses i les ombres de les coses), tècnica mixta sobre tela, 213 x 122 cm",
     width: 304,
     height: 525,
     landscape: false,
@@ -185,6 +211,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/Sin titulo mixta sobre papel 60x 40 cm 2002.webp",
     alt: "Work from the 2000-09 archive by Enrique Ciapara, mixed media on paper, 60x 40 cm",
+    altFr: "Œuvre de l'archive 2000-09 d'Enrique Ciapara, technique mixte sur papier, 60 x 40 cm",
+    altCa: "Obra de l'arxiu 2000-09 d'Enrique Ciapara, tècnica mixta sobre paper, 60 x 40 cm",
     width: 333,
     height: 527,
     landscape: false,
@@ -199,6 +227,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/alt camp mixta sobre tela 213x 122 cm 2003.webp",
     alt: "Piece titled Alt camp, mixed media on canvas, 213x 122 cm, by Enrique Ciapara",
+    altFr: "Pièce intitulée Alt camp, technique mixte sur toile, 213 x 122 cm, d'Enrique Ciapara",
+    altCa: "Peça titulada Alt camp, tècnica mixta sobre tela, 213 x 122 cm, d'Enrique Ciapara",
     width: 302,
     height: 528,
     landscape: false,
@@ -213,6 +243,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/delerrictus mixta sobre tela 213x 122 cm 2001.webp",
     alt: "Piece titled Delerrictus by Enrique Ciapara, mixed media on canvas, 213x 122 cm, from the 2000-09 archive",
+    altFr: "Pièce intitulée Delerrictus d'Enrique Ciapara, technique mixte sur toile, 213 x 122 cm, de l'archive 2000-09",
+    altCa: "Peça titulada Delerrictus d'Enrique Ciapara, tècnica mixta sobre tela, 213 x 122 cm, de l'arxiu 2000-09",
     width: 294,
     height: 527,
     landscape: false,
@@ -227,6 +259,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/dibujo mixta sobre tela 122x 107 cm 2006.webp",
     alt: "Piece titled Drawing, mixed media on canvas, 122x 107 cm, by painter Enrique Ciapara",
+    altFr: "Pièce intitulée Dibujo (Dessin), technique mixte sur toile, 122 x 107 cm, du peintre Enrique Ciapara",
+    altCa: "Peça titulada Dibujo (Dibuix), tècnica mixta sobre tela, 122 x 107 cm, del pintor Enrique Ciapara",
     width: 465,
     height: 528,
     landscape: false,
@@ -241,6 +275,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/el conejo u el león mixta sobre tela 200x 200 2005.webp",
     alt: "Piece titled The Rabbit and the Lion by Enrique Ciapara, mixed media on canvas, 200x200 cm, from the 2000-09 archive",
+    altFr: "Pièce intitulée El conejo en el león (Le Lapin dans le Lion) d'Enrique Ciapara, technique mixte sur toile, 200 x 200 cm, de l'archive 2000-09",
+    altCa: "Peça titulada El conejo en el león (El Conill dins el Lleó) d'Enrique Ciapara, tècnica mixta sobre tela, 200 x 200 cm, de l'arxiu 2000-09",
     width: 539,
     height: 528,
     landscape: false,
@@ -255,6 +291,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/habitación amarilla con pipa mixta sobre papel 60x 40 cm 2003.webp",
     alt: "Work titled Yellow Room with Pipe, 60x 40 cm, from the 2000-09 archive by visual artist Enrique Ciapara",
+    altFr: "Œuvre intitulée Habitación amarilla con pipa (Chambre jaune avec pipe), 60 x 40 cm, de l'archive 2000-09 de l'artiste visuel Enrique Ciapara",
+    altCa: "Obra titulada Habitación amarilla con pipa (Habitació groga amb pipa), 60 x 40 cm, de l'arxiu 2000-09 de l'artista visual Enrique Ciapara",
     width: 363,
     height: 528,
     landscape: false,
@@ -269,6 +307,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/historias de cocina mixta sobre tela 183x 152 cm 2006.webp",
     alt: "Work titled Kitchen Stories, mixed media on canvas, 183x 152 cm, by visual artist Enrique Ciapara",
+    altFr: "Œuvre intitulée Historias de cocina (Histoires de cuisine), technique mixte sur toile, 183 x 152 cm, de l'artiste visuel Enrique Ciapara",
+    altCa: "Obra titulada Historias de cocina (Històries de cuina), tècnica mixta sobre tela, 183 x 152 cm, de l'artista visual Enrique Ciapara",
     width: 399,
     height: 525,
     landscape: false,
@@ -283,6 +323,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/la brigade mixta sobre tela 244x 183 cm 2009.webp",
     alt: "Piece titled La brigade, mixed media on canvas, 244 x 183 cm, by visual artist Ciapara",
+    altFr: "Pièce intitulée La brigade, technique mixte sur toile, 244 x 183 cm, de l'artiste visuel Ciapara",
+    altCa: "Peça titulada La brigade, tècnica mixta sobre tela, 244 x 183 cm, de l'artista visual Ciapara",
     width: 397,
     height: 528,
     landscape: false,
@@ -297,6 +339,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/la obrera mixta sobre tela 183x 152 cm 2006.webp",
     alt: "Piece titled The Worker, mixed media on canvas, 183 x 152 cm, by Enrique Ciapara",
+    altFr: "Pièce intitulée La obrera (L'Ouvrière), technique mixte sur toile, 183 x 152 cm, d'Enrique Ciapara",
+    altCa: "Peça titulada La obrera (L'Obrera), tècnica mixta sobre tela, 183 x 152 cm, d'Enrique Ciapara",
     width: 379,
     height: 529,
     landscape: false,
@@ -311,6 +355,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/lolita mixta sobre tela 183x 152 cm 2006.webp",
     alt: "Piece titled Lolita, from the 2000-09 archive, mixed media, 183x 152 cm, by Enrique Ciapara",
+    altFr: "Pièce intitulée Lolita, de l'archive 2000-09, technique mixte, 183 x 152 cm, d'Enrique Ciapara",
+    altCa: "Peça titulada Lolita, de l'arxiu 2000-09, tècnica mixta, 183 x 152 cm, d'Enrique Ciapara",
     width: 398,
     height: 529,
     landscape: false,
@@ -325,6 +371,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/mal arreglo mixta sobre papel 60x 40 cm 2003.webp",
     alt: "Bad Arrangement, mixed media on paper, 60x 40 cm, by Mexican artist Enrique Ciapara",
+    altFr: "Mal arreglo (Mauvais Arrangement), technique mixte sur papier, 60 x 40 cm, de l'artiste mexicain Enrique Ciapara",
+    altCa: "Mal arreglo (Mal Arranjament), tècnica mixta sobre paper, 60 x 40 cm, de l'artista mexicà Enrique Ciapara",
     width: 361,
     height: 529,
     landscape: false,
@@ -339,6 +387,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/nature morte mixta sobre tela 183x 152 cm 2006 .webp",
     alt: "Piece titled Nature morte, mixed media on canvas, 183 x 152 cm, by a Tijuana-based artist",
+    altFr: "Pièce intitulée Nature morte, technique mixte sur toile, 183 x 152 cm, par un artiste basé à Tijuana",
+    altCa: "Peça titulada Nature morte, tècnica mixta sobre tela, 183 x 152 cm, per un artista establert a Tijuana",
     width: 399,
     height: 526,
     landscape: false,
@@ -353,6 +403,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/nina (la selva) mixta sobre tela 183x 152 cm 2009.webp",
     alt: "Work titled Nina (the Jungle), mixed media on canvas, 183x 152 cm, by Enrique Ciapara",
+    altFr: "Œuvre intitulée Nina (la Jungle), technique mixte sur toile, 183 x 152 cm, d'Enrique Ciapara",
+    altCa: "Obra titulada Nina (la Selva), tècnica mixta sobre tela, 183 x 152 cm, d'Enrique Ciapara",
     width: 399,
     height: 528,
     landscape: false,
@@ -367,6 +419,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/noirceur mixta sobre tela 183x 152 cm 2006.webp",
     alt: "Piece titled Noirceur, by Mexican artist Enrique Ciapara",
+    altFr: "Pièce intitulée Noirceur, de l'artiste mexicain Enrique Ciapara",
+    altCa: "Peça titulada Noirceur, de l'artista mexicà Enrique Ciapara",
     width: 404,
     height: 529,
     landscape: false,
@@ -381,6 +435,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/now you're here mixta sobre tela 244 x 183 cm 2009.webp",
     alt: "Piece titled Now You're Here by Mexican artist Enrique Ciapara, mixed media on canvas, 244 x 183 cm",
+    altFr: "Pièce intitulée Now you're here (Te voilà) de l'artiste mexicain Enrique Ciapara, technique mixte sur toile, 244 x 183 cm",
+    altCa: "Peça titulada Now you're here (Ara ets aquí) de l'artista mexicà Enrique Ciapara, tècnica mixta sobre tela, 244 x 183 cm",
     width: 396,
     height: 528,
     landscape: false,
@@ -395,6 +451,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/recuerdo de Pompeya mixta sobre papel 60x 40 cm 2002.webp",
     alt: "Work titled Memory of Pompeii, mixed media on paper, 60x 40 cm, by Enrique Ciapara",
+    altFr: "Œuvre intitulée Recuerdo de Pompeya (Souvenir de Pompéi), technique mixte sur papier, 60 x 40 cm, d'Enrique Ciapara",
+    altCa: "Obra titulada Recuerdo de Pompeya (Record de Pompeia), tècnica mixta sobre paper, 60 x 40 cm, d'Enrique Ciapara",
     width: 333,
     height: 529,
     landscape: false,
@@ -409,6 +467,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/recuerdo de sobremesa mixta sobre papel 122x 90 cm 2008.webp",
     alt: "Piece titled After-dinner Memory, mixed media on paper, 122 x 90 cm, by Enrique Ciapara",
+    altFr: "Pièce intitulée Recuerdo de sobremesa (Souvenir d'après-repas), technique mixte sur papier, 122 x 90 cm, d'Enrique Ciapara",
+    altCa: "Peça titulada Recuerdo de sobremesa (Record de sobretaula), tècnica mixta sobre paper, 122 x 90 cm, d'Enrique Ciapara",
     width: 377,
     height: 526,
     landscape: false,
@@ -423,6 +483,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/ry cayó mixta sobre tela 122x 107 2006.webp",
     alt: "Piece titled Ry Fell, mixed media on canvas, 122 x 107 cm, by painter Enrique Ciapara",
+    altFr: "Pièce intitulée Ry cayó (Ry est tombé), technique mixte sur toile, 122 x 107 cm, du peintre Enrique Ciapara",
+    altCa: "Peça titulada Ry cayó (Ry va caure), tècnica mixta sobre tela, 122 x 107 cm, del pintor Enrique Ciapara",
     width: 474,
     height: 529,
     landscape: false,
@@ -437,6 +499,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/sala de espera mixta sobre tela 213x 122 cm 2006.webp",
     alt: "Work titled Waiting Room, mixed media on canvas, 213x 122 cm, by Mexican artist Enrique Ciapara",
+    altFr: "Œuvre intitulée Sala de espera (Salle d'attente), technique mixte sur toile, 213 x 122 cm, de l'artiste mexicain Enrique Ciapara",
+    altCa: "Obra titulada Sala de espera (Sala d'espera), tècnica mixta sobre tela, 213 x 122 cm, de l'artista mexicà Enrique Ciapara",
     width: 300,
     height: 526,
     landscape: false,
@@ -451,6 +515,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/sin titulo acrilico sobre tela 200x 200 cm 1999.webp",
     alt: "Untitled work from the 2000-09 archive, acrylic on canvas, 200x 200 cm, from 1999, by Enrique Ciapara",
+    altFr: "Œuvre sans titre de l'archive 2000-09, acrylique sur toile, 200 x 200 cm, de 1999, par Enrique Ciapara",
+    altCa: "Obra sense títol de l'arxiu 2000-09, acrílic sobre tela, 200 x 200 cm, del 1999, per Enrique Ciapara",
     width: 537,
     height: 527,
     landscape: false,
@@ -465,6 +531,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/sin titulo acrilico sobre tela 213x 244 cm 2009.webp",
     alt: "Untitled piece in acrylic on canvas, 213 x 244 cm, from the 2000-09 archive, by Enrique Ciapara",
+    altFr: "Pièce sans titre en acrylique sur toile, 213 x 244 cm, de l'archive 2000-09, d'Enrique Ciapara",
+    altCa: "Peça sense títol en acrílic sobre tela, 213 x 244 cm, de l'arxiu 2000-09, d'Enrique Ciapara",
     width: 617,
     height: 529,
     landscape: false,
@@ -479,6 +547,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/sin titulo mixta sobre papel 122 x 90 cm 2008.webp",
     alt: "Untitled work in mixed media on paper, 122 x 90 cm, by Mexican artist Enrique Ciapara",
+    altFr: "Œuvre sans titre en technique mixte sur papier, 122 x 90 cm, de l'artiste mexicain Enrique Ciapara",
+    altCa: "Obra sense títol en tècnica mixta sobre paper, 122 x 90 cm, de l'artista mexicà Enrique Ciapara",
     width: 478,
     height: 527,
     landscape: false,
@@ -493,6 +563,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/sin titulo mixta sobre papel 60 x 40 cm  2002.webp",
     alt: "Untitled piece in mixed media on paper, 60x 40 cm, by visual artist Enrique Ciapara",
+    altFr: "Pièce sans titre en technique mixte sur papier, 60 x 40 cm, de l'artiste visuel Enrique Ciapara",
+    altCa: "Peça sense títol en tècnica mixta sobre paper, 60 x 40 cm, de l'artista visual Enrique Ciapara",
     width: 335,
     height: 527,
     landscape: false,
@@ -507,6 +579,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/sin titulo mixta sobre tela 122x 107 2006.webp",
     alt: "Untitled, mixed media on canvas, 122x 107 cm, by Enrique Ciapara, from the 2006 archive",
+    altFr: "Sans titre, technique mixte sur toile, 122 x 107 cm, d'Enrique Ciapara, de l'archive 2006",
+    altCa: "Sense títol, tècnica mixta sobre tela, 122 x 107 cm, d'Enrique Ciapara, de l'arxiu 2006",
     width: 473,
     height: 527,
     landscape: false,
@@ -521,6 +595,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/sin titulo mixta sobre tela 122x 213 cm 2006.webp",
     alt: "Untitled work in mixed media on canvas, 122 x 213 cm, by Mexican artist Enrique Ciapara",
+    altFr: "Œuvre sans titre en technique mixte sur toile, 122 x 213 cm, de l'artiste mexicain Enrique Ciapara",
+    altCa: "Obra sense títol en tècnica mixta sobre tela, 122 x 213 cm, de l'artista mexicà Enrique Ciapara",
     width: 672,
     height: 379,
     landscape: false,
@@ -535,6 +611,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/sin titulo mixta sobre tela 183x 152 cm 2006 .webp",
     alt: "Untitled work in mixed media on canvas, 183 x 152 cm, from the 2000-09 archive, by Enrique Ciapara",
+    altFr: "Œuvre sans titre en technique mixte sur toile, 183 x 152 cm, de l'archive 2000-09, d'Enrique Ciapara",
+    altCa: "Obra sense títol en tècnica mixta sobre tela, 183 x 152 cm, de l'arxiu 2000-09, d'Enrique Ciapara",
     width: 391,
     height: 527,
     landscape: false,
@@ -549,6 +627,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/sin titulo mixta sobre tela 183x 152 cm 2006.webp",
     alt: "Untitled piece in mixed media on canvas, 183x 152 cm, by Mexican artist Enrique Ciapara",
+    altFr: "Pièce sans titre en technique mixte sur toile, 183 x 152 cm, de l'artiste mexicain Enrique Ciapara",
+    altCa: "Peça sense títol en tècnica mixta sobre tela, 183 x 152 cm, de l'artista mexicà Enrique Ciapara",
     width: 402,
     height: 526,
     landscape: false,
@@ -563,6 +643,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/blurb/taller mixta sobre papel 60x 40cm 2002 .webp",
     alt: "Work titled Workshop by Tijuana-based artist Enrique Ciapara, mixed media on paper, 60 x 40 cm, year 2002",
+    altFr: "Œuvre intitulée Taller (Atelier) de l'artiste Enrique Ciapara basé à Tijuana, technique mixte sur papier, 60 x 40 cm, année 2002",
+    altCa: "Obra titulada Taller de l'artista Enrique Ciapara establert a Tijuana, tècnica mixta sobre paper, 60 x 40 cm, any 2002",
     width: 365,
     height: 528,
     landscape: false,

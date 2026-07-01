@@ -67,6 +67,72 @@ export const artistTranslations = {
       contact: 'Contact the Artist',
     },
   },
+  fr: {
+    hero: {
+      label: "L'Artiste",
+    },
+    opening: "Peintre de Tijuana, Enrique Ciapara évolue entre l'abstrait et le semi-abstrait avec une pratique enracinée dans le paysage frontalier, l'architecture spontanée de Tijuana et les objets quotidiens de la cuisine — une œuvre qui redéfinit la relation entre lieu, mémoire et matière.",
+    imageCaption1: 'Enrique Ciapara dans son atelier, Tijuana, B.C.',
+    imageCaption2: 'Enrique Ciapara · Œuvre récente · Technique mixte sur toile',
+    bio: {
+      p1: "Enrique Ciapara est né et a grandi à Tijuana, Baja California, une ville frontalière qui allait pour toujours façonner son regard. L'architecture spontanée, les couleurs violentes du paysage urbain et la lumière particulière du nord du Mexique devinrent dès son jeune âge le vocabulaire visuel de son œuvre. La frontière — comme condition géographique et comme état mental — est une présence constante dans son travail : non comme thème explicite, mais comme structure sous-jacente qui informe la tension entre forme et matière, entre ordre et débordement.",
+      p2: "Dans son enfance, Ciapara développe une fascination précoce pour les objets quotidiens — les ustensiles de la cuisine familiale, les surfaces domestiques usées par l'usage, les fragments de paysage qui filtrent par les fenêtres. Cette attention à l'ordinaire, cultivée depuis ses premières années, allait devenir le noyau thématique de sa pratique adulte : non la grandiloquence du geste héroïque, mais la dignité silencieuse de ce qui est toujours présent et rarement vu.",
+      formacionLabel: 'Formation · années 1990',
+      p3: "Sa formation artistique s'est développée entre le Mexique et le sud-ouest des États-Unis, où il est entré en contact avec la tradition de la gravure et avec une génération d'artistes engagés dans une pratique rigoureuse et autonome. L'exigence technique de la gravure — la plaque, la morsure de l'acide, la pression de la presse — allait marquer sa façon de comprendre la peinture : comme acte physique, comme négociation avec la résistance des matériaux.",
+      p4: "Les premières œuvres de Ciapara oscillent entre la figuration réduite et l'abstraction émergente. Les motifs récurrents — ustensiles de cuisine, surfaces domestiques, fragments de paysage — apparaissent filtrés par une sensibilité qui privilégie le processus sur le résultat. Dans ces pièces précoces, on peut déjà pressentir le principe qui gouvernera toute sa trajectoire : le refus de résoudre la tension entre référent et abstraction, l'insistance à maintenir les deux registres simultanément actifs.",
+    },
+    pullQuote: {
+      text: "L'œuvre de Ciapara présente trois aspects simultanés : la texture comme argument, la couleur comme mémoire et le geste comme architecture. Les surfaces accumulent le temps — des couches de pigment qui sont simultanément un registre du processus et son occultation. Ce qui distingue Ciapara est son refus de résoudre la tension entre abstraction et référent : la cuisine, le paysage, la frontière demeurent comme des présences insinuées, jamais déclarées. Cette instabilité n'est pas une limitation mais le principe organisateur de tout son travail.",
+      attribution: "Critique d'art · Revue d'Art Contemporain, 2018",
+    },
+    bio2: {
+      brigadaLabel: 'La Brigada · 2001',
+      p5: "En 2001, Ciapara fonde à Tijuana l'atelier de gravure La Brigada, nom emprunté à la brigade de cuisine — la hiérarchie et la rigueur de la cuisine professionnelle comme métaphore du travail artistique collectif et méthodique. L'atelier est devenu un centre de production, de recherche et de rencontre pour les artistes de la région frontalière. La pratique de la gravure, avec ses exigences techniques et ses possibilités de multiplication, a profondément enrichi l'œuvre picturale de Ciapara, lui introduisant une conscience renouvelée de la trace, de la texture et de la sérialité.",
+      p6: "Durant les premières années de l'atelier, Ciapara développe une série d'œuvres dans lesquelles la cuisine domestique occupe le centre de l'investigation visuelle. Les ustensiles — cocottes, cuillères, planches à découper — sont soumis à un processus d'abstraction progressive jusqu'à perdre leur lisibilité immédiate, tout en conservant cependant leur poids spécifique, leur présence matérielle. C'est une poétique de l'objet quotidien élevé : ni kitsch, ni conceptuel, mais simplement honnête.",
+      tarragonaLabel: 'Tarragone · années 2010',
+      p7: "Au cours des années 2010, Ciapara développe des séjours prolongés à Tarragone, en Catalogne, qui ouvrent son œuvre à de nouveaux registres chromatiques et spatiaux. La lumière méditerranéenne, l'architecture romaine et une relation différente avec le temps influencent un virage vers des compositions plus lumineuses et une plus grande liberté gestuelle. Ce qui à Tijuana était tension et contraste, à Tarragone devient ouverture et respiration.",
+      p8: "Ce dialogue entre le nord du Mexique et le sud de l'Europe — deux extrêmes du monde hispanophone, deux géographies radicalement distinctes dans leur rapport au passé et à la matière — reste l'une des tensions productives qui alimentent sa pratique actuelle. Ciapara ne tente pas de résoudre la contradiction entre les deux mondes : il l'habite, la travaille, la convertit en méthode.",
+    },
+    bio3: {
+      actualLabel: 'Pratique actuelle · années 2020',
+      p9: "Aujourd'hui, Ciapara alterne entre Tijuana et Tarragone, maintenant actif l'atelier La Brigada et participant à des expositions collectives et individuelles au Mexique, en Espagne et aux États-Unis. Son œuvre est une investigation continue sur les limites de l'image : où le geste se termine et où la forme commence, où la peinture se souvient et où elle oublie.",
+      p10: "Les séries les plus récentes approfondissent le paysage du nord — l'aridité, l'étendue, la lumière qui aplatit et en même temps révèle — combiné avec l'architecture fragmentée de la ville frontalière. Ce sont des peintures qui ne décrivent pas un lieu mais le reconstruisent depuis la mémoire : imprécises par principe, fidèles pour cette raison même.",
+      contact: "Contacter l'artiste",
+    },
+  },
+  ca: {
+    hero: {
+      label: "L'Artista",
+    },
+    opening: "Pintor de Tijuana, Enrique Ciapara transita entre l'abstracte i el semi-abstracte amb una pràctica arrelada en el paisatge fronterer, l'arquitectura espontània de Tijuana i els objectes quotidians de la cuina — una obra que redefineix la relació entre lloc, memòria i matèria.",
+    imageCaption1: 'Enrique Ciapara al seu taller, Tijuana, B.C.',
+    imageCaption2: 'Enrique Ciapara · Obra recent · Tècnica mixta sobre tela',
+    bio: {
+      p1: "Enrique Ciapara va néixer i créixer a Tijuana, Baja California, una ciutat fronterera que moldejaria per sempre la seva mirada. L'arquitectura espontània, els colors violents del paisatge urbà i la llum particular del nord de Mèxic es van convertir des de molt jove en el vocabulari visual de la seva obra. La frontera — com a condició geogràfica i com a estat mental — és una presència constant en el seu treball: no com a tema explícit, sinó com a estructura subjacent que informa la tensió entre forma i matèria, entre ordre i desbordament.",
+      p2: "En la seva infància, Ciapara desenvolupa una fascinació precoç pels objectes quotidians — els estris de la cuina familiar, les superfícies domèstiques gastades per l'ús, els fragments de paisatge que es filtren per les finestres. Aquesta mirada cap a l'ordinari, cultivada des dels primers anys, es convertiria en el nucli temàtic de la seva pràctica adulta: no la grandiloqüència del gest heroic, sinó la dignitat silenciosa d'allò que és sempre present i rarament vist.",
+      formacionLabel: 'Formació · anys 1990',
+      p3: "La seva formació artística es va desenvolupar entre Mèxic i el sud-oest dels Estats Units, on va entrar en contacte amb la tradició del gravat i amb una generació d'artistes compromesos amb una pràctica rigorosa i autònoma. L'exigència tècnica del gravat — la planxa, la mossegada de l'àcid, la pressió de la premsa — marcaria la seva manera d'entendre la pintura: com a acte físic, com a negociació amb la resistència dels materials.",
+      p4: "Les primeres obres de Ciapara oscil·len entre la figuració reduïda i l'abstracció emergent. Els motius recurrents — estris de cuina, superfícies domèstiques, fragments de paisatge — apareixen filtrats per una sensibilitat que privilegia el procés sobre el resultat. En aquestes peces primerenques ja es pot intuir el principi que governarà tota la seva trajectòria: la negativa a resoldre la tensió entre referent i abstracció, la insistència a mantenir tots dos registres simultàniament actius.",
+    },
+    pullQuote: {
+      text: "L'obra de Ciapara presenta tres aspectes simultanis: la textura com a argument, el color com a memòria i el gest com a arquitectura. Les superfícies acumulen temps — capes de pigment que són, simultàniament, registre del procés i el seu ocultament. El que distingeix Ciapara és la seva negativa a resoldre la tensió entre abstracció i referent: la cuina, el paisatge, la frontera romanen com a presències insinuades, mai declarades. Aquesta inestabilitat no és una limitació sinó el principi organitzador de tot el seu treball.",
+      attribution: "Crítica d'art · Revista d'Art Contemporani, 2018",
+    },
+    bio2: {
+      brigadaLabel: 'La Brigada · 2001',
+      p5: "El 2001, Ciapara funda a Tijuana el taller de gravat La Brigada, nom pres de la brigade de cuisine — la jerarquia i el rigor de la cuina professional com a metàfora del treball artístic col·lectiu i metòdic. El taller es va convertir en un centre de producció, investigació i trobada per a artistes de la regió fronterera. La pràctica del gravat, amb la seva exigència tècnica i les seves possibilitats de multiplicació, va enriquir profundament l'obra pictòrica de Ciapara, introduint-li una consciència renovada de la petjada, la textura i la serialitat.",
+      p6: "Durant els primers anys del taller, Ciapara desenvolupa una sèrie d'obres en les quals la cuina domèstica ocupa el centre de la investigació visual. Els estris — cassoles, culleres, taules de tallar — són sotmesos a un procés d'abstracció progressiva fins a perdre la seva llegibilitat immediata, conservant però el seu pes específic, la seva presència material. És una poètica de l'objecte quotidià elevat: no kitsch, no conceptual, sinó simplement honest.",
+      tarragonaLabel: 'Tarragona · anys 2010',
+      p7: "Al llarg dels anys 2010, Ciapara desenvolupa estades prolongades a Tarragona, Catalunya, que obren la seva obra a nous registres cromàtics i espacials. La llum mediterrània, l'arquitectura romana i la relació diferent amb el temps influeixen en un gir cap a composicions més lluminoses i una major llibertat gestual. El que a Tijuana era tensió i contrast, a Tarragona es converteix en obertura i respiració.",
+      p8: "Aquest diàleg entre el nord de Mèxic i el sud d'Europa — dos extrems del món hispanoparlant, dues geografies radicalment distintes en la seva relació amb el passat i amb la matèria — segueix sent una de les tensions productives que alimenten la seva pràctica actual. Ciapara no intenta resoldre la contradicció entre tots dos mons: l'habita, la treballa, la converteix en mètode.",
+    },
+    bio3: {
+      actualLabel: 'Pràctica actual · anys 2020',
+      p9: "Avui, Ciapara alterna entre Tijuana i Tarragona, mantenint actiu el taller La Brigada i participant en exposicions col·lectives i individuals a Mèxic, Espanya i els Estats Units. La seva obra és una investigació contínua sobre els límits de la imatge: on acaba el gest i on comença la forma, on la pintura recorda i on oblida.",
+      p10: "Les sèries més recents aprofundeixen en el paisatge del nord — l'aridesa, l'extensió, la llum que aplana i al mateix temps revela — combinat amb l'arquitectura fragmentada de la ciutat fronterera. Són pintures que no descriuen un lloc sinó que el reconstrueixen des de la memòria: imprecises per principi, fidels per això mateix.",
+      contact: "Contactar l'artista",
+    },
+  },
 } as const
 
 export function useArtistT(locale: Locale) {

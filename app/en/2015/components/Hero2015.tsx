@@ -30,7 +30,7 @@ export default function HeroErrores() {
       <div className="absolute inset-0">
         <img
           src="/images/2015/Pieza dulce del dia de brujas acrilico sobre tela 122x 141 cm por pintor enrique ciapara.webp"
-          alt="Sweet piece, Halloween-themed, acrylic on canvas 122x141 cm by painter Enrique Ciapara"
+          alt={t2015.hero.bgImageAlt}
           className="w-full h-full object-cover object-center scale-105"
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/85" />

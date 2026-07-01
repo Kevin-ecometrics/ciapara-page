@@ -73,7 +73,7 @@ export default function MobileMenu({
             </button>
 
             <div className="flex items-center gap-1.5 text-[11px] tracking-[0.15em]">
-              {(["es", "en"] as Locale[]).map((l, i) => (
+              {(["es", "en", "fr", "ca"] as Locale[]).map((l, i) => (
                 <span key={l} className="flex items-center gap-1.5">
                   {i > 0 && <span className="text-white/20">/</span>}
                   <button

@@ -187,6 +187,192 @@ export const aboutTranslations = {
       ],
     },
   },
+  fr: {
+    hero: {
+      label: "Textes sur l'œuvre",
+      title: 'Vers la\nmonotonie',
+    },
+    essay: {
+      title: 'Vers la monotonie chez Ciapara',
+      p1: "Le mot monotonie a presque toujours une connotation négative, péjorative. Pourtant, si l'on reprend la citation du poète argentin Hugo Gola — écrivant sur Juan L. Ortiz — pour définir l'œuvre d'un peintre, ce peintre devrait se sentir flatté d'être qualifié de peintre monotone.",
+      blockquote: `«Dans son essai Tienen razón los literatos, Cesare Pavese écrit : "Tout authentique écrivain est splendidement monotone en ce que ses pages sont régies par un moule auquel il recourt, une loi formelle de fantaisie qui transforme les matériaux les plus divers en figures et en situations qui sont presque toujours les mêmes." Si cette affirmation est vraie, comme nous le croyons vraiment, Juan L. Ortiz est, sans aucun doute, un authentique écrivain. Sa tâche a toujours consisté à transformer les matériaux variés à sa portée, vastes et renouvelés, en figures et en situations qui sont presque toujours les mêmes, attestant d'une splendide monotonie.»`,
+      blockquoteAuthor: 'Hugo Gola',
+      p2: "Nous prenons la citation de Gola au pied de la lettre et affirmons qu'Enrique Ciapara est un authentique peintre, car dans ses tableaux règne une loi formelle de fantaisie qui transforme les matériaux variés à sa portée en formes, espaces, figures et lignes qui sont presque toujours les mêmes, attestant d'une splendide monotonie, ou cohérence formelle.",
+      p3: "Quant aux couleurs, la palette de Ciapara consiste toujours en une chromatique tonale d'une grande subtilité. Le rouge qu'il emploie, par exemple, est un rouge indien avec un peu de jaune canari, un peu de blanc, jusqu'à obtenir quelque chose comme du papaye ou du saumon. Ainsi Ciapara reformule les couleurs industrielles, les altère, créant une palette personnelle sans stridence, tendant vers le ton mat.",
+      p4: "La peinture de Ciapara est une peinture vitaliste qui, sans l'énoncer explicitement, invite à jouir de ses couleurs, de sa spontanéité, de ses lignes sensibles. Rien de rigide ne s'y trouve ; elle est flexible, un délice pour les yeux. Rien d'obscur, ni de lugubre, ni de dramatique, ni d'idéologique ne se conçoit dans ses tableaux, mais seulement la pure joie de voir, manger, boire, vivre.",
+      author: 'Luis Verdejo',
+    },
+    motivos: {
+      label: 'Les matériaux à portée de main',
+      question: 'Quel est le matériau à sa portée ou les motifs avec lesquels Ciapara travaille ?',
+      items: [
+        { letter: 'a', title: 'Le paysage', body: 'La campagne de Basse-Californie avec peu d\'arbres. Des espaces vides avec de rares éléments, comme une nature morte de composition minimale.' },
+        { letter: 'b', title: "L'architecture", body: 'Les couleurs usées de certains murs de Tijuana ; les tons délavés, la subtilité des couleurs brûlées par le soleil ; le vert-terre qui migre vers un vert pâle sous les étés et les hivers de la frontière.' },
+        { letter: 'c', title: 'La matière trouvée', body: 'Les plans juxtaposés de contreplaqué et de plastique, de fer et d\'aluminium qui constituent l\'architecture provisoire ou spontanée de nombreux quartiers de Tijuana.' },
+        { letter: 'd', title: 'Les objets de cuisine', body: 'Marmites, cocottes, poêles, spatules, cuillères, louches, économes, fouets. Des instruments qui invitent à peindre : plats, non imitatifs, schématiques, synthétiques.' },
+        { letter: 'e', title: 'Les enseignes et panneaux', body: 'Les dessins d\'enseignes qui subsistent encore à Tijuana ; les mots tordus sur les affiches commerciales. Un stimulus visuel qui exprime une vision de la vie, une manière d\'être d\'une zone précise.' },
+      ],
+      sixthBody: 'Nous, en tant que spectateurs de peinture, disons que la beauté imparfaite dans l\'œuvre de Ciapara est un motif de joie.',
+      sixthLabel: 'La beauté imparfaite',
+    },
+    pullQuote: {
+      text: "Je dirais que les peintures de Ciapara sont lyriques et syncopées comme le Night Train de John Coltrane ; libres comme des gribouillis d'enfants mais pleinement conscientes de leur ingéniosité compositionnelle ; elles sont naturelles ; et leurs surfaces expriment un plaisir si hédoniste dans le processus de leur création qu'il ne reste pas de place pour la nostalgie du passé de la peinture.",
+      attribution: 'Lucía Sanromán · Juin 2011',
+    },
+    criticalTexts: {
+      label: 'Textes critiques',
+      title: "Écrits sur l'œuvre d'Enrique Ciapara",
+      sections: [
+        {
+          num: 'I',
+          author: 'Santiago Espinosa de los Monteros',
+          date: 'Mexico, juin 2011',
+          paragraphs: [
+            "Certaines de ses meilleures pièces s'approchent de front d'une narration dans laquelle les mots jouent un rôle fondamental. Il s'agit de mots imaginés. Non pas parce qu'ils auraient simplement été pensés puis transférés sur la toile, mais parce que ce sont des mots devenus image — et bien que conservant des codes représentatifs de l'écriture et nous renvoyant à certains des objets qu'ils désignent, ils sont désormais autre chose. Ils font partie de ses toiles et de ses papiers et se convertissent, tout comme une cuillère, une assiette creuse ou une chaussure, en dessins qui habitent l'espace et font partie d'un tout visuel.",
+            "Le travail d'Enrique Ciapara pointe en direction de la peinture. Alors qu'il semblerait que de mauvais temps lui soient réservés et qu'elle coexiste comme jamais auparavant de façon particulièrement inconfortable avec d'autres disciplines, ce travail repose non seulement la question de sa pertinence mais aussi de son actualité et de son renouvellement constant. Sa peinture recèle une iconographie qui, à première vue, nous est quotidienne. Au second regard, elle nous surprend en révélant que chaque objet, chaque tentative de reconstruction de son environnement a échoué et a permis en échange la naissance d'un monde parallèle. Il existe un monde nouveau, avec des formes et des codes autonomes de tout ce que nous avons appris à nommer.",
+          ],
+        },
+        {
+          num: 'II',
+          author: 'Lucía Sanromán',
+          date: 'June 2011',
+          paragraphs: [
+            "Enrique Ciapara's paintings give real pleasure. This pleasure is not divorced from the senses but rather dependent on them, and to enjoy his painting is not too far removed from what is experienced during a lovingly made, extraordinary meal.",
+            "What he offers is a different narrative as startling for its sincerity as for its paradoxical transience. He offers painting. Just that. Painting, but at its best. Good painting is difficult to describe with language and one must circle around it, through metaphor and simile, in order to translate it into text.",
+            "Painting for his entire adult life, Ciapara was in his late teens when he began attending the workshops that Spanish painter Luis Moret taught in Tijuana in the 1980s. Closer to Art Informel than American School abstract expressionism, Ciapara's pictorial language has evolved into an alphabet of markings that express an awareness of painting's representational origins while not being tied to either realism or abstraction.",
+            "Sometimes reminiscent of Cy Twombly and at others of early Philip Guston, Ciapara is most himself when he is at his most hedonistic — when pleasure guides the pictorial decisions being made in real time, in the studio.",
+            "Ciapara's persistent return to pleasure, even amidst a social order that is intent on dissolution, is neither banal nor ornamental, but evidences one more form of resistance.",
+          ],
+        },
+        {
+          num: 'III',
+          author: 'Alberto Dilger',
+          date: 'Curateur',
+          paragraphs: [
+            "La peinture d'Enrique Ciapara récupère ce qui n'appartient pas à la peinture et s'articule comme un langage qui n'obéit pas à une grammaire définie. Les mots qui viennent à l'esprit lorsque l'on observe son œuvre établissent un vocabulaire de contours et de couleurs où le cercle peut être l'origine d'une idée, d'une pomme ou d'une étoile.",
+            "Ciapara part d'une certitude pour la convertir en mensonge. La couleur est la mesure de toutes choses : le jour est noir, la nuit blanche et le ciel bleu comme une orange. Mais avant la peinture, rien n'est défini. La peinture de Ciapara ne représente pas ce que nous voyons mais ce que nous pouvons en venir à voir. Comme si les figures ou les formes perdaient leur dimension et leur équilibre, et qu'il fallait recommencer.",
+          ],
+        },
+      ],
+    },
+    semblanza: {
+      label: 'Biographie',
+      title: 'Enrique Ciapara\nTijuana, Baja California, 1972',
+      paragraphs: [
+        "Depuis le début des années 2000, il est l'un des artistes les plus importants de la région frontalière Tijuana–San Diego, présentant son travail dans de nombreuses expositions collectives et individuelles dans des musées et galeries de Tijuana, San Diego, Mexico, Barcelone, Los Angeles et Washington DC, entre autres lieux.",
+        "Son œuvre figure dans divers catalogues d'expositions nationales et internationales, tels que Obra Negra, una aproximación a la cultura visual de Tijuana (2011, Centro Cultural Tijuana) et Strange New World (2006, Museum of Contemporary Art San Diego). Son travail a été commenté dans les livres De aquellos páramos sin cultura… (Roberto Rosique, 2016) et Cambio y permanencia (Gabriel Trujillo Muñoz, 2017).",
+        "Il a été récompensé par des prix et distinctions dans divers concours, notamment la III Bienal del Noroeste (1991), la Bienal Plástica de Baja California (1993, 2005) et le premier prix de la VI Bienal de Pintura Pedro Coronel (2019). Il a fait partie du Sistema Nacional de Creadores de Arte, FONCA, édition 2019–2022.",
+        "Enrique Ciapara est né sous le signe du Cancer, d'un père sonorais et d'une mère mexico-bajacalifornienne. Comme beaucoup d'artistes, il s'est approché des arts dès son jeune âge, essayant la musique avant de prendre pour voie définitive le dessin et la peinture. Dans une ville sans écoles d'art professionnelles, il s'est formé dans des ateliers libres. À la fin des années 1980 et au début des années 1990, Felipe Almada fut son mentor et le Nopal Centenario sa bande et sa génération, un milieu où se développèrent des jeunes qui se distinguèrent en théâtre, performance, littérature, activisme binational et peinture.",
+        "Plus tard, une influence déterminante fut sa relation étroite avec les maîtres Luis Moret et Marta Palau. En 1993, il effectua sa première résidence en Europe, voyageant à travers l'Espagne, la France et l'Allemagne, et séjournant trois mois à Tarragone. Cette expérience lui laissa un goût pour la culture méditerranéenne et développa son don naturel pour la gastronomie. En 1997, il effectua son deuxième séjour à Tarragone, où naquit sa deuxième fille, et la gestualité s'affirma comme voie d'expression.",
+        "À son retour, il rencontra l'artiste Fernando Delmar, avec qui il partage une sensibilité et une recherche d'intentionnalité créative. Depuis lors et jusqu'à présent, il a développé une complicité dans des projets de gravure, livres d'artiste et peinture à quatre mains. Il vit et travaille à Tijuana, Mexique.",
+      ],
+    },
+    cv: {
+      label: 'Curriculum Vitae',
+      title: 'Enrique Ciapara · Tijuana, B.C. · 1972',
+      otrasActividades: 'Autres activités',
+      sectionTitles: [
+        'Formation',
+        'Expositions individuelles (sélection)',
+        'Expositions collectives (sélection)',
+        'Distinctions',
+        'Acquisitions',
+      ],
+    },
+  },
+  ca: {
+    hero: {
+      label: "Textos sobre l'obra",
+      title: 'Cap a la\nmonotonia',
+    },
+    essay: {
+      title: 'Cap a la monotonia en Ciapara',
+      p1: "La paraula monotonia gairebé sempre té una connotació negativa, pejorativa. Tanmateix, si prenem la cita del poeta argentí Hugo Gola —quan escriu sobre Juan L. Ortiz— i amb ella definim l'obra d'un pintor, tal pintor hauria de sentir-se elogiat de ser un pintor monòton.",
+      blockquote: `«En el seu assaig Tienen razón los literatos, Cesare Pavese diu: "Tot autèntic escriptor és esplèndidament monòton en tant que en les seves pàgines regeix un motlle al qual acudeix, una llei formal de fantasia que transforma el material més divers en figures i situacions que són gairebé sempre les mateixes." Si aquesta afirmació és veritable, com realment ho creiem, Juan L. Ortiz és, sens dubte, un autèntic escriptor. La seva tasca va consistir sempre a transformar el material divers al seu abast, vast i renovat, en figures i situacions que són gairebé sempre les mateixes, donant proves d'una esplèndida monotonia.»`,
+      blockquoteAuthor: 'Hugo Gola',
+      p2: "Prenem al peu de la lletra la cita de Gola i afirmem que Enrique Ciapara és un autèntic pintor, ja que en els seus quadres regeix una llei formal de fantasia que transforma el material divers al seu abast en formes, espais, figures i línies que són gairebé sempre les mateixes, donant proves d'una esplèndida monotonia, o coherència formal.",
+      p3: "Pel que fa als colors, la paleta de Ciapara consisteix sempre en una colorística tonal de gran subtilesa. El vermell que utilitza, per exemple, és un vermell indi amb una mica de groc canari, una mica de blanc, fins a arribar a una mena de mamey o de salmó. Així Ciapara va reformulant els colors industrials, alterant-los, creant una paleta personal sense estridències, tendint al to mat.",
+      p4: "La pintura de Ciapara és una pintura vitalista que, sense explicitar-ho, convida a gaudir dels seus colors, de la seva espontaneïtat, de les seves línies sensibles. Res de rígid no s'hi troba; és flexible, un delit per als ulls. Res d'obscur, ni tètric, ni dramàtic, ni ideològic no es concep en els seus quadres, sinó el pur gaudi de veure, menjar, beure, viure.",
+      author: 'Luis Verdejo',
+    },
+    motivos: {
+      label: 'Els materials al seu abast',
+      question: 'Quin és el material al seu abast o els motius amb els quals treballa Ciapara?',
+      items: [
+        { letter: 'a', title: 'El paisatge', body: "El camp de la Baixa Califòrnia amb pocs arbres. Els espais buits amb escassos elements, com una natura morta de composició mínima." },
+        { letter: 'b', title: "L'arquitectura", body: "Els colors desgastats d'algunes parets de Tijuana; els tons apagats, la subtilesa dels colors cremats pel sol; el verd terra que migra cap a un verd pàl·lid pels estius i hiverns de la frontera." },
+        { letter: 'c', title: 'La matèria trobada', body: "Els plans juxtaposats de contraxapat i plàstic, ferro i alumini que conformen l'arquitectura provisional o espontània de molts barris de Tijuana." },
+        { letter: 'd', title: 'Els objectes de cuina', body: "Olles, cassoles, paelles, espàtules, culleres, cullerots, peladors, batedores. Instruments que conviden a pintar: plans, no imitatius, esquemàtics, sintètics." },
+        { letter: 'e', title: 'Els rètols i cartells', body: "Els dibuixos de rètols que encara subsisteixen a Tijuana; les paraules tortes en cartells comercials. Un estímul visual que expressa una visió de la vida, una manera de ser d'una zona precisa." },
+      ],
+      sixthBody: "Nosaltres, com a espectadors de pintura, diem que la bellesa imperfecta en l'obra de Ciapara és un motiu d'alegria.",
+      sixthLabel: 'La bellesa imperfecta',
+    },
+    pullQuote: {
+      text: "Jo diria que les pintures de Ciapara són líriques i sincopades com el Night Train de John Coltrane; soltes com gargots de nens però plenament conscients del seu enginy compositiu; són naturals; i les seves superfícies expressen un plaer tan hedonista en el procés de la seva creació que no queda espai per a la nostàlgia del passat de la pintura.",
+      attribution: 'Lucía Sanromán · Juny 2011',
+    },
+    criticalTexts: {
+      label: 'Textos crítics',
+      title: "Escrits sobre l'obra d'Enrique Ciapara",
+      sections: [
+        {
+          num: 'I',
+          author: 'Santiago Espinosa de los Monteros',
+          date: 'Ciutat de Mèxic, juny 2011',
+          paragraphs: [
+            "Algunes de les millors peces de la seva producció s'acosten de manera frontal a una narrativa en la qual les paraules juguen un paper fonamental. Es tracta de paraules imaginades. No perquè s'hagin pensat senzillament i de allà s'hagin portat a la tela, sinó perquè són paraules fetes imatge i, tot i conservar codis representatius de l'escriptura i dir-nos —referint-nos— a alguns dels objectes que denoten, ara són una altra cosa. Han passat a ser part de les seves teles i dels seus papers per convertir-se, igual que una cullera, un plat fondo o una sabata, en dibuixos que habiten l'espai i formen part d'un tot visual.",
+            "El treball d'Enrique Ciapara apunta en direcció a la pintura. Quan semblaria que corren mals temps per a ella i quan conviu com mai li havia passat de manera especialment incòmoda amb altres disciplines, aquest treball replanteja no tan sols la seva pertinença sinó la seva vigència i constant renovació. La seva pintura tanca una iconografia que a primera vista ens és quotidiana. En una següent mirada ens sorprèn en descobrir que cada objecte, cada intent de reconstrucció del seu entorn ha fallat i a canvi ha permès el naixement d'un altre de paral·lel. Hi ha un món nou, amb formes i codis autònoms de tot el que hem après a nomenar.",
+          ],
+        },
+        {
+          num: 'II',
+          author: 'Lucía Sanromán',
+          date: 'June 2011',
+          paragraphs: [
+            "Enrique Ciapara's paintings give real pleasure. This pleasure is not divorced from the senses but rather dependent on them, and to enjoy his painting is not too far removed from what is experienced during a lovingly made, extraordinary meal.",
+            "What he offers is a different narrative as startling for its sincerity as for its paradoxical transience. He offers painting. Just that. Painting, but at its best. Good painting is difficult to describe with language and one must circle around it, through metaphor and simile, in order to translate it into text.",
+            "Painting for his entire adult life, Ciapara was in his late teens when he began attending the workshops that Spanish painter Luis Moret taught in Tijuana in the 1980s. Closer to Art Informel than American School abstract expressionism, Ciapara's pictorial language has evolved into an alphabet of markings that express an awareness of painting's representational origins while not being tied to either realism or abstraction.",
+            "Sometimes reminiscent of Cy Twombly and at others of early Philip Guston, Ciapara is most himself when he is at his most hedonistic — when pleasure guides the pictorial decisions being made in real time, in the studio.",
+            "Ciapara's persistent return to pleasure, even amidst a social order that is intent on dissolution, is neither banal nor ornamental, but evidences one more form of resistance.",
+          ],
+        },
+        {
+          num: 'III',
+          author: 'Alberto Dilger',
+          date: 'Curador',
+          paragraphs: [
+            "La pintura d'Enrique Ciapara recupera allò que no li pertany a la pintura i s'articula com un llenguatge que no obeeix a una gramàtica definida. Les paraules que vénen a la nostra ment quan observem la seva obra estableixen un vocabulari de contorns i colors on el cercle pot ser l'origen d'una idea, una poma o una estrella.",
+            "Ciapara parteix d'una certesa per convertir-la en una mentida. El color és la mesura de totes les coses: el dia és negre, la nit blanca i el cel blau com una taronja. Però abans de la pintura no hi ha res de definit. La pintura de Ciapara no representa el que veiem sinó el que podem arribar a veure. Com si les figures o les formes perdessin la seva dimensió i l'equilibri, i haguéssim de tornar a començar.",
+          ],
+        },
+      ],
+    },
+    semblanza: {
+      label: 'Semblança',
+      title: 'Enrique Ciapara\nTijuana, Baja California, 1972',
+      paragraphs: [
+        "Des de principis dels anys dos mil ha estat un dels artistes més destacats de la zona fronterera Tijuana–San Diego, presentant el seu treball en nombroses mostres col·lectives i exposicions individuals en museus i galeries de Tijuana, San Diego, Ciutat de Mèxic, Barcelona, Los Angeles i Washington DC, entre d'altres seus.",
+        "La seva obra apareix en diversos catàlegs d'exposicions nacionals i internacionals, com ara Obra Negra, una aproximación a la cultura visual de Tijuana (2011, Centro Cultural Tijuana) i Strange New World (2006, Museum of Contemporary Art San Diego). El seu treball ha estat ressenyat en els llibres De aquellos páramos sin cultura… (Roberto Rosique, 2016) i Cambio y permanencia (Gabriel Trujillo Muñoz, 2017).",
+        "Ha estat guardonat amb premis i distincions en diversos certàmens, incloent-hi la III Bienal del Noroeste (1991), la Bienal Plástica de Baja California (1993, 2005) i el primer lloc a la VI Bienal de Pintura Pedro Coronel (2019). Va formar part del Sistema Nacional de Creadores de Arte, FONCA, edició 2019–2022.",
+        "Enrique Ciapara va néixer sota el signe de Càncer, de pare sonorenc i mare mexicana-bajacaliforniana. Com molts artistes, es va apropar des de molt jove a les arts, provant destresa en la música i prenent perfil definitiu en el dibuix i la pintura. En una ciutat sense estudis artístics professionals, es va formar en tallers lliures. A finals dels vuitanta i principis dels noranta, Felipe Almada fou el seu mentor i el Nopal Centenario la seva colla i generació, ambient en el qual es van desenvolupar joves que van destacar en teatre, performance, literatura, activisme binacional i pintura.",
+        "Més tard, una influència determinant va ser la proximitat amb el mestre Luis Moret i la mestra Marta Palau. El 1993 va fer la seva primera residència a Europa, viatjant per Espanya, França i Alemanya, i quedant-se tres mesos a Tarragona. Aquesta experiència li va deixar un gust per la cultura mediterrània i va desenvolupar la seva habilitat gastronòmica natural. El 1997 va fer la seva segona estada a Tarragona, on va néixer la seva segona filla, i la gestualitat es va consolidar com a camí d'expressió.",
+        "Al seu retorn va conèixer l'artista Fernando Delmar, amb qui sintonitza en sensibilitat i recerca d'intencionalitat creativa. Des d'aleshores i fins avui, ha desenvolupat una complicitat en projectes de gravat, llibres d'artista i pintura a quatre mans. Treballa i resideix a Tijuana, Mèxic.",
+      ],
+    },
+    cv: {
+      label: 'Curriculum Vitae',
+      title: 'Enrique Ciapara · Tijuana, B.C. · 1972',
+      otrasActividades: 'Altres activitats',
+      sectionTitles: [
+        'Formació',
+        'Exposicions individuals (selecció)',
+        "Exposicions col·lectives (selecció)",
+        'Distincions',
+        'Adquisicions',
+      ],
+    },
+  },
 } as const
 
 export function useAboutT(locale: Locale) {

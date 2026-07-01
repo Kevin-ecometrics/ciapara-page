@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     languages: {
       es: "https://enriqueciapara.com/catalogo-de-errores",
       en: "https://enriqueciapara.com/en/catalogo-de-errores",
+      fr: "https://enriqueciapara.com/fr/catalogo-de-errores",
+      ca: "https://enriqueciapara.com/ca/catalogo-de-errores",
       "x-default": "https://enriqueciapara.com/catalogo-de-errores",
     },
   },

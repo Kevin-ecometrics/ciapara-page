@@ -1,4 +1,4 @@
-export type Locale = "es" | "en";
+export type Locale = "es" | "en" | "fr" | "ca";
 
 export const translations = {
     es: {
@@ -21,7 +21,7 @@ export const translations = {
         place: "Estudio · Tijuana, B.C. México",
         title: "Enrique Ciapara",
         subtitle: "Artista abstracto basado en Tijuana México",
-        scroller: "Desplazar"   
+        scroller: "Desplazar"
         },
     about: {
         quote: "La pintura de Ciapara es una pintura vitalista, que sin explicitarlo, invita a gozar de la misma, de sus colores, de su espontaneidad,de sus líneas sensibles: nada rígido se encuentra en ella, es flexible, un deleite para los ojos; nada oscuro, ni tétrico, ni dramático, ni ideológico, se concibe en sus cuadros, sino el puro goce de ver, comer, beber, vivir.",
@@ -102,7 +102,7 @@ export const translations = {
                 text: "En 1997 realiza su segunda estancia en Europa, tomando de nuevo, como ciudad de base Tarragona en donde nace su segunda hija. En ésta residencia se afianza la gestualidad como camino de expresión en su obra. A su vuelta conoce al artista Fernando Delmar con quien empata en sensibilidad y búsqueda de intencionalidad creativa con el deseo, el azar y lo indeterminado como camino de trabajo.",
             },
             recentShows: {
-                text: "Desde principios de los años dos mil ha sido uno de los artistas más destacados de la zona fronteriza Tijuana-San Diego, presentando su trabajo en numerosas muestras colectivas y exposiciones individuales en museos y galerías de Tijuana, San Diego, Ciudad de México, Barcelona, Los Ángeles y Washington DC., entre otras sedes. Entre sus exposiciones individuales más recientes destacan ERRORES (2019), PAISAJES EN TRÁNSITO en el Museo Pedro Coronel, Zacatecas (2019), ENRIQUE CIAPARA en la Galería Estación Coyoacán, Arte Contemporáneo, CDMX (2015) y TROMPE-L’OEIL en el Centro Cultural Tijuana (2013).",
+                text: "Desde principios de los años dos mil ha sido uno de los artistas más destacados de la zona fronteriza Tijuana-San Diego, presentando su trabajo en numerosas muestras colectivas y exposiciones individuales en museos y galerías de Tijuana, San Diego, Ciudad de México, Barcelona, Los Ángeles y Washington DC., entre otras sedes. Entre sus exposiciones individuales más recientes destacan ERRORES (2019), PAISAJES EN TRÁNSITO en el Museo Pedro Coronel, Zacatecas (2019), ENRIQUE CIAPARA en la Galería Estación Coyoacán, Arte Contemporáneo, CDMX (2015) y TROMPE-L'OEIL en el Centro Cultural Tijuana (2013).",
             },
             catalogs: {
                 text: "Su obra aparece en distintos catálogos de exposiciones nacionales e internacionales, tales como OBRA NEGRA, Una aproximación a la cultura visual de Tijuana, 2011, Centro Cultural Tijuana; STRANGE NEW WORLD, 2006, Museum of Contemporary Art San Diego. Su trabajo también se ha reseñado y analizado en los libros: De aquellos páramos sin cultura…(Tres décadas de artes en Baja California: de lo retiniano a lo conceptual), Roberto Rosique, 2016; Cambio y permanencia (Las rutas abiertas del arte Bajacaliforniano del siglo XXI), Gabriel Trujillo Muñoz, 2017.",
@@ -243,7 +243,7 @@ export const translations = {
                 scroller: "Scroll",
             },
             about: {
-                quote: "Ciapara’s painting is full of life; without explicitly stating it, it invites us to enjoy it—its colors, its spontaneity, its delicate lines. There is nothing rigid about it; it is flexible, a delight to the eyes. Nothing dark, gloomy, dramatic, or ideological can be found in his paintings, only the pure joy of seeing, eating, drinking, and living.",
+                quote: "Ciapara's painting is full of life; without explicitly stating it, it invites us to enjoy it—its colors, its spontaneity, its delicate lines. There is nothing rigid about it; it is flexible, a delight to the eyes. Nothing dark, gloomy, dramatic, or ideological can be found in his paintings, only the pure joy of seeing, eating, drinking, and living.",
                 speaker: "Luis Verdejo",
                 text: "His painting contains an iconography that, at first glance, seems familiar to us. Upon closer inspection, we are surprised to discover that every object, every attempt to reconstruct his surroundings, has failed—and in its place, a parallel world has emerged. There is a new world, with forms and codes entirely independent of everything we have learned to name. Santiago Espinosa de los Monteros",
                 speaker2: "Santiago Espinosa de los Monteros",
@@ -253,14 +253,14 @@ export const translations = {
                 more:'More information about "Errores"',
             },
             collections: {
-                quoteBold: "Enrique Ciapara’s paintings give real pleasure. This pleasure is not divorced from the senses but rather dependent on them, and to enjoy his painting is not too far removed from what is experienced during a lovingly made, extraordinary meal.",
+                quoteBold: "Enrique Ciapara's paintings give real pleasure. This pleasure is not divorced from the senses but rather dependent on them, and to enjoy his painting is not too far removed from what is experienced during a lovingly made, extraordinary meal.",
                 quote: "What he offers is a different narrative as startling for its sincerity as for its paradoxical transience. He offers painting. Just that. Painting, but at its best.",
                 speaker: "Lucía Sanromán",
                 date: "June 2011",
                 items: [
                     {
                         title: "Errores Catalogue",
-                        description: "Discover Enrique Ciapara’s free reinterpretation of the works of Sandro Botticelli and Boccaccio. A contemporary and independent perspective.",
+                        description: "Discover Enrique Ciapara's free reinterpretation of the works of Sandro Botticelli and Boccaccio. A contemporary and independent perspective.",
                     },
                     {
                         title: "Vanitas",
@@ -271,7 +271,7 @@ export const translations = {
                         description: "A work inspired by the northern light and the landscapes of Tarragona, where kitchen objects come to life.",
                     },
                     {
-                        title: "Trompe l’oeil",
+                        title: "Trompe l'oeil",
                         description: "The works featured in this exhibition explore the boundary between all the possibilities that lie beyond what we can see, beyond the landscape",
                     },
                     {
@@ -280,7 +280,7 @@ export const translations = {
                     },
                     {
                         title: "2000-09 Archive",
-                        description: "The hedonism in Ciapara’s paintings, set against the backdrop of a social order, serves as a manifesto of resistance. Explore the complete collection",
+                        description: "The hedonism in Ciapara's paintings, set against the backdrop of a social order, serves as a manifesto of resistance. Explore the complete collection",
                     },
                 ]
             },
@@ -321,7 +321,7 @@ export const translations = {
                     text: "In 1997 he spent a second period in Europe, again based in Tarragona, where his second daughter was born. During this residency, gesture became firmly established as a path of expression in his work. Upon his return, he met the artist Fernando Delmar, with whom he shares a sensibility and a shared pursuit of creative intent — working with desire, chance, and the indeterminate as a method.",
                 },
                 recentShows: {
-                    text: "Since the early 2000s, he has been one of the most prominent artists of the Tijuana–San Diego border region, presenting his work in numerous group shows and solo exhibitions at museums and galleries in Tijuana, San Diego, Mexico City, Barcelona, Los Angeles, and Washington, DC, among other venues. His most recent solo exhibitions include ERRORES (2019), PAISAJES EN TRÁNSITO at the Museo Pedro Coronel, Zacatecas (2019), ENRIQUE CIAPARA at Galería Estación Coyoacán, Arte Contemporáneo, CDMX (2015), and TROMPE-L’OEIL at the Centro Cultural Tijuana (2013).",
+                    text: "Since the early 2000s, he has been one of the most prominent artists of the Tijuana–San Diego border region, presenting his work in numerous group shows and solo exhibitions at museums and galleries in Tijuana, San Diego, Mexico City, Barcelona, Los Angeles, and Washington, DC, among other venues. His most recent solo exhibitions include ERRORES (2019), PAISAJES EN TRÁNSITO at the Museo Pedro Coronel, Zacatecas (2019), ENRIQUE CIAPARA at Galería Estación Coyoacán, Arte Contemporáneo, CDMX (2015), and TROMPE-L'OEIL at the Centro Cultural Tijuana (2013).",
                 },
                 catalogs: {
                     text: "His work appears in various national and international exhibition catalogues, such as OBRA NEGRA, una aproximación a la cultura visual de Tijuana (2011, Centro Cultural Tijuana) and STRANGE NEW WORLD (2006, Museum of Contemporary Art San Diego). His work has also been reviewed and analyzed in the books De aquellos páramos sin cultura… (Tres décadas de artes en Baja California: de lo retiniano a lo conceptual), by Roberto Rosique (2016), and Cambio y permanencia (Las rutas abiertas del arte Bajacaliforniano del siglo XXI), by Gabriel Trujillo Muñoz (2017).",
@@ -443,7 +443,158 @@ export const translations = {
                 },
             },
   },
-
+  fr: {
+    nav: {
+      about: "À propos",
+      collections: "Œuvres",
+      news: "Presse",
+      contact: "Contact",
+      artistPage: "Artiste",
+      aboutPage: "Textes",
+      openMenu: "Ouvrir le menu",
+      closeMenu: "Fermer le menu",
+    },
+    press: {
+      heading: "Dernières actualités",
+      articles: "articles",
+      cta: "Lire plus",
+    },
+    hero: {
+      place: "Atelier · Tijuana, B.C. Mexique",
+      title: "Enrique Ciapara",
+      subtitle: "Artiste abstrait basé à Tijuana, Mexique",
+      scroller: "Défiler",
+    },
+    about: {
+      quote: "La peinture de Ciapara est une peinture vitaliste qui, sans l'énoncer explicitement, invite à en jouir — de ses couleurs, de sa spontanéité, de ses lignes sensibles. Rien de rigide ne s'y trouve ; elle est flexible, un délice pour les yeux. Rien d'obscur, ni de lugubre, ni de dramatique, ni d'idéologique ne se conçoit dans ses tableaux, mais seulement la pure joie de voir, manger, boire, vivre.",
+      speaker: "Luis Verdejo",
+      text: "Sa peinture recèle une iconographie qui, à première vue, nous est familière. Au second regard, elle nous surprend en révélant que chaque objet, chaque tentative de reconstruction de son environnement a échoué, et a permis en échange la naissance d'un monde parallèle. Il existe un monde nouveau, avec des formes et des codes autonomes de tout ce que nous avons appris à nommer. Santiago Espinosa de los Monteros",
+      speaker2: "Santiago Espinosa de los Monteros",
+      date: "Mexico, Juin 2011",
+      preArrow: "Lorem",
+      postArrow: "Ipsum",
+      more: "Plus d'informations sur « Errores »",
+    },
+    collections: {
+      quoteBold: "Les peintures d'Enrique Ciapara procurent un plaisir authentique. Ce plaisir n'est pas séparé des sens, mais en dépend, et apprécier sa peinture n'est pas très éloigné de ce que l'on ressent lors d'un repas extraordinaire préparé avec beaucoup d'amour.",
+      quote: "Ce qu'il offre est une narration différente, aussi saisissante par sa sincérité que par sa fugacité paradoxale. Il offre de la peinture. Rien que ça. De la peinture, mais dans sa plus haute expression.",
+      speaker: "Lucía Sanromán",
+      date: "Juin 2011",
+      items: [
+        { title: "Catalogue d'Errores", description: "Découvrez la libre réinterprétation d'Enrique Ciapara de l'œuvre de Sandro Botticelli et Boccaccio. Une vision contemporaine et indépendante." },
+        { title: "Vanitas", description: "Vanitas explore la gravure à travers une dualité fascinante : d'un côté, la mélancolie de l'éphémère, du futile et du mortel, et de l'autre, la vanité telle qu'on l'entend." },
+        { title: "2015", description: "Une œuvre inspirée par la lumière du Nord et les paysages de Tarragone, où les objets de cuisine prennent vie." },
+        { title: "Trompe l'oeil", description: "Les œuvres réunies dans cette exposition décrivent une limite entre toutes les possibilités qui se trouvent au-delà de ce que nous atteignons à voir, au-delà du paysage." },
+        { title: "Detritus", description: "" },
+        { title: "Archive 2000-09", description: "L'hédonisme de la peinture de Ciapara au sein d'un ordre social constitue un manifeste de résistance. Découvrez la collection complète." },
+      ],
+    },
+    works: { title: "Sélection de projets" },
+    footer: {
+      studio: "Atelier",
+      studioDesc: "Tijuana, Baja California.",
+      established: "Tijuana, B.C. Mexique",
+      navigation: "Navigation",
+      contact: "Contact",
+      location1: "Tijuana, Baja California",
+      location2: "Mexique",
+      rights: "Tous droits réservés.",
+      developedBy: "Développé par",
+      privacy: "Confidentialité",
+      credits: "Crédits",
+    },
+    worksFooter: { works: "Œuvres", seeMore: "Voir plus" },
+    aboutBio: {
+      hero: { title: "Portrait d'Enrique Ciapara" },
+      firstYears: { text: "Enrique Ciapara est né à Tijuana, BC, sous le signe du Cancer, en 1972, d'un père sonorais et d'une mère mexico-bajacalifornienne. Comme beaucoup d'artistes, il s'est rapproché des arts dès son jeune âge, essayant la musique avant de trouver sa voie définitive dans le dessin et la peinture. Dans une ville qui, jusqu'à récemment, ne disposait pas d'écoles d'art professionnelles, Enrique s'est formé dans des ateliers libres, a fréquenté le Southwestern College de Chula Vista et a étudié dans les ateliers de divers peintres et graveurs de Tijuana." },
+      mentors: { text: "À la fin des années 1980 et au début des années 1990, l'artiste Felipe Almada fut son mentor et le Nopal Centenario son groupe et sa génération — un milieu dans lequel des jeunes artistes se sont distingués en théâtre (Edward Coward), performance (Hugo Sánchez), littérature (Gerardo Navarro), activisme binational (Carmela Castrejón) et peinture (Ciapara). Plus tard, une influence déterminante dans sa formation fut sa relation étroite avec les maîtres Luis Moret et Marta Palau." },
+      europeFirst: { text: "En 1993, il effectua sa première résidence en Europe, voyageant à travers l'Espagne, la France et l'Allemagne, et séjournant trois mois à Tarragone. Cette expérience lui laissa un goût pour la culture méditerranéenne et développa davantage son don naturel pour la cuisine. À partir de 1996, la demande pour son œuvre se formalisa, et depuis quelques années il bénéficie d'une stabilité sur le marché régional Ensenada–Tijuana–San Diego." },
+      europeSecond: { text: "En 1997, il effectua son deuxième séjour en Europe, de nouveau basé à Tarragone, où naquit sa deuxième fille. Lors de cette résidence, le geste s'affirma comme voie d'expression dans son œuvre. À son retour, il rencontra l'artiste Fernando Delmar, avec qui il partage une sensibilité et une recherche d'intentionnalité créative, travaillant avec le désir, le hasard et l'indéterminé comme méthode." },
+      recentShows: { text: "Depuis le début des années 2000, il est l'un des artistes les plus importants de la région frontalière Tijuana–San Diego, présentant son travail dans de nombreuses expositions collectives et individuelles dans des musées et galeries de Tijuana, San Diego, Mexico, Barcelone, Los Angeles et Washington, DC, entre autres lieux. Parmi ses expositions individuelles les plus récentes figurent ERRORES (2019), PAISAJES EN TRÁNSITO au Museo Pedro Coronel, Zacatecas (2019), ENRIQUE CIAPARA à la Galería Estación Coyoacán, Arte Contemporáneo, CDMX (2015) et TROMPE-L'OEIL au Centro Cultural Tijuana (2013)." },
+      catalogs: { text: "Son œuvre figure dans divers catalogues d'expositions nationales et internationales, tels que OBRA NEGRA, una aproximación a la cultura visual de Tijuana (2011, Centro Cultural Tijuana) et STRANGE NEW WORLD (2006, Museum of Contemporary Art San Diego). Son travail a également été commenté et analysé dans les livres De aquellos páramos sin cultura… (Roberto Rosique, 2016) et Cambio y permanencia (Gabriel Trujillo Muñoz, 2017)." },
+      awards: { text: "Il a été récompensé par des prix et distinctions dans divers concours d'art, notamment la III Bienal del Noroeste (1991) et la Bienal Plástica de Baja California (1993, 2005), et a récemment remporté le premier prix de la VI Bienal de Pintura Pedro Coronel (2019). Il a fait partie du Sistema Nacional de Creadores de Arte, FONCA, édition 2019–2022. Il vit et travaille à Tijuana, Mexique." },
+      cv: {
+        title: "C.V. — ENRIQUE CIAPARA",
+        body: `Tijuana, B.C., Mexique, 1972 —– FORMATION —– 1991–94 Atelier de peinture avec le maître Luis Moret, Tijuana, BC. 1992–93 Atelier de dessin et de gravure avec le maître Michel Shnor, Southwestern College, San Diego, CA. 1993 Résidence artistique dans l'atelier de Ramón Ferran, Reus, Tarragone, Espagne. 1993–94 Atelier de gravure avec le maître Luis Lombardo, France Cultura, Tijuana, BC. 1995 Atelier de peinture avec le maître Roger Von Guten, Centro Cultural Tijuana, Tijuana, BC. —– EXPOSITIONS INDIVIDUELLES —– 2013 Trompe-L'oeil, Sala 3 de El Cubo, Centro Cultural Tijuana. 2010 Enrique Ciapara, el Take it Easy, San Diego, CA. 2009 Obra sobre papel, Galería Arte256, Tijuana, BC. 2009 La Brigade, Manzanilla, Ensenada, BC. 2006 Pintura, Galería Arte256, Tijuana, BC. 2006 Ciapara, Galería La Caja, Tijuana, BC. 2005 Taller, Galería 4, Tijuana, BC. 2003 Cara y Lugar, Pasillos del Arte, Televisa, Tijuana, BC. 2001 Detritus, Centro Cultural Tijuana, Tijuana, BC (catalogue). 2000 Habitual Stops, Moctezuma Gallery, San Diego, CA. 1998 Enrique Ciapara, Galería 3art, Barcelone, Espagne. 1998 Papers, La Rosa de Foc, Barcelone, Espagne. 1996 Crisálida, Centro Cultural Tijuana, Tijuana, BC. 1994 Ocio y Trabajo, Instituto Veracruzano de Cultura, Veracruz, Ver. 1992 Galería Carmen Cuenca, Tijuana, BC. 1991 Ciapara, Rendezvous Bar, Tijuana, BC. —– EXPOSITIONS COLLECTIVES —– 2011 Obra Negra, una aproximación a la construcción de la cultura visual de Tijuana, El Cubo, Centro Cultural Tijuana (catalogue). 2010 Sexta Bienal Internacional de Estandartes 2010, Centro Cultural Tijuana (itinérante) (catalogue). 2010 Beyond the Border, foire internationale d'art contemporain, San Diego, CA. 2010 Herma, Galería Vía Corporativo, Tijuana, BC. 2009 Beyond the Border, foire internationale d'art contemporain, San Diego, CA. 2008 Acid-Free, Galería Arte256, Tijuana, BC. 2008 Malamano, Exconvento del Carmen, Guadalajara, JAL. 2007 Re-Cuentos, Grand Hotel Tijuana, Tijuana, BC. 2006 Strange New World : Art et Design de Tijuana, Museum of Contemporary Art San Diego, San Diego, CA ; Santa Monica Museum of Art ; et Instituto Mexicano en Washington, DC (itinérante) (catalogue). 2005 XV Bienal de Artes Plásticas de Baja California, Centro Estatal de las Artes, Mexicali, BC (itinérante) (catalogue). 2004 International Gallery, Solana Beach, CA. 2003 Baja Terra, Centro Cultural Tijuana, Tijuana, BC. 2001 Pintura Fresca, Luckman Gallery, Los Angeles, CA. 2000 ES2000 Salón Internacional de Estandartes, Centro Cultural Tijuana, Tijuana, BC (itinérante) (catalogue). 1999 Presencia Nacional de Creadores, Centro Nacional de las Artes, Mexico. 1997 Tall a l'Ull, Galería Moret, Reus, Tarragone, Espagne. 1997 BWA Gallery, Zielona Góra, Pologne. 1997 Certamen Nacional de Dibujo Gregorio Prieto, Fundación Gregorio Prieto, Ciudad Real et Caja de Madrid, Madrid, Espagne (itinérante) (catalogue). 1997 XVII Encuentro Nacional de Arte Joven, Pinacoteca de Nuevo León, Monterrey, N.L. 1996 ES96 Salón Internacional de Estandartes, Centro Cultural Tijuana, Tijuana, BC (itinérante) (catalogue). 1996 All Americans, Porter-Troupe Gallery, San Diego, CA. 1995 X Bienal de Artes Plásticas de Baja California, Instituto de Cultura de Baja California, Mexicali, BC (itinérante) (catalogue). 1995 V Bienal del Noroeste, Culiacán, Sinaloa (itinérante) (catalogue). 1994 Poliloquio, Centro Cultural Tijuana, Tijuana, BC. 1993 IV Bienal del Noroeste, Culiacán, Sinaloa (itinérante) (catalogue). 1993 Galería Carmen Cuenca, Tijuana, BC. 1992 Yokohama Citizens Gallery, Yokohama, Japon (catalogue). 1992 Cova Gallery, San Diego, CA. 1991 VIII Bienal de Artes Plásticas de Baja California, Instituto de Cultura de Baja California, Mexicali, BC (catalogue). 1991 III Bienal del Noroeste, Culiacán, Sinaloa (itinérante) (catalogue). 1991 El Nopal Centenario, Tijuana, BC. —– DISTINCTIONS —– 2005 Premier prix en dessin, XV Bienal de Artes Plásticas de Baja California. 1997 Mention honorable, Concurso BID de Pintura Joven en México. 1997 Bourse artistes établis, Fondo Estatal para la Cultura y las Artes. 1995 Premier prix en gravure, X Bienal de Artes Plásticas de Baja California. 1995 Mention honorable en peinture, V Bienal del Noroeste. 1995 Bourse jeunes créateurs, Fondo Nacional para la Cultura y las Artes. 1993 Mention honorable en peinture, IV Bienal del Noroeste. 1993 Mention honorable en dessin, IV Bienal del Noroeste. 1991 Troisième prix en techniques mixtes, VIII Bienal de Artes Plásticas de Baja California. 1991 Troisième prix en œuvres sur papier, III Bienal del Noroeste. —– ACQUISITIONS —– 2005 Museum of Contemporary Art San Diego. 2005 Instituto de Cultura de Baja California. 2000 Museo de las Californias. 1995 Instituto de Cultura de Baja California. 1991 Instituto de Cultura de Baja California. 1991 Museo de Arte de Sinaloa. —– AUTRES ACTIVITÉS —– 2010 Design d'étiquette pour le vin La Niña Au Rouge. 2008 Gestion et organisation de l'exposition individuelle de l'artiste Marta Palau, El Mitote, Grand Hotel Tijuana, Tijuana, B.C. 2001 Scénographie pour la Compañía Jorge Domínguez à la Tercera Muestra Internacional de Danza Cuerpos en Tránsito, Centro Cultural Tijuana, Tijuana, B.C. 2001 Scénographie pour Danzas Para Transitar el Mundo de Jorge Domínguez, Teatro del Centro Nacional de las Artes, Mexico. 1999 Couverture de El Bilé y Otras Ensoñaciones d'Alejandra Camposeco, Fondo Editorial Tierra Adentro, Mexico. 1999 Couverture et sélection de dessins pour Tramoya, Revista de Teatro, n° 61, Universidad Veracruzana, Veracruz. 1992 Performance avec le groupe Tijuana's Hottest Blues (chant), au Ruse, San Diego, CA. 1991 Couverture de Desencuentros del Blues, de los Amores de Francisco Morales, Département éditorial de l'Universidad Autónoma de Baja California, Mexicali, B.C. 1991 Sélection de dessins pour Hoja, du Taller de Poesía de Tijuana, Universidad Autónoma de Baja California.`,
+      },
+    },
+  },
+  ca: {
+    nav: {
+      about: "Sobre",
+      collections: "Obres",
+      news: "Premsa",
+      contact: "Contacte",
+      artistPage: "Artista",
+      aboutPage: "Textos",
+      openMenu: "Obrir menú",
+      closeMenu: "Tancar menú",
+    },
+    press: {
+      heading: "Últimes notícies",
+      articles: "articles",
+      cta: "Llegir més",
+    },
+    hero: {
+      place: "Estudi · Tijuana, B.C. Mèxic",
+      title: "Enrique Ciapara",
+      subtitle: "Artista abstracte establert a Tijuana, Mèxic",
+      scroller: "Desplaçar",
+    },
+    about: {
+      quote: "La pintura de Ciapara és una pintura vitalista que, sense explicitar-ho, convida a gaudir-ne — dels seus colors, de la seva espontaneïtat, de les seves línies sensibles. No hi ha res de rígid; és flexible, un delit per als ulls. Res de fosc, ni tètric, ni dramàtic, ni ideològic no es concep en els seus quadres, sinó el pur gaudi de veure, menjar, beure, viure.",
+      speaker: "Luis Verdejo",
+      text: "La seva pintura conté una iconografia que, a primera vista, ens és quotidiana. En una segona mirada ens sorprèn en descobrir que cada objecte, cada intent de reconstrucció del seu entorn ha fracassat i, a canvi, ha permès el naixement d'un altre de paral·lel. Hi ha un món nou, amb formes i codis autònoms de tot el que hem après a nomenar. Santiago Espinosa de los Monteros",
+      speaker2: "Santiago Espinosa de los Monteros",
+      date: "Ciutat de Mèxic, Juny 2011",
+      preArrow: "Lorem",
+      postArrow: "Ipsum",
+      more: "Més informació sobre «Errores»",
+    },
+    collections: {
+      quoteBold: "Les pintures d'Enrique Ciapara proporcionen un autèntic plaer. Aquest plaer no és separat dels sentits, sinó que en depèn, i gaudir de la seva pintura no s'allunya gaire del que s'experimenta en degustar un àpat extraordinari preparat amb molt d'afecte.",
+      quote: "Allò que ofereix és una narrativa diferent, tan sorprenent per la seva sinceritat com per la seva paradoxal fugacitat. Ofereix pintura. Només això. Pintura, però en la seva màxima expressió.",
+      speaker: "Lucía Sanromán",
+      date: "Juny 2011",
+      items: [
+        { title: "Catàleg d'Errores", description: "Descobreix la lliure reinterpretació d'Enrique Ciapara de l'obra de Sandro Botticelli i Boccaccio. Una visió contemporània i independent." },
+        { title: "Vanitas", description: "Vanitas explora el gravat a través d'una dualitat fascinant: d'una banda, la malenconia de l'efímer, el fútil i el mortal; de l'altra, la vanitat entesa." },
+        { title: "2015", description: "Una obra inspirada en la llum del Nord i els paisatges de Tarragona, on els objectes de cuina cobren vida." },
+        { title: "Trompe l'oeil", description: "Les obres reunides en aquesta exposició descriuen un límit entre totes les possibilitats que es poden trobar més enllà del que aconseguim a veure, més enllà del paisatge." },
+        { title: "Detritus", description: "" },
+        { title: "Arxiu 2000-09", description: "L'hedonisme de la pintura de Ciapara enmig d'un ordre social constitueix un manifest de resistència. Coneix la col·lecció completa." },
+      ],
+    },
+    works: { title: "Selecció de projectes" },
+    footer: {
+      studio: "Estudi",
+      studioDesc: "Tijuana, Baja California.",
+      established: "Tijuana, B.C. Mèxic",
+      navigation: "Navegació",
+      contact: "Contacte",
+      location1: "Tijuana, Baja California",
+      location2: "Mèxic",
+      rights: "Tots els drets reservats.",
+      developedBy: "Desenvolupat per",
+      privacy: "Privadesa",
+      credits: "Crèdits",
+    },
+    worksFooter: { works: "Obres", seeMore: "Veure més" },
+    aboutBio: {
+      hero: { title: "Semblança d'Enrique Ciapara" },
+      firstYears: { text: "Enrique Ciapara va néixer a la ciutat de Tijuana, BC, sota el signe de Càncer, l'any 1972, de pare sonorenc i mare mexicana-bajacaliforniana. Com molts artistes, des de molt jove es va apropar a les arts, provant destresa en la música i prenent perfil definitiu en el dibuix i la pintura. En una ciutat que, fins fa pocs anys, no disposava d'estudis artístics professionals, Enrique es va formar en tallers lliures, va assistir al Southwestern College de Chula Vista i als estudis de diversos pintors i gravadors de Tijuana." },
+      mentors: { text: "A finals dels anys vuitanta i principis dels noranta, l'artista Felipe Almada fou el seu mentor i el Nopal Centenario la seva colla i generació. En aquest ambient es van desenvolupar joves que van destacar en teatre (Edward Coward), performance (Hugo Sánchez), literatura (Gerardo Navarro), activisme binacional (Carmela Castrejón) i pintura (Ciapara). Més tard, una influència determinant en la seva formació va ser la proximitat amb el mestre Luis Moret i la mestra Marta Palau." },
+      europeFirst: { text: "El 1993 va fer la seva primera residència a Europa, on va viatjar per Espanya, França i Alemanya, i va quedar-se tres mesos a Tarragona. Aquesta experiència li va deixar un gust per la cultura mediterrània i va desenvolupar la seva habilitat gastronòmica natural. A partir del 1996 es va formalitzar la demanda de la seva obra, aconseguint des de fa uns anys una estabilitat de mercat regional Ensenada–Tijuana–San Diego." },
+      europeSecond: { text: "El 1997 va fer la seva segona estada a Europa, de nou amb base a Tarragona, on va néixer la seva segona filla. En aquesta residència es va consolidar la gestualitat com a camí d'expressió en la seva obra. Al seu retorn va conèixer l'artista Fernando Delmar, amb qui sintonitza en sensibilitat i recerca d'intencionalitat creativa, treballant amb el desig, l'atzar i l'indeterminat com a mètode." },
+      recentShows: { text: "Des de principis dels anys dos mil ha estat un dels artistes més destacats de la zona fronterera Tijuana–San Diego, presentant el seu treball en nombroses mostres col·lectives i exposicions individuals en museus i galeries de Tijuana, San Diego, Ciutat de Mèxic, Barcelona, Los Angeles i Washington, DC, entre d'altres seus. Entre les seves exposicions individuals més recents destaquen ERRORES (2019), PAISAJES EN TRÁNSITO al Museo Pedro Coronel, Zacatecas (2019), ENRIQUE CIAPARA a la Galería Estación Coyoacán, Arte Contemporáneo, CDMX (2015) i TROMPE-L'OEIL al Centro Cultural Tijuana (2013)." },
+      catalogs: { text: "La seva obra apareix en diversos catàlegs d'exposicions nacionals i internacionals, com ara OBRA NEGRA, Una aproximación a la cultura visual de Tijuana (2011, Centro Cultural Tijuana) i STRANGE NEW WORLD (2006, Museum of Contemporary Art San Diego). El seu treball ha estat ressenyat i analitzat en els llibres De aquellos páramos sin cultura… (Roberto Rosique, 2016) i Cambio y permanencia (Gabriel Trujillo Muñoz, 2017)." },
+      awards: { text: "Ha estat guardonat amb premis i distincions en diversos certàmens d'art, com la III Bienal del Noroeste (1991), la Bienal Plástica de Baja California (1993, 2005) i recentment ha obtingut el primer lloc a la VI Bienal de Pintura Pedro Coronel (2019). Va formar part del Sistema Nacional de Creadores de Arte, FONCA, edició 2019–2022. Treballa i resideix a Tijuana, Mèxic." },
+      cv: {
+        title: "C.V. — ENRIQUE CIAPARA",
+        body: `Tijuana, B.C., Mèxic, 1972 —– FORMACIÓ —– 1991–94 Taller de pintura amb el mestre Luis Moret, Tijuana, BC. 1992–93 Taller de dibuix i gravat amb el mestre Michel Shnor, Southwestern College, San Diego, CA. 1993 Residència artística al taller de Ramón Ferran, Reus, Tarragona, Espanya. 1993–94 Taller de gravat amb el mestre Luis Lombardo, France Cultura, Tijuana, BC. 1995 Taller de pintura amb el mestre Roger Von Guten, Centro Cultural Tijuana, Tijuana, BC. —– EXPOSICIONS INDIVIDUALS —– 2013 Trompe-L'oeil, Sala 3 de El Cubo, Centro Cultural Tijuana. 2010 Enrique Ciapara, el Take it Easy, San Diego, CA. 2009 Obra sobre papel, Galería Arte256, Tijuana, BC. 2009 La Brigade, Manzanilla, Ensenada, BC. 2006 Pintura, Galería Arte256, Tijuana, BC. 2006 Ciapara, Galería La Caja, Tijuana, BC. 2005 Taller, Galería 4, Tijuana, BC. 2003 Cara y Lugar, Pasillos del Arte, Televisa, Tijuana, BC. 2001 Detritus, Centro Cultural Tijuana, Tijuana, BC (catàleg). 2000 Habitual Stops, Moctezuma Gallery, San Diego, CA. 1998 Enrique Ciapara, Galería 3art, Barcelona, Espanya. 1998 Papers, La Rosa de Foc, Barcelona, Espanya. 1996 Crisálida, Centro Cultural Tijuana, Tijuana, BC. 1994 Ocio y Trabajo, Instituto Veracruzano de Cultura, Veracruz, Ver. 1992 Galería Carmen Cuenca, Tijuana, BC. 1991 Ciapara, Rendezvous Bar, Tijuana, BC. —– EXPOSICIONS COL·LECTIVES —– 2011 Obra Negra, una aproximación a la construcción de la cultura visual de Tijuana, El Cubo, Centro Cultural Tijuana (catàleg). 2010 Sexta Bienal Internacional de Estandartes 2010, Centro Cultural Tijuana (itinerant) (catàleg). 2010 Beyond the Border, fira internacional d'art contemporani, San Diego, CA. 2010 Herma, Galería Vía Corporativo, Tijuana, BC. 2009 Beyond the Border, fira internacional d'art contemporani, San Diego, CA. 2008 Acid-Free, Galería Arte256, Tijuana, BC. 2008 Malamano, Exconvento del Carmen, Guadalajara, JAL. 2007 Re-Cuentos, Grand Hotel Tijuana, Tijuana, BC. 2006 Strange New World: Art i Disseny de Tijuana, Museum of Contemporary Art San Diego, San Diego, CA; Santa Monica Museum of Art; i Institut Mexicà a Washington, DC (itinerant) (catàleg). 2005 XV Bienal de Artes Plásticas de Baja California, Centro Estatal de las Artes, Mexicali, BC (itinerant) (catàleg). 2004 International Gallery, Solana Beach, CA. 2003 Baja Terra, Centro Cultural Tijuana, Tijuana, BC. 2001 Pintura Fresca, Luckman Gallery, Los Angeles, CA. 2000 ES2000 Salón Internacional de Estandartes, Centro Cultural Tijuana, Tijuana, BC (itinerant) (catàleg). 1999 Presencia Nacional de Creadores, Centro Nacional de las Artes, Mèxic. 1997 Tall a l'Ull, Galería Moret, Reus, Tarragona, Espanya. 1997 BWA Gallery, Zielona Góra, Polònia. 1997 Certamen Nacional de Dibujo Gregorio Prieto, Fundación Gregorio Prieto, Ciudad Real i Caja de Madrid, Madrid, Espanya (itinerant) (catàleg). 1997 XVII Encuentro Nacional de Arte Joven, Pinacoteca de Nuevo León, Monterrey, N.L. 1996 ES96 Salón Internacional de Estandartes, Centro Cultural Tijuana, Tijuana, BC (itinerant) (catàleg). 1996 All Americans, Porter-Troupe Gallery, San Diego, CA. 1995 X Bienal de Artes Plásticas de Baja California, Instituto de Cultura de Baja California, Mexicali, BC (itinerant) (catàleg). 1995 V Bienal del Noroeste, Culiacán, Sinaloa (itinerant) (catàleg). 1994 Poliloquio, Centro Cultural Tijuana, Tijuana, BC. 1993 IV Bienal del Noroeste, Culiacán, Sinaloa (itinerant) (catàleg). 1993 Galería Carmen Cuenca, Tijuana, BC. 1992 Yokohama Citizens Gallery, Yokohama, Japó (catàleg). 1992 Cova Gallery, San Diego, CA. 1991 VIII Bienal de Artes Plásticas de Baja California, Instituto de Cultura de Baja California, Mexicali, BC (catàleg). 1991 III Bienal del Noroeste, Culiacán, Sinaloa (itinerant) (catàleg). 1991 El Nopal Centenario, Tijuana, BC. —– DISTINCIONS —– 2005 Primer premi en dibuix, XV Bienal de Artes Plásticas de Baja California. 1997 Menció honorífica, Concurso BID de Pintura Joven en México. 1997 Beca artistes amb trajectòria, Fondo Estatal para la Cultura y las Artes. 1995 Primer premi en gravat, X Bienal de Artes Plásticas de Baja California. 1995 Menció honorífica en pintura, V Bienal del Noroeste. 1995 Beca joves creadors, Fondo Nacional para la Cultura y las Artes. 1993 Menció honorífica en pintura, IV Bienal del Noroeste. 1993 Menció honorífica en dibuix, IV Bienal del Noroeste. 1991 Tercer premi en tècniques mixtes, VIII Bienal de Artes Plásticas de Baja California. 1991 Tercer premi en obra sobre paper, III Bienal del Noroeste. —– ADQUISICIONS —– 2005 Museum of Contemporary Art San Diego. 2005 Instituto de Cultura de Baja California. 2000 Museo de las Californias. 1995 Instituto de Cultura de Baja California. 1991 Instituto de Cultura de Baja California. 1991 Museo de Arte de Sinaloa. —– ALTRES ACTIVITATS —– 2010 Disseny d'etiqueta per al vi La Niña Au Rouge. 2008 Gestió i organització de l'exposició individual de l'artista Marta Palau, El Mitote, Grand Hotel Tijuana, Tijuana, B.C. 2001 Disseny de l'espai per a la Compañía Jorge Domínguez a la Tercera Muestra Internacional de Danza Cuerpos en Tránsito, Centro Cultural Tijuana, Tijuana, B.C. 2001 Disseny de l'espai per a Danzas Para Transitar el Mundo de Jorge Domínguez, Teatro del Centro Nacional de las Artes, Mèxic. 1999 Portada d'El Bilé y otras ensoñaciones d'Alejandra Camposeco, Fondo Editorial Tierra Adentro, Mèxic. 1999 Portada i selecció de dibuixos de Tramoya, Revista de Teatro, n. 61, Universidad Veracruzana, Veracruz. 1992 Actuació amb el grup Tijuana's Hottest Blues (veu), al Ruse, San Diego, CA. 1991 Portada de Desencuentros del Blues, de los Amores de Francisco Morales, Departament editorial de la Universidad Autónoma de Baja California, Mexicali, B.C. 1991 Selecció d'apunts en dibuix per a Hoja, del Taller de Poesía de Tijuana, Universidad Autónoma de Baja California.`,
+      },
+    },
+  },
 };
 
 export type Translations = {

@@ -7,6 +7,7 @@ export const translationsTrompe = {
       title1: "Trompe",
       title2: "L'oeil",
       explore: "Explorar",
+      bgImageAlt: "Exposición Trompe-l'oeil presentada en 2013 por Enrique Ciapara, artista visual de Baja California",
     },
     nav: {
       back: "Volver",
@@ -29,6 +30,7 @@ export const translationsTrompe = {
       title1: "Trompe",
       title2: "L'oeil",
       explore: "Explore",
+      bgImageAlt: "Trompe-l'oeil exhibition presented in 2013 by Enrique Ciapara, visual artist from Baja California",
     },
     nav: {
       back: "Back",
@@ -42,6 +44,52 @@ export const translationsTrompe = {
         dimensions: "Dimensions",
         date: "Year",
         close: "Close",
+      },
+    },
+  },
+  fr: {
+    hero: {
+      subtitle: "Œuvres · Enrique Ciapara · 2013",
+      title1: "Trompe",
+      title2: "L'oeil",
+      explore: "Explorer",
+      bgImageAlt: "Exposition Trompe-l'œil présentée en 2013 par Enrique Ciapara, artiste visuel de Basse-Californie",
+    },
+    nav: {
+      back: "Retour",
+    },
+    gallery: {
+      hint: "Passez le curseur sur une œuvre",
+      description: "",
+      labels: {
+        title: "Titre",
+        technique: "Technique",
+        dimensions: "Dimensions",
+        date: "Année",
+        close: "Fermer",
+      },
+    },
+  },
+  ca: {
+    hero: {
+      subtitle: "Obres · Enrique Ciapara · 2013",
+      title1: "Trompe",
+      title2: "L'oeil",
+      explore: "Explorar",
+      bgImageAlt: "Exposició Trompe-l'oeil presentada el 2013 per Enrique Ciapara, artista visual de Baixa Califòrnia",
+    },
+    nav: {
+      back: "Tornar",
+    },
+    gallery: {
+      hint: "Passa el cursor per una obra",
+      description: "",
+      labels: {
+        title: "Títol",
+        technique: "Tècnica",
+        dimensions: "Dimensions",
+        date: "Any",
+        close: "Tancar",
       },
     },
   },

@@ -30,7 +30,7 @@ export default function HeroArchivo00_09() {
       <div className="absolute inset-0">
         <img
           src="/images/blurb/Pieza caminata en tecnica mixta sobre tela 183x 305 cm 2008 por enrique ciapara.webp"
-          alt="Piece titled Walk, mixed media on canvas, 183x 305 cm, made in 2008 by artist Enrique Ciapara"
+          alt={bT.hero.bgImageAlt}
           className="w-full h-full object-cover object-center scale-105"
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/85" />

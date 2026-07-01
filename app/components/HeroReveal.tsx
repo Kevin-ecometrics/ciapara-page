@@ -21,7 +21,14 @@ export default function HeroReveal({
   const aboutOpacity = useTransform(progress, [0.65, 0.82], [0, 1]);
 
   const SHOW_NEWS_LINK = true;
-  const aboutHref = locale === "en" ? "/en/about" : "/about";
+  const aboutHref =
+    locale === "en"
+      ? "/en/about"
+      : locale === "fr"
+      ? "/fr/about"
+      : locale === "ca"
+      ? "/ca/about"
+      : "/about";
 
   const heroLinks = [
     { label: t.nav.about, href: aboutHref },
@@ -95,7 +102,7 @@ export default function HeroReveal({
 
           {/* Derecha: idiomas */}
           <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
-            {(["es", "en"] as Locale[]).map((l, i) => (
+            {(["es", "en", "fr", "ca"] as Locale[]).map((l, i) => (
               <span key={l} className="flex items-center gap-1.5">
                 {i > 0 && <span className="text-[#1A1916]/20">/</span>}
                 <button

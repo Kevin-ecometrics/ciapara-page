@@ -21,6 +21,8 @@ const collectionsMeta = [
     imgFallback: "#4C2A1D",
     href: "/catalogo-de-errores",
     hrefEn: "/en/catalogo-de-errores",
+    hrefFr: "/fr/catalogo-de-errores",
+    hrefCa: "/ca/catalogo-de-errores",
     disabled: false,
     noLink: false,
     hidden: false,
@@ -32,6 +34,8 @@ const collectionsMeta = [
     imgFallback: "#3B3028",
     href: "",
     hrefEn: "",
+    hrefFr: "",
+    hrefCa: "",
     disabled: false,
     noLink: true,
     hidden: false,
@@ -43,6 +47,8 @@ const collectionsMeta = [
     imgFallback: "#2D3C30",
     href: "/2015",
     hrefEn: "/en/2015",
+    hrefFr: "/fr/2015",
+    hrefCa: "/ca/2015",
     disabled: false,
     noLink: false,
     hidden: false,
@@ -54,6 +60,8 @@ const collectionsMeta = [
     imgFallback: "#2C3540",
     href: "/trompe-loeil",
     hrefEn: "/en/trompe-loeil",
+    hrefFr: "/fr/trompe-loeil",
+    hrefCa: "/ca/trompe-loeil",
     disabled: false,
     noLink: false,
     hidden: false,
@@ -65,6 +73,8 @@ const collectionsMeta = [
     imgFallback: "#2A2A2A",
     href: "/Trompe-L'oeil",
     hrefEn: "",
+    hrefFr: "",
+    hrefCa: "",
     disabled: false,
     noLink: false,
     hidden: true,
@@ -76,6 +86,8 @@ const collectionsMeta = [
     imgFallback: "#2B2F4C",
     href: "/archivo-2000-09",
     hrefEn: "/en/archivo-2000-09",
+    hrefFr: "/fr/archivo-2000-09",
+    hrefCa: "/ca/archivo-2000-09",
     disabled: false,
     noLink: false,
     hidden: false,
@@ -104,7 +116,7 @@ export default function Collections() {
   // En la página de una obra, no mostrarla entre las opciones — evita que
   // el listado se enlace a la página en la que ya estás.
   const normalizedPath =
-    pathname.replace(/^\/en/, "").replace(/\/$/, "") || "/";
+    pathname.replace(/^\/(en|fr|ca)/, "").replace(/\/$/, "") || "/";
 
   const collections = collectionsMeta
     .map((meta, i) => ({
@@ -288,7 +300,15 @@ export default function Collections() {
                 className="mb-6 group transition-colors duration-300 cursor-pointer"
                 onMouseEnter={() => setActiveService(s.num)}
                 onMouseLeave={() => setActiveService(null)}
-                href={locale === "en" ? s.hrefEn : s.href}
+                href={
+                locale === "en"
+                  ? s.hrefEn
+                  : locale === "fr"
+                  ? s.hrefFr
+                  : locale === "ca"
+                  ? s.hrefCa
+                  : s.href
+              }
               >
                 {inner}
               </Link>

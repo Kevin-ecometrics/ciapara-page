@@ -22,7 +22,7 @@ function LangSwitcher({
 }) {
   return (
     <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
-      {(["es", "en"] as Locale[]).map((l, i) => (
+      {(["es", "en", "fr", "ca"] as Locale[]).map((l, i) => (
         <span key={l} className="flex items-center gap-1.5">
           {i > 0 && (
             <span
@@ -93,11 +93,33 @@ export default function Navbar() {
   const [hovered, setHovered] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const isHome = pathname === "/" || pathname === "/en";
-  const homeBase = isHome ? "" : locale === "en" ? "/en" : "/";
+  const isHome =
+    pathname === "/" ||
+    pathname === "/en" ||
+    pathname === "/en/" ||
+    pathname === "/fr" ||
+    pathname === "/fr/" ||
+    pathname === "/ca" ||
+    pathname === "/ca/";
+  const homeBase = isHome
+    ? ""
+    : locale === "en"
+    ? "/en"
+    : locale === "fr"
+    ? "/fr"
+    : locale === "ca"
+    ? "/ca"
+    : "";
 
   const SHOW_NEWS_LINK = true;
-  const aboutHref = locale === "en" ? "/en/about" : "/about";
+  const aboutHref =
+    locale === "en"
+      ? "/en/about"
+      : locale === "fr"
+      ? "/fr/about"
+      : locale === "ca"
+      ? "/ca/about"
+      : "/about";
 
   const links = [
     { label: t.nav.about, href: aboutHref },

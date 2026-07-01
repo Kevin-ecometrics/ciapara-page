@@ -1,6 +1,8 @@
 export type GalleryImage = {
   src: string;
   alt: string;
+  altFr: string;
+  altCa: string;
   width: number;
   height: number;
   landscape: boolean;
@@ -17,6 +19,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Pieza cipres acrilico sobre tela 122 x 80 cm  por enrique ciapara.webp",
     alt: "Piece titled Cypress, acrylic on canvas, 122 x 80 cm, by Mexican visual artist Enrique Ciapara, inspired by Tijuana's architecture",
+    altFr: "Pièce intitulée Ciprés, acrylique sur toile, 122 x 80 cm, de l'artiste visuel mexicain Enrique Ciapara, inspirée par l'architecture de Tijuana",
+    altCa: "Peça titulada Ciprés, acrílic sobre tela, 122 x 80 cm, de l'artista visual mexicà Enrique Ciapara, inspirada per l'arquitectura de Tijuana",
     width: 223,
     height: 339,
     landscape: false,
@@ -31,6 +35,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Pieza Cielo acrilico sobre tela 213x 122 cm por ciapara artista basado en tijuana.webp",
     alt: "Piece titled Sky, made in acrylic on canvas, 213x 122 cm, by Tijuana-based artist Ciapara, inspired by street food signage",
+    altFr: "Pièce intitulée Cielo (Ciel), en acrylique sur toile, 213 x 122 cm, de l'artiste Ciapara basé à Tijuana, inspirée par la signalétique de la restauration de rue",
+    altCa: "Peça titulada Cielo (Cel), en acrílic sobre tela, 213 x 122 cm, de l'artista Ciapara establert a Tijuana, inspirada per la senyalètica de menjar al carrer",
     width: 344,
     height: 590,
     landscape: false,
@@ -45,6 +51,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Pieza sunnyday en acrilico sobre tela 122x 107 cm por artista enrique ciapara.webp",
     alt: "Work titled Sunnyday, acrylic on canvas, 122x 107 cm, by Baja California artist Enrique Ciapara, inspired by Tijuana and the Spanish Mediterranean",
+    altFr: "Œuvre intitulée Sunnyday, acrylique sur toile, 122 x 107 cm, de l'artiste de Basse-Californie Enrique Ciapara, inspirée par Tijuana et la Méditerranée espagnole",
+    altCa: "Obra titulada Sunnyday, acrílic sobre tela, 122 x 107 cm, de l'artista de Baixa Califòrnia Enrique Ciapara, inspirada per Tijuana i la Mediterrània espanyola",
     width: 294,
     height: 339,
     landscape: false,
@@ -59,6 +67,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Pieza ensenada acrilico sobre tela 213x 122 cm por artista de la frontera san diego tijuana.webp",
     alt: "Piece titled Ensenada, acrylic on canvas, 213x 122 cm, by a San Diego-Tijuana border artist, inspired by Ensenada, Baja California",
+    altFr: "Pièce intitulée Ensenada, acrylique sur toile, 213 x 122 cm, par un artiste de la frontière San Diego-Tijuana, inspirée par Ensenada, Basse-Californie",
+    altCa: "Peça titulada Ensenada, acrílic sobre tela, 213 x 122 cm, per un artista de la frontera San Diego-Tijuana, inspirada per Ensenada, Baixa Califòrnia",
     width: 336,
     height: 592,
     landscape: false,
@@ -73,6 +83,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Pieza dulce del dia de brujas acrilico sobre tela 122x 141 cm por pintor enrique ciapara.webp",
     alt: "Piece titled Halloween Candy, acrylic on canvas, 122x 141 cm, by painter Enrique Ciapara",
+    altFr: "Pièce intitulée Dulces del día de brujas (Bonbons d'Halloween), acrylique sur toile, 122 x 141 cm, du peintre Enrique Ciapara",
+    altCa: "Peça titulada Dulces del día de brujas (Llaminadures de Halloween), acrílic sobre tela, 122 x 141 cm, del pintor Enrique Ciapara",
     width: 392,
     height: 337,
     landscape: false,
@@ -87,6 +99,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Pieza paisaje acrilico sobre tela 122x 95 cm por artista enrique ciapara en tijuana.webp",
     alt: "Piece made in 2015 titled Landscape, acrylic on canvas, 122x 95 cm, by artist Enrique Ciapara in Tijuana",
+    altFr: "Pièce réalisée en 2015 intitulée Paisaje (Paysage), acrylique sur toile, 122 x 95 cm, par l'artiste Enrique Ciapara à Tijuana",
+    altCa: "Peça realitzada el 2015 titulada Paisaje (Paisatge), acrílic sobre tela, 122 x 95 cm, per l'artista Enrique Ciapara a Tijuana",
     width: 263,
     height: 340,
     landscape: false,
@@ -101,6 +115,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Pieza 8bit acrilico sobre tela 124x 107 cm Por enrique ciapara artista plastico en tijuana.webp",
     alt: "Piece titled 8bit, made in acrylic on canvas, 124x 107 cm, by visual artist Enrique Ciapara in Tijuana, made during 2015",
+    altFr: "Pièce intitulée 8bit, en acrylique sur toile, 124 x 107 cm, de l'artiste visuel Enrique Ciapara à Tijuana, réalisée en 2015",
+    altCa: "Peça titulada 8bit, en acrílic sobre tela, 124 x 107 cm, de l'artista visual Enrique Ciapara a Tijuana, realitzada el 2015",
     width: 296,
     height: 344,
     landscape: false,
@@ -115,6 +131,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Pieza lontananza acrilico sobre tela 122x 122 cm por enrique ciapara artista visual de bajacaliforniando.webp",
     alt: "Piece titled Lontananza, made in acrylic on canvas, 122x 122 cm, by Enrique Ciapara, Baja California visual artist",
+    altFr: "Pièce intitulée Lontananza, en acrylique sur toile, 122 x 122 cm, d'Enrique Ciapara, artiste visuel de Basse-Californie",
+    altCa: "Peça titulada Lontananza, en acrílic sobre tela, 122 x 122 cm, d'Enrique Ciapara, artista visual de Baixa Califòrnia",
     width: 339,
     height: 338,
     landscape: false,
@@ -129,6 +147,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Pieza gran cañon acrilico sobre tela 213x 122 cm por enrique ciapara.webp",
     alt: "Piece titled Grand Canyon, made in acrylic on canvas, 213x 122 cm, by Enrique Ciapara, abstract artist in Tijuana",
+    altFr: "Pièce intitulée Gran cañón (Grand Canyon), en acrylique sur toile, 213 x 122 cm, d'Enrique Ciapara, artiste abstrait à Tijuana",
+    altCa: "Peça titulada Gran cañón (Gran Canyó), en acrílic sobre tela, 213 x 122 cm, d'Enrique Ciapara, artista abstracte a Tijuana",
     width: 267,
     height: 348,
     landscape: false,
@@ -143,6 +163,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Grits acrilico sobre tela 122x 107 cm 2015.webp",
     alt: "Work titled Grits, made on canvas, 122 x 80 cm, by painter Enrique Ciapara",
+    altFr: "Œuvre intitulée Grits, sur toile, 122 x 80 cm, du peintre Enrique Ciapara",
+    altCa: "Obra titulada Grits, sobre tela, 122 x 80 cm, del pintor Enrique Ciapara",
     width: 223,
     height: 337,
     landscape: false,
@@ -157,6 +179,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Recuerdo de Magali acrilico sobre tela 125 x 107 cm 2015.webp",
     alt: "Work titled Memory of Magali from the 2015 series, acrylic on canvas, 125 x 107 cm, by Enrique Ciapara",
+    altFr: "Œuvre intitulée Recuerdo Magali (Souvenir de Magali) de la série 2015, acrylique sur toile, 125 x 107 cm, d'Enrique Ciapara",
+    altCa: "Obra titulada Recuerdo Magali (Record de Magali) de la sèrie 2015, acrílic sobre tela, 125 x 107 cm, d'Enrique Ciapara",
     width: 297,
     height: 347,
     landscape: false,
@@ -171,6 +195,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/Robot acrilico sobre tela 213x 122 cm 2015.webp",
     alt: "Piece titled Robot, made in acrylic on canvas, 213 x 122 cm, by Enrique Ciapara, from the 2015 series",
+    altFr: "Pièce intitulée Robot, en acrylique sur toile, 213 x 122 cm, d'Enrique Ciapara, de la série 2015",
+    altCa: "Peça titulada Robot, en acrílic sobre tela, 213 x 122 cm, d'Enrique Ciapara, de la sèrie 2015",
     width: 344,
     height: 592,
     landscape: false,
@@ -185,6 +211,8 @@ export const images: GalleryImage[] = [
   {
     src: "/images/2015/El globo acrilico sobre tela 144 x 103 cm 2015.webp",
     alt: "Piece titled The Balloon, made in acrylic on canvas, 144 x 103 cm, by visual artist Enrique Ciapara",
+    altFr: "Pièce intitulée El globo (Le Ballon), en acrylique sur toile, 144 x 103 cm, de l'artiste visuel Enrique Ciapara",
+    altCa: "Peça titulada El globo (El Globus), en acrílic sobre tela, 144 x 103 cm, de l'artista visual Enrique Ciapara",
     width: 288,
     height: 400,
     landscape: false,

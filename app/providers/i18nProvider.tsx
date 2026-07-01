@@ -20,15 +20,26 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const locale: Locale = pathname.startsWith("/en") ? "en" : "es";
+  const locale: Locale = pathname.startsWith("/fr")
+    ? "fr"
+    : pathname.startsWith("/ca")
+    ? "ca"
+    : pathname.startsWith("/en")
+    ? "en"
+    : "es";
+
+  function stripLocalePrefix(path: string): string {
+    return path.replace(/^\/(en|fr|ca)(?=\/|$)/, "") || "/";
+  }
 
   function setLocale(l: Locale) {
     if (l === locale) return;
     sessionStorage.setItem("skip-intro", "1");
-    if (l === "en") {
-      router.push(`/en${pathname}`, { scroll: false });
+    const base = stripLocalePrefix(pathname);
+    if (l === "es") {
+      router.push(base, { scroll: false });
     } else {
-      router.push(pathname.replace(/^\/en/, "") || "/", { scroll: false });
+      router.push(`/${l}${base === "/" ? "" : base}`, { scroll: false });
     }
   }
 

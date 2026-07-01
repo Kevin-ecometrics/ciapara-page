@@ -30,6 +30,12 @@ const rows: Array<Array<{ idx: number; start: number; span: number; y: number }>
 export default function GalleryTrompe() {
   const { locale } = useI18n();
   const tTrompe = useTrompeT(locale);
+
+  function getAlt(img: typeof images[number]): string {
+    if (locale === "fr" && img.altFr) return img.altFr;
+    if (locale === "ca" && img.altCa) return img.altCa;
+    return img.alt;
+  }
   const [hovered, setHovered] = useState<number | null>(null);
   const active = hovered !== null ? images[hovered] : null;
 
@@ -74,7 +80,7 @@ export default function GalleryTrompe() {
                       <div className="group overflow-hidden rounded-xl shadow-lg shadow-black/10 ring-1 ring-black/5">
                         <img
                           src={img.src}
-                          alt={img.alt}
+                          alt={getAlt(img)}
                           width={img.width}
                           height={img.height}
                           draggable={false}
@@ -102,7 +108,7 @@ export default function GalleryTrompe() {
                   transition={{ duration: 0.4, ease: expo }}
                 >
                   <p className="text-sm text-[#1A1916]/70 leading-relaxed">
-                    {active.alt}
+                    {getAlt(active)}
                   </p>
                 </motion.div>
               ) : (

@@ -30,7 +30,7 @@ export default function HeroErrores() {
       <div className="absolute inset-0">
         <img
           src="/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.jpeg"
-          alt="Work titled Banquet in the Pine Forest, made in acrylic on canvas, 152 x 429 cm, by Enrique Ciapara, 2019"
+          alt={eT.hero.bgImageAlt}
           className="w-full h-full object-cover object-center scale-105"
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/85" />

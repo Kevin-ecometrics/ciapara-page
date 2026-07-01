@@ -24,12 +24,14 @@ export default function NavbarErrores() {
 
   function handleBack() {
     sessionStorage.setItem("skip-intro", "1");
-    router.push(locale === "en" ? "/en#obras" : "/#obras");
+    const base = locale === "en" ? "/en" : locale === "fr" ? "/fr" : locale === "ca" ? "/ca" : "";
+    router.push(`${base}/#obras`);
   }
 
   function handleBackMain() {
     sessionStorage.setItem("skip-intro", "0");
-    router.push(locale === "en" ? "/en" : "/");
+    const base = locale === "en" ? "/en" : locale === "fr" ? "/fr" : locale === "ca" ? "/ca" : "";
+    router.push(`${base}/`);
   }
 
   const colorText = scrolled ? "text-[#1A1916]" : "text-white";
@@ -107,7 +109,7 @@ export default function NavbarErrores() {
           </span>
 
           <div className="flex items-center gap-1.5 text-[10px] tracking-[0.15em]">
-            {(["es", "en"] as Locale[]).map((l, i) => (
+            {(["es", "en", "fr", "ca"] as Locale[]).map((l, i) => (
               <span key={l} className="flex items-center gap-1.5">
                 {i > 0 && (
                   <span

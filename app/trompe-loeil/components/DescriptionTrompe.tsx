@@ -68,6 +68,140 @@ export default function DescriptionTrompe() {
     );
   }
 
+  if (locale === "fr") {
+    return (
+      <div className="text-lg text-[#1A1916]/45 leading-relaxed pr-6 flex flex-col gap-4 [&_p]:text-justify">
+        <p>
+          La peinture d&apos;Enrique Ciapara récupère ce qui n&apos;appartient
+          pas à la peinture et s&apos;articule comme un langage qui n&apos;obéit
+          à aucune grammaire définie. Les mots qui viennent à l&apos;esprit
+          lorsque nous observons son œuvre établissent un vocabulaire de
+          contours et de couleurs où le cercle peut être l&apos;origine
+          d&apos;une idée, d&apos;une pomme ou d&apos;une étoile.
+        </p>
+        <p>
+          Les œuvres rassemblées dans cette exposition décrivent une limite
+          entre toutes les possibilités que l&apos;on peut trouver au-delà de
+          ce que nous arrivons à voir — au-delà du paysage, dans la direction
+          des lignes, comme l&apos;écriture dans l&apos;obscurité.
+        </p>
+        <p>
+          Ciapara part d&apos;une certitude pour la transformer en mensonge. La
+          couleur est la mesure de toutes choses : le jour est noir, la nuit
+          blanche et le ciel aussi bleu qu&apos;une orange. Mais avant la
+          peinture, rien n&apos;est défini. La peinture de Ciapara ne représente
+          pas ce que nous voyons mais ce que nous pourrions en venir à voir —
+          comme si les figures et les formes perdaient leur dimension et leur
+          équilibre, et qu&apos;il nous fallait recommencer.
+        </p>
+        <p>
+          Chaque œuvre représente la première image qui donne naissance aux
+          suivantes. Dans chaque toile, les couleurs, les arbres, les chaises
+          réapparaissent. La peinture fait partie de la nature — un élément de
+          plus qui complète la réalité. C&apos;est la première image que nous
+          retenons de l&apos;enfance. C&apos;est la première image de la
+          sensation de vitesse comme attribut de la couleur.
+        </p>
+        <p>
+          Tout peut être peint. Tout est dehors, comme le paysage qui passe par
+          la fenêtre quand nous voyageons en train — une image que nous
+          n&apos;avons pas face à nous mais de côté, et qui soudainement, de
+          façon mystérieuse, devient visible. Comme il arrive avec les couleurs
+          de l&apos;arc-en-ciel qui se confondent entre elles. Par la peinture
+          nous savons que l&apos;arc-en-ciel n&apos;est pas, par essence, dans
+          la pluie ni dans l&apos;œil qui le voit — bien qu&apos;il soit généré
+          par la pluie, le soleil et l&apos;œil.
+        </p>
+        <p>
+          Voir est une façon de marcher. Parcourir les chemins où les souvenirs
+          s&apos;ordonnent à partir de la ressemblance — entre une forme et une
+          autre, entre un arbre et l&apos;image de son ombre. Dans cette
+          simultanéité, Ciapara confond la partie avec le tout et son œuvre,
+          comme l&apos;arc-en-ciel, se projette comme un trompe-l&apos;œil :
+        </p>
+        <p className="italic">
+          Ainsi la pierre jetée dans l&apos;eau devient le centre et le motif de
+          nombreux cercles — et ainsi le son se diffuse en cercles à travers
+          l&apos;air — de même un corps placé dans l&apos;air lumineux
+          s&apos;étend circulairement et remplit les parties environnantes de ses
+          infinies images, paraissant complet dans le tout et complet dans la
+          moindre de ses parties. (Léonard de Vinci, Traité de la peinture, 68
+          [A. 9b]).
+        </p>
+        <h2>
+          Alberto Dilger
+          <br />
+          Commissaire d&apos;exposition
+        </h2>
+      </div>
+    );
+  }
+
+  if (locale === "ca") {
+    return (
+      <div className="text-lg text-[#1A1916]/45 leading-relaxed pr-6 flex flex-col gap-4 [&_p]:text-justify">
+        <p>
+          La pintura d&apos;Enrique Ciapara recupera allò que no pertany a la
+          pintura i s&apos;articula com un llenguatge que no obeeix cap gramàtica
+          definida. Les paraules que venen a la ment quan observem la seva obra
+          estableixen un vocabulari de contorns i colors on el cercle pot ser
+          l&apos;origen d&apos;una idea, una poma o una estrella.
+        </p>
+        <p>
+          Les obres reunides en aquesta exposició descriuen un límit entre totes
+          les possibilitats que es poden trobar més enllà del que aconseguim
+          veure — més enllà del paisatge, en la direcció de les línies, com
+          l&apos;escriptura en la foscor.
+        </p>
+        <p>
+          Ciapara parteix d&apos;una certesa per convertir-la en una mentida. El
+          color és la mesura de totes les coses: el dia és negre, la nit blanca
+          i el cel tan blau com una taronja. Però abans de la pintura, res no
+          està definit. La pintura de Ciapara no representa el que veiem sinó el
+          que podríem arribar a veure — com si les figures i les formes perdessin
+          la seva dimensió i el seu equilibri, i haguéssim de tornar a començar.
+        </p>
+        <p>
+          Cada obra representa la primera imatge que dóna origen a les altres.
+          En cada tela, els colors, els arbres, les cadires tornen a aparèixer.
+          La pintura forma part de la natura — un element més que completa la
+          realitat. És la primera imatge que tenim de la infància. És la primera
+          imatge de la sensació de velocitat com a atribut del color.
+        </p>
+        <p>
+          Tot es pot pintar. Tot és a fora, com el paisatge que passa per la
+          finestra quan viatgem en tren — una imatge que no tenim de front sinó
+          de costat i que de sobte, d&apos;una manera misteriosa, es fa visible.
+          Com passa amb els colors de l&apos;arc de Sant Martí que es confonen
+          entre si. Per la pintura sabem que l&apos;arc de Sant Martí no és, per
+          essència, a la pluja ni a l&apos;ull que el veu — tot i que és generat
+          per la pluja, el sol i l&apos;ull.
+        </p>
+        <p>
+          Veure és una manera de caminar. Recórrer els camins on els records
+          s&apos;ordenen a partir de la semblança — entre una forma i una altra,
+          entre un arbre i la imatge de la seva ombra. En aquesta simultaneïtat,
+          Ciapara confon la part amb el tot i la seva obra, com l&apos;arc de
+          Sant Martí, es projecta com un trompe l&apos;oeil:
+        </p>
+        <p className="italic">
+          Així la pedra llançada a l&apos;aigua es fa centre i motiu de nombrosos
+          cercles — i així el so es difon en cercles a través de l&apos;aire —
+          de la mateixa manera un cos col·locat a l&apos;aire lluminós
+          s&apos;expandeix circularment i omple les parts circumdants de les
+          seves infinites imatges, semblant complet en el tot i complet en la
+          menor de les seves parts. (Leonardo da Vinci, Tractat de la pintura,
+          68 [A. 9b]).
+        </p>
+        <h2>
+          Alberto Dilger
+          <br />
+          Comissari
+        </h2>
+      </div>
+    );
+  }
+
   return (
     <div className="text-lg text-[#1A1916]/45 leading-relaxed pr-6 flex flex-col gap-4 [&_p]:text-justify">
       <p>

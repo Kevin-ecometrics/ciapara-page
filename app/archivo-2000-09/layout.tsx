@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     languages: {
       es: "https://enriqueciapara.com/archivo-2000-09",
       en: "https://enriqueciapara.com/en/archivo-2000-09",
+      fr: "https://enriqueciapara.com/fr/archivo-2000-09",
+      ca: "https://enriqueciapara.com/ca/archivo-2000-09",
       "x-default": "https://enriqueciapara.com/archivo-2000-09",
     },
   },
