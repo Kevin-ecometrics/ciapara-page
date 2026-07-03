@@ -18,7 +18,7 @@ export default function TextGallery() {
           <figure className="mr-auto">
             <img
               src="/images/about/Exposicion en el cubo trompe l oeil con piezas y television con video los 15 errores mas comunes en la pintura.webp"
-              alt={isEn ? "Exhibition at El Cubo in Tijuana titled Trompe-l'oeil featuring an altered television showing: the 15 most common errors in painting, by Enrique Ciapara" : "Exposición en tijuana en El Cubo titulada Trompe l' oeil con piezas y una pieza intervenida de una televisión presentando: los 15 errores más comunes en la pintura por el artista Enrique Ciapara"}
+              alt={isEn ? "Exhibition at El Cubo in Tijuana titled Trompe-l'œil featuring an altered television showing: the 15 most common errors in painting, by Enrique Ciapara" : "Exposición en tijuana en El Cubo titulada Trompe l'œil con piezas y una pieza intervenida de una televisión presentando: los 15 errores más comunes en la pintura por el artista Enrique Ciapara"}
               className="h-auto w-full"
             />
           </figure>
@@ -34,7 +34,7 @@ export default function TextGallery() {
         <figure className="mr-20 md:mr-0">
           <img
             src="/images/about/Poliptico de mas de 300 dibujos en tinta por enrique ciapara expuestos en CECUT anio 2013.webp"
-            alt={isEn ? "Polyptych of more than 300 ink-on-paper drawings by Enrique Ciapara exhibited in the Trompe-l'oeil collection at Centro Cultural Tijuana" : "Políptico de más de 300 dibujos en técnica de tinta sobre papel por artista Enrique Ciapara expuestos en colección Trompe-l'oeil en el Centro Cultural Tijuana"}
+            alt={isEn ? "Polyptych of more than 300 ink-on-paper drawings by Enrique Ciapara exhibited in the Trompe-l'œil collection at Centro Cultural Tijuana" : "Políptico de más de 300 dibujos en técnica de tinta sobre papel por artista Enrique Ciapara expuestos en colección Trompe-l'œil en el Centro Cultural Tijuana"}
             className="w-full h-auto md:w-140"
           />
         </figure>

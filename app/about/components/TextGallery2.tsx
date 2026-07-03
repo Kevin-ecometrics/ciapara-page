@@ -34,7 +34,7 @@ export default function TextGallery() {
         <figure className="mr-20 md:mr-0">
           <img
             src="/images/about/Escultura titulada panadero en la exposicion del 2013 en el cubo por el artista plastico enrique ciapara en tijuana.webp"
-            alt={isEn ? "Sculpture titled 'Baker' in the 2013 Trompe-l'oeil exhibition at El Cubo by Enrique Ciapara in Tijuana" : "Escultura titulada panadero en la exposicion del 2013 en El Cubo trompe l'oeil por el artista plástico Enrique Ciapara en Tijuana"}
+            alt={isEn ? "Sculpture titled 'Baker' in the 2013 Trompe-l'œil exhibition at El Cubo by Enrique Ciapara in Tijuana" : "Escultura titulada panadero en la exposicion del 2013 en El Cubo trompe l'œil por el artista plástico Enrique Ciapara en Tijuana"}
             className="w-full h-auto md:w-140"
           />
         </figure>

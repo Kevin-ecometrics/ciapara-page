@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { useI18n } from "../../../providers/i18nProvider";
 import { use2015T } from "../../../lib/i18n-2015";
 import { images } from "./GalleryImages2015";
@@ -69,23 +69,13 @@ export default function Gallery() {
   const [hovered, setHovered] = useState<number | null>(null);
   const active = hovered !== null ? images[hovered] : null;
 
-  const colRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: titleProgress } = useScroll({
-    target: colRef,
-    offset: ["start 65%", "start 15%"],
-  });
-  const titleY = useTransform(titleProgress, [0, 1], [110, 0]);
-  const titleOpacity = useTransform(titleProgress, [0, 0.75], [0, 1]);
-
   return (
     <section className="bg-[#F6F2EC] py-28 md:py-40">
       <div className="px-6 lg:px-12 flex flex-col lg:flex-row gap-16 lg:gap-0">
-        <div ref={colRef} className="lg:w-3/4">
-          <motion.div style={{ y: titleY, opacity: titleOpacity }}>
-            <CollectionDescription title={t2015.hero.title1}>
-              <Description2015 />
-            </CollectionDescription>
-          </motion.div>
+        <div className="lg:w-3/4">
+          <CollectionDescription>
+            <Description2015 />
+          </CollectionDescription>
 
           <div className="space-y-6 lg:space-y-12 mt-20 lg:mt-32">
             {rows.map((row, ri) => (

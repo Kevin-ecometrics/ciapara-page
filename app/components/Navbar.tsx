@@ -109,7 +109,7 @@ export default function Navbar() {
     ? "/fr"
     : locale === "ca"
     ? "/ca"
-    : "";
+    : "/";
 
   const SHOW_NEWS_LINK = true;
   const aboutHref =
@@ -136,7 +136,6 @@ export default function Navbar() {
   ) {
     if (!href.includes("#")) return;
     if (!isHome) {
-      sessionStorage.setItem("skip-intro", "1");
       return;
     }
     e.preventDefault();
@@ -257,7 +256,6 @@ export default function Navbar() {
             <a
               href={homeBase || "/"}
               className="shrink-0"
-              onClick={() => sessionStorage.setItem("skip-intro", "1")}
             >
               <Image
                 src="/logos/ecp 3.3.1.png"
@@ -312,7 +310,6 @@ export default function Navbar() {
             <a
               href={homeBase || "/"}
               className="shrink-0"
-              onClick={() => sessionStorage.setItem("skip-intro", "1")}
             >
               <Image
                 src="/logos/ecp 3.2.png"

@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import { useI18n } from "../../../providers/i18nProvider";
 import { useTrompeT } from "../../../lib/i18n-trompe";
 
@@ -10,20 +9,9 @@ const expo = [0.16, 1, 0.3, 1] as const;
 export default function HeroTrompe() {
   const { locale } = useI18n();
   const tTrompe = useTrompeT(locale);
-  const heroRef = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "45%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0.25]);
 
   return (
-    <section
-      ref={heroRef}
-      className="relative h-screen overflow-hidden bg-black"
-    >
+    <section className="relative h-screen overflow-hidden bg-black">
       <div className="absolute inset-0">
         <img
           src="/images/Trompe/Trompe l´oeil de enrique ciapara artista visual bajacaliforniano.jpg"
@@ -41,19 +29,14 @@ export default function HeroTrompe() {
         }}
       />
 
-      <motion.div
-        style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 h-full flex flex-col items-start justify-end text-left px-6 md:px-14 lg:px-20 pb-10 md:pb-14"
-      >
+      <div className="relative z-10 h-full flex flex-col items-start justify-end text-left px-6 md:px-14 lg:px-20 pb-10 md:pb-14">
         <div className="overflow-hidden mb-8">
           <motion.p
             initial={{ y: "110%" }}
             animate={{ y: 0 }}
             transition={{ duration: 0.7, ease: expo, delay: 0.2 }}
             className="text-[10px] tracking-[0.5em] uppercase text-white/40"
-          >
-            {tTrompe.hero.subtitle}
-          </motion.p>
+          ></motion.p>
         </div>
 
         <h1 className="flex flex-col items-start">
@@ -87,7 +70,7 @@ export default function HeroTrompe() {
           transition={{ duration: 0.8, ease: expo, delay: 0.9 }}
           className="w-12 h-px bg-white/25 mt-8 origin-left"
         />
-      </motion.div>
+      </div>
     </section>
   );
 }

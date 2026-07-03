@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import { useI18n } from "../../../providers/i18nProvider";
 import { use2015T } from "../../../lib/i18n-2015";
 
@@ -10,26 +9,13 @@ const expo = [0.16, 1, 0.3, 1] as const;
 export default function HeroErrores() {
   const { locale } = useI18n();
   const t2015 = use2015T(locale);
-  const heroRef = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  // El título se desplaza hacia abajo y se desvanece a medida que se scrollea,
-  // como si quedara "atrás" justo antes de llegar a la galería.
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "45%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0.25]);
 
   return (
-    <section
-      ref={heroRef}
-      className="relative h-screen overflow-hidden bg-black"
-    >
+    <section className="relative h-screen overflow-hidden bg-black">
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
-          src="/images/2015/Pieza dulce del dia de brujas acrilico sobre tela 122x 141 cm por pintor enrique ciapara.webp"
+          src="/images/2015/cover 2015.webp"
           alt={t2015.hero.bgImageAlt}
           className="w-full h-full object-cover object-center scale-105"
         />
@@ -46,10 +32,7 @@ export default function HeroErrores() {
       />
 
       {/* Contenido — cargado a la izquierda */}
-      <motion.div
-        style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 h-full flex flex-col items-start justify-end text-left px-6 md:px-14 lg:px-20 pb-10 md:pb-14"
-      >
+      <div className="relative z-10 h-full flex flex-col items-start justify-end text-left px-6 md:px-14 lg:px-20 pb-10 md:pb-14">
         {/* Etiqueta */}
         <div className="overflow-hidden mb-8">
           <motion.p
@@ -57,9 +40,7 @@ export default function HeroErrores() {
             animate={{ y: 0 }}
             transition={{ duration: 0.7, ease: expo, delay: 0.2 }}
             className="text-[10px] tracking-[0.5em] uppercase text-white/40"
-          >
-            {t2015.hero.subtitle}
-          </motion.p>
+          ></motion.p>
         </div>
 
         {/* Título */}
@@ -95,7 +76,7 @@ export default function HeroErrores() {
           transition={{ duration: 0.8, ease: expo, delay: 0.9 }}
           className="w-12 h-px bg-white/25 mt-8 origin-left"
         />
-      </motion.div>
+      </div>
     </section>
   );
 }

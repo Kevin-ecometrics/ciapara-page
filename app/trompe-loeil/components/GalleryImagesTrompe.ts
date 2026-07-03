@@ -12,7 +12,7 @@ export type GalleryImage = {
 export const images: GalleryImage[] = [
   {
     src: "/images/Trompe/Trompe l´oeil de enrique ciapara artista visual bajacaliforniano.jpg",
-    alt: "Trompe l´oeil  obra  presentada en 2013 por  Enrique Ciapara  artista visual bajacaliforniano",
+    alt: "Trompe l'œil  obra  presentada en 2013 por  Enrique Ciapara  artista visual bajacaliforniano",
     width: 4288,
     height: 2848,
     title: "",
@@ -32,7 +32,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Pieza en exhibición de Trompe l´oeil de enrique ciapara.jpg",
-    alt: "Pieza en exhibición de Trompe l´oeil de Enrique Ciapara en Tijuana",
+    alt: "Pieza en exhibición de Trompe l'œil de Enrique Ciapara en Tijuana",
     width: 4288,
     height: 2848,
     title: "",
@@ -52,7 +52,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Trompe l´oeil obra del artista enrique ciapara en tijuana.webp",
-    alt: "Trompe l´oeil obra del artista Enrique Ciapara en Tijuana",
+    alt: "Trompe l'œil obra del artista Enrique Ciapara en Tijuana",
     width: 2100,
     height: 1644,
     title: "",
@@ -62,7 +62,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Enrique ciapara presento en 2013 su obra Trompe l´oeil.jpg",
-    alt: "Enrique Ciapara presento en 2013 su obra Trompe l´oeil en tijuana",
+    alt: "Enrique Ciapara presento en 2013 su obra Trompe l'œil en tijuana",
     width: 4288,
     height: 2848,
     title: "",
@@ -72,7 +72,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Exposición  de la obra titulada Trompe l´oeil de enrique ciapara.jpg",
-    alt: "Exposición de la obra titulada Trompe l´oeil de Enrique Ciapara",
+    alt: "Exposición de la obra titulada Trompe l'œil de Enrique Ciapara",
     width: 4288,
     height: 2848,
     title: "",
@@ -82,7 +82,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Fotografia intervenida por enrique ciapara parte de la exposicion de su obra trompe l´oeil.jpg",
-    alt: "Fotografía intervenida por Enrique Ciapara parte de la exposición de su obra Trompe l´oeil",
+    alt: "Fotografía intervenida por Enrique Ciapara parte de la exposición de su obra Trompe l'œil",
     width: 1640,
     height: 1378,
     title: "",
@@ -92,7 +92,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Obra de trompe l´oeil por enrique ciapara en tijuana.jpg",
-    alt: "Exposición de la obra titulada  trompe l´oeil por Enrique Ciapara",
+    alt: "Exposición de la obra titulada  trompe l'œil por Enrique Ciapara",
     width: 4288,
     height: 2848,
     title: "",
@@ -102,7 +102,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Conoce la simultaneidad de las obras de enrique ciapara en trompe l’oeil.JPG",
-    alt: "Conoce la simultaneidad de las obras de enrique ciapara en trompe l'oeil obra del 2013 exuesta en EL CUBO en Tijuana",
+    alt: "Conoce la simultaneidad de las obras de enrique ciapara en trompe l'œil obra del 2013 exuesta en EL CUBO en Tijuana",
     width: 2896,
     height: 1944,
     title: "",
@@ -122,7 +122,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/TrompeL’oeil de enrique ciapara, bajo la curaduría Fernando Delmar, conocido en el mundo del arte como alberto dilge.jpg",
-    alt: "Piezas expuestas en TrompeL'oeil de Enrique Ciapara, bajo la curaduría Fernando Delmar, conocido en el mundo del arte como Alberto Dilge",
+    alt: "Piezas expuestas en TrompeL'œil de Enrique Ciapara, bajo la curaduría Fernando Delmar, conocido en el mundo del arte como Alberto Dilge",
     width: 4288,
     height: 2848,
     title: "",
@@ -132,7 +132,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Mural expuesto en Trompe-L’oeil  en el   el CECUT el 6 de julio del 2013.jpg",
-    alt: "Pieza mural de la exposición Trompe-L'oeil una muestra retrospectiva de Ciapara",
+    alt: "Pieza mural de la exposición Trompe-L'œil una muestra retrospectiva de Ciapara",
     width: 4236,
     height: 2769,
     title: "",
@@ -142,7 +142,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Trompe-L’oeil es una exposición que  comprende obra de distintas épocas de enrique ciapara.jpg",
-    alt: "Piezas en exhibición Trompe-L'oeil  que  comprende obra de distintas épocas de Enrique iapara",
+    alt: "Piezas en exhibición Trompe-L'œil  que  comprende obra de distintas épocas de Enrique iapara",
     width: 4288,
     height: 2848,
     title: "",
@@ -152,7 +152,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/La exhibición trompe-l’oeil comprende obra de distintas épocas del artista Enrique Ciapara enfocadas en una reflexión.jpg",
-    alt: "La exhibición Trompe-L'oeil  es una reflexión acerca de la naturaleza de la pintura por Enrique Ciapara",
+    alt: "La exhibición Trompe-L'œil  es una reflexión acerca de la naturaleza de la pintura por Enrique Ciapara",
     width: 4288,
     height: 2848,
     title: "",
@@ -162,7 +162,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Vista de varias piezas de la exposicion trompe l’oeil por enrique ciapara y la curaduria de alberto dilge.jpg",
-    alt: "Vista de varias piezas de la exposicion trompe l'oeil por el artista visual de Tijuana Enrique Ciapara y la curaduría de Alberto Dilge",
+    alt: "Vista de varias piezas de la exposicion trompe l'œil por el artista visual de Tijuana Enrique Ciapara y la curaduría de Alberto Dilge",
     width: 4200,
     height: 2779,
     title: "",
@@ -172,7 +172,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Pieza de trompe l’oeil colgada en exposicion en el cubo.JPG",
-    alt: "Pieza de trompe l'oeil colgada en exposición del artista Enrique Ciapara en El CUBO",
+    alt: "Pieza de trompe l'œil colgada en exposición del artista Enrique Ciapara en El CUBO",
     width: 2896,
     height: 1944,
     title: "",
@@ -182,7 +182,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Estudio de enrique ciapara donde se registro el proceso de Trompe I oeil.JPG",
-    alt: "Estudio de Enrique Ciapara Trompe L oeil, una manera diferente de desafiar al arte contemporáneo",
+    alt: "Estudio de Enrique Ciapara Trompe L'Œil, una manera diferente de desafiar al arte contemporáneo",
     width: 2896,
     height: 1944,
     title: "",
@@ -202,7 +202,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Pieza exhibida en Trompe l oei por enrique ciapara en el cubo tijuana.jpg",
-    alt: "Pieza exhibida en Trompe l oei por Enrique Ciapara en el cubo Tijuana",
+    alt: "Pieza exhibida en Trompe l'œil por Enrique Ciapara en el cubo Tijuana",
     width: 6001,
     height: 4172,
     title: "",
@@ -212,7 +212,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Pieza por enrique ciapara  de su muestra trompe l' oeil de la expresion francesa engañar al ojo.jpg",
-    alt: "Pieza por Enrique Ciapara  de su muestra trompe l' oeil de la expresion francesa engañar al ojo presentada en 2013 en El CUBO",
+    alt: "Pieza por Enrique Ciapara  de su muestra trompe l'œil de la expresion francesa engañar al ojo presentada en 2013 en El CUBO",
     width: 6137,
     height: 4310,
     title: "",
@@ -222,7 +222,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Pieza titulada Ensenada exhibida en trompe-l’oeil por ciapara.jpg",
-    alt: "Pieza titulada Ensenada exhibida en trompe-l'oeil por ciapara artista de Tijuana",
+    alt: "Pieza titulada Ensenada exhibida en trompe-l'œil por ciapara artista de Tijuana",
     width: 664,
     height: 1000,
     title: "Ensenada",
@@ -232,7 +232,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Pieza del enrique ciapara que presento en trompe-l’oeil en tijuana en la sala 3  del cubo en 2013.JPG",
-    alt: "Pieza  expuesta en  trompe-l'oeil  exhibición del artista visual Enrique Ciapara  en Tijuana en la sala 3  del cubo en 2013",
+    alt: "Pieza  expuesta en  trompe-l'œil  exhibición del artista visual Enrique Ciapara  en Tijuana en la sala 3  del cubo en 2013",
     width: 2670,
     height: 3600,
     title: "",
@@ -242,7 +242,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Pieza dentro de exhibicion trompe-l’oeil por  ciapara.JPG",
-    alt: "Pieza dentro de exhibición trompe-l'oeil por  ciapara en la ciduad de Tijuana",
+    alt: "Pieza dentro de exhibición trompe-l'œil por  ciapara en la ciduad de Tijuana",
     width: 2685,
     height: 3600,
     title: "",
@@ -252,7 +252,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Pieza titulada dormido por ciapara exhibida en trompe-l’oeil en tijuana.JPG",
-    alt: "Pieza titulada dormido por ciapara exhibida en trompe-l'oeil en la sala 3 de El Cubo en tijuana julio del 2013",
+    alt: "Pieza titulada dormido por ciapara exhibida en trompe-l'œil en la sala 3 de El Cubo en tijuana julio del 2013",
     width: 2668,
     height: 3600,
     title: "Dormido",
@@ -262,7 +262,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/Trompe/Pieza presentada en trompe-l’oei en tijuana por ciapara 2013.JPG",
-    alt: "Pieza dentro de exhibición trompe-l'oeil por  ciapara en la ciduad de Tijuana",
+    alt: "Pieza dentro de exhibición trompe-l'œil por  ciapara en la ciduad de Tijuana",
     width: 2660,
     height: 3600,
     title: "",

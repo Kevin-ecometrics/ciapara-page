@@ -1,5 +1,6 @@
 "use client";
 
+import IntroAnimation from "../../components/IntroAnimation";
 import Navbar from "../../components/Navbar";
 import Hero from "./components/HeroErrores";
 import GalleryErrores from "./components/GalleryErrores";
@@ -10,6 +11,7 @@ export default function ErroresPage() {
   return (
     <>
       <div className="relative z-1 bg-[#F6F2EC]">
+        <IntroAnimation />
         <Navbar />
         <Hero />
         <GalleryErrores />

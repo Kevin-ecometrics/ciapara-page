@@ -8,11 +8,9 @@ import AboutIntro from "./AboutIntro";
 
 export default function HeroReveal({
   progress,
-  titleFontSize,
   onOpenMenu,
 }: {
   progress: MotionValue<number>;
-  titleFontSize: number | null;
   onOpenMenu: () => void;
 }) {
   const { t, locale, setLocale } = useI18n();
@@ -53,17 +51,12 @@ export default function HeroReveal({
           {t.hero.place}
         </p>
         <h1 className="overflow-hidden w-full mb-4 px-6">
-          <span
-            className="block font-bold tracking-[-0.02em] text-[#1A1916] leading-[0.88] whitespace-nowrap"
-            style={{
-              fontFamily: "var(--font-interstate-compressed)",
-              fontSize: titleFontSize
-                ? `${titleFontSize}px`
-                : "clamp(2rem, 10.2vw, 20rem)",
-            }}
-          >
-            ENRIQUE CIAPARA
-          </span>
+          <img
+            src="/logos/ecp 2.png"
+            alt="Enrique Ciapara"
+            className="block w-full h-auto select-none"
+            draggable={false}
+          />
         </h1>
 
         <div className="flex items-center justify-between px-6 pt-3 border-t border-[#1A1916]/10">

@@ -10,7 +10,6 @@ const expo = [0.16, 1, 0.3, 1] as const;
 const COLLAPSED_HEIGHT = "16.25em";
 
 interface Props {
-  title: string;
   children: React.ReactNode;
 }
 
@@ -40,10 +39,10 @@ function ToggleButton({ up, label, onClick }: { up: boolean; label: string; onCl
   );
 }
 
-export default function CollectionDescription({ title, children }: Props) {
+export default function CollectionDescription({ children }: Props) {
   const [expanded, setExpanded] = useState(false);
   const { locale } = useI18n();
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const readMoreLabel = locale === "en" ? "Read more" : "Leer más";
   const collapseLabel = locale === "en" ? "Show less" : "Leer menos";
@@ -51,19 +50,12 @@ export default function CollectionDescription({ title, children }: Props) {
   function collapseAndScroll() {
     setExpanded(false);
     setTimeout(() => {
-      titleRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 80);
   }
 
   return (
-    <div className="mb-20 md:mb-32">
-      <h2
-        ref={titleRef}
-        className="text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tight uppercase text-[#1A1916] leading-[0.9] mb-6 md:mb-8"
-      >
-        {title}
-      </h2>
-
+    <div ref={containerRef} className="mb-20 md:mb-32">
       {/* Top "leer menos" — collapses only, no scroll */}
       <AnimatePresence>
         {expanded && (

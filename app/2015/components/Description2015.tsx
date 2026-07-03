@@ -102,8 +102,8 @@ export default function Description2015() {
           thousands of possibilities in conflict…"
         </p>
         <p>
-          We, as viewers of painting, say that the imperfect beauty in
-          Ciapara's work is a cause for joy.
+          We, as viewers of painting, say that the imperfect beauty in Ciapara's
+          work is a cause for joy.
         </p>
       </div>
     );
@@ -116,7 +116,8 @@ export default function Description2015() {
           Enrique Ciapara (ou The Joy of Living ou la joie de vivre)
         </h3>
         <h4 className="text-end">
-          L&apos;œil ne se rassasie pas de voir, ni l&apos;oreille d&apos;entendre
+          L&apos;œil ne se rassasie pas de voir, ni l&apos;oreille
+          d&apos;entendre
         </h4>
         <h2 className="text-end">L&apos;Ecclésiaste</h2>
         <p>
@@ -126,32 +127,32 @@ export default function Description2015() {
           également vu des tableaux qu&apos;il a peints avant cette période. À
           travers cette observation, j&apos;ai trouvé quelque chose de
           fondamental dans tout son parcours jusqu&apos;à présent : une grande
-          cohérence artistique. Cela ne signifie pas que son travail
-          n&apos;a pas évolué pendant tout ce temps, mais plutôt que ses œuvres,
-          bien que distinctes, portent la marque Ciapara. En quoi consiste cette
-          marque ? Voici quelques idées.
+          cohérence artistique. Cela ne signifie pas que son travail n&apos;a
+          pas évolué pendant tout ce temps, mais plutôt que ses œuvres, bien que
+          distinctes, portent la marque Ciapara. En quoi consiste cette marque ?
+          Voici quelques idées.
         </p>
         <h4>1. Vers la monotonie chez Ciapara.</h4>
         <p>
           Le mot monotonie a presque toujours une connotation négative,
-          péjorative. Cependant, si l&apos;on prend la citation du poète argentin
-          Hugo Gola (lorsqu&apos;il écrit sur Juan L. Ortiz) et qu&apos;on
-          l&apos;utilise pour définir l&apos;œuvre d&apos;un peintre, ce peintre
-          devrait se sentir flatté d&apos;être qualifié de peintre monotone. La
-          citation de Gola :
+          péjorative. Cependant, si l&apos;on prend la citation du poète
+          argentin Hugo Gola (lorsqu&apos;il écrit sur Juan L. Ortiz) et
+          qu&apos;on l&apos;utilise pour définir l&apos;œuvre d&apos;un peintre,
+          ce peintre devrait se sentir flatté d&apos;être qualifié de peintre
+          monotone. La citation de Gola :
         </p>
         <p>
-          &laquo; Dans son essai &ldquo;Tienen razón los literatos&rdquo;, Cesare
-          Pavese dit : &ldquo;Tout écrivain authentique est splendidement monotone
-          en ce que ses pages sont gouvernées par un moule auquel il revient
-          toujours, une loi formelle de la fantaisie qui transforme le matériau le
-          plus divers en figures et situations qui sont presque toujours les
-          mêmes&rdquo;. Si cette affirmation est vraie, comme nous le croyons
-          réellement, Juan L. Ortiz est, sans aucun doute, un écrivain authentique.
-          Sa tâche a toujours consisté à transformer le matériau divers à sa
-          disposition — vaste et sans cesse renouvelé — en figures et situations
-          qui sont presque toujours les mêmes, donnant la preuve d&apos;une
-          splendide monotonie. &raquo;
+          &laquo; Dans son essai &ldquo;Tienen razón los literatos&rdquo;,
+          Cesare Pavese dit : &ldquo;Tout écrivain authentique est splendidement
+          monotone en ce que ses pages sont gouvernées par un moule auquel il
+          revient toujours, une loi formelle de la fantaisie qui transforme le
+          matériau le plus divers en figures et situations qui sont presque
+          toujours les mêmes&rdquo;. Si cette affirmation est vraie, comme nous
+          le croyons réellement, Juan L. Ortiz est, sans aucun doute, un
+          écrivain authentique. Sa tâche a toujours consisté à transformer le
+          matériau divers à sa disposition — vaste et sans cesse renouvelé — en
+          figures et situations qui sont presque toujours les mêmes, donnant la
+          preuve d&apos;une splendide monotonie. &raquo;
         </p>
         <p>
           Nous prenons la citation de Gola au pied de la lettre et affirmons
@@ -171,10 +172,10 @@ export default function Description2015() {
           peuplent, comme une nature morte avec des composantes minimales.
         </p>
         <p>
-          b) L&apos;architecture de Tijuana, les couleurs usées de certains murs,
-          les tons fanés, la subtilité des couleurs décolorées par le soleil. Le
-          vert terreux qui a changé de ton vers un vert pâle sous le terrible
-          soleil d&apos;été, sous la rosée hivernale de Tijuana.
+          b) L&apos;architecture de Tijuana, les couleurs usées de certains
+          murs, les tons fanés, la subtilité des couleurs décolorées par le
+          soleil. Le vert terreux qui a changé de ton vers un vert pâle sous le
+          terrible soleil d&apos;été, sous la rosée hivernale de Tijuana.
         </p>
         <p>
           c) L&apos;architecture encore : les plans juxtaposés de matériaux
@@ -186,34 +187,35 @@ export default function Description2015() {
         <p>
           d) Un autre matériau : les objets de cuisine. Marmites, casseroles,
           poêles, spatules, cuillères, louches, épluche-légumes, fouets — ces
-          instruments l&apos;invitent à peindre. On trouve parfois ces instruments
-          dans ses tableaux, rendus de façon plate, non imitative,
-          bidimensionnelle, schématique, synthétique. Ce n&apos;est pas un hasard
-          si son atelier de gravure s&apos;appelle La Brigada, en référence à{" "}
-          <em>la brigade de cuisine</em>, et que son logo soit l&apos;os
-          d&apos;une patte de jambon serrano — évidemment déjà mangé.
+          instruments l&apos;invitent à peindre. On trouve parfois ces
+          instruments dans ses tableaux, rendus de façon plate, non imitative,
+          bidimensionnelle, schématique, synthétique. Ce n&apos;est pas un
+          hasard si son atelier de gravure s&apos;appelle La Brigada, en
+          référence à <em>la brigade de cuisine</em>, et que son logo soit
+          l&apos;os d&apos;une patte de jambon serrano — évidemment déjà mangé.
         </p>
         <p>
           e) Les enseignes peintes qui subsistent encore à Tijuana constituent
           une source d&apos;inspiration pour le peintre : elles dénotent et
           connotent un espace précis, un lieu. Les panneaux commerciaux et les
-          lettres tordues qui y sont inscrites sont également un stimulus visuel :
-          on pourrait dire que les peintres en lettres ou les employés des
-          magasins en ville qui réalisent ces enseignes expriment une vision de la
-          vie, une façon d&apos;être d&apos;une zone précise — quelque chose que
-          Ciapara, en maître du regard, recueille et condense en œuvres d&apos;une
-          beauté imparfaite, comme le souhaitait Hugo Padeletti. C&apos;est ce que
-          le grand cinéaste C.T. Dreyer a affirmé de manière concluante, et cela
-          s&apos;aligne avec ce que fait le peintre de Tijuana :
+          lettres tordues qui y sont inscrites sont également un stimulus visuel
+          : on pourrait dire que les peintres en lettres ou les employés des
+          magasins en ville qui réalisent ces enseignes expriment une vision de
+          la vie, une façon d&apos;être d&apos;une zone précise — quelque chose
+          que Ciapara, en maître du regard, recueille et condense en œuvres
+          d&apos;une beauté imparfaite, comme le souhaitait Hugo Padeletti.
+          C&apos;est ce que le grand cinéaste C.T. Dreyer a affirmé de manière
+          concluante, et cela s&apos;aligne avec ce que fait le peintre de
+          Tijuana :
         </p>
         <p>
           &laquo; Sans aucun doute, nous sommes tous d&apos;accord pour dire que
-          le cinéma, tel que nous le connaissons aujourd&apos;hui, n&apos;est pas
-          parfait. Mais c&apos;est une raison de se réjouir, car l&apos;imparfait
-          implique l&apos;évolution. L&apos;imparfait est vivant ; le parfait est
-          mort, hors concours — nous n&apos;avons pas à nous en inquiéter. Dans
-          l&apos;imparfait se trouvent des milliers de possibilités en
-          conflit… &raquo;
+          le cinéma, tel que nous le connaissons aujourd&apos;hui, n&apos;est
+          pas parfait. Mais c&apos;est une raison de se réjouir, car
+          l&apos;imparfait implique l&apos;évolution. L&apos;imparfait est
+          vivant ; le parfait est mort, hors concours — nous n&apos;avons pas à
+          nous en inquiéter. Dans l&apos;imparfait se trouvent des milliers de
+          possibilités en conflit… &raquo;
         </p>
         <p>
           Nous, en tant que spectateurs de peinture, disons que la beauté
@@ -250,8 +252,8 @@ export default function Description2015() {
           La paraula monotonia gairebé sempre té una connotació negativa,
           pejorativa. No obstant això, si prenem la cita del poeta argentí Hugo
           Gola (quan escriu sobre Juan L. Ortiz) i l&apos;usem per definir
-          l&apos;obra d&apos;un pintor, aquell pintor hauria de sentir-se afalagat
-          de ser anomenat pintor monòton. La cita de Gola:
+          l&apos;obra d&apos;un pintor, aquell pintor hauria de sentir-se
+          afalagat de ser anomenat pintor monòton. La cita de Gola:
         </p>
         <p>
           &laquo; En el seu assaig &ldquo;Tienen razón los literatos&rdquo;,
@@ -263,16 +265,16 @@ export default function Description2015() {
           com realment ho creiem, Juan L. Ortiz és, sens dubte, un escriptor
           autèntic. La seva tasca ha consistit sempre a transformar el material
           divers al seu abast — vast i sempre renovat — en figures i situacions
-          que són gairebé sempre les mateixes, donant proves d&apos;una esplèndida
-          monotonia. &raquo;
+          que són gairebé sempre les mateixes, donant proves d&apos;una
+          esplèndida monotonia. &raquo;
         </p>
         <p>
           Prenem al peu de la lletra la cita de Gola i afirmem que Enrique
           Ciapara és un pintor autèntic, ja que els seus quadres estan governats
-          per una llei formal de la fantasia que transforma el material divers al
-          seu abast en formes, espais, figures i línies que són gairebé sempre les
-          mateixes, donant proves d&apos;una esplèndida monotonia, o coherència
-          formal.
+          per una llei formal de la fantasia que transforma el material divers
+          al seu abast en formes, espais, figures i línies que són gairebé
+          sempre les mateixes, donant proves d&apos;una esplèndida monotonia, o
+          coherència formal.
         </p>
         <h4>
           2. Quin és el material al seu abast, o els motius amb els quals
@@ -284,10 +286,11 @@ export default function Description2015() {
           morta amb components mínims.
         </p>
         <p>
-          b) L&apos;arquitectura de Tijuana, els colors desgastats d&apos;algunes
-          parets, els tons descolorits, la subtilesa dels colors cremats pel sol.
-          El verd terra que va canviar de to cap a un verd pàl·lid pel terrible
-          sol d&apos;estiu, per la rosada d&apos;hivern a Tijuana.
+          b) L&apos;arquitectura de Tijuana, els colors desgastats
+          d&apos;algunes parets, els tons descolorits, la subtilesa dels colors
+          cremats pel sol. El verd terra que va canviar de to cap a un verd
+          pàl·lid pel terrible sol d&apos;estiu, per la rosada d&apos;hivern a
+          Tijuana.
         </p>
         <p>
           c) L&apos;arquitectura de nou: els plans juxtaposats de materials
@@ -297,8 +300,8 @@ export default function Description2015() {
         </p>
         <p>
           d) Un altre material: els objectes de cuina. Olles, cassoles, paelles,
-          espàtules, culleres, cullerots, peladors de verdures, batidors — aquests
-          instruments l&apos;inviten a pintar. De vegades trobem aquests
+          espàtules, culleres, cullerots, peladors de verdures, batidors —
+          aquests instruments l&apos;inviten a pintar. De vegades trobem aquests
           instruments als seus quadres, de forma plana, no imitatius,
           bidimensionals, esquemàtics, sintètics. No és casual que el seu taller
           de gravat s&apos;anomeni La Brigada, en referència a{" "}
@@ -314,21 +317,22 @@ export default function Description2015() {
           retoladors o els dependents de les botigues de la ciutat que fan
           aquells rètols expressen una visió de la vida, una manera de ser
           d&apos;una zona precisa — quelcom que Ciapara, com a expert del veure,
-          recull i condensa en obres d&apos;una bellesa imperfecta, com volia Hugo
-          Padeletti. Això ja ho va dir de manera contundent el gran cineasta
-          C.T. Dreyer, i s&apos;alinea amb el que fa el pintor de Tijuana:
+          recull i condensa en obres d&apos;una bellesa imperfecta, com volia
+          Hugo Padeletti. Això ja ho va dir de manera contundent el gran
+          cineasta C.T. Dreyer, i s&apos;alinea amb el que fa el pintor de
+          Tijuana:
         </p>
         <p>
           &laquo; Sens dubte, tots estem d&apos;acord que el cinema, tal com el
           coneixem avui dia, no és perfecte. Però això és motiu d&apos;alegria,
-          perquè l&apos;imperfecte implica l&apos;evolució. L&apos;imperfecte viu;
-          el perfecte està mort, fora de competició — no ens hem de preocupar per
-          ell. En l&apos;imperfecte hi ha milers de possibilitats en
-          conflicte… &raquo;
+          perquè l&apos;imperfecte implica l&apos;evolució. L&apos;imperfecte
+          viu; el perfecte està mort, fora de competició — no ens hem de
+          preocupar per ell. En l&apos;imperfecte hi ha milers de possibilitats
+          en conflicte… &raquo;
         </p>
         <p>
-          Nosaltres, com a espectadors de pintura, diem que la bellesa imperfecta
-          en l&apos;obra de Ciapara és un motiu d&apos;alegria.
+          Nosaltres, com a espectadors de pintura, diem que la bellesa
+          imperfecta en l&apos;obra de Ciapara és un motiu d&apos;alegria.
         </p>
       </div>
     );

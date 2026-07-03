@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { useI18n } from "../../providers/i18nProvider";
 import { useErroresT } from "../../lib/i18n-errores";
 import { images } from "./GalleryImagesErrores";
@@ -181,27 +181,15 @@ export default function Gallery() {
     };
   }, [lightboxIndex]);
 
-  const colRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: titleProgress } = useScroll({
-    target: colRef,
-    offset: ["start 65%", "start 15%"],
-  });
-  const titleY = useTransform(titleProgress, [0, 1], [110, 0]);
-  const titleOpacity = useTransform(titleProgress, [0, 0.75], [0, 1]);
-
   return (
     <>
       <section className="bg-[#F6F2EC] py-28 md:py-40">
         <div className="px-6 lg:px-12 flex flex-col lg:flex-row gap-16 lg:gap-0">
           {/* Galería — 3/4 del ancho en desktop */}
-          <div ref={colRef} className="lg:w-3/4">
-            <motion.div style={{ y: titleY, opacity: titleOpacity }}>
-              <CollectionDescription
-                title={`${eT.hero.title1} ${eT.hero.title2}`}
-              >
-                <DescriptionErrores />
-              </CollectionDescription>
-            </motion.div>
+          <div className="lg:w-3/4">
+            <CollectionDescription>
+              <DescriptionErrores />
+            </CollectionDescription>
 
             {/*
               Cada renglón es un grid independiente de 12 columnas.

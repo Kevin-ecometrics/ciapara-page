@@ -1,4 +1,3 @@
-import IntroAnimation from "../components/IntroAnimation";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
@@ -11,7 +10,6 @@ export default function HomeEn() {
   return (
     <>
       <div className="relative z-1 bg-[#F6F2EC]">
-        <IntroAnimation />
         <Navbar />
         <main>
           <Hero />

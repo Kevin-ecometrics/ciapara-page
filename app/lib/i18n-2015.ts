@@ -7,7 +7,7 @@ export const translations2015 = {
       title1: "2015",
       title2: "",
       explore: "Explorar",
-      bgImageAlt: "Pieza dulce del día de brujas, acrílico sobre tela 122x141 cm, por el pintor Enrique Ciapara",
+      bgImageAlt: "Portada de la exposición 2015 del artista mexicano Enrique Ciapara",
     },
     nav: {
       back: "Volver",
@@ -28,9 +28,9 @@ export const translations2015 = {
     hero: {
       subtitle: "Works · Enrique Ciapara · 2015",
       title1: "2015",
-      title2: "Series",
+      title2: "",
       explore: "Explore",
-      bgImageAlt: "Sweet piece, Halloween-themed, acrylic on canvas 122x141 cm by painter Enrique Ciapara",
+      bgImageAlt: "Cover of the 2015 exhibition by Mexican artist Enrique Ciapara",
     },
     nav: {
       back: "Back",
@@ -51,9 +51,9 @@ export const translations2015 = {
     hero: {
       subtitle: "Œuvres · Enrique Ciapara · 2015",
       title1: "2015",
-      title2: "Série",
+      title2: "",
       explore: "Explorer",
-      bgImageAlt: "Pièce sucrée sur le thème d'Halloween, acrylique sur toile 122x141 cm, du peintre Enrique Ciapara",
+      bgImageAlt: "Couverture de l'exposition 2015 de l'artiste mexicain Enrique Ciapara",
     },
     nav: {
       back: "Retour",
@@ -74,9 +74,9 @@ export const translations2015 = {
     hero: {
       subtitle: "Obres · Enrique Ciapara · 2015",
       title1: "2015",
-      title2: "Sèrie",
+      title2: "",
       explore: "Explorar",
-      bgImageAlt: "Peça dolça temàtica de Halloween, acrílic sobre tela 122x141 cm, del pintor Enrique Ciapara",
+      bgImageAlt: "Portada de l'exposició 2015 de l'artista mexicà Enrique Ciapara",
     },
     nav: {
       back: "Tornar",

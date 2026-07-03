@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Life, influences, and exhibitions of a leading painter of contemporary art on the Tijuana-San Diego border. Explore his artistic journey here.",
   keywords:
-    "Enrique Ciapara, Ciapara, Art Tijuana, Tijuana painter, Border art, Printmaking Tijuana, Baja California art, Enrique Ciapara Trompe-l'oeil CECUT, Landscapes in Transit Museum Pedro Coronel Ciapara, Enrique Ciapara Errors exhibition 2019, Strange New World Museum of Contemporary Art San Diego Ciapara, contemporary art Tijuana San Diego border",
+    "Enrique Ciapara, Ciapara, Art Tijuana, Tijuana painter, Border art, Printmaking Tijuana, Baja California art, Enrique Ciapara Trompe-l'œil CECUT, Landscapes in Transit Museum Pedro Coronel Ciapara, Enrique Ciapara Errors exhibition 2019, Strange New World Museum of Contemporary Art San Diego Ciapara, contemporary art Tijuana San Diego border",
   alternates: {
     canonical: "https://enriqueciapara.com/en/about",
     languages: {

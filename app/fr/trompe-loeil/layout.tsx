@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Découvrez l'exposition Trompe-l'œil d'Enrique Ciapara au Centro Cultural Tijuana. Une œuvre qui explore les limites entre réalité et illusion.",
   keywords:
-    "Enrique Ciapara Trompe-l'oeil, CECUT, Centro Cultural Tijuana, exposition art contemporain, peinture Tijuana",
+    "Enrique Ciapara Trompe-l'œil, CECUT, Centro Cultural Tijuana, exposition art contemporain, peinture Tijuana",
   alternates: {
     canonical: "https://enriqueciapara.com/fr/trompe-loeil",
     languages: {

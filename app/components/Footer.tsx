@@ -198,7 +198,7 @@ export default function Footer() {
         className="absolute bottom-0 left-0 right-0 z-10 pl-6 pr-3 will-change-transform"
       >
         <img
-          src="/logos/ecp1.png"
+          src="/logos/ecp 1.png"
           alt="Enrique Ciapara"
           className="w-full h-auto object-contain select-none"
           draggable={false}

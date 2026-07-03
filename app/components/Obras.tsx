@@ -43,7 +43,7 @@ const collectionsMeta = [
   {
     num: "03",
     hoverBg: "bg-[#2D3C30]",
-    img: "/images/2015/Pieza dulce del dia de brujas acrilico sobre tela 122x 141 cm por pintor enrique ciapara.jpg",
+    img: "/images/2015/cover 2015.webp",
     imgFallback: "#2D3C30",
     href: "/2015",
     hrefEn: "/en/2015",
@@ -56,7 +56,7 @@ const collectionsMeta = [
   {
     num: "04",
     hoverBg: "bg-[#2C3540]",
-    img: "/images/about/Vista de obras en la colección trompe l' oeil de enrique ciapara en artista en la frontera san diego tijuana.webp",
+    img: "/images/about/Sala de exposiciones el cubo donde se expuso el trabajo del artista mexicano enrique ciapara.webp",
     imgFallback: "#2C3540",
     href: "/trompe-loeil",
     hrefEn: "/en/trompe-loeil",
@@ -217,7 +217,7 @@ export default function Collections() {
 
         {/* Contenido encima de la imagen */}
         <div className="relative z-10 mx-auto text-white">
-          {isHome && (
+          {/* {isHome && (
             <motion.div
               animate={{ opacity: activeService ? 0 : 1 }}
               transition={{ duration: 0.4, ease: expo }}
@@ -232,7 +232,7 @@ export default function Collections() {
                 </p>
               </div>
             </motion.div>
-          )}
+          )} */}
 
           {collections.map((s) => {
             const inner = (
@@ -275,7 +275,7 @@ export default function Collections() {
                         transition={{ duration: 0.4, ease: expo }}
                         className="text-sm text-white text-center leading-relaxed max-w-md"
                       >
-                        {s.desc}
+                        {/* {s.desc} */}
                       </motion.p>
                     )}
                   </AnimatePresence>
@@ -304,14 +304,14 @@ export default function Collections() {
                 onMouseEnter={() => setActiveService(s.num)}
                 onMouseLeave={() => setActiveService(null)}
                 href={
-                locale === "en"
-                  ? s.hrefEn
-                  : locale === "fr"
-                  ? s.hrefFr
-                  : locale === "ca"
-                  ? s.hrefCa
-                  : s.href
-              }
+                  locale === "en"
+                    ? s.hrefEn
+                    : locale === "fr"
+                      ? s.hrefFr
+                      : locale === "ca"
+                        ? s.hrefCa
+                        : s.href
+                }
               >
                 {inner}
               </Link>

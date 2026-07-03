@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://enriqueciapara.com"),
-  title: "Trompe-l'oeil — Enrique Ciapara · CECUT 2013",
+  title: "Trompe-l'œil — Enrique Ciapara · CECUT 2013",
   description:
-    "Descobreix l'exposició Trompe-l'oeil d'Enrique Ciapara al Centro Cultural Tijuana. Una obra que explora els límits entre realitat i il·lusió.",
+    "Descobreix l'exposició Trompe-l'œil d'Enrique Ciapara al Centro Cultural Tijuana. Una obra que explora els límits entre realitat i il·lusió.",
   keywords:
-    "Enrique Ciapara Trompe-l'oeil, CECUT, Centro Cultural Tijuana, exposició art contemporani, pintura Tijuana",
+    "Enrique Ciapara Trompe-l'œil, CECUT, Centro Cultural Tijuana, exposició art contemporani, pintura Tijuana",
   alternates: {
     canonical: "https://enriqueciapara.com/ca/trompe-loeil",
     languages: {
@@ -26,22 +26,22 @@ export const metadata: Metadata = {
     alternateLocale: ["es_MX", "en_US", "fr_FR"],
     url: "https://enriqueciapara.com/ca/trompe-loeil",
     siteName: "Enrique Ciapara",
-    title: "Trompe-l'oeil — Enrique Ciapara · CECUT 2013",
+    title: "Trompe-l'œil — Enrique Ciapara · CECUT 2013",
     description:
-      "Descobreix l'exposició Trompe-l'oeil d'Enrique Ciapara al Centro Cultural Tijuana.",
+      "Descobreix l'exposició Trompe-l'œil d'Enrique Ciapara al Centro Cultural Tijuana.",
     images: [
       {
         url: "https://enriqueciapara.com/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Enrique Ciapara — Trompe-l'oeil",
+        alt: "Enrique Ciapara — Trompe-l'œil",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trompe-l'oeil — Enrique Ciapara · CECUT 2013",
-    description: "Descobreix l'exposició Trompe-l'oeil d'Enrique Ciapara al CECUT.",
+    title: "Trompe-l'œil — Enrique Ciapara · CECUT 2013",
+    description: "Descobreix l'exposició Trompe-l'œil d'Enrique Ciapara al CECUT.",
     images: ["https://enriqueciapara.com/opengraph-image.png"],
   },
 };

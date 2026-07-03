@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://enriqueciapara.com"),
-  title: "Trompe-L'oeil | Exposición 2013 de Enrique Ciapara en CECUT",
+  title: "Trompe-L'Œil | Exposición 2013 de Enrique Ciapara en CECUT",
   description:
-    'Trompe-L\'oeil, exposición individual de Enrique Ciapara presentada en la Sala 3 de El Cubo, Centro Cultural Tijuana, 2013. Curada por Fernando Delmar.',
+    "Trompe-L'Œil, exposición individual de Enrique Ciapara presentada en la Sala 3 de El Cubo, Centro Cultural Tijuana, 2013. Curada por Fernando Delmar.",
   keywords:
-    "Trompe-L'oeil, Enrique Ciapara, CECUT, El Cubo, Tijuana, exposición 2013, Fernando Delmar, pintura ilusionista, artista mexicano frontera",
+    "Trompe-L'Œil, Enrique Ciapara, CECUT, El Cubo, Tijuana, exposición 2013, Fernando Delmar, pintura ilusionista, artista mexicano frontera",
 
   alternates: {
     canonical: "https://enriqueciapara.com/trompe-loeil",
@@ -29,23 +29,23 @@ export const metadata: Metadata = {
     locale: "es_MX",
     url: "https://enriqueciapara.com/trompe-loeil",
     siteName: "Enrique Ciapara",
-    title: "Trompe-L'oeil | Exposición 2013 de Enrique Ciapara en CECUT",
+    title: "Trompe-L'Œil | Exposición 2013 de Enrique Ciapara en CECUT",
     description:
-      "Trompe-L'oeil, exposición individual de Enrique Ciapara presentada en la Sala 3 de El Cubo, Centro Cultural Tijuana, 2013. Curada por Fernando Delmar.",
+      "Trompe-L'Œil, exposición individual de Enrique Ciapara presentada en la Sala 3 de El Cubo, Centro Cultural Tijuana, 2013. Curada por Fernando Delmar.",
     images: [
       {
         url: "https://enriqueciapara.com/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Enrique Ciapara — Trompe-L'oeil, CECUT 2013",
+        alt: "Enrique Ciapara — Trompe-L'Œil, CECUT 2013",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trompe-L'oeil | Exposición 2013 de Enrique Ciapara en CECUT",
+    title: "Trompe-L'Œil | Exposición 2013 de Enrique Ciapara en CECUT",
     description:
-      "Trompe-L'oeil, exposición individual de Enrique Ciapara en El Cubo, Centro Cultural Tijuana, 2013.",
+      "Trompe-L'Œil, exposición individual de Enrique Ciapara en El Cubo, Centro Cultural Tijuana, 2013.",
     images: ["https://enriqueciapara.com/opengraph-image.png"],
   },
 };

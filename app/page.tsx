@@ -1,4 +1,3 @@
-import IntroAnimation from "./components/IntroAnimation";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -14,7 +13,6 @@ export default function Home() {
     <>
       {/* relative z-[1] apila el contenido encima del footer fijo (z-index:0). */}
       <div className="relative z-1 bg-[#F6F2EC]">
-        <IntroAnimation />
         <Navbar />
         <main>
           <Hero />

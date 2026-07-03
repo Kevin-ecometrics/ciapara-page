@@ -11,8 +11,6 @@ import {
 import { useI18n } from "../providers/i18nProvider";
 import type { Locale } from "../lib/i18n";
 import { scrollToSection } from "../lib/scrollToSection";
-import { useFitText } from "../lib/useFitText";
-import { useCoverFill } from "../lib/useCoverFill";
 import HeroReveal from "./HeroReveal";
 import MobileMenu from "./MobileMenu";
 
@@ -25,12 +23,6 @@ export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const {
-    containerRef: titleRef,
-    textRef: titleTextRef,
-    fontSize: titleFontSize,
-  } = useFitText<HTMLHeadingElement, HTMLSpanElement>();
-  const colorFill = useCoverFill(HeroColor, bgRef, titleRef);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -209,32 +201,16 @@ export default function Hero() {
               {t.hero.place}
             </motion.p>
           </div>
-          <h1
-            ref={titleRef}
-            className="overflow-hidden w-full mb-4 px-6"
-            style={{
-              fontSize: titleFontSize
-                ? `${titleFontSize}px`
-                : "clamp(2rem, 10.2vw, 20rem)",
-            }}
-          >
-            <motion.span
-              ref={titleTextRef}
+          <h1 className="overflow-hidden w-full mb-4 px-6">
+            <motion.img
+              src="/logos/ecp 1.png"
+              alt="Enrique Ciapara"
               initial={{ y: "105%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.0, ease: expo, delay: 0.5 }}
-              className="block font-bold tracking-[-0.02em] leading-[0.88] whitespace-nowrap bg-clip-text bg-no-repeat text-transparent"
-              style={{
-                fontFamily: "var(--font-interstate-compressed)",
-                backgroundImage: `url(${HeroColor})`,
-                backgroundSize: colorFill?.backgroundSize ?? "cover",
-                backgroundPosition: colorFill?.backgroundPosition ?? "center",
-                WebkitTextFillColor: "transparent",
-                WebkitBackgroundClip: "text",
-              }}
-            >
-              ENRIQUE CIAPARA
-            </motion.span>
+              className="block w-full h-auto select-none"
+              draggable={false}
+            />
           </h1>
           <motion.div
             initial={{ opacity: 0, y: 6 }}
@@ -278,7 +254,6 @@ export default function Hero() {
           <div className="absolute inset-0 z-10">
             <HeroReveal
               progress={progress}
-              titleFontSize={titleFontSize}
               onOpenMenu={() => setMenuOpen(true)}
             />
           </div>

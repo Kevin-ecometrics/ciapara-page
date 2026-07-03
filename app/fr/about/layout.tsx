@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Vie, influences et expositions d'un peintre majeur de l'art contemporain à la frontière Tijuana-San Diego. Explorez son parcours artistique ici.",
   keywords:
-    "Enrique Ciapara, Ciapara, Art Tijuana, Peintre Tijuana, Art frontalier, Gravure Tijuana, Art Basse-Californie, Enrique Ciapara Trompe-l'oeil CECUT, Ciapara artiste contemporain, art mexicain contemporain",
+    "Enrique Ciapara, Ciapara, Art Tijuana, Peintre Tijuana, Art frontalier, Gravure Tijuana, Art Basse-Californie, Enrique Ciapara Trompe-l'œil CECUT, Ciapara artiste contemporain, art mexicain contemporain",
   alternates: {
     canonical: "https://enriqueciapara.com/fr/about",
     languages: {

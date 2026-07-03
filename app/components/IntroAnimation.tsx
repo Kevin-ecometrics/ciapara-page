@@ -216,7 +216,7 @@ export default function IntroAnimation() {
                     animate={{ y: 0 }}
                     transition={{ duration: 1.0, ease: expo, delay: 0.1 }}
                   >
-                    ENRIQUE
+                    CATÁLOGO
                   </motion.span>
                 </div>
                 <div className="overflow-hidden">
@@ -227,7 +227,7 @@ export default function IntroAnimation() {
                     animate={{ y: 0 }}
                     transition={{ duration: 1.0, ease: expo, delay: 0.25 }}
                   >
-                    CIAPARA
+                    DE ERRORES
                   </motion.span>
                 </div>
                 <motion.div

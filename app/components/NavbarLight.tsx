@@ -29,7 +29,7 @@ export default function NavbarLight() {
     ? "/fr"
     : locale === "ca"
     ? "/ca"
-    : "";
+    : "/";
 
   const SHOW_NEWS_LINK = true;
 

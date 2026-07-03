@@ -34,7 +34,7 @@ export default function FirstYears() {
         <figure className="h-100 w-[90%] shrink-0 overflow-hidden md:h-175 md:w-1/2 md:min-w-100 md:shrink">
           <img
             src="/images/about/Vista de obras en la colección trompe l' oeil de enrique ciapara en artista en la frontera san diego tijuana.webp"
-            alt={isEn ? "View of works in Enrique Ciapara's Trompe-l'oeil collection — artist on the San Diego-Tijuana border" : "Vista de obras en la colección trompe l' oeil de enrique ciapara en artista en la frontera san diego tijuana"}
+            alt={isEn ? "View of works in Enrique Ciapara's Trompe-l'œil collection — artist on the San Diego-Tijuana border" : "Vista de obras en la colección trompe l'œil de enrique ciapara en artista en la frontera san diego tijuana"}
             className="w-full h-full object-cover object-center"
             draggable={false}
           />

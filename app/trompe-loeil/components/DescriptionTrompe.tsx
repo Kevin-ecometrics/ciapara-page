@@ -49,7 +49,7 @@ export default function DescriptionTrompe() {
           arrange themselves by likeness — between one form and another, between
           a tree and the image of its shadow. In this simultaneity, Ciapara
           confuses part with whole, and his work, like the rainbow, projects
-          itself as a trompe l&apos;oeil:
+          itself as a trompe l&apos;œil:
         </p>
         <p className="italic">
           Just as the stone thrown into water becomes the center and origin of
@@ -182,7 +182,7 @@ export default function DescriptionTrompe() {
           s&apos;ordenen a partir de la semblança — entre una forma i una altra,
           entre un arbre i la imatge de la seva ombra. En aquesta simultaneïtat,
           Ciapara confon la part amb el tot i la seva obra, com l&apos;arc de
-          Sant Martí, es projecta com un trompe l&apos;oeil:
+          Sant Martí, es projecta com un trompe l&apos;œil:
         </p>
         <p className="italic">
           Així la pedra llançada a l&apos;aigua es fa centre i motiu de nombrosos
@@ -247,7 +247,7 @@ export default function DescriptionTrompe() {
         se ordenan a partir de la similitud entre una forma y otra, entre un
         árbol y la imagen de la sombra de ese árbol. En esta simultaneidad,
         Ciapara confunde la parte con el todo y su obra, como el arco iris, se
-        proyecta como un trompe l&apos;oeil:
+        proyecta como un trompe l&apos;œil:
       </p>
       <p className="italic">
         Es así como la piedra que al agua fue arrojada se hace centro y motivo
