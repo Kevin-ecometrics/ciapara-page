@@ -112,7 +112,7 @@ export default function Footer() {
         >
           {/* Location */}
           <motion.div custom={0} variants={fadeUp}>
-            <p className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-white leading-tight">
+            <p className="text-base sm:text-lg md:text-xl font-bold uppercase text-white leading-tight">
               Tijuana, Baja California,
               <br />
               México
@@ -123,7 +123,7 @@ export default function Footer() {
           <motion.div custom={0.1} variants={fadeUp}>
             <a
               href="tel:+526642177876"
-              className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-white hover:text-white/70 transition-colors duration-300"
+              className="text-base sm:text-lg md:text-xl font-bold uppercase text-white hover:text-white/70 transition-colors duration-300"
             >
               Tel +52 664 217 7876
             </a>
@@ -133,7 +133,7 @@ export default function Footer() {
           <motion.div custom={0.2} variants={fadeUp} className="md:text-right">
             <a
               href="mailto:Ciaenriqueciapara@gmail.com"
-              className="text-lg sm:text-xl md:text-2xl font-bold uppercase text-white hover:text-white/70 transition-colors duration-300"
+              className="text-base sm:text-lg md:text-xl font-bold uppercase text-white hover:text-white/70 transition-colors duration-300"
             >
               Ciaenriqueciapara@gmail.com
             </a>

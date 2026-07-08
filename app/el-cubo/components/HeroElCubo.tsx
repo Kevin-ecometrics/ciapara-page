@@ -9,6 +9,7 @@ const expo = [0.16, 1, 0.3, 1] as const;
 export default function HeroElCubo() {
   const { locale } = useI18n();
   const tElCubo = useElCuboT(locale);
+  const isEn = locale === "en";
 
   return (
     <section className="relative h-screen overflow-hidden bg-black">
@@ -49,7 +50,11 @@ export default function HeroElCubo() {
             initial={{ y: "105%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1.0, ease: expo, delay: 0.35 }}
-            className="block max-w-5xl text-[clamp(3rem,6vw,5rem)] font-bold tracking-tight uppercase text-white leading-[0.95] indent-18 md:indent-45"
+            className={
+              isEn
+                ? "block max-w-4xl text-[clamp(2rem,5.5vw,4.5rem)] font-bold tracking-tight uppercase text-white leading-[0.95]"
+                : "block max-w-5xl text-[clamp(3rem,6vw,5rem)] font-bold tracking-tight uppercase text-white leading-[0.95] indent-18 md:indent-45"
+            }
           >
             {tElCubo.hero.title}
           </motion.span>

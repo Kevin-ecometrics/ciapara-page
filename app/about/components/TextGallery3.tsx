@@ -13,31 +13,48 @@ export default function TextGallery() {
           {t.aboutBio.recentShows.text}
         </h4>
       </div>
-      <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-center md:justify-center md:gap-16">
-        <div className="flex w-full flex-col gap-10 md:w-180 md:gap-14">
-          <figure className="mr-20">
-            <img
-              src="/images/about/Enrique cipara observando sus piezas en una galeria.webp"
-              alt={isEn ? "Tijuana-based artist Enrique Ciapara standing with his back turned, contemplating his works in a gallery" : "Artista basado en Tijuana Enrique Ciapara de pie, de espaldas pensativo observando sus piezas en una galería"}
-              className="h-auto w-full"
-            />
-          </figure>
-          <figure className="ml-auto md:ml-auto">
-            <img
-              src="/images/about/Fotografia de exposicion de enrique ciapara en 2013 en el cubo.webp"
-              alt={isEn ? "Photograph of works already hung alongside others still being arranged at Enrique Ciapara's 2013 exhibition at El Cubo" : "Fotografía de piezas ya colgadas y otras aún sin acomodar en la exposición de Enrique Ciapara en 2013 en el cubo"}
-              className="w-full h-auto md:w-150"
-            />
-          </figure>
+      <div className="mt-10 max-w-5xl mx-auto space-y-8 lg:space-y-16">
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-4 lg:gap-x-6 gap-y-8 lg:gap-y-0">
+          <div
+            className="relative col-span-2 lg:col-[1/span_7]"
+            style={{ transform: "translateY(30px)" }}
+          >
+            <figure className="overflow-hidden rounded-2xl">
+              <img
+                src="/images/about/Enrique cipara observando sus piezas en una galeria.webp"
+                alt={isEn ? "Tijuana-based artist Enrique Ciapara standing with his back turned, contemplating his works in a gallery" : "Artista basado en Tijuana Enrique Ciapara de pie, de espaldas pensativo observando sus piezas en una galería"}
+                className="w-full h-auto aspect-[4/3] object-cover"
+              />
+            </figure>
+          </div>
+          <div
+            className="relative col-span-2 lg:col-[8/span_5]"
+            style={{ transform: "translateY(0px)" }}
+          >
+            <figure className="overflow-hidden rounded-2xl">
+              <img
+                src="/images/about/Retrato en blanco y negro del artista enrique ciapara entre dos de sus obras.webp"
+                alt={isEn ? "Black-and-white portrait photograph of artist Enrique Ciapara standing between two of his works in his studio, 2024" : "Fotografía de retrato en blanco y negro del artista Enrique Ciapara entre dos de sus obras en su estudio 2024"}
+                className="w-full h-auto aspect-[3/4] object-cover"
+              />
+            </figure>
+          </div>
         </div>
 
-        <figure className="ml-20 md:ml-0">
-          <img
-            src="/images/about/Retrato en blanco y negro del artista enrique ciapara entre dos de sus obras.webp"
-            alt={isEn ? "Black-and-white portrait photograph of artist Enrique Ciapara standing between two of his works in his studio, 2024" : "Fotografía de retrato en blanco y negro del artista Enrique Ciapara entre dos de sus obras en su estudio 2024"}
-            className="w-full h-auto md:w-140"
-          />
-        </figure>
+        <div className="grid grid-cols-2 lg:grid-cols-12">
+          <div
+            className="relative col-span-2 lg:col-[3/span_7]"
+            style={{ transform: "translateY(0px)" }}
+          >
+            <figure className="overflow-hidden rounded-2xl">
+              <img
+                src="/images/about/Sala de exposiciones el cubo donde se expuso el trabajo del artista mexicano enrique ciapara.webp"
+                alt={isEn ? "General view of multiple works from the Trompe-l'œil collection at El Cubo by Mexican artist Enrique Ciapara" : "Vista general de varias piezas de la colección titulada trompe-l'œil en la sala de exposiciones de El Cubo por el artista mexicano Enrique Ciapara"}
+                className="w-full h-auto aspect-[16/9] object-cover"
+              />
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
   );

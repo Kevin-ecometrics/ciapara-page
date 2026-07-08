@@ -1,1 +1,1 @@
-export { default } from '../../en/el-cubo/page'
+export { default } from '../../el-cubo/page'
