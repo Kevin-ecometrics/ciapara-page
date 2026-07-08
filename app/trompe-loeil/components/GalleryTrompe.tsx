@@ -5,74 +5,59 @@ import DescriptionTrompe from "./DescriptionTrompe";
 import CollectionDescription from "../../components/CollectionDescription";
 
 /*
-  Layout editorial — 26 imágenes. Landscape 3:2 → spans 4-6. Portrait 3:4 → spans 2-3.
+  Layout editorial — 20 imágenes. Landscape 3:2 → spans 5-6. Portrait 3:4 → spans 2-4.
   Cada renglón es un grid de 12 cols independiente, centrado sobre el ancho completo
   de la página (ya no hay panel lateral). Sin lightbox.
 */
 const rows: Array<
   Array<{ idx: number; start: number; span: number; y: number }>
 > = [
-  // 0(L) 1(L)
+  // 0(L) 2(L)
   [
     { idx: 0, start: 1, span: 5, y: 0 },
-    { idx: 1, start: 7, span: 6, y: 30 },
+    { idx: 2, start: 7, span: 6, y: 30 },
   ],
-  // 2(L) sola, ancha y centrada
-  [{ idx: 2, start: 2, span: 10, y: 0 }],
-  // 3(L) 4(L) — ratio 1.28, más cuadradas
+  // 4(L) sola, ancha y centrada
+  [{ idx: 4, start: 2, span: 10, y: 0 }],
+  // 1(P) 3(P)
   [
-    { idx: 3, start: 2, span: 4, y: 20 },
-    { idx: 4, start: 7, span: 4, y: 0 },
+    { idx: 1, start: 2, span: 4, y: 0 },
+    { idx: 3, start: 7, span: 4, y: 30 },
   ],
   // 5(L) 6(L)
   [
-    { idx: 5, start: 1, span: 5, y: 0 },
-    { idx: 6, start: 7, span: 6, y: 40 },
+    { idx: 5, start: 1, span: 6, y: 0 },
+    { idx: 6, start: 8, span: 5, y: 20 },
   ],
-  // 7(~cuadrado) 8(L)
+  // 7(L) sola, ancha y centrada
+  [{ idx: 7, start: 2, span: 10, y: 0 }],
+  // 8(L) 9(L)
   [
-    { idx: 7, start: 2, span: 4, y: 0 },
-    { idx: 8, start: 7, span: 5, y: 20 },
+    { idx: 8, start: 1, span: 5, y: 30 },
+    { idx: 9, start: 7, span: 6, y: 0 },
   ],
-  // 9(L) 10(L)
+  // 10(P) 11(P)
   [
-    { idx: 9, start: 1, span: 6, y: 0 },
-    { idx: 10, start: 8, span: 5, y: 30 },
+    { idx: 10, start: 2, span: 4, y: 0 },
+    { idx: 11, start: 7, span: 4, y: 20 },
   ],
-  // 11(L) sola, ancha y centrada
-  [{ idx: 11, start: 2, span: 10, y: 0 }],
-  // 12(L) 13(L)
+  // 12(L) sola, ancha y centrada
+  [{ idx: 12, start: 2, span: 10, y: 0 }],
+  // 13(L) 17(L)
   [
-    { idx: 12, start: 1, span: 5, y: 30 },
-    { idx: 13, start: 7, span: 6, y: 0 },
+    { idx: 13, start: 1, span: 5, y: 0 },
+    { idx: 17, start: 7, span: 6, y: 30 },
   ],
-  // 14(L) sola, ancha y centrada
-  [{ idx: 14, start: 2, span: 10, y: 0 }],
-  // 15(L) 16(L)
+  // 15(P estrecho) 14(P) 16(P) — tres retratos, distribuidas parejo
   [
-    { idx: 15, start: 1, span: 5, y: 0 },
-    { idx: 16, start: 7, span: 5, y: 30 },
+    { idx: 15, start: 2, span: 2, y: 0 },
+    { idx: 14, start: 5, span: 3, y: 20 },
+    { idx: 16, start: 9, span: 3, y: 0 },
   ],
-  // 17(L) 18(L)
+  // 18(L) 19(L)
   [
-    { idx: 17, start: 2, span: 4, y: 0 },
-    { idx: 18, start: 7, span: 5, y: 20 },
-  ],
-  // 19(L) 20(L)
-  [
-    { idx: 19, start: 1, span: 5, y: 30 },
-    { idx: 20, start: 7, span: 6, y: 0 },
-  ],
-  // 21(P estrecho) 22(P) 23(P) — tres retratos, distribuidas parejo
-  [
-    { idx: 21, start: 2, span: 2, y: 0 },
-    { idx: 22, start: 5, span: 3, y: 20 },
-    { idx: 23, start: 9, span: 3, y: 0 },
-  ],
-  // 24(P) 25(P) — centradas
-  [
-    { idx: 24, start: 2, span: 4, y: 0 },
-    { idx: 25, start: 7, span: 4, y: 30 },
+    { idx: 18, start: 1, span: 6, y: 0 },
+    { idx: 19, start: 8, span: 5, y: 30 },
   ],
 ];
 

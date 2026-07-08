@@ -17,7 +17,7 @@ const collectionsMeta = [
   {
     num: "01",
     hoverBg: "bg-[#4C2A1D]",
-    img: "/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.jpeg",
+    img: "/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp",
     imgFallback: "#4C2A1D",
     href: "/catalogo-de-errores",
     hrefEn: "/en/catalogo-de-errores",
@@ -56,7 +56,7 @@ const collectionsMeta = [
   {
     num: "04",
     hoverBg: "bg-[#2C3540]",
-    img: "/images/about/Sala de exposiciones el cubo donde se expuso el trabajo del artista mexicano enrique ciapara.webp",
+    img: "/images/Trompe/Exposición  de la obra titulada Trompe l´oeil de enrique ciapara.webp",
     imgFallback: "#2C3540",
     href: "/trompe-loeil",
     hrefEn: "/en/trompe-loeil",

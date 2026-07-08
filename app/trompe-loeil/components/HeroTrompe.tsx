@@ -15,7 +15,7 @@ export default function HeroTrompe() {
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
-          src="/images/Trompe/Trompe l´oeil de enrique ciapara artista visual bajacaliforniano.jpg"
+          src="/images/Trompe/Exposición  de la obra titulada Trompe l´oeil de enrique ciapara.webp"
           alt="Trompe l'œil  obra  presentada en 2013 por  Enrique Ciapara  artista visual bajacaliforniano"
           className="w-full h-full object-cover object-center scale-105"
         />

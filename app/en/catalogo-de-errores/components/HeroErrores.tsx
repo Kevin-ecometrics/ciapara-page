@@ -15,7 +15,7 @@ export default function HeroErrores() {
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img
-          src="/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.jpeg"
+          src="/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp"
           alt={eT.hero.bgImageAlt}
           className="w-full h-full object-cover object-center scale-105"
         />

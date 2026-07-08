@@ -6,7 +6,7 @@ export default function CVEnriqueCiapara() {
   const { t } = useI18n();
 
   return (
-    <section className="px-6 pb-24 bg-white">
+    <section className="px-6 pb-24 bg-[#F6F2EC]">
       <div className="mx-auto text-center px-6 py-24">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase mb-4 leading-[1.15] text-[#1A1916]">
           {t.aboutBio.cv.title}

@@ -6,20 +6,17 @@ import DescriptionTrompe from "../../../trompe-loeil/components/DescriptionTromp
 import CollectionDescription from "../../../components/CollectionDescription";
 
 const rows: Array<Array<{ idx: number; start: number; span: number; y: number }>> = [
-  [{ idx: 0, start: 1, span: 5, y: 0 }, { idx: 1, start: 7, span: 6, y: 30 }],
-  [{ idx: 2, start: 2, span: 10, y: 0 }],
-  [{ idx: 3, start: 2, span: 4, y: 20 }, { idx: 4, start: 7, span: 4, y: 0 }],
-  [{ idx: 5, start: 1, span: 5, y: 0 }, { idx: 6, start: 7, span: 6, y: 40 }],
-  [{ idx: 7, start: 2, span: 4, y: 0 }, { idx: 8, start: 7, span: 5, y: 20 }],
-  [{ idx: 9, start: 1, span: 6, y: 0 }, { idx: 10, start: 8, span: 5, y: 30 }],
-  [{ idx: 11, start: 2, span: 10, y: 0 }],
-  [{ idx: 12, start: 1, span: 5, y: 30 }, { idx: 13, start: 7, span: 6, y: 0 }],
-  [{ idx: 14, start: 2, span: 10, y: 0 }],
-  [{ idx: 15, start: 1, span: 5, y: 0 }, { idx: 16, start: 7, span: 5, y: 30 }],
-  [{ idx: 17, start: 2, span: 4, y: 0 }, { idx: 18, start: 7, span: 5, y: 20 }],
-  [{ idx: 19, start: 1, span: 5, y: 30 }, { idx: 20, start: 7, span: 6, y: 0 }],
-  [{ idx: 21, start: 2, span: 2, y: 0 }, { idx: 22, start: 5, span: 3, y: 20 }, { idx: 23, start: 9, span: 3, y: 0 }],
-  [{ idx: 24, start: 2, span: 4, y: 0 }, { idx: 25, start: 7, span: 4, y: 30 }],
+  [{ idx: 0, start: 1, span: 5, y: 0 }, { idx: 2, start: 7, span: 6, y: 30 }],
+  [{ idx: 4, start: 2, span: 10, y: 0 }],
+  [{ idx: 1, start: 2, span: 4, y: 0 }, { idx: 3, start: 7, span: 4, y: 30 }],
+  [{ idx: 5, start: 1, span: 6, y: 0 }, { idx: 6, start: 8, span: 5, y: 20 }],
+  [{ idx: 7, start: 2, span: 10, y: 0 }],
+  [{ idx: 8, start: 1, span: 5, y: 30 }, { idx: 9, start: 7, span: 6, y: 0 }],
+  [{ idx: 10, start: 2, span: 4, y: 0 }, { idx: 11, start: 7, span: 4, y: 20 }],
+  [{ idx: 12, start: 2, span: 10, y: 0 }],
+  [{ idx: 13, start: 1, span: 5, y: 0 }, { idx: 17, start: 7, span: 6, y: 30 }],
+  [{ idx: 15, start: 2, span: 2, y: 0 }, { idx: 14, start: 5, span: 3, y: 20 }, { idx: 16, start: 9, span: 3, y: 0 }],
+  [{ idx: 18, start: 1, span: 6, y: 0 }, { idx: 19, start: 8, span: 5, y: 30 }],
 ];
 
 export default function GalleryTrompe() {

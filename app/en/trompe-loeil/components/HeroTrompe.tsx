@@ -14,7 +14,7 @@ export default function HeroTrompe() {
     <section className="relative h-screen overflow-hidden bg-black">
       <div className="absolute inset-0">
         <img
-          src="/images/Trompe/Trompe l´oeil de enrique ciapara artista visual bajacaliforniano.jpg"
+          src="/images/Trompe/Exposición  de la obra titulada Trompe l´oeil de enrique ciapara.webp"
           alt={tTrompe.hero.bgImageAlt}
           className="w-full h-full object-cover object-center scale-105"
         />
