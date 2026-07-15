@@ -1,3 +1,5 @@
+
+
 export type GalleryImage = {
   src: string;
   lightboxSrc?: string;
@@ -17,6 +19,7 @@ export type GalleryImage = {
 export const images: GalleryImage[] = [
   {
     src: "/images/errores/Pieza 1 del catalogo errores por enrique ciapara en acrilico sobre tela 160 x 122 cm.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%201%20del%20catalogo%20errores%20por%20enrique%20ciapara%20en%20acrilico%20sobre%20tela%20160%20x%20122%20cm.jpg",
     alt: "Pieza 1 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1600,
@@ -31,6 +34,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 2 del catalogo de errores por artista visual  enrique ciapara en acrilico sobre tela en dimensiones 160 x 122 cm.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%202%20del%20catalogo%20de%20errores%20por%20artista%20visual%20%20enrique%20ciapara%20en%20acrilico%20sobre%20tela%20en%20dimensiones%20160%20x%20122%20cm.jpg",
     alt: "Pieza 2 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1600,
@@ -45,6 +49,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 3 del catalogo de errores por ciapara elaborada en acrilico sobre tela 200 c 140 cm.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%203%20del%20catalogo%20de%20errores%20por%20ciapara%20elaborada%20en%20acrilico%20sobre%20tela%20200%20c%20140%20cm.jpg",
     alt: "Pieza 3 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -59,6 +64,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 4 del catalogo de errores por ciapara elaborada en acrilico sobre tela 200 x 140 cm.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%204%20del%20catalogo%20de%20errores%20por%20ciapara%20elaborada%20en%20acrilico%20sobre%20tela%20200%20x%20140%20cm.jpg",
     alt: "Pieza 4 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -73,6 +79,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 5 sin titulo catalogo de errores acrilico  sobre tela por enrique ciapara en dimensiones 160 x 122 cm  Pieza 5 sin titulo catalogo de errores acrilico  sobre tela por enrique ciapara en dimensiones 160 x 122 cm.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%205%20sin%20titulo%20catalogo%20de%20errores%20acrilico%20%20sobre%20tela%20por%20enrique%20ciapara%20en%20dimensiones%20160%20x%20122%20cm%20%20Pieza%205%20sin%20titulo%20catalogo%20de%20errores%20acrilico%20%20sobre%20tela%20por%20enrique%20ciapara%20en%20dimensiones%20160%20x%20122%20cm.jpg",
     alt: "Pieza 5 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1600,
@@ -87,6 +94,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 6 del catalogo de errores en acrilico sobre tela en 160 x 122 cm por artista basado en tijuana enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%206%20del%20catalogo%20de%20errores%20en%20acrilico%20sobre%20tela%20en%20160%20x%20122%20cm%20por%20artista%20basado%20en%20tijuana%20enrique%20ciapara.jpg",
     alt: "Pieza 6 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1600,
@@ -101,6 +109,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 7 titulada san antonio del catalogo de errores por enrique ciapara en acrilico sobre tela 122 x 107 cm.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%207%20titulada%20san%20antonio%20del%20catalogo%20de%20errores%20por%20enrique%20ciapara%20en%20acrilico%20sobre%20tela%20122%20x%20107%20cm.jpg",
     alt: "Pieza 7 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1070,
     height: 1220,
@@ -115,6 +124,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 8 titulada duetto elaborada en acrilico sobre tela 160 x 122 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%208%20titulada%20duetto%20elaborada%20en%20acrilico%20sobre%20tela%20160%20x%20122%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 8 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1600,
@@ -129,6 +139,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 9 Banquete en el pinar acrilico sobre tela 152 x 429 cm por enrique ciapara 2019.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%209%20Banquete%20en%20el%20pinar%20acrilico%20sobre%20tela%20152%20x%20429%20cm%20por%20enrique%20ciapara%202019.jpeg",
     alt: "Pieza 9 de la colección Catálogo de errores por Enrique Ciapara",
     width: 4290,
     height: 1520,
@@ -143,6 +154,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 10 el tigre en acrilico sobre tela en 160 x 122 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2010%20el%20tigre%20en%20acrilico%20sobre%20tela%20en%20160%20x%20122%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 10 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1600,
@@ -157,6 +169,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 11 sin titulo catalogo de errores acrilico sobre tela 122 x 86 del artista visual baja californiano ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2011%20sin%20titulo%20catalogo%20de%20errores%20acrilico%20sobre%20tela%20122%20x%2086%20del%20artista%20visual%20baja%20californiano%20ciapara.jpg",
     alt: "Pieza 11 de la colección Catálogo de errores por Enrique Ciapara",
     width: 860,
     height: 1220,
@@ -171,6 +184,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 12 sin titulo souvenir del valle catalogo de errores acrilico y oleo sobre tela 200x 140 cm del artista abstracto mexicano enrique ciapara .webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2012%20sin%20titulo%20souvenir%20del%20valle%20catalogo%20de%20errores%20acrilico%20y%20oleo%20sobre%20tela%20200x%20140%20cm%20del%20artista%20abstracto%20mexicano%20enrique%20ciapara%20.jpg",
     alt: "Pieza 12 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -185,6 +199,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 13 sin titulo de catalogo de errores acrilico sobre tela 213 x 122 cm del pintor ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2013%20sin%20titulo%20de%20catalogo%20de%20errores%20acrilico%20sobre%20tela%20213%20x%20122%20cm%20del%20pintor%20ciapara.jpg",
     alt: "Pieza 13 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 2130,
@@ -199,6 +214,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 14 cascada souvenir del valle acrilico sobre tela 200x 140 cm  por Ciapara artista mexicano.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2014%20cascada%20souvenir%20del%20valle%20acrilico%20sobre%20tela%20200x%20140%20cm%20%20por%20Ciapara%20artista%20mexicano.jpg",
     alt: "Pieza 14 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -213,6 +229,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 15 catálogo de errores acrílico sobre tela 160 x 122 cm realizado por enrique ciapara artista en tijuana.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2015%20cat%C3%A1logo%20de%20errores%20acr%C3%ADlico%20sobre%20tela%20160%20x%20122%20cm%20realizado%20por%20enrique%20ciapara%20artista%20en%20tijuana.jpg",
     alt: "Pieza 15 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1600,
@@ -227,6 +244,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 16 marisqueria del catalogo de errores elaborada en acrilico sobre tela 200 x 140 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2016%20marisqueria%20del%20catalogo%20de%20errores%20elaborada%20en%20acrilico%20sobre%20tela%20200%20x%20140%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 16 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -241,6 +259,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 17 sin titulo del catalogo de errores en acrilico sobre tela 213 x 122 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2017%20sin%20titulo%20del%20catalogo%20de%20errores%20en%20acrilico%20sobre%20tela%20213%20x%20122%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 17 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 2130,
@@ -255,6 +274,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 18 titulada santo tomas elaborada en acrilico sobre tela 244 x 183 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2018%20titulada%20santo%20tomas%20elaborada%20en%20acrilico%20sobre%20tela%20244%20x%20183%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 18 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1830,
     height: 2440,
@@ -269,6 +289,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 19 titulada guadalupe en acrilico sobre tela 200x 140 cm por enrique ciapara en 2019.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2019%20titulada%20guadalupe%20en%20acrilico%20sobre%20tela%20200x%20140%20cm%20por%20enrique%20ciapara%20en%202019.jpg",
     alt: "Pieza 19 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -283,6 +304,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 20 sin titulo del catalogo de erroes en acrilico sobre tela 122 x 86 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2020%20sin%20titulo%20del%20catalogo%20de%20erroes%20en%20acrilico%20sobre%20tela%20122%20x%2086%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 20 de la colección Catálogo de errores por Enrique Ciapara",
     width: 860,
     height: 1220,
@@ -297,6 +319,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 21 sin titulo del catalogo de errores elaborado en acrilico sobre tela 122 x 86 cm por artista mexicano enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2021%20sin%20titulo%20del%20catalogo%20de%20errores%20elaborado%20en%20acrilico%20sobre%20tela%20122%20x%2086%20cm%20por%20artista%20mexicano%20enrique%20ciapara.jpg",
     alt: "Pieza 21 de la colección Catálogo de errores por Enrique Ciapara",
     width: 860,
     height: 1220,
@@ -311,6 +334,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 22 sin titulo del catalogo de errores en acrilico sobre tela 305 x 153 cm por artista enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2022%20sin%20titulo%20del%20catalogo%20de%20errores%20en%20acrilico%20sobre%20tela%20305%20x%20153%20cm%20por%20artista%20enrique%20ciapara.jpg",
     alt: "Pieza 22 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1530,
     height: 3050,
@@ -325,6 +349,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 23 sin titulo en acrilico sobre tela 200 x 140 cm por enrique ciapara artista en tijuana.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2023%20sin%20titulo%20en%20acrilico%20sobre%20tela%20200%20x%20140%20cm%20por%20enrique%20ciapara%20artista%20en%20tijuana.jpg",
     alt: "Pieza 23 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -339,6 +364,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 24 sin titulo en acrilico sobre tela 122 x 86 cm por pintor enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2024%20sin%20titulo%20en%20acrilico%20sobre%20tela%20122%20x%2086%20cm%20por%20pintor%20enrique%20ciapara.jpg",
     alt: "Pieza 24 de la colección Catálogo de errores por Enrique Ciapara",
     width: 860,
     height: 1220,
@@ -353,6 +379,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 25 sin titulo elaborada en acrilico sobre tela 122 x 86 cm por artista visual bajacaliforniano ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2025%20sin%20titulo%20elaborada%20en%20acrilico%20sobre%20tela%20122%20x%2086%20cm%20por%20artista%20visual%20bajacaliforniano%20ciapara.jpg",
     alt: "Pieza 25 de la colección Catálogo de errores por Enrique Ciapara",
     width: 860,
     height: 1220,
@@ -367,6 +394,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 26 sin titulo elaborado en acrilico sobre tela 244 x 183 cm por Enrique Ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2026%20sin%20titulo%20elaborado%20en%20acrilico%20sobre%20tela%20244%20x%20183%20cm%20por%20Enrique%20Ciapara.jpg",
     alt: "Pieza 26 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1830,
     height: 2440,
@@ -381,6 +409,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 27 sin titulo elaborada en acrilico sobre tela 200x 140 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2027%20sin%20titulo%20elaborada%20en%20acrilico%20sobre%20tela%20200x%20140%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 27 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -395,6 +424,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 28 sin titulo elaborado en acrilico sobre tela 170 x 122 cm por artista visual enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2028%20sin%20titulo%20elaborado%20en%20acrilico%20sobre%20tela%20170%20x%20122%20cm%20por%20artista%20visual%20enrique%20ciapara.jpg",
     alt: "Pieza 28 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1700,
@@ -409,6 +439,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 29 sin titulo catalogo de errores oleo sobre tela 183x 122 cm por artista del la frontera san diego tijuana Enrique Ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2029%20sin%20titulo%20catalogo%20de%20errores%20oleo%20sobre%20tela%20183x%20122%20cm%20por%20artista%20del%20la%20frontera%20san%20diego%20tijuana%20Enrique%20Ciapara.jpg",
     alt: "Pieza 29 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1830,
     height: 1220,
@@ -423,6 +454,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 30 sin titulo en oleo sobre tela 183 x 122 cm por artista enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2030%20sin%20titulo%20en%20oleo%20sobre%20tela%20183%20x%20122%20cm%20por%20artista%20enrique%20ciapara.jpg",
     alt: "Pieza 30 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1830,
@@ -437,6 +469,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 31 sin título en óleo sobre tela en 183 x 122 cm por Enrique Ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2031%20sin%20t%C3%ADtulo%20en%20%C3%B3leo%20sobre%20tela%20en%20183%20x%20122%20cm%20por%20Enrique%20Ciapara.jpg",
     alt: "Pieza 31 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1830,
@@ -451,6 +484,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 32 sin titulo del catalogo de errores elaborado sobre tela 183 x 122 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2032%20sin%20titulo%20del%20catalogo%20de%20errores%20elaborado%20sobre%20tela%20183%20x%20122%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 32 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1830,
@@ -465,6 +499,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 33 sin titulo del catalogo de errores en acrilico y oleo sobre tela en 200 x 140 cm por artista mexicano enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2033%20sin%20titulo%20del%20catalogo%20de%20errores%20en%20acrilico%20y%20oleo%20sobre%20tela%20en%20200%20x%20140%20cm%20por%20artista%20mexicano%20enrique%20ciapara.jpg",
     alt: "Pieza 33 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -479,6 +514,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 34 sin titulo del catalogo de errores en oleo sobre tela 183 x 122 cm por artista enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2034%20sin%20titulo%20del%20catalogo%20de%20errores%20en%20oleo%20sobre%20tela%20183%20x%20122%20cm%20por%20artista%20enrique%20ciapara.jpg",
     alt: "Pieza 34 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1830,
@@ -493,6 +529,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 35 sin titulo del catalogo de errores en tecnica mixta  sobre papel estampado en 53.5 x 39.5 cm por artista enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2035%20sin%20titulo%20del%20catalogo%20de%20errores%20en%20tecnica%20mixta%20%20sobre%20papel%20estampado%20en%2053.5%20x%2039.5%20cm%20por%20artista%20enrique%20ciapara.jpg",
     alt: "Pieza 35 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -507,6 +544,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 36 sin titulo elaborada en mixta sobre papel estampado en 53. 5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2036%20sin%20titulo%20elaborada%20en%20mixta%20sobre%20papel%20estampado%20en%2053.%205%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 36 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -521,6 +559,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 37 sin titulo en tecnica mixta sobre papel estampado 53.5 x 39.5 cm.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2037%20sin%20titulo%20en%20tecnica%20mixta%20sobre%20papel%20estampado%2053.5%20x%2039.5%20cm.jpg",
     alt: "Pieza 37 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -535,6 +574,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 38 sin titulo en tecnica mixta sobre papel estampado 53.5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2038%20sin%20titulo%20en%20tecnica%20mixta%20sobre%20papel%20estampado%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 38 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -549,6 +589,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 39 en tecnica mixta sobre papel estampado en 53.5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2039%20en%20tecnica%20mixta%20sobre%20papel%20estampado%20en%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 39 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -563,6 +604,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 40 en tecnica mixta sobre papel estampado 53.5 x 39.5 por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2040%20en%20tecnica%20mixta%20sobre%20papel%20estampado%2053.5%20x%2039.5%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 40 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -577,6 +619,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 41 sin titulo en tecnica mixta sobre papel estampado 53.5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2041%20sin%20titulo%20en%20tecnica%20mixta%20sobre%20papel%20estampado%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 41 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -591,6 +634,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 42 sin titulo en tecnica mixta sobre papel estampado, 53.5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2042%20sin%20titulo%20en%20tecnica%20mixta%20sobre%20papel%20estampado%2C%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 42 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -605,6 +649,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 43 sin titulo en tecnica mixta sobre papel estampado 53.5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2043%20sin%20titulo%20en%20tecnica%20mixta%20sobre%20papel%20estampado%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 43 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -619,6 +664,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 44 en tecnica mixta sobre sobre papel estampado 53.5 x 39.5 cm por enrique ciapara del catalogo de errores.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2044%20en%20tecnica%20mixta%20sobre%20sobre%20papel%20estampado%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara%20del%20catalogo%20de%20errores.jpg",
     alt: "Pieza 44 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -633,6 +679,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 45 sin titulo del catalogo errores en tecnica mixta sobre papel estampado 53.5 x 39.5 cm.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2045%20sin%20titulo%20del%20catalogo%20errores%20en%20tecnica%20mixta%20sobre%20papel%20estampado%2053.5%20x%2039.5%20cm.jpg",
     alt: "Pieza 45 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -647,6 +694,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 46 sin titulo de catalogo de errores en tecnica mixta sobre papel estampado en 53.5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2046%20sin%20titulo%20de%20catalogo%20de%20errores%20en%20tecnica%20mixta%20sobre%20papel%20estampado%20en%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 46 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -661,6 +709,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 47 sin titulo en tecnica mixta sobre papel estampado 53.5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2047%20sin%20titulo%20en%20tecnica%20mixta%20sobre%20papel%20estampado%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 47 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -675,6 +724,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 48 sin titulo en tecnica mixta sobre papel estampado 53.5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2048%20sin%20titulo%20en%20tecnica%20mixta%20sobre%20papel%20estampado%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 48 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -689,6 +739,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 49 sin titulo en tecnica mixta sobre papel estampado en 53.5 x 39.5 cm por artista enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2049%20sin%20titulo%20en%20tecnica%20mixta%20sobre%20papel%20estampado%20en%2053.5%20x%2039.5%20cm%20por%20artista%20enrique%20ciapara.jpg",
     alt: "Pieza 49 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -703,6 +754,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 50 sin titulo del catalogo de errores en tecnica sobre papel estampado en 53.5 x 39.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2050%20sin%20titulo%20del%20catalogo%20de%20errores%20en%20tecnica%20sobre%20papel%20estampado%20en%2053.5%20x%2039.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 50 de la colección Catálogo de errores por Enrique Ciapara",
     width: 395,
     height: 535,
@@ -717,6 +769,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 51 sin titulo  acrilico y oleo sobre tela 200 x 140 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2051%20sin%20titulo%20%20acrilico%20y%20oleo%20sobre%20tela%20200%20x%20140%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 51 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -731,6 +784,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 52 sin titulo en  acrilico y oleo sobre tela en 200 x 140 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2052%20sin%20titulo%20en%20%20acrilico%20y%20oleo%20sobre%20tela%20en%20200%20x%20140%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 52 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -745,6 +799,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 53 sin titulo del catalogo de errores en acrilico y oleo sobre tela 200 x 140 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2053%20sin%20titulo%20del%20catalogo%20de%20errores%20en%20acrilico%20y%20oleo%20sobre%20tela%20200%20x%20140%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 53 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -759,6 +814,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 54 sin titulo en oleo sobre tela por 122 x 107 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2054%20sin%20titulo%20en%20oleo%20sobre%20tela%20por%20122%20x%20107%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 54 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1070,
     height: 1220,
@@ -773,6 +829,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 55 sin titulo del catalogo de errores en acrilico y oleo sobre tela en 200 x 140 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2055%20sin%20titulo%20del%20catalogo%20de%20errores%20en%20acrilico%20y%20oleo%20sobre%20tela%20en%20200%20x%20140%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 55 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -787,6 +844,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 56 sin titulo en oleo sobre tela 122 x 107 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2056%20sin%20titulo%20en%20oleo%20sobre%20tela%20122%20x%20107%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 56 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1070,
     height: 1220,
@@ -801,6 +859,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 57 sin titulo en  oleo sobre tela en 183 x 122 cm del artista enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2057%20sin%20titulo%20en%20%20oleo%20sobre%20tela%20en%20183%20x%20122%20cm%20del%20artista%20enrique%20ciapara.jpg",
     alt: "Pieza 57 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 1830,
@@ -815,6 +874,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 58 sin  titulo del catalgo de errores en acrilico sobre tela en 200 x 140 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2058%20sin%20%20titulo%20del%20catalgo%20de%20errores%20en%20acrilico%20sobre%20tela%20en%20200%20x%20140%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 58 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -829,6 +889,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 59 sin titulo en acrilico y oleo sobre tela en 305 x 152.5 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2059%20sin%20titulo%20en%20acrilico%20y%20oleo%20sobre%20tela%20en%20305%20x%20152.5%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 59 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1525,
     height: 3050,
@@ -843,6 +904,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 60 sin titulo en acrilico sobre tela en 200 x 140 cm por enrique ciapara.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2060%20sin%20titulo%20en%20acrilico%20sobre%20tela%20en%20200%20x%20140%20cm%20por%20enrique%20ciapara.jpg",
     alt: "Pieza 60 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1400,
     height: 2000,
@@ -857,6 +919,7 @@ export const images: GalleryImage[] = [
   },
   {
     src: "/images/errores/Pieza 61 sin titulo catalogo de errores en acrilico sobre tela 122 x 80 cm por artista enrique ciapara en tijuana.webp",
+    lightboxSrc: "https://pub-531098b4bea7462d86a899b4c8d6b106.r2.dev/catalogo-de-errores/Pieza%2061%20sin%20titulo%20catalogo%20de%20errores%20en%20acrilico%20sobre%20tela%20122%20x%2080%20cm%20por%20artista%20enrique%20ciapara%20en%20tijuana.JPG",
     alt: "Pieza 61 de la colección Catálogo de errores por Enrique Ciapara",
     width: 1220,
     height: 800,

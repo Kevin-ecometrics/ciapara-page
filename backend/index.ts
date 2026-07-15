@@ -3,6 +3,7 @@ import cors from "cors";
 import mysql from "mysql2/promise";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import { S3Client, ListObjectsV2Command } from "@aws-sdk/client-s3";
 
 // En dev carga .env.local; en producción (cPanel) carga .env
 dotenv.config({ path: ".env.local" });
@@ -30,6 +31,19 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// ─── R2 (Cloudflare) ──────────────────────────────────────────────────────────
+const r2 = new S3Client({
+  region: "auto",
+  endpoint: `https://${process.env.ACCOUNT_ID}.r2.cloudflarestorage.com`,
+  credentials: {
+    accessKeyId: process.env.ACCESS_KEY_ID ?? "",
+    secretAccessKey: process.env.SECRET_ACCESS_KEY ?? "",
+  },
+});
+
+const R2_BUCKET = "enrique-ciapara";
+const R2_PUBLIC_URL = process.env.R2_PUBLIC_URL ?? "";
+
 // ─── App ──────────────────────────────────────────────────────────────────────
 const app = express();
 
@@ -48,6 +62,40 @@ app.get("/api/health", async (_req: Request, res: Response) => {
     res.json({ status: "ok", db: "connected" });
   } catch {
     res.status(503).json({ status: "error", db: "unreachable" });
+  }
+});
+
+// ─── Images (R2) ──────────────────────────────────────────────────────────────
+app.get("/api/images", async (_req: Request, res: Response, next: NextFunction) => {
+  try {
+    const images: { key: string; url: string; size?: number; lastModified?: Date }[] = [];
+    let continuationToken: string | undefined;
+
+    do {
+      const page = await r2.send(
+        new ListObjectsV2Command({
+          Bucket: R2_BUCKET,
+          ContinuationToken: continuationToken,
+        })
+      );
+
+      for (const obj of page.Contents ?? []) {
+        if (!obj.Key || obj.Key.endsWith("/")) continue;
+        const encodedKey = obj.Key.split("/").map(encodeURIComponent).join("/");
+        images.push({
+          key: obj.Key,
+          url: `${R2_PUBLIC_URL}/${encodedKey}`,
+          size: obj.Size,
+          lastModified: obj.LastModified,
+        });
+      }
+
+      continuationToken = page.IsTruncated ? page.NextContinuationToken : undefined;
+    } while (continuationToken);
+
+    res.json({ images });
+  } catch (err) {
+    next(err);
   }
 });
 

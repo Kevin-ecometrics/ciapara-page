@@ -10,6 +10,55 @@ import CollectionDescription from "../../components/CollectionDescription";
 
 const expo = [0.16, 1, 0.3, 1] as const;
 
+function LightboxImage({ src, alt }: { src: string; alt: string }) {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new window.Image();
+    img.onload = () => setLoaded(true);
+    img.onerror = () => setLoaded(true);
+    img.src = src;
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
+  }, [src]);
+
+  return (
+    <>
+      <AnimatePresence>
+        {!loaded && (
+          <motion.div
+            key="loader"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0 flex items-center justify-center"
+          >
+            <div className="w-10 h-10 rounded-full border-2 border-white/20 border-t-white/90 animate-spin" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.div
+        initial={false}
+        animate={{ opacity: loaded ? 1 : 0 }}
+        transition={{ duration: 0.5, ease: expo }}
+        style={{
+          backgroundImage: `url("${src}")`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+        role="img"
+        aria-label={alt}
+        className="w-full h-full"
+      />
+    </>
+  );
+}
+
 /*
   Layout editorial de 12 columnas, respetando el aspect ratio y tamaño físico
   de cada obra. Formato de dimensiones: "alto × ancho" (excepto Pieza 61).
@@ -363,16 +412,14 @@ export default function Gallery() {
             <div
               onClick={(e) => e.stopPropagation()}
               onContextMenu={(e) => e.preventDefault()}
-              style={{
-                backgroundImage: `url("${lightboxImage.lightboxSrc ?? lightboxImage.src}")`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
-              role="img"
-              aria-label={lightboxImage.alt}
-              className="w-full h-full select-none"
-            />
+              className="relative w-full h-full select-none"
+            >
+              <LightboxImage
+                key={lightboxIndex}
+                src={lightboxImage.lightboxSrc ?? lightboxImage.src}
+                alt={lightboxImage.alt}
+              />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
