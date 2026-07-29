@@ -17,7 +17,7 @@ import MobileMenu from "./MobileMenu";
 const expo = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
-  const HeroColor = "/images/HeroColor.jpeg";
+  const HeroColor = "/CiaparaHeroImg.jpeg";
 
   const { t, locale, setLocale } = useI18n();
   const containerRef = useRef<HTMLElement>(null);
@@ -53,10 +53,10 @@ export default function Hero() {
     locale === "en"
       ? "/en/about"
       : locale === "fr"
-      ? "/fr/about"
-      : locale === "ca"
-      ? "/ca/about"
-      : "/about";
+        ? "/fr/about"
+        : locale === "ca"
+          ? "/ca/about"
+          : "/about";
 
   const heroLinks = [
     { label: t.nav.about, href: aboutHref },
@@ -149,7 +149,7 @@ export default function Hero() {
         onMouseMove={handlePointerMove}
       >
         {/* ── Fondo ── */}
-        <div ref={bgRef} className="absolute inset-0 grayscale">
+        <div ref={bgRef} className="absolute inset-0">
           <img
             src={HeroColor}
             alt=""

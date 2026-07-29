@@ -73,7 +73,7 @@ export default function Footer() {
       {/* Background image with parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <img
-          src="/CiaparaHeroImg.jpeg"
+          src="/images/HeroBW.jpeg"
           alt=""
           className="w-full h-full object-cover object-top scale-110"
         />
